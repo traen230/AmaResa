@@ -1,0 +1,103 @@
+<input type="radio" name="category" value="/gp/bestsellers/amazon-devices/ref=zg_bs_nav_amazon-devices_0" id="cat0"><label for="cat0">Amazonデバイス・アクセサリ</label><br>
+<input type="radio" name="category" value="/gp/bestsellers/amazon-renewed/ref=zg_bs_nav_amazon-renewed_0" id="cat1"><label for="cat1">Amazon整備済み品</label><br>
+<input type="radio" name="category" value="/gp/bestsellers/diy/ref=zg_bs_nav_diy_0" id="cat2"><label for="cat2">DIY・工具・ガーデン</label><br>#修正前
+<div class="_p13n-zg-nav-tree-all_style_zg-browse-root__-jwNv" role="tree" id="CardInstancetbHRHb74dUcZIXjg_RAorA" data-card-metrics-id="p13n-zg-nav-tree-all_zeitgeist-lists_1">
+                                                    <div class="_p13n-zg-nav-tree-all_style_zg-root-browse-item__2WmBB _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL" role="treeitem">
+                                                        <span class="_p13n-zg-nav-tree-all_style_zg-selected__1SfhQ">すべてのカテゴリー</span>
+                                                    </div>
+                                                    <div role="group" class="_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz">
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/amazon-devices/ref=zg_bs_nav_amazon-devices_0">Amazonデバイス・アクセサリ</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/amazon-renewed/ref=zg_bs_nav_amazon-renewed_0">Amazon整備済み品</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/diy/ref=zg_bs_nav_diy_0">DIY・工具・ガーデン</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/dvd/ref=zg_bs_nav_dvd_0">DVD</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/digital-text/ref=zg_bs_nav_digital-text_0">Kindleストア</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/software/ref=zg_bs_nav_software_0">PCソフト</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/instant-video/ref=zg_bs_nav_instant-video_0">Prime Video</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/mobile-apps/ref=zg_bs_nav_mobile-apps_0">アプリ＆ゲーム</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/toys/ref=zg_bs_nav_toys_0">おもちゃ</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/gift-cards/ref=zg_bs_nav_gift-cards_0">ギフトカード</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/videogames/ref=zg_bs_nav_videogames_0">ゲーム</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/sports/ref=zg_bs_nav_sports_0">スポーツ＆アウトドア</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/dmusic/ref=zg_bs_nav_dmusic_0">デジタルミュージック</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/hpc/ref=zg_bs_nav_hpc_0">ドラッグストア</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/computers/ref=zg_bs_nav_computers_0">パソコン・周辺機器</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/beauty/ref=zg_bs_nav_beauty_0">ビューティー</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/fashion/ref=zg_bs_nav_fashion_0">ファッション</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/pet-supplies/ref=zg_bs_nav_pet-supplies_0">ペット用品</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/baby/ref=zg_bs_nav_baby_0">ベビー＆マタニティ</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/kitchen/ref=zg_bs_nav_kitchen_0">ホーム＆キッチン</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/hobby/ref=zg_bs_nav_hobby_0">ホビー</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/music/ref=zg_bs_nav_music_0">ミュージック</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/appliances/ref=zg_bs_nav_appliances_0">大型家電</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/electronics/ref=zg_bs_nav_electronics_0">家電＆カメラ</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/office-products/ref=zg_bs_nav_office-products_0">文房具・オフィス用品</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/books/ref=zg_bs_nav_books_0">本</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/musical-instruments/ref=zg_bs_nav_musical-instruments_0">楽器・音響機器</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/english-books/ref=zg_bs_nav_english-books_0">洋書</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/industrial/ref=zg_bs_nav_industrial_0">産業・研究開発用品</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/automotive/ref=zg_bs_nav_automotive_0">車＆バイク</a>
+                                                        </div>
+                                                        <div role="treeitem" class="_p13n-zg-nav-tree-all_style_zg-browse-item__1rdKf _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL">
+                                                            <a href="/gp/bestsellers/food-beverage/ref=zg_bs_nav_food-beverage_0">食品・飲料・お酒</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
