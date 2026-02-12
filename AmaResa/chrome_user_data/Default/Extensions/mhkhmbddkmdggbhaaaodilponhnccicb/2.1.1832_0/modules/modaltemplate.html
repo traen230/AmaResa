@@ -1,0 +1,54 @@
+﻿<!-- Replace #TEMPLATENAME# x 3-->
+<!-- Replace #TITLE# -->
+<!-- Replace #TOOL# -->
+<!-- If not based on a single video, remove tb-module-selected-video <div> -->
+<!--Start Base Module Template-->
+<div id="tb-#TEMPLATENAME#-container" class="tb-module-template draggable-container" style="display:none; width:600px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                #TITLE#
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=#TOOL#" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-#TEMPLATENAME#-video-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-#TEMPLATENAME#-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div>this is the content</div>
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer">
+            <a class="tb-btn-red tb-module-close" id="tb-dc-close">Close</a>
+        </div>
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>SellerSprite ログイン確認</title>
+</head>
+<body>
+    <h2>🔐 SellerSprite にログインしてください</h2>
+
+    <p>🚀 Chrome（SellerSprite拡張付き）を起動しました。</p>
+    <p>以下の手順に従ってください：</p>
+
+    <ol>
+        <li>起動したChromeウィンドウで <strong>Amazonのランキングページ</strong> を開いてください。</li>
+        <li><strong>SellerSprite拡張機能にログイン</strong>してください（右上のアイコン等から）。</li>
+        <li>ログインが完了し、各種SaellerSpriteの数値が出力されたら、下の「OK」ボタンを押してください。</li>
+    </ol>
+
+    <form method="POST" action="/ranking/research/execute">
+        <input type="hidden" name="ranking_url" value="{{ url }}">
+        <button type="submit">✅ OK（ログイン完了）</button>
+    </form>
+
+    <p><a href="/">← トップページに戻る</a></p>
+</body>
+</html>

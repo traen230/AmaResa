@@ -1,0 +1,10 @@
+flask
+requests
+beautifulsoup4
+gunicorn
+selenium
+pillow
+tensorflow
+scikit-learn
+psutil
+pandas

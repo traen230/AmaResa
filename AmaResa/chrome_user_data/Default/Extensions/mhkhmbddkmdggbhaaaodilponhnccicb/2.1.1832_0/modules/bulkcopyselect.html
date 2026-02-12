@@ -1,0 +1,98 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-bulk-copy-select-container" class="tb-module-template draggable-container" style="display:none; width:700px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 id="tb-bulk-copy-select-title-block" class="tb-module-title">
+
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkcopycards" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" id="tb-bulk-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content" id="tb-bulk-copy-select">
+                <div class="tb-bulk-content-templates">
+                    <div id="tb-bulk-copy-select-instructions" class="tb-bulk-instructions tb-bulk-instructions--condensed-y">
+                        Click on the video you want to copy cards from:
+                    </div>
+                    <div class="tb-bulk-copy-select-videotemplates-contianer">
+                        <div class="tb-bulk-copy-select-videotemplates-contianer-name tb-bold tb-font-size14 tb-margin-bottom5">Templates</div>
+                        <div class="tb-bulk-copy-select-videotemplates" style="max-height: 100px; overflow-y: hidden; overflow: auto; line-height:25px"></div>
+                    </div>
+                </div>
+                <div class="tb-bulk-copy-search-filter">
+                    <div class="tb-bold tb-font-size14 tb-padding-left10 tb-margin-bottom5">Search Videos</div>
+                    <div class="tb-bulk-search-menu">
+                        <div class="tb-bulk-search">
+                            <input class="tb-bulk-copy-select-search-input tb-material-input" type="text" placeholder="Search for a video" />
+                            <button class="tb-bulk-copy-select-search tb-btn-green">Search</button>
+                        </div>
+                        <div class="tb-bulk-filter">
+                            <span class="tb-bulk-filter-text">Filter</span>
+                            <select class="tb-bulk-copy-select-filter tb-dropdown-menu">
+                                <option value="all">Show All Videos</option>
+                                <option value="public">Only Public Videos</option>
+                                <option value="unlisted">Only Unlisted Videos</option>
+                                <option value="private">Only Private Videos</option>
+                                <option value="publicunlisted">Public and Unlisted Videos</option>
+                                <option value="privateunlisted">Private and Unlisted Videos</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="tb-bulk-content-templates">
+                    <div class="tb-bulk-copy-select-videos-contianer">
+                        <div class="tb-bulk-copy-select-fetching tb-height100">
+                            <div class="tb-margin-top40"> <span class="tb-spinner"></span> &nbsp;Loading your recent uploads</div>
+                        </div>
+                        <div class="tb-bulk-copy-select-videos tb-bulk-videos-filtered-list"></div>
+                    </div>
+                    <div class="tb-bulk-copy-select-videos-search-contianer">
+                        <div class="tb-bulk-copy-select-fetching tb-height100">
+                            <div class="tb-margin-top40"> <span class="tb-spinner"></span> &nbsp;Searching Videos</div>
+                        </div>
+                        <div class="tb-bulk-copy-select-videos-search tb-bulk-videos-filtered-list"></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer tb-right">
+            <!--<a class="tb-btn-red tb-module-close" id="tb-dc-close">Close</a>-->
+            <button class="tb-btn-blue tb-bulk-copy-select-continue">
+                Continue
+            </button>
+        </div>
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+
+<div type="text/template" id="tb-bulk-copy-select-video-template" style="display:none">
+    <div data-video-id="{0}" data-video-title="{3}" class="tb-bulk-copy-select-row tb-cursor-pointer" data-privacy="{4}" style="max-width:650px;">
+        <img data-video-id="{0}" src='{1}' style="height: 30px;" class="tb-margin-right5" />
+        <span class="tb-margin-right5 tb-destination-video-title" data-video-id="{0}">{3}</span>
+        <a data-video-id="{0}" href="{2}" target="_blank" title="view video" class="tb-bulk-view-video"><i class="material-icons tb-font-size13">open_in_new</i></a>
+    </div>
+</div>

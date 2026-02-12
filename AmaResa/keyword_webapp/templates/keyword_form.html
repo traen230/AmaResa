@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ランキングリサーチ</title>
+</head>
+<body>
+    <h2>ランキングリサーチ</h2>
+    <form method="post">
+        <h4>ライバルチェック：</h4>
+        評価数 ≤ <input type="number" name="rival_review_max" value="20">
+        販売数 ≥ <input type="number" name="rival_sales_min" value="70"><br><br>
+
+        <h4>逆引きリサーチ：</h4>
+        ASIN: <input type="text" name="reverse_asin"><br><br>
+
+        <h4>キーワード分析：</h4>
+        評価数 ≤ <input type="number" name="keyword_review_max" value="20">
+        販売数 ≥ <input type="number" name="keyword_sales_min" value="70"><br><br>
+
+        <button type="submit">リサーチ実行</button>
+    </form>
+
+    {% if result %}
+        <hr>
+        <h3>リサーチ結果：</h3>
+        <p>{{ result | safe }}</p>
+    {% endif %}
+</body>
+</html>

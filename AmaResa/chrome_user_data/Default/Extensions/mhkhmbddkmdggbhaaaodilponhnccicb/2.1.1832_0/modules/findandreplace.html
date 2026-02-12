@@ -1,0 +1,627 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-findandreplace-container" class="tb-module-template draggable-container" style="display:none; width:875px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Bulk Find / Replace / Append
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkfindreplaceappend" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-padding-0">
+                <div id="tb-findandreplace-action-text" style="display:none;">
+
+                </div>
+                <div class="tb-padding10">
+                    <!-- step 1 -->
+                    <div id="tb-findandreplace-source" style="display: none;">
+                        <div class="tb-font-size16">
+                            <div class="tb-margin-top10 tb-findandreplace-form-item-container">
+                                <div class="tb-findandreplace-form-item-label tb-font-size18">Action: </div>
+                                <select id="tb-findandreplace-action-type" class="tb-dropdown-menu tb-bulk-dropdown">
+                                    <option value="5">Find Text</option>
+                                    <option value="1" selected="">Find and Replace Text</option>
+                                    <option value="2">Insert After Text</option>
+                                    <option value="3">Insert Before Text</option>
+                                    <option value="4">Remove/Delete Text</option>
+                                    <option value="6">Add Text to End of Description</option>
+                                    <option value="7">Insert Text at Beginning of Description</option>
+                                    <option value="8">Replace Entire Description</option>
+                                    <option value="9" style="display:none;">Trim Description (remove blank lines from start/end)</option>
+                                </select>
+                            </div>
+
+                            <div id="tb-findandreplace-find-container" class="tb-margin-top10 tb-findandreplace-form-item-container">
+                                <div class="tb-findandreplace-find-text tb-findandreplace-form-item-label">Find Text:</div>
+                                <textarea id="tb-findandreplace-find" class="tb-findandreplace-form-item-input" rows="2"></textarea>
+                            </div>
+
+
+                            <div id="tb-findandreplace-specialcharacters" style="display: none; font-size: 11px; padding: 5px 130px 0 135px; line-height: 14px; color: coral;">
+                                Note: Because your Find Text contains special characters, the checkbox <i>"Include partial word matches"</i> is automatically checked.
+                            </div>
+                            <span id="tb-findandreplace-action-type-text-container">
+                                <br />
+                            </span>
+
+                            <div class="tb-margin-top10 tb-findandreplace-form-item-container">
+                                <div class="tb-findandreplace-form-item-label tb-findandreplace-action-type-text">
+                                    Replace Text:
+                                </div>
+                                <textarea id="tb-findandreplace-replace" type="text" class="tb-findandreplace-form-item-input" rows="2"></textarea>
+                            </div>
+
+                            <div id="tb-findandreplace-linebreak-box" style="display: none; margin-left:133px;">
+                                <div class="tb-material-checkbox-container tb-width100-percent">
+                                    <label class="tb-material-checkbox-label">
+                                        <input id="tb-findandreplace-linebreak" type="checkbox" checked="checked" class="tb-material-checkbox-input" />
+                                        <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                        Remove line-break after "Remove Text" (if a line-break is found)
+                                    </label>
+                                </div>
+                                <div class="tb-material-checkbox-container tb-width100-percent">
+                                    <label class="tb-material-checkbox-label">
+                                        <input id="tb-findandreplace-blanklines" type="checkbox" checked="checked" class="tb-material-checkbox-input" />
+                                        <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                        Remove blank line after "Remove Text"  (if blank line is found)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="tb-findandreplace-linebreak-prepend-box" style="display: none; margin-left:133px;">
+                                <div class="tb-material-checkbox-container tb-width100-percent">
+                                    <label class="tb-material-checkbox-label">
+                                        <input id="tb-findandreplace-linebreak-prepend" type="checkbox" checked="checked" class="tb-material-checkbox-input" />
+                                        <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                        Add a linebreak after my text
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div id="tb-findandreplace-options-container" class="tb-findandreplace-form-item-container tb-margin-top10">
+                                <div class="tb-findandreplace-form-item-label">
+                                    Options:
+                                </div>
+                                <div class="tb-findandreplace-form-item-options-container">
+                                    <div class="tb-material-checkbox-container tb-margin-right10">
+                                        <label class="tb-material-checkbox-label">
+                                            <input id="tb-findandreplace-casesensitive" type="checkbox" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            caSe SeNsItIvE
+                                        </label>
+                                    </div>
+                                    <div class="tb-material-checkbox-container">
+                                        <label class="tb-material-checkbox-label">
+                                            <input id="tb-findandreplace-partialword" type="checkbox" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Include partial word matches
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="tb-findandreplace-search-in-container" class="tb-findandreplace-form-item-container tb-margin-top10">
+                                <div class="tb-findandreplace-form-item-label">
+                                    Search In:
+                                </div>
+                                <div class="tb-findandreplace-form-item-options-container">
+                                    <div id="tb-findandreplace-search-in-titles" class="tb-material-checkbox-container tb-margin-right10">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" id="tb-findandreplace-titles" checked="checked" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Titles
+                                        </label>
+                                    </div>
+                                    <div id="tb-findandreplace-search-in-descriptions" class="tb-material-checkbox-container">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" id="tb-findandreplace-descriptions" checked="checked" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Descriptions
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tb-findandreplace-form-item-container tb-findandreplace-example-container tb-margin-top10">
+                                <div class="tb-findandreplace-form-item-label">
+                                    Example:
+                                </div>
+                                <div class="tb-findandreplace-examples">
+                                    <div class="tb-findandreplace-example-input-container" id="tb-findandreplace-example-input-container-find">
+                                        <div class="tb-findandreplace-example-input-label">Find Text:</div>
+                                        <input type="text" name="name" class="tb-material-input tb-findandreplace-example-input" disabled value="Spotify:http://smarturl.it/mjs" />
+                                    </div>
+                                    <div class="tb-findandreplace-example-input-container" id="tb-findandreplace-example-input-container-replace">
+                                        <div class="tb-findandreplace-example-input-label"><span class="tb-findandreplace-action-type-text">Replace Text:</span></div>
+                                        <input type="text" name="name" class="tb-material-input tb-findandreplace-example-input" disabled id="tb-findandreplace-sample-replace-text" value="iTunes: http://smarturl.it/mjiT" />
+                                    </div>
+                                    <div class="tb-findandreplace-before-after-container">
+                                        <!-- find -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-find-before" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                <span>➨ Streaming & Store Links</span> <br />
+                                                <span style="background-color: #ffffaa;">Spotify: http://smarturl.it/mjs </span> <br />
+                                                <span>Google Play: http://smarturl.it/mjgp </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- find/replace -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-replace-before">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                <span>➨ Streaming & Store Links</span> <br />
+                                                <span>Spotify: http://smarturl.it/mjs </span> <br />
+                                                <span>Google Play: http://smarturl.it/mjgp </span>
+                                            </div>
+                                        </div>
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-replace-after">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--after">
+                                                After
+                                            </div>
+                                            <div class="tb-padding10">
+                                                <span>➨ Streaming & Store Links</span> <br />
+                                                <span style="background-color: #ffffaa;">iTunes: <a style="text-decoration:none;" href="http://smarturl.it/mjiT">http://smarturl.it/mjiT</a> </span> <br />
+                                                <span>Google Play: <a style="text-decoration:none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a></span>
+                                            </div>
+                                        </div>
+                                        <!-- append -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-append-before" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-append-after" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--after">
+                                                After
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                <span style="background-color: #ffffaa">
+                                                    iTunes: <a style="text-decoration: none;" href="http://smarturl.it/mjiT">http://smarturl.it/mjiT</a>
+                                                </span><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <!-- prepend -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-prepend-before" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-prepend-after" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--after">
+                                                After
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                <span style="background-color: #ffffaa">
+                                                    iTunes: <a style="text-decoration: none;" href="http://smarturl.it/mjiT">http://smarturl.it/mjiT</a>
+                                                </span><br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <!-- remove -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-remove-before" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-remove-after" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--after">
+                                                After
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                <br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <!-- remove line -->
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-removeline-before" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--before">
+                                                Before
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Spotify: <a style="text-decoration: none;" href="http://smarturl.it/mjs">http://smarturl.it/mjs</a><br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                        <div class="tb-findandreplace-before-after-box tb-findandreplace-example" id="tb-findandreplace-example-removeline-after" style="display:none;">
+                                            <div class="tb-findandreplace-before-after-box-header tb-findandreplace-before-after-box-header--after">
+                                                After
+                                            </div>
+                                            <div class="tb-padding10">
+                                                ➨ Streaming & Store Links:<br />
+                                                Google Play: <a style="text-decoration: none;" href="http://smarturl.it/mjgp">http://smarturl.it/mjgp</a><br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- step 2 -->
+                    <div id="tb-findandreplace-method" style="display: none;">
+                        <div class="tb-bulk-instructions">Which videos would you like to search for the text?</div>
+                        <div class="tb-margin-top10 tb-material-radio-container">
+                            <input checked="checked" name="tb-findandreplace-method" data-method="3" id="tb-findandreplace-method-full" type="radio" class="tb-material-radio" /> 
+                            <label for="tb-findandreplace-method-full" class="tb-material-radio-label">
+                                I want search a full list of <b>all</b> my videos.
+                            </label>
+                            
+                            <div class="tb-margin-left25 tb-material-checkbox-container tb-bulk-checkbox-container">
+                                <label class="tb-material-checkbox-label tb-font-color-gray">
+                                    <input id="tb-findandreplace-onlyLoadFirstPage" type="checkbox" class="tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Only load my most recent
+                                    <input id="tb-findandreplace-onlyLoadFirstPage-number" class="tb-width35 tb-material-input tb-bulk-input" type="text" value="50" /> videos (faster)
+                                </label>                                
+                            </div>
+                        </div>
+                        <div class="tb-material-radio-container">
+                            <input name="tb-findandreplace-method" data-method="0" id="tb-findandreplace-method-ids" type="radio" class="tb-material-radio"/> 
+                            <label for="tb-findandreplace-method-ids" class="tb-material-radio-label">
+                                A list of Video IDs that I specify
+                            </label>
+                            <div class="tb-margin-left25">
+                                <input id="tb-findandreplace-input-ids" disabled type="text" class="tb-material-input tb-bulk-input" placeholder="Example: gXDMoiEkyuQ, Cpc-t-Uwv1I, 8fE29CHJMCg"/>
+                                <span style="font-size: 11px; font-weight: bold;" id="tb-findandreplace-input-ids-status"></span>
+                            </div>    
+                        </div>                        
+                        <div class="tb-material-radio-container">
+                            <input name="tb-findandreplace-method" data-method="1" id="tb-findandreplace-method-playlist" type="radio" class="tb-material-radio" />
+                            <label for="tb-findandreplace-method-playlist" class="tb-material-radio-label">
+                                All videos within one of my playlists
+                            </label>
+                            <div class="tb-margin-left25">
+                                <div id="tb-findandreplace-input-playlist" class="tb-margin-left5"></div>
+                            </div>
+                            
+                        </div>
+                        <div class="tb-material-radio-container">
+                            <input name="tb-findandreplace-method" data-method="2" id="tb-findandreplace-method-search" type="radio" class="tb-material-radio"/>
+                            <label for="tb-findandreplace-method-search" class="tb-material-radio-label">
+                                Search a list of videos that match my Search Phrase below.
+                            </label>
+                            <div class="tb-margin-left25">
+                                <input disabled="disabled" id="tb-findandreplace-input-search" type="text" class="tb-material-input tb-bulk-input" placeholder="Example: Avengers" />
+                            </div>
+                         </div>
+
+                    </div>
+                    <!-- step 3 -->
+                    <div id="tb-findandreplace-destination" style="display: none">
+                        <div class="tb-font-color-gray" style="font-weight: 600; font-size: 15px; padding-bottom: 5px; margin-bottom: 5px;">
+                            <span id="tb-findandreplace-whatvideos-text">
+                                What Video(s) do you want to run this action on?
+                            </span>
+                            <span id="tb-findandreplace-whatvideos-text2">
+                                Find results below...
+                            </span>
+                        </div>
+                        <div class="tb-findandreplace-annotations-item-destination-header" style="padding-bottom: 5px; margin-bottom: 5px; display:flex; align-items:center; justify-content:space-between;">
+                            <span id="tb-findandreplace-selected-text2">
+                                <span id="tb-findandreplace-selected-text" class="tb-font-size15 tb-font-color-gray">
+                                    <span> Selected:</span> (<span id="tb-findandreplace-destination-selected-count" class="tb-font-color-blue">0</span>)
+                                </span> <a class="tb-font-color-blue"style="cursor: pointer;" id="tb-findandreplace-select-all-checkboxes">All</a> | <a class="tb-font-color-blue" style="cursor: pointer;" id="tb-findandreplace-select-no-checkboxes">None</a>
+                            </span>
+
+                            <div style="display:flex; align-items:center;">
+                                <span class="tb-bulk-filter-text">Filter</span>
+                                <select class="tb-findandreplace-filter tb-dropdown-menu tb-dropdown-menu--small" style="width:450px;">
+                                    <option value="all">Show All Videos</option>
+                                    <option value="public">Only Public Videos</option>
+                                    <option value="unlisted">Only Unlisted Videos</option>
+                                    <option value="private">Only Private Videos</option>
+                                    <option value="publicunlisted">Public and Unlisted Videos</option>
+                                    <option value="privateunlisted">Private and Unlisted Videos</option>
+                                </select>
+                            </div>
+
+                            <div class="tb-font-size12" style="display:flex; align-items:center; justify-content:space-between; width:190px;">
+                                <i class="material-icons tb-font-color-gray tb-font-size18">search</i>
+                                <span > = Preview </span>&nbsp;&nbsp;
+                                <span class="tb-findandreplace-found-status tb-findandreplace-found-status--found">Found</span>
+                                <span class="tb-findandreplace-found-status tb-findandreplace-found-status--notfound">Not Found</span>
+                            </div>
+                        </div>
+                        <div class="tb-width100-percent" style="border-top: solid 1px #ccc; margin:10px 0"></div>
+                        <div style="margin-top: 0px; height: 290px; overflow-y: scroll; overflow: auto;">
+
+                            <div id="tb-findandreplace-loading-videos" style="margin-top: 40px; margin-left: 15px;">
+                                <span class="tb-spinner"></span> <b style="position:relative; top:-2px;">LOADING...</b><br /><br />
+                                <span style="font-size: 12px; font-weight: bold;" id="tb-findandreplace-loading-count-container">
+                                    <span id="tb-findandreplace-loading-count">0</span> of
+                                    <span id="tb-findandreplace-loading-count-total">?</span> total Videos.
+                                </span>
+                                <div style="margin-top: 15px; display:none;" id="tb-findandreplace-rendering">
+                                    Rendering videos on screen (this can take a few seconds)...
+                                </div>
+                            </div>
+
+
+                            <div id="tb-findandreplace-destination-list" style="display: none;">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- step 4 -->
+                    <div id="tb-findandreplace-confirm" style="display: none">
+
+                        <div style="margin: 20px 15px;" id="tb-findandreplace-confirm-container">
+                            <div id="tb-findandreplace-confirmation-text" style="font-size: 18px; color: #424242;line-height: 23px; max-height:100px; overflow:auto;"></div>
+              
+                            <div class="tb-material-checkbox-container tb-margin-top15">
+                                <label class="tb-material-checkbox-label" id="tb-findandreplace-confirm-label" >
+                                    <input class="tb-material-checkbox-input" type="checkbox" id="tb-findandreplace-confirm-checkbox" />
+                                    <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Yes, do it.
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- processing -->
+                    <div id="tb-findandreplace-status" style="display: none">
+
+                        <div class="tb-bulk-instructions">
+
+                            <div style="margin-left:20px; font-weight:normal; float:right; margin-right:15px;">
+                                <div id="tb-findandreplace-done" class="tb-bulk-header-status tb-font-color-green" style="display: none;">
+                                    <i class="material-icons tb-font-size16 tb-margin-right4">check_circle_outline</i>
+                                    Processing complete!
+                                </div>
+                                <div id="tb-findandreplace-stopped" class="tb-bulk-header-status tb-font-color-red" style="display:none;">
+                                    <i class="material-icons tb-font-size16 tb-margin-right4">error_outline</i>
+                                    Processing Stopped!
+                                </div>
+                            </div>
+
+                            <span id="tb-findandreplace-working">
+                                <span class="tb-spinner"></span>
+
+                                <span style="display:none">
+                                    <img id="tb-findandreplace-current-image" src="" style="height: 20px; position: relative; top: 5px;" />
+                                    <a id="tb-findandreplace-current-video" target="_blank"></a>
+                                </span>
+                            </span>
+
+                            <span class="tb-bold-tb-font-size15">
+                                Status:
+                                <span id="tb-findandreplace-status-count"></span>
+                            </span>                                                       
+
+                            <div id="tb-findandreplace-progress-container" class="tb-font-color-green tb-margin-top15 tb-font-size11 tb-bold"></div>
+                        </div>
+
+                        <div id="tb-findandreplace-progress-v2-container">
+                            <div style="float: right; width: 330px;">
+
+                                <div class="tb-font-color-green tb-margin-bottom10 tb-bold">
+                                    Videos Completed Successfully
+
+                                    &nbsp;&nbsp; (<span style="" id="tb-findandreplace-completed-list2-count">0</span>)
+                                </div>
+                                <div id="tb-findandreplace-completed-list2" style="height:275px; overflow-y:auto; display:none;"></div>
+                                <div id="tb-findandreplace-completed-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:20px;">
+                                    (none)
+                                </div>
+                            </div>
+
+                            <div style="width:330px;">
+                                <div class="tb-margin-bottom10 tb-bold">Next 3 Videos to be Processed</div>
+                                <div id="tb-findandreplace-queue-complete-list2" style="display:none; padding:15px 10px; height:80px;">
+                                    (no more)
+                                </div>
+                                <div id="tb-findandreplace-queue-list2" style="height:140px;">
+
+                                </div>
+
+                            </div>
+                            <div style="margin-top:15px; width:330px;">
+
+                                <div class="tb-margin-bottom10 tb-bold tb-font-color-red">
+                                    <div style="float:left">
+                                        Videos Completed with Errors
+
+                                        &nbsp;&nbsp; (<span style="" id="tb-findandreplace-error-list2-count">0</span>)
+                                    </div>
+                                    <div id="tb-findandreplace-error-copy-container" class="tb-cursor-pointer tb-font-color-blue" style="display:none;float:left;margin-left:5px;">
+                                        <a id="tb-findandreplace-error-copy" data-clipboard-text="">
+                                            <i class="material-icons tb-font-size16">file_copy</i>
+                                            <span class="tb-font-size10 tb-move-up4">Copy video ids</span>
+                                        </a>
+                                    </div>
+                                    <div style="clear:left"></div>
+                                </div>
+                                <div id="tb-findandreplace-error-list2" style="height:120px; overflow:auto; display:none;">
+
+                                </div>
+                                <div id="tb-findandreplace-error-none-list2" style="height:120px; overflow:auto; margin-left:10px; padding-top:15px;">
+                                    (none)
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer">
+            <div style="display:flex; justify-content:space-between">
+                <div>
+                    <button class="tb-btn-grey" id="tb-findandreplace-back" style="display: none; float: left;">
+                        Back
+                    </button>
+                </div>
+                <div id="tb-bulk-metadata-csv-uploader" class="tb-file-input-and-submit" style="margin-top: 10px; display: none;">
+                    <div style="display: flex;flex-direction: row;">
+                        <label class="tb-cursor-pointer" for="tb-bulk-metadata-input" style="
+                            display: inline;">
+                            Choose a csv to upload
+                        </label>
+                        <input name="tb-bulk-metadata-input" id="tb-bulk-metadata-input" accept="text/csv" type="file" style="display:inline-block; margin-left: 10px;">
+                    </div>
+                    <div style="display: flex;justify-content: center; margin-top: 10px;">
+                        <button class="btn btn-primary" id="tb-bulk-metadata-submit">Submit</button>
+                        <span class="icon-check small material-icons" style="display: none;"
+                              id="tb-finished-bulk-submit">done</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="tb-btn-blue" id="tb-findandreplace-continue">
+                        Continue
+                    </button>
+                    <button class="tb-btn-green" id="tb-findandreplace-kickoff" style="display: none">
+                        Start!
+                    </button>
+                    <button class="tb-btn-red" id="tb-findandreplace-stop" style="display: none;">
+                        Stop
+                    </button>
+                    <button id="tb-findandreplace-done-close" class="tb-btn-blue tb-module-close" style="display:none;">
+                        Done
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+<div style="display: none">
+    <div class="tb-findandreplace-destination-row" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; margin:0px 5px 10px 5px;" data-privacy="#PRIVACY#">
+
+        <div style="width:20px;">
+            <div class="tb-material-checkbox-container tb-padding-0" style="#DISPLAYCHECKBOX#">
+                <label class="tb-material-checkbox-label">
+                    <input class="tb-findandreplace-checkbox-include tb-material-checkbox-input" data-video-id="#VIDEOID#" style="#DISPLAYCHECKBOX#" type="checkbox" />
+                    <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                </label>
+            </div>
+            <span class="yt-uix-tooltip" data-tooltip-text="No matches found" style="#DISPLAYX#"><i class="material-icons tb-red tb-move-left4">close</i></span>
+
+        </div>
+
+        <img src="#VIDEOTHUMBNAIL#" style="height: 51px; border-radius:3px;" />
+        <div style="width: 580px; max-width: 580px; display:flex; align-items:center;">
+            <span class="tb-destination-video-title" style="max-width:">#VIDEOTITLE#</span>
+            <a target="_blank" href="https://www.youtube.com/watch?v=#VIDEOID#" title="https://www.youtube.com/watch?v=#VIDEOID#" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; width: 105px;">
+            <i data-video-id="#VIDEOID#" class="tb-findandreplace-search material-icons tb-font-color-gray tb-cursor-pointer">search</i>
+            <span class="tb-findandreplace-title-box tb-findandreplace-found-status #TITLEFOUNDSTATUS#" data-video-id="#VIDEOID#" style="#TITLEDISPLAY#;">Title</span>
+            <span class="tb-findandreplace-description-box tb-findandreplace-found-status #DESCRIPTIONFOUNDSTATUS#" data-video-id="#VIDEOID#" style="#DESCRIPTIONDISPLAY#;">Desc.</span>
+        </div>
+
+        <div class="tb-findandreplace-preview-container">
+            <div data-video-id="#VIDEOID#" class="tb-findandreplace-preview-options tb-margin-bottom10" style="display: none;">                                
+                <div style="display:flex; align-items: center;">
+                    <span class="tb-font-color-gray tb-font-size15">Show:</span>
+
+                    <div class="tb-material-radio-container">
+                        <input id="tb-findandreplace-preview-option-before-#VIDEOID#" data-video-id="#VIDEOID#" type="radio" checked="checked" class="tb-findandreplace-preview-before tb-material-radio" name="findandreplacePreviewType#VIDEOID#" style="position:relative;  top:3px; left:2px;" />
+                        <label for="tb-findandreplace-preview-option-before-#VIDEOID#" class="tb-material-radio-label">
+                            Before
+                        </label>
+                    </div>
+                    <div class="tb-material-radio-container">
+                        <input id="tb-findandreplace-preview-option-after-#VIDEOID#" data-video-id="#VIDEOID#" type="radio" class="tb-findandreplace-preview-after tb-material-radio" name="findandreplacePreviewType#VIDEOID#" style="position:relative;  top:3px; left:2px;" /> 
+                        <label for="tb-findandreplace-preview-option-after-#VIDEOID#" class="tb-material-radio-label">
+                            After
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div data-video-id="#VIDEOID#" class="tb-findandreplace-preview-title tb-margin-bottom10 tb-findandreplace-preview-box" style="display: none;">
+                <div class="tb-findandreplace-preview-box-header tb-findandreplace-preview-box-header--before">Title</div>
+                <div class="tb-findandreplace-preview-title-text" style="padding:2px 5px; line-height:14px;"></div>
+            </div>
+            <div data-video-id="#VIDEOID#" class="tb-findandreplace-preview-description tb-margin-bottom10 tb-findandreplace-preview-box" style="display: none;">
+                <div class="tb-findandreplace-preview-box-header tb-findandreplace-preview-box-header--before">Description</div>
+                <div class="tb-findandreplace-preview-description-text" style="padding:2px 5px; line-height:14px;"></div>
+            </div>
+        </div>
+        
+
+    </div>
+</div>
+<!--<div data-video-id="#VIDEOID#" class="tb-findandreplace-processing-template" style="display: none; margin-bottom: 5px; width: 295px; max-width: 295px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' style="height: 20px; position: relative; top: 5px;" />
+    <a data-video-id="#VIDEOID#" href="#HREF#" target="_blank">#VIDEOTITLE#</a>
+</div>
+<div data-video-id="#VIDEOID#" class="tb-findandreplace-processed-template" style="display:none; margin-bottom:5px; width: 295px; max-width: 295px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+    <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" class="tb-findandreplace-success-image" style="display:none" />
+    <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png" class="tb-findandreplace-failure-image" style="display:none" title="Error - could be a duplicate video, Internet outtage, etc." />
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' style="height: 20px; position: relative; top: 5px;" />
+    <a data-video-id="#VIDEOID#" href="#HREF#" target="_blank">#VIDEOTITLE#</a>
+</div>-->
+
+
+<div data-video-id="#VIDEOID#" class="tb-findandreplace-processing-template2 tb-bulk-processing-video-row" style="display: none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title" style="max-width:214px;">#VIDEOTITLE#</span>
+    <a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-findandreplace-processed-success tb-bulk-processing-video-row tb-bulk-processing-video-row--success" style="display:none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title" style="max-width:214px;">#VIDEOTITLE#</span>
+    <a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-findandreplace-processed-error tb-bulk-processing-video-row tb-bulk-processing-video-row--error" data-video-id="#VIDEOID#" style="display:none; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center;">
+        <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+        <span class="tb-destination-video-title" style="max-width:214px;">#VIDEOTITLE#</span>
+        <a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+    </div>  
+    <div class="tb-red tb-font-size12 tb-padding-top5 tb-bulk-processing-error-msg" style="width:295px;">#ERROR#</div>
+</div>

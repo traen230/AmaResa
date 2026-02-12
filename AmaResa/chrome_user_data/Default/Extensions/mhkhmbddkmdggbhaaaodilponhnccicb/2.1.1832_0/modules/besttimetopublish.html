@@ -1,0 +1,126 @@
+﻿<div id="tb-best-time-to-publish-container" style="display:none;">
+    <!--<hr class="tb-border-bottom tb-margin-top-10 tb-margin-bottom-10"/>-->
+    <div class="tb-best-time-to-publish-header-container">
+        <div>
+            <img class="tb-best-time-to-publish-tb-logo tb-margin-right-2" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+            <span class="tb-font-size-md tb-best-time-to-publish-bolder">Recommendations</span>
+        </div>
+
+        <div class="tb-best-time-to-publish-create-type-container">
+            <div class="tb-material-radio-container tb-best-time-to-publish-radio">
+                <input type="radio" class="tb-material-radio tb-best-time-to-publish-create-type-option" name="tb-best-time-to-publish-create-type" value="upload" id="tb-best-time-to-publish-create-type-upload" checked />
+                <label class="tb-material-radio-label tb-best-time-to-publish-radio" for="tb-best-time-to-publish-create-type-upload">Upload Time</label>
+            </div>
+            <div class="tb-material-radio-container tb-best-time-to-publish-radio">
+                <input type="radio" class="tb-material-radio tb-best-time-to-publish-create-type-option" name="tb-best-time-to-publish-create-type" value="livestream" id="tb-best-time-to-publish-create-type-livestream" />
+                <label class="tb-material-radio-label tb-best-time-to-publish-radio" for="tb-best-time-to-publish-create-type-livestream">Livestream Time</label>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="tb-best-time-to-publish-data-loading" class="tb-margin-top-10 tb-margin-bottom-40">
+        <span class="tb-spinner"></span> Loading data...
+    </div>
+
+    <div id="tb-best-time-to-publish-data-loaded" style="display:none;">
+        <div class="tb-best-time-to-publish-overall-peak-container tb-margin-top-40">
+            <div class="tb-best-time-to-publish-overall-peak-header">
+                <span class="tb-font-bold">Weekly<i id="tb-best-time-to-publish-weekly-help" class="material-icons tb-best-time-to-publish-material-tooltip" data-tb-tooltip-btp="Based on our analysis, if you were to upload (or livestream) once per week, this would be the ideal day and time in order to maximize exposure to your audience.">help_outline</i> </span>
+                <span class="tb-best-time-to-publish-overall-peak-day tb-best-time-to-publish-bolder"></span>, <span class="tb-best-time-to-publish-overall-peak-time tb-best-time-to-publish-bolder"></span><span class="tb-best-time-to-publish-timezone"></span>
+            </div>
+            <!--<div class="tb-best-time-to-publish-overall-text">
+                <span class="tb-best-time-to-publish-overall-description-upload">
+                    If you are looking to get the most active viewers during the first <span class="tb-best-time-to-publish-first-x-hours">12</span> hours of a new upload, the best time to publish would be on
+                </span>
+                <span class="tb-best-time-to-publish-overall-description-livestream" style="display:none;">
+                    If you are looking to get the most active viewers during your livestream, the best time to go live would be on
+                </span>
+                <span class="tb-best-time-to-publish-bolder"><span class="tb-best-time-to-publish-overall-peak-day"></span>s</span> at <span class="tb-best-time-to-publish-overall-peak-time tb-best-time-to-publish-bolder"></span>&nbsp;<span class="tb-best-time-to-publish-timezone"></span>.
+            </div>-->
+        </div>
+
+        <div class="tb-best-time-to-publish-daily-peaks-container tb-margin-bottom-10 tb-margin-top-25">
+            <div class="tb-best-time-to-publish-daily-peaks-header tb-margin-top-5 tb-margin-right-10">
+                <span class="tb-font-bold">Daily<i id="tb-best-time-to-publish-daily-help" class="material-icons tb-best-time-to-publish-material-tooltip tb-margin-right-2" data-tb-tooltip-btp="Based on our analysis, the following hours would be the ideal time to post for each day of the week in order to maximize exposure to your audience.">help_outline</i> </span>
+            </div>
+            <div class="tb-best-time-to-publish-daily-data-container">
+                <div class="tb-best-time-to-publish-daily-peaks-days tb-border-bottom tb-margin-top-5">
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Sun</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Mon</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Tue</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Wed</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Thu</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Fri</div>
+                    <div class="tb-best-time-to-publish-daily-peak-day-header">Sat</div>
+                </div>
+                <div class="tb-best-time-to-publish-daily-peaks-data-container tb-margin-top-5">
+                    <div class="tb-best-time-to-publish-sunday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-monday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-tuesday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-wednesday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-thursday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-friday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                    <div class="tb-best-time-to-publish-saturday tb-best-time-to-publish-daily-peak-day-data-container">
+                        <i class="material-icons"></i><span class="tb-margin-left-1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tb-best-time-to-publish-info-container">
+        <span class="tb-best-time-to-publish-more-info-toggle tb-font-color-blue">How are recommendations calculated?<i class="material-icons tb-margin-left-2 tb-best-time-to-publish-more-info-toggle-expand">arrow_drop_down</i></span>
+        <div class="tb-best-time-to-publish-info" style="display:none;">
+
+            <div style="padding: 20px 15px; margin-bottom:5px; line-height:19px; font-size:13px;">
+                <div style="padding-bottom:4px; font-weight:bold">Overview</div>
+                The first hour that your video is live is the most critical. The next most critical hour is the second hour. Followed by the third hour
+                and so on. Our proprietary algorithm examines YouTube's "When your viewers are on YouTube" data (purple graph above) and calculates a score
+                for every single hour of the week.
+                <div style="padding-top: 4px;">
+                    Our recommendations show when the score is highest. Of course there are different theories and ways to calculate when the best time to publish
+                    would be, but this is our particular take on it.
+                </div>
+                <br />
+                <div style="padding-bottom:4px; font-weight:bold">Upload Time vs Livestream Time</div>
+                Our Upload Time recommendations look at <span class="tb-best-time-to-publish-upload-interval">12</span> hour blocks of time (again, where the first hour is weighted the most all the way through to the <span class="tb-best-time-to-publish-upload-interval">12</span>th hour
+                which is weighted the least). We figure the bulk of your subscribers will view your video during this time period so you should publish and optimize focused around
+                this block of time.
+                <div style="padding-top: 4px;">
+                    Our Livestream Time recommendations look at 2 hour blocks of time. This assumes that most people stream for an hour or so. The idea is that
+                    you want to livestream right when your audience is most active. 
+                </div>
+                <br />
+                <div style="padding-bottom:4px; font-weight:bold">Other Considerations</div>
+
+                Ultimately, consistency is more important than anything. If you can stick to a consistent publishing schedule that your
+                fans remember and can count on, that's probably your best bet.
+            </div>
+           
+        </div>
+    </div>
+
+    <div id="tb-best-time-to-publish-container-no-data" style="display:none;">        
+        
+            <img class="tb-best-time-to-publish-tb-logo tb-margin-right-2" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+            <span class="tb-font-size-md tb-best-time-to-publish-bolder">Recommendations</span>
+            <div class="tb-margin-top-5 tb-font-size-sm">
+                Sorry, we can't give any recommendations because YouTube does not have enough data.
+            </div>        
+    </div>
+
+</div>

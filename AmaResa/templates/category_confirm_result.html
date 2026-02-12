@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>カテゴリ選択完了</title></head>
+<body>
+    <h2>『{{ label }}』を選択しました。</h2>
+    <form method="post" action="/market/category">
+        <input type="hidden" name="category_url" value="{{ url }}">
+        <input type="hidden" name="category_label" value="{{ label }}">
+        <button type="submit">戻る</button>
+    </form>
+</body>
+</html>

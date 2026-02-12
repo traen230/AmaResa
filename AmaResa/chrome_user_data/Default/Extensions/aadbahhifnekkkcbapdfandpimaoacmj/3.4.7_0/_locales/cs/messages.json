@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "S ním můžete snadno najít zdroje produktů na Alibaba, AliExpress, 1688, Taobao, Pinduoduo a Yiwugo"
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPrice vyhledávání podle obrázku na Alibaba"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Zachytit pro vyhledávání podle obrázku"
+   },
+   "context_menus_goote_trans": {
+      "message": "Přeložit stránku/Zobrazit originál"
+   },
+   "context_menus_search_by_image": {
+      "message": "Hledání podle obrázku na $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Zachyťte do $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Zachytit a přeložit"
+   }
+}

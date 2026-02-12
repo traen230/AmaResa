@@ -1,0 +1,533 @@
+@-webkit-keyframes show {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+    -ms-transform: rotate(180deg) scale(0);
+    -moz-transform: rotate(180deg) scale(0);
+    -o-transform: rotate(180deg) scale(0);
+    transform: rotate(180deg) scale(0);
+    right: 11px;
+    top: 5em; }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    right: -5px;
+    top: 0; } }
+
+@-moz-keyframes show {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+    -ms-transform: rotate(180deg) scale(0);
+    -moz-transform: rotate(180deg) scale(0);
+    -o-transform: rotate(180deg) scale(0);
+    transform: rotate(180deg) scale(0);
+    right: 11px;
+    top: 5em; }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    right: -5px;
+    top: 0; } }
+
+@-ms-keyframes show {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+    -ms-transform: rotate(180deg) scale(0);
+    -moz-transform: rotate(180deg) scale(0);
+    -o-transform: rotate(180deg) scale(0);
+    transform: rotate(180deg) scale(0);
+    right: 11px;
+    top: 5em; }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    right: -5px;
+    top: 0; } }
+
+@keyframes show {
+  0% {
+    -webkit-transform: rotate(180deg) scale(0);
+    -ms-transform: rotate(180deg) scale(0);
+    -moz-transform: rotate(180deg) scale(0);
+    -o-transform: rotate(180deg) scale(0);
+    transform: rotate(180deg) scale(0);
+    right: 11px;
+    top: 5em; }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -moz-transform: rotate(360deg) scale(1);
+    -o-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1);
+    right: -5px;
+    top: 0; } }
+
+.area-to-be-divided,
+.no-divider {
+  position: relative;
+  margin-bottom: 1em;
+  border: 1px solid gray; }
+
+/* For modern browsers */
+.clearfix:before, .area-to-be-divided:before,
+.no-divider:before,
+.clearfix:after,
+.area-to-be-divided:after,
+.no-divider:after {
+  content: "";
+  display: table; }
+
+
+.clearfix:after,
+.area-to-be-divided:after,
+.no-divider:after {
+  clear: both; }
+
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix, .area-to-be-divided,
+.no-divider {
+  zoom: 1; }
+
+#tabsContent.tp-yt-paper-tabs > :not(#selectionBar).tb-videos-list-all-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  color: var(--color-black);
+  border-radius: 4px;
+  border: 2px solid var(--color-brand-teal-500);
+  padding: 6px 8px;
+  height: initial;
+  gap: 5px; }
+  .tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper > img {
+    position: relative;
+    height: 22px;
+    border-radius: 50%;
+    filter: grayscale(1); }
+  .tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper .tb-videos-list-all-tools-toggle {
+    font-weight: 600;
+    font-size: 15px; }
+    .tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper .tb-videos-list-all-tools-toggle > div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper:hover {
+    background: var(--color-brand-teal-200); }
+
+.tb-videos-list-all-tools .tb-videos-list-all-tools-wrapper #tb-icon-transparent,
+.tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover #tb-icon-transparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-text-primary);
+  border-radius: 9999999px;
+  fill: #fff;
+  height: 15px;
+  width: 15px;
+  fill-rule: evenodd;
+  padding: 5px; }
+
+.tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  line-height: 1; }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover #tb-videos-list-dropdown-template {
+    position: absolute; }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 3px 6px;
+    border: 2px solid var(--color-brand-teal-500);
+    background: var(--color-white); }
+    .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover > span:hover {
+      background: var(--color-brand-teal-200); }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover:hover #tb-icon-transparent {
+    fill: var(--color-white); }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover:hover .tb-studio-videos-menu-carat {
+    fill: var(--color-white); }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover img {
+    position: relative;
+    top: 1px;
+    left: 0; }
+  .tb-studio-videos-list-dropdown.tb-studio-videos-list-dropdown--new-hover .tb-studio-videos-menu-carat {
+    font-weight: bold;
+    line-height: 0;
+    color: var(--color-primary); }
+
+.tb-videos-list-all-tools-dropdown {
+  flex-direction: column;
+  width: auto;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 9999;
+  padding: 10px;
+  background: white;
+  display: none;
+  min-width: 400px;
+  color: var(--color-neutral-900);
+  gap: 10px;
+  max-height: 500px;
+  border-radius: 8px; }
+  .tb-videos-list-all-tools-dropdown .tb-videos-list-tool {
+    color: var(--color-neutral-900);
+    display: block; }
+    .tb-videos-list-all-tools-dropdown .tb-videos-list-tool > * {
+      padding: 8px 16px;
+      display: block; }
+    .tb-videos-list-all-tools-dropdown .tb-videos-list-tool:hover {
+      background: var(--color-brand-secondary-50, #fafbfe); }
+  .tb-videos-list-all-tools-dropdown .tb-videos-list-category-container {
+    width: 50%; }
+  .tb-videos-list-all-tools-dropdown .tb-videoslist-section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    justify-content: initial;
+    color: var(--color-neutral-900, #2d3236); }
+    .tb-videos-list-all-tools-dropdown .tb-videoslist-section-header i {
+      font-size: 20px;
+      padding: 5px; }
+
+/* tb-videoslist-tabs */
+.tb-video-list-studio-video-overview {
+  position: absolute;
+  z-index: 9999 !important;
+  width: 650px;
+  margin-top: -40px;
+  outline: 0;
+  text-align: left;
+  min-height: 500px;
+  /* Safari */ }
+  .tb-video-list-studio-video-overview .tb-launch-pad-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--color-neutral-100);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px; }
+    .tb-video-list-studio-video-overview .tb-launch-pad-spinner::before {
+      content: '';
+      border-radius: 50%;
+      border: 3px solid var(--color-brand-dark-blue-700);
+      width: 50%;
+      height: 50%;
+      border-bottom-color: transparent;
+      -webkit-animation: tb-spinner-kf 1s linear infinite;
+      /* Safari */
+      animation: tb-spinner-kf 1s linear infinite; }
+
+@-webkit-keyframes tb-spinner-kf {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes tb-spinner-kf {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+  .tb-video-list-studio-video-overview .tb-videoslist-tabs {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid var(--color-neutral-200, #cacbcd);
+    background: var(--color-brand-dark-blue-50, #fafaff); }
+  .tb-video-list-studio-video-overview .tb-videos-list-category-container a {
+    display: block;
+    padding: 5px;
+    color: var(--color-neutral-900, #2d3236); }
+    .tb-video-list-studio-video-overview .tb-videos-list-category-container a:hover {
+      background: var(--color-brand-dark-blue-50, #fafaff); }
+
+.tb-videoslist-tab-header.epic-nav-item {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--color-neutral-800, #43484c);
+  padding: 2px; }
+  .tb-videoslist-tab-header.epic-nav-item .untitled-ui {
+    font-size: 19px;
+    color: var(--color-brand-dark-blue-700); }
+  .tb-videoslist-tab-header.epic-nav-item.tb-selected {
+    position: relative;
+    border-bottom: none;
+    color: var(--color-brand-dark-blue-900-default, #0c0f42); }
+    .tb-videoslist-tab-header.epic-nav-item.tb-selected::after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: -2px;
+      height: 2px;
+      width: 100%;
+      background: var(--color-brand-dark-blue-900-default, #0c0f42); }
+
+.tb-videoslist-tab-header-title {
+  height: 33px;
+  width: 100%;
+  padding: 5px 10px 0 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; }
+
+.tb-videos-list-tab-contents {
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-16);
+  box-sizing: border-box; }
+
+#tb-videoslist-tools-tab,
+#tb-videoslist-quicklinks-tab,
+#tb-videoslist-launchpad-tab,
+#tb-videoslist-info-tab {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px; }
+  #tb-videoslist-tools-tab .tb-videoslist-section-header,
+  #tb-videoslist-quicklinks-tab .tb-videoslist-section-header,
+  #tb-videoslist-launchpad-tab .tb-videoslist-section-header,
+  #tb-videoslist-info-tab .tb-videoslist-section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-weight: 600;
+    color: var(--color-neutral-900, #2d3236);
+    padding: var(--spacing-8) 0; }
+    #tb-videoslist-tools-tab .tb-videoslist-section-header i,
+    #tb-videoslist-quicklinks-tab .tb-videoslist-section-header i,
+    #tb-videoslist-launchpad-tab .tb-videoslist-section-header i,
+    #tb-videoslist-info-tab .tb-videoslist-section-header i {
+      font-size: 25px; }
+  #tb-videoslist-tools-tab > div,
+  #tb-videoslist-quicklinks-tab > div,
+  #tb-videoslist-launchpad-tab > div,
+  #tb-videoslist-info-tab > div {
+    width: calc(100% / 3 - 10px); }
+  #tb-videoslist-tools-tab.tb-videoslist-quicklinks-container,
+  #tb-videoslist-quicklinks-tab.tb-videoslist-quicklinks-container,
+  #tb-videoslist-launchpad-tab.tb-videoslist-quicklinks-container,
+  #tb-videoslist-info-tab.tb-videoslist-quicklinks-container {
+    flex-direction: column; }
+    #tb-videoslist-tools-tab.tb-videoslist-quicklinks-container > .tb-videos-list-category-container,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-quicklinks-container > .tb-videos-list-category-container,
+    #tb-videoslist-launchpad-tab.tb-videoslist-quicklinks-container > .tb-videos-list-category-container,
+    #tb-videoslist-info-tab.tb-videoslist-quicklinks-container > .tb-videos-list-category-container {
+      width: 100%; }
+    #tb-videoslist-tools-tab.tb-videoslist-quicklinks-container .tb-video-menu-item,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-quicklinks-container .tb-video-menu-item,
+    #tb-videoslist-launchpad-tab.tb-videoslist-quicklinks-container .tb-video-menu-item,
+    #tb-videoslist-info-tab.tb-videoslist-quicklinks-container .tb-video-menu-item {
+      display: flex;
+      flex-wrap: wrap; }
+      #tb-videoslist-tools-tab.tb-videoslist-quicklinks-container .tb-video-menu-item > a,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-quicklinks-container .tb-video-menu-item > a,
+      #tb-videoslist-launchpad-tab.tb-videoslist-quicklinks-container .tb-video-menu-item > a,
+      #tb-videoslist-info-tab.tb-videoslist-quicklinks-container .tb-video-menu-item > a {
+        width: calc(100% / 2 - 10px); }
+  #tb-videoslist-tools-tab.tb-videoslist-launchpad-container,
+  #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container,
+  #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container,
+  #tb-videoslist-info-tab.tb-videoslist-launchpad-container {
+    display: none; }
+    #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header,
+    #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header,
+    #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: flex-start;
+      color: var(--color-neutral-900, #2d3236);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      text-align: left;
+      gap: 5px; }
+      #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header i,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header i,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header i,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-header i {
+        color: var(--color-brand-dark-blue-900);
+        font-size: 22px; }
+    #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded,
+    #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded,
+    #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded {
+      width: 100%; }
+      #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded > div,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded > div,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded > div,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded > div {
+        display: block;
+        width: 100%; }
+      #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a {
+        font-size: 20px;
+        color: var(--color-brand-dark-blue-800);
+        font-weight: 600;
+        font-style: normal; }
+        #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a .tb-complete-count, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a .tb-complete-count, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a .tb-complete-count,
+        #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a .tb-complete-count,
+        #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a .tb-complete-count,
+        #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a .tb-complete-count,
+        #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a .tb-complete-count,
+        #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a .tb-complete-count,
+        #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a .tb-complete-count,
+        #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata a .tb-complete-count,
+        #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-hasdata a .tb-complete-count,
+        #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-launchpad-hasdata a .tb-complete-count {
+          text-decoration: underline; }
+      #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary {
+        display: inline-block;
+        margin: 30px 0 0;
+        padding: 6px 8px;
+        border-radius: 4px;
+        border: 2px solid var(--color-brand-teal-500, #4bead7);
+        color: var(--color-black); }
+        #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary:hover,
+        #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary:hover,
+        #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary:hover,
+        #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-videosummary:hover {
+          background: var(--color-brand-teal-100, #4bead7); }
+      #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-nodata, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-nodata, #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-opportunities-nodata,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-nodata,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-nodata,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-opportunities-nodata,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-nodata,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-nodata,
+      #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-opportunities-nodata,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-hasdata,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-checklist-nodata,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-bestpractices-nodata,
+      #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loaded .tb-videoslist-launchpad-opportunities-nodata {
+        padding: 8px 0 8px 28px;
+        font-style: italic; }
+    #tb-videoslist-tools-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loading,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loading,
+    #tb-videoslist-launchpad-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loading,
+    #tb-videoslist-info-tab.tb-videoslist-launchpad-container .tb-videoslist-launchpad-loading {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+      gap: 36px;
+      flex-direction: column; }
+  #tb-videoslist-tools-tab.tb-videoslist-tab-container,
+  #tb-videoslist-quicklinks-tab.tb-videoslist-tab-container,
+  #tb-videoslist-launchpad-tab.tb-videoslist-tab-container,
+  #tb-videoslist-info-tab.tb-videoslist-tab-container {
+    flex-wrap: wrap; }
+    #tb-videoslist-tools-tab.tb-videoslist-tab-container .tb-videos-list-notes,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-tab-container .tb-videos-list-notes,
+    #tb-videoslist-launchpad-tab.tb-videoslist-tab-container .tb-videos-list-notes,
+    #tb-videoslist-info-tab.tb-videoslist-tab-container .tb-videos-list-notes {
+      width: 100%; }
+  #tb-videoslist-tools-tab.tb-videoslist-info-tab-container,
+  #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container,
+  #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container,
+  #tb-videoslist-info-tab.tb-videoslist-info-tab-container {
+    flex-direction: column; }
+    #tb-videoslist-tools-tab.tb-videoslist-info-tab-container .tb-videoslist-info-tab-input,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container .tb-videoslist-info-tab-input,
+    #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container .tb-videoslist-info-tab-input,
+    #tb-videoslist-info-tab.tb-videoslist-info-tab-container .tb-videoslist-info-tab-input {
+      width: 50%; }
+    #tb-videoslist-tools-tab.tb-videoslist-info-tab-container .tb-videoslist-input-wrapper,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container .tb-videoslist-input-wrapper,
+    #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container .tb-videoslist-input-wrapper,
+    #tb-videoslist-info-tab.tb-videoslist-info-tab-container .tb-videoslist-input-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      border-bottom: 1px solid var(--color-neutral-900);
+      padding: 0 0 10px 10px; }
+    #tb-videoslist-tools-tab.tb-videoslist-info-tab-container .tb-video-list-playlists-container,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container .tb-video-list-playlists-container,
+    #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container .tb-video-list-playlists-container,
+    #tb-videoslist-info-tab.tb-videoslist-info-tab-container .tb-video-list-playlists-container {
+      width: 100%; }
+    #tb-videoslist-tools-tab.tb-videoslist-info-tab-container button,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container button,
+    #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container button,
+    #tb-videoslist-info-tab.tb-videoslist-info-tab-container button {
+      cursor: pointer;
+      color: var(--color-black);
+      border-radius: 4px;
+      border: 2px solid var(--color-brand-teal-500);
+      padding: 6px 8px;
+      background: var(--color-white); }
+      #tb-videoslist-tools-tab.tb-videoslist-info-tab-container button i,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container button i,
+      #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container button i,
+      #tb-videoslist-info-tab.tb-videoslist-info-tab-container button i {
+        color: var(--color-brand-teal-800); }
+    #tb-videoslist-tools-tab.tb-videoslist-info-tab-container input,
+    #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container input,
+    #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container input,
+    #tb-videoslist-info-tab.tb-videoslist-info-tab-container input {
+      border: none;
+      flex-grow: 1; }
+      #tb-videoslist-tools-tab.tb-videoslist-info-tab-container input:focus-visible,
+      #tb-videoslist-quicklinks-tab.tb-videoslist-info-tab-container input:focus-visible,
+      #tb-videoslist-launchpad-tab.tb-videoslist-info-tab-container input:focus-visible,
+      #tb-videoslist-info-tab.tb-videoslist-info-tab-container input:focus-visible {
+        outline: none;
+        border: none; }
+
+.tb-badge-new,
+.tb-beta-tag {
+  display: none !important; }

@@ -1,0 +1,105 @@
+﻿<div id="tb-video-editor-studio-container" style="display: none; overflow: hidden;">
+
+    <!--Select Cards or End Screen-->
+    <div class="tb-video-editor-studio-select" style="display:none;">
+        <div class="tb-video-editor-studio-tb-icon tb-inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" id="tb-icon-transparent" class="tb-video-editor-studio-svg">
+                <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+            </svg>
+        </div>
+        <div tabindex="1" class="tb-font-medium" id="tb-video-editor-studio-select-menu">
+            <div class="tb-video-editor-studio-dropdown-holder" style="display: inline-block;">TEMPLATES</div>
+            <i class="material-icons tb-video-editor-studio-arrow-down">keyboard_arrow_down</i>
+            <i class="material-icons tb-video-editor-studio-arrow-up" style="display: none;">keyboard_arrow_up</i>
+        </div>
+
+
+        <div class="tb-video-editor-studio-dropdown" style="display:none;">
+            <!--------------------- CARDS ----------------------->
+            <div style="width: 100%;">
+                <div class="tb-font-cbold tb-font-size-14 tb-padding-10 tb-inline-block">
+                    CARDS
+                </div>
+                <!--HELP-->
+                <div class="tb-module-help tb-video-editor-studio-help" style="float: right;padding: 4px;">
+                    <a style="vertical-align: middle; text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=cardtemplates" data-draggable="false">
+                        <i class="small material-icons" style="font-size: 22px; color: rgba(66, 66, 66, 0.56);">help_outline</i>
+                    </a>
+                </div>
+            </div>
+            <div class="tb-video-editor-studio-cards">
+                <!-- Apply Card template btn-->
+                <div class="tb-video-editor-studio-apply-btn tb-margin-bottom-2">
+                    <a id="tb-video-editor-studio-apply-cards-template" class="tb-btn-link tb-font-medium">APPLY TEMPLATE</a>
+                </div>
+                <!-- Set as Card template checkbox-->
+                <div class="tb-video-editor-studio-checkboxes">
+                    <!-- CARDS TEMPLATE -->
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-font-book">
+                            <input type="checkbox" class="tb-material-checkbox-input tb-video-editor-studio-cards-template-checkbox" />
+                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                        </label>
+                        <div class="tb-material-checkbox-cards-text tb-inline-block tb-font-color-gray tb-font-size-14 tb-font-book">
+                            Set Video as a Cards Template
+                        </div>
+                        <!--Cards Template name-->
+                        <div class="tb-video-editor-studio-cards-template-name tb-font-medium tb-hid"><p></p></div>
+                    </div>
+                </div>
+                <!--Saved msg-->
+                <div class="" style="padding:5px 15px;">
+                    <span id="tb-video-editor-studio-changes-saved-cards" class="tb-video-editor-studio-changes-saved tb-font-book" style="display:none;">
+                        <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" alt="success icon"/> Changes saved
+                    </span>
+                </div>
+            </div>
+
+
+            <!------------------- END SCREEN ----------------------->
+            <div style="width: 100%;">
+                <div class="tb-font-cbold tb-font-size-14 tb-padding-10 tb-inline-block">
+                    END SCREEN
+                </div>
+                <!--HELP-->
+                <div class="tb-module-help tb-video-editor-studio-help" style="float: right;padding: 4px;">
+                    <a style="vertical-align: middle; text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=endscreentemplates" data-draggable="false">
+                        <i class="small material-icons" style="font-size: 22px; color: rgba(66, 66, 66, 0.56);">help_outline</i>
+                    </a>
+                </div>
+            </div>
+            <div class="tb-video-editor-studio-endscreen tb-margin-bottom-10">
+                <!-- Apply End Screen template btn-->
+                <div class="tb-video-editor-studio-apply-btn tb-margin-bottom-2">
+                    <a id="tb-video-editor-studio-apply-endscreen-template" class="tb-font-medium tb-btn-link">APPLY TEMPLATE</a>
+                </div>
+                <!-- Set as End Screen template checkbox-->
+                <div class="tb-video-editor-studio-checkboxes">
+                    <!--END SCREEN TEMPLATE-->
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-font-book">
+                            <input type="checkbox" class="tb-material-checkbox-input tb-video-editor-studio-endscreen-template-checkbox" />
+                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                        </label>
+                        <div class="tb-material-checkbox-endscreen-text tb-inline-block tb-font-color-gray tb-font-size-14 tb-font-book">
+                            Set Video as a End Screen Template
+                        </div>
+                        <!--End Screen Template name-->
+                        <div class="tb-video-editor-studio-endscreen-template-name tb-font-medium tb-hid"><p></p></div>
+                    </div>
+                </div>
+                <!--Saved msg-->
+                <div class="" style="padding:5px 15px;">
+                    <span id="tb-video-editor-studio-changes-saved-endscreen" class="tb-video-editor-studio-changes-saved tb-font-book" style="display:none;">
+                        <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" alt="success icon"/> Changes saved
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

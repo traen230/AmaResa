@@ -1,0 +1,501 @@
+﻿<div id="tb-upload-defaults-studio-container" style="display:none">
+    <!-- TubeBuddy Logo -->
+    <div class="tb-upload-defaults-studio-dropdown-container">
+        <span class="tb-upload-defaults-studio-videos-list" data-tbtooltip="Upload Defaults">
+            <span class="tb-ud-tooltip-text tb-font-medium" style="">Upload Defaults</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" id="tb-icon-transparent">
+                <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+            </svg>
+            <i class="material-icons tb-studio-videos-menu-carat tb-move-left5 tb-move-down5">expand_more</i>
+        </span>
+    </div>
+    <!-- Upload Defaults List -->
+    <div id="tb-upload-defaults-studio-list" class="tb-upload-defaults-studio-list" style="display: none;">
+        <ul id="tb-upload-defaults-studio-main-list" class="tb-ud-main-list"></ul>
+    </div>
+    <!-- Buttons -->
+    <div class="tb-upload-defaults-studio-btn-container" style="display: none;">
+        <!--<img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" class="tb-upload-defaults-studio-label-icon" style="display:none;">
+            <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+            <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+        </svg>
+        <div class="tb-font-cbold tb-upload-defaults-studio-label" style="display:none;">Upload Defaults</div>
+        <div class="tb-inline-block" style="min-width: 75px;">
+            <button id="tb-upload-defaults-studio-new-profile-btn" class="tb-btn tb-btn-sm tb-btn-success tb-font-cbold" style="cursor: pointer;">
+                <!--<img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" class="tb-height11 tb-upload-defaults-studio-new-profile-logo">-->
+                NEW
+            </button>
+            <button id="tb-upload-defaults-studio-copy-btn" class="tb-btn tb-btn-sm tb-btn-success" style="cursor: pointer; display: none;">NEW</button>
+        </div>
+        <div class="tb-inline-block" style="min-width: 82px; left: -14px; position: relative;">
+            <button id="tb-upload-defaults-studio-delete-btn" class="tb-btn tb-btn-sm tb-btn-danger tb-margin-left-5" style="cursor: pointer; display:none;">DELETE</button>
+        </div>
+        <div class="tb-upload-defaults-studio-save-cancel-container">
+            <button id="tb-upload-defaults-studio-cancel-btn" class="tb-btn tb-btn-sm tb-btn-secondary" style="display:none; cursor:pointer; left:57px;">CANCEL</button>
+            <div class="tb-upload-defaults-studio-save-btn-container tb-inline-block">
+                <button id="tb-upload-defaults-studio-save-btn-newprofile" class="tb-btn tb-btn-sm tb-btn-primary" style="display:none;">SAVE</button>
+                <button id="tb-upload-defaults-studio-save-btn" class="tb-btn tb-btn-sm tb-btn-primary" style="display:none;">SAVE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TubeBuddy Upload Defaults -->
+    <div class="tb-upload-defaults-studio-form-container tb-font-color-gray" style="display: none;">
+
+        <!-- Tabs container -->
+        <div class="tb-upload-defaults-studio-tabs-continer">
+
+            <!-- Tabs -->
+            <div>
+                <ul class="tb-tabs-menu-container tb-margin-top-10 tb-margin-bottom-10 tb-font-book">
+                    <li class="tb-tabs-menu-item-container tb-tabs-selected-menu-item tb-tab-1" data-tab="tb-tab-1">
+                        <div class="tb-tabs-menu-item">
+                            <div class="tb-tab-menu-item-title">
+                                Basic info
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tb-tabs-menu-item-container tb-margin-left-15 tb-tab-2" data-tab="tb-tab-2">
+                        <div class="tb-tabs-menu-item">
+                            <div class="tb-tab-menu-item-title">
+                                Advanced settings
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tb-tabs-menu-item-container tb-margin-left-15 tb-tab-3" data-tab="tb-tab-3">
+                        <div class="tb-tabs-menu-item">
+                            <div class="tb-tab-menu-item-title">
+                                Monetization
+                            </div>
+                        </div>
+                    </li>
+                    <span class="tb-meta-blue-bar"></span>
+                </ul>
+                <hr class="tb-upload-defaults-studio-tab-menu-border" />
+
+            </div>
+
+            <!-- Tabs content -->
+            <div>
+                <!-- Tab 1 -->
+                <div id="tb-tab-1" data-tab="1" class="tb-tabs-content">
+                    <!-- Title -->
+                    <div class="tb-basic-info-title tb-font-cbold tb-font-color-gray tb-font-size-14 tb-margin-top-15 tb-margin-bottom-10">Title</div>
+                    <div id="tb-upload-defaults-studio-title-textarea-container" class="tb-input-textfield">
+                        <textarea id="tb-upload-defaults-studio-title-textarea" class="tb-font-book tb-font-size-14 tb-font-color-gray"></textarea>
+                        <div class="tb-upload-defaults-studio-title-characters tb-font-size-xs" style="color: rgba(66,66,66,0.6);"><span class="tb-upload-defaults-studio-title-count">0</span>/100</div>
+                    </div>
+                    <!-- Description -->
+                    <div class="tb-basic-info-title tb-font-cbold tb-font-color-gray tb-font-size-14 tb-margin-top-15 tb-margin-bottom-10">Description</div>
+                    <div id="tb-upload-defaults-studio-description-textarea-container" class="tb-input-textfield">
+                        <textarea id="tb-upload-defaults-studio-description-textarea" class="tb-font-book tb-font-size-14 tb-font-color-gray"></textarea>
+                        <div class="tb-upload-defaults-studio-description-characters tb-font-size-xs" style="color: rgba(66,66,66,0.6);"><span class="tb-upload-defaults-studio-description-count">0</span>/5000</div>
+                    </div>
+                    <!-- Visibility -->
+                    <div class="tb-margin-top-10 tb-inline-block">
+                        <div class="tb-basic-info-title tb-font-cbold tb-font-size-14">Visibility</div>
+                        <select id="tb-upload-defaults-studio-visibility" class="tb-input-textfield">
+                            <option value="public" selected>Public</option>
+                            <option value="private">Private</option>
+                            <option value="unlisted">Unlisted</option>
+                            <option value="scheduled" style="display: none;">Scheduled</option>
+                        </select>
+                    </div>
+                    <!-- Tags -->
+                    <div class="tb-basic-info-title tb-font-cbold tb-font-color-gray tb-font-size-14 tb-margin-top-15 tb-margin-bottom-10">Tags</div>
+                    <div id="tb-upload-defaults-studio-tags-input-container" class="tb-input-textfield">
+                        <input id="tb-upload-defaults-studio-tags-input" placeholder="Add tag here..." class="tb-font-size-sm tb-font-medium">
+                        <div class="tb-inline-block tb-upload-defaults-studio-clear-tags"><span class="tb-ud-tooltip-text-del tb-font-medium" style="">Delete all tags</span><i class="medium material-icons tb-up-tag-remove-all" data-draggable="false">close</i></div>
+                        <div id="tb-upload-defaults-studio-tags-entered" style="min-height: 14px;"></div>
+                        <div class="tb-upload-defaults-studio-tags-characters tb-font-size-xs" style="color: rgba(66,66,66,0.5);"><span class="tb-upload-defaults-studio-tags-count">0</span>/500</div>
+                    </div>
+
+                </div>
+
+                <!-- Tab 2 -->
+                <div id="tb-tab-2" data-tab="2" class="tb-tabs-content tb-hid">
+
+                    <div class="tb-margin-top-10">
+                        <!-- YouTube License -->
+                        <div class="tb-inline-block">
+                            <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14 tb-margin-bottom-10">License and rights ownership</div>
+                            <select id="tb-upload-defaults-studio-yt-license" class="tb-input-textfield tb-upload-defaults-studio-select">
+                                <option value="all_rights_reserved" selected>Standard YouTube License</option>
+                                <option value="creative_commons">Creative Commons - Attribution</option>
+                            </select>
+                        </div>
+                        <!-- Category -->
+                        <div class="tb-inline-block">
+                            <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14 tb-margin-bottom-10">Category</div>
+                            <select id="tb-upload-defaults-studio-category" class="tb-upload-defaults-studio-select tb-input-textfield">
+                                <option value="0" selected>None</option>
+                                <option value="1">Film &amp; animation</option>
+                                <option value="2">Autos &amp; Vehicles</option>
+                                <option value="10">Music</option>
+                                <option value="15">Pets &amp; Animals</option>
+                                <option value="17">Sports</option>
+                                <option value="18" style="display:none;">Short movies</option>
+                                <option value="19">Travel &amp; Events</option>
+                                <option value="20">Gaming</option>
+                                <option value="21" style="display:none;">Videoblogging</option>
+                                <option value="22">People &amp; Blogs</option>
+                                <option value="23">Comedy</option>
+                                <option value="24">Entertainment</option>
+                                <option value="25">News &amp; Politics</option>
+                                <option value="26">Howto &amp; Style</option>
+                                <option value="27">Education</option>
+                                <option value="28">Science &amp; Technology</option>
+                                <option value="29">Nonprofits &amp; Activism</option>
+                                <option value="30" style="display:none;">Movies</option>
+                                <option value="31" style="display:none;">Anime/Animation</option>
+                                <option value="32" style="display:none;">Action/Adventure</option>
+                                <option value="33" style="display:none;">Classics</option>
+                                <option value="35" style="display:none;">Documentary</option>
+                                <option value="37" style="display:none;">Family</option>
+                                <option value="38" style="display:none;">Foreign</option>
+                                <option value="39" style="display:none;">Horror</option>
+                                <option value="40" style="display:none;">Sci-Fi/Fantasy</option>
+                                <option value="41" style="display:none;">Thriller</option>
+                                <option value="42" style="display:none;">Shorts</option>
+                                <option value="43" style="display:none;">Shows</option>
+                                <option value="44" style="display:none;">Trailers</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tb-margin-top-15">
+                        <!-- Video Language -->
+                        <div class="tb-inline-block">
+                            <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14 tb-margin-bottom-10">Video Language</div>
+                            <select id="tb-upload-defaults-studio-language" class="tb-input-textfield tb-upload-defaults-studio-select">
+                                <option value="zxx">Not applicable</option>
+                                <option value="ab">Abkhazian</option>
+                                <option value="af">Afrikaans</option>
+                                <option value="sq">Albanian</option>
+                                <option value="ase">American Sign Language</option>
+                                <option value="am">Amharic</option>
+                                <option value="ar">Arabic</option>
+                                <option value="arc">Aramaic</option>
+                                <option value="hy">Armenian</option>
+                                <option value="as">Assamese</option>
+                                <option value="ay">Aymara</option>
+                                <option value="az">Azerbaijani</option>
+                                <option value="bn">Bangla</option>
+                                <option value="ba">Bashkir</option>
+                                <option value="eu">Basque</option>
+                                <option value="be">Belarusian</option>
+                                <option value="bh">Bihari</option>
+                                <option value="bi">Bislama</option>
+                                <option value="bs">Bosnian</option>
+                                <option value="br">Breton</option>
+                                <option value="bg">Bulgarian</option>
+                                <option value="yue">Cantonese</option>
+                                <option value="yue-HK">Cantonese (Hong Kong)</option>
+                                <option value="ca">Catalan</option>
+                                <option value="chr">Cherokee</option>
+                                <option value="zh">Chinese</option>
+                                <option value="zh-CN">Chinese (China)</option>
+                                <option value="zh-HK">Chinese (Hong Kong)</option>
+                                <option value="zh-Hans">Chinese (Simplified)</option>
+                                <option value="zh-SG">Chinese (Singapore)</option>
+                                <option value="zh-TW">Chinese (Taiwan)</option>
+                                <option value="zh-Hant">Chinese (Traditional)</option>
+                                <option value="cho">Choctaw</option>
+                                <option value="co">Corsican</option>
+                                <option value="hr">Croatian</option>
+                                <option value="cs">Czech</option>
+                                <option value="da">Danish</option>
+                                <option value="nl">Dutch</option>
+                                <option value="nl-BE">Dutch (Belgium)</option>
+                                <option value="nl-NL">Dutch (Netherlands)</option>
+                                <option value="dz">Dzongkha</option>
+                                <option value="en" selected>English</option>
+                                <option value="en-CA">English (Canada)</option>
+                                <option value="en-IE">English (Ireland)</option>
+                                <option value="en-GB">English (United Kingdom)</option>
+                                <option value="en-US">English (United States)</option>
+                                <option value="eo">Esperanto</option>
+                                <option value="et">Estonian</option>
+                                <option value="fo">Faroese</option>
+                                <option value="fj">Fijian</option>
+                                <option value="fil">Filipino</option>
+                                <option value="fi">Finnish</option>
+                                <option value="fr">French</option>
+                                <option value="fr-BE">French (Belgium)</option>
+                                <option value="fr-CA">French (Canada)</option>
+                                <option value="fr-FR">French (France)</option>
+                                <option value="fr-CH">French (Switzerland)</option>
+                                <option value="ff">Fulah</option>
+                                <option value="gl">Galician</option>
+                                <option value="ka">Georgian</option>
+                                <option value="de">German</option>
+                                <option value="de-AT">German (Austria)</option>
+                                <option value="de-DE">German (Germany)</option>
+                                <option value="de-CH">German (Switzerland)</option>
+                                <option value="el">Greek</option>
+                                <option value="kl">Greenlandic (Kalaallisut)</option>
+                                <option value="gn">Guarani</option>
+                                <option value="gu">Gujarati</option>
+                                <option value="hak">Hakka Chinese</option>
+                                <option value="hak-TW">Hakka Chinese (Taiwan)</option>
+                                <option value="ha">Hausa</option>
+                                <option value="iw">Hebrew</option>
+                                <option value="hi">Hindi</option>
+                                <option value="hi-Latn">Hindi (Phonetic)</option>
+                                <option value="hu">Hungarian</option>
+                                <option value="is">Icelandic</option>
+                                <option value="ig">Igbo</option>
+                                <option value="id">Indonesian</option>
+                                <option value="ia">Interlingua</option>
+                                <option value="ie">Interlingue</option>
+                                <option value="iu">Inuktitut</option>
+                                <option value="ik">Inupiaq</option>
+                                <option value="ga">Irish</option>
+                                <option value="it">Italian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="jv">Javanese</option>
+                                <option value="kn">Kannada</option>
+                                <option value="ks">Kashmiri</option>
+                                <option value="kk">Kazakh</option>
+                                <option value="km">Khmer</option>
+                                <option value="rw">Kinyarwanda</option>
+                                <option value="tlh">Klingon</option>
+                                <option value="ko">Korean</option>
+                                <option value="ku">Kurdish</option>
+                                <option value="ky">Kyrgyz</option>
+                                <option value="lo">Lao</option>
+                                <option value="la">Latin</option>
+                                <option value="lv">Latvian</option>
+                                <option value="ln">Lingala</option>
+                                <option value="lt">Lithuanian</option>
+                                <option value="lb">Luxembourgish</option>
+                                <option value="mk">Macedonian</option>
+                                <option value="mg">Malagasy</option>
+                                <option value="ms">Malay</option>
+                                <option value="ml">Malayalam</option>
+                                <option value="mt">Maltese</option>
+                                <option value="mni">Manipuri</option>
+                                <option value="mi">Maori</option>
+                                <option value="mr">Marathi</option>
+                                <option value="mas">Masai</option>
+                                <option value="nan">Min Nan Chinese</option>
+                                <option value="nan-TW">Min Nan Chinese (Taiwan)</option>
+                                <option value="lus">Mizo</option>
+                                <option value="mo">Moldavian</option>
+                                <option value="mn">Mongolian</option>
+                                <option value="my">Myanmar (Burmese)</option>
+                                <option value="na">Nauru</option>
+                                <option value="nv">Navajo</option>
+                                <option value="ne">Nepali</option>
+                                <option value="no">Norwegian</option>
+                                <option value="oc">Occitan</option>
+                                <option value="or">Odia</option>
+                                <option value="om">Oromo</option>
+                                <option value="ps">Pashto</option>
+                                <option value="fa">Persian</option>
+                                <option value="fa-AF">Persian (Afghanistan)</option>
+                                <option value="fa-IR">Persian (Iran)</option>
+                                <option value="pl">Polish</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="pt-BR">Portuguese (Brazil)</option>
+                                <option value="pt-PT">Portuguese (Portugal)</option>
+                                <option value="pa">Punjabi</option>
+                                <option value="qu">Quechua</option>
+                                <option value="ro">Romanian</option>
+                                <option value="rm">Romansh</option>
+                                <option value="rn">Rundi</option>
+                                <option value="ru">Russian</option>
+                                <option value="ru-Latn">Russian (Phonetic)</option>
+                                <option value="sm">Samoan</option>
+                                <option value="sg">Sango</option>
+                                <option value="sa">Sanskrit</option>
+                                <option value="sc">Sardinian</option>
+                                <option value="gd">Scottish Gaelic</option>
+                                <option value="sr">Serbian</option>
+                                <option value="sr-Cyrl">Serbian (Cyrillic)</option>
+                                <option value="sr-Latn">Serbian (Latin)</option>
+                                <option value="sh">Serbo-Croatian</option>
+                                <option value="sdp">Sherdukpen</option>
+                                <option value="sn">Shona</option>
+                                <option value="scn">Sicilian</option>
+                                <option value="sd">Sindhi</option>
+                                <option value="si">Sinhala</option>
+                                <option value="sk">Slovak</option>
+                                <option value="sl">Slovenian</option>
+                                <option value="so">Somali</option>
+                                <option value="st">Southern Sotho</option>
+                                <option value="es">Spanish</option>
+                                <option value="es-419">Spanish (Latin America)</option>
+                                <option value="es-MX">Spanish (Mexico)</option>
+                                <option value="es-ES">Spanish (Spain)</option>
+                                <option value="es-US">Spanish (United States)</option>
+                                <option value="su">Sundanese</option>
+                                <option value="sw">Swahili</option>
+                                <option value="ss">Swati</option>
+                                <option value="sv">Swedish</option>
+                                <option value="tl">Tagalog</option>
+                                <option value="tg">Tajik</option>
+                                <option value="ta">Tamil</option>
+                                <option value="tt">Tatar</option>
+                                <option value="te">Telugu</option>
+                                <option value="th">Thai</option>
+                                <option value="bo">Tibetan</option>
+                                <option value="ti">Tigrinya</option>
+                                <option value="to">Tongan</option>
+                                <option value="ts">Tsonga</option>
+                                <option value="tn">Tswana</option>
+                                <option value="tr">Turkish</option>
+                                <option value="tk">Turkmen</option>
+                                <option value="tw">Twi</option>
+                                <option value="uk">Ukrainian</option>
+                                <option value="ur">Urdu</option>
+                                <option value="uz">Uzbek</option>
+                                <option value="vi">Vietnamese</option>
+                                <option value="vo">Volapük</option>
+                                <option value="cy">Welsh</option>
+                                <option value="fy">Western Frisian</option>
+                                <option value="wo">Wolof</option>
+                                <option value="xh">Xhosa</option>
+                                <option value="yi">Yiddish</option>
+                                <option value="yo">Yoruba</option>
+                                <option value="zu">Zulu</option>
+                            </select>
+                        </div>
+                        <!--Caption-->
+                        <div class="tb-inline-block">
+                            <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14 tb-margin-bottom-10">Caption certification</div>
+                            <select id="tb-upload-defaults-studio-caption-certification" class="tb-input-textfield tb-upload-defaults-studio-select">
+                                <option value="0" selected>None</option>
+                                <option value="1">This content has never aired on television in the U.S.</option>
+                                <option value="2">This content has only aired on television in the U.S. without captions</option>
+                                <option value="3">This content has not aired on U.S. television with captions since September 30, 2012.</option>
+                                <option value="4">This content does not consist of full-length video programming.</option>
+                                <option value="5">This content does not fall within a category of online programming that requires captions under FCC regulations (47 C.F.R. § 79).</option>
+                                <option value="6">The FCC and/or U.S. Congress has granted an exemption from captioning requirements for this content.</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tb-margin-top-15">
+                        <!-- Community contributions -->
+                        <div class="tb-inline-block">
+                            <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14 tb-margin-bottom-10">Community contributions</div>
+                            <select id="tb-upload-defaults-studio-community" class="tb-input-textfield tb-upload-defaults-studio-select">
+                                <option value="checked" selected>On</option>
+                                <option value="unchecked">Off</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tb-upload-defaults-studio-comments-section tb-margin-top-15">
+                        <!-- Comments section -->
+                        <div class="tb-advanced-settings-title tb-font-cbold tb-font-size-14">Comments</div>
+
+                        <div class="tb-material-radio-container tb-upload-defaults-comment-main-options">
+                            <input id="tb-upload-defaults-studio-on-comments" type="radio" class="tb-material-radio" name="tb-selection-type" data-value="on" checked />
+                            <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-on-comments">On</label>
+                        </div>
+                        <div id="tb-ud-on-options">
+                            <div class="tb-material-radio-container">
+                                <input id="tb-upload-defaults-studio-all-comments" type="radio" class="tb-material-radio" name="tb-selection-subtype" data-value="-all" checked />
+                                <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-all-comments">None</label>
+                            </div>
+    
+                            <div class="tb-material-radio-container">
+                                <input id="tb-upload-defaults-studio-auto-comments" type="radio" class="tb-material-radio" name="tb-selection-subtype" data-value="-basic" />
+                                <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-auto-comments">Basic</label>
+                            </div>
+                            <div class="tb-material-radio-container">
+                                <input id="tb-upload-defaults-studio-strict-comments" type="radio" class="tb-material-radio" name="tb-selection-subtype" data-value="-strict" />
+                                <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-strict-comments">Strict</label>
+                            </div>
+                            <div class="tb-material-radio-container">
+                                <input id="tb-upload-defaults-studio-hold-all-comments" type="radio" class="tb-material-radio" name="tb-selection-subtype" data-value="-hold" />
+                                <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-hold-all-comments">Hold all</label>
+                            </div>
+    
+                        </div>
+                        <div class="tb-material-radio-container  tb-upload-defaults-comment-main-options">
+                            <input id="tb-upload-defaults-studio-pause-comments" type="radio" class="tb-material-radio" name="tb-selection-type" data-value="pause" checked />
+                            <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-pause-comments">Pause</label>
+                        </div>
+                        <div class="tb-material-radio-container  tb-upload-defaults-comment-main-options">
+                            <input id="tb-upload-defaults-studio-off-comments" type="radio" class="tb-material-radio" name="tb-selection-type" data-value="off" checked />
+                            <label class="tb-material-radio-label tb-font-book" for="tb-upload-defaults-studio-off-comments">Off</label>
+                        </div>
+                        
+                    </div>
+
+                    <div class="tb-material-checkbox-container tb-margin-top-10">
+                        <label class="tb-material-checkbox-label tb-font-book">
+                            <input id="tb-upload-defaults-studio-view-ratings" type="checkbox" class="tb-material-checkbox-input" checked="checked" />
+                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                            Users can view ratings for this video
+                        </label>
+                    </div>
+
+                </div>
+
+                <!-- Tab 3 -->
+                <div id="tb-tab-3" data-tab="3" class="tb-tabs-content tb-hid">
+
+                    <!-- Ads -->
+                    <div class="tb-upload-defaults-studio-ads-container tb-margin-top-15">
+                        <div class="tb-upload-defaults-studio-ads-type tb-inline-block">
+                            <div class="tb-tabs-content-type tb-font-size-14 tb-font-cbold tb-margin-bottom-10">Type of ads</div>
+
+                            <!--<div class="tb-material-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-upload-defaults-studio-monetization" type="checkbox" class="tb-material-checkbox-input" checked />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Display ads
+                                </label>
+                            </div>-->
+
+                            <div class="tb-material-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-upload-defaults-studio-overlay-ads" type="checkbox" class="tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Overlay ads
+                                </label>
+                            </div>
+
+                            <div class="tb-material-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-upload-defaults-studio-sponsored-cards" type="checkbox" class="tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Sponsored cards
+                                </label>
+                            </div>
+
+                            <div class="tb-material-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-upload-defaults-studio-skippable-ads" type="checkbox" class="tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Skippable video ads
+                                </label>
+                            </div>
+
+                            <div class="tb-material-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-upload-defaults-studio-non-skippable-ads" type="checkbox" class="tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Non-skippable video ads
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

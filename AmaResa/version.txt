@@ -1,0 +1,16 @@
+AmaResa Local App 
+Version: 117.2.0 
+Release Date: 2025/08/23 
+ 
+[Environment] 
+Python: 3.11.9 
+PyInstaller: 5.13.0 
+ChromeDriver: 117.0.5938.92 
+ 
+[Dependencies] 
+tensorflow: 2.15.0 
+scikit-learn: 1.4.2 
+scipy: 1.13.0 
+
+[Revision]
+117.2.0 類似度を可変に修正　2025/8/23

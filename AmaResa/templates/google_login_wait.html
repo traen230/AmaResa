@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Googleログイン確認</title>
+  <script>
+    // ページ読み込み後、非同期でChromeをバックグラウンド起動
+    window.onload = function () {
+      fetch("/open/google", { method: "POST" });
+    };
+  </script>
+</head>
+<body>
+  <h2>🔐 Googleにログインしてください</h2>
+  <p>ログインが完了したら「OK」を押してください。</p>
+  <!-- google_login_wait.html -->
+  <form method="POST" action="{{ next_action }}">
+    <input type="hidden" name="url" value="{{ url }}">
+    <input type="hidden" name="keyword" value="{{ keyword }}">
+    <input type="hidden" name="review_threshold" value="{{ review }}">
+    <input type="hidden" name="sales_threshold" value="{{ sales }}">
+    <button type="submit">OK</button>
+  </form>
+</body>
+</html>

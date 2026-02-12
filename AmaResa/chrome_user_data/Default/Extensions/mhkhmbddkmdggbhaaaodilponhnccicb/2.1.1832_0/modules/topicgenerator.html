@@ -1,0 +1,261 @@
+﻿<!--Start Base Module Template-->
+    <div id="tb-topic-generator-container" class="tb-module-template draggable-container" style="display:none; width:950px">
+
+        <!--Start Base Module Shadow-->
+        <div class="tb-module-shadow">
+
+            <!--Start BASE Module Header-->
+            <div class="tb-module-header" data-draggable="true">
+                <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+                <h1 class="tb-module-title">
+                    Video Topic Planner
+                </h1>
+                <div class="tb-module-help">
+                    <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=videotopicplanner" data-draggable="false">
+                        <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                    </a>
+                </div>
+                <div class="tb-module-close" data-draggable="false">
+                    <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+                </div>
+            </div>
+            <!--End Base Module Header-->
+
+            <div class="tb-module-container">
+
+                <!--Start Base Module Container-->
+                <div class="tb-module-content" style="padding: 0">
+                    <div id="tb-topic-generator-tab-container" style="min-height: 390px;">
+
+                        <div class="tb-topic-generator-tab-ideas" style="display:none;">
+                            <div style="display:flex; justify-content: space-between;">
+                                <!-- main - topic list & filter -->
+                                <div class="tb-topic-left-container" >
+                                    <div class="tb-font-color-gray" style="display:flex; justify-content:space-between; align-items:center;">
+                                        <h1 class="tb-topic-title-header" style="font-weight:600;">Topics</h1>
+                                        <button id="tb-topic-planner-add-topic" class="tb-topic-generator-addVideoTopic" style="padding:5px 10px;">
+                                            New Topic
+                                            <i class="untitled-ui untitled-ui-plus-line"></i>
+                                        </button>
+                                    </div>
+                                    <label for="filters"><i class="untitled-ui untitled-ui-filter-funnel-02-line"></i></label>
+
+                                    <select name="filters" id="tb-topic-generator-video-topics-list-filter-container" class="tb-topic-generator-video-topics-list-filter">
+                                        <option value="1">Current</option>
+                                        <option value="2">Complete</option>
+                                        <option value="0">All</option>
+                                    </select>
+                                    <div class="tb-margin-top10">
+                                        <div>
+                                            <div id="tb-topic-generator-video-topics-loading" style="line-height: 24px; margin-bottom: 100px; padding-top: 15px; margin-top: 5px; font-size: 15px; padding-left: 18px; display: none;">
+                                                <span class="tb-spinner tb-margin-right5"></span> Loading...
+                                            </div>
+
+                                            <div id="tb-topic-generator-video-topics" style="line-height: 24px; padding-top: 5px; font-size: 15px; display:none">
+                                                <div id="tb-topic-generator-video-topics-list" style="height:305px; padding-right:5px; overflow:scroll; overflow-x:hidden">
+                                                    <ul id="tb-topic-generator-video-topics-list-sortable" style="list-style-type:none; padding-left:0;"></ul>
+                                                </div>
+                                                <div id="tb-topic-generator-video-topics-empty" style="height:305px; padding-right:5px;  overflow:scroll; overflow-x:hidden">
+                                                    <i class="untitled-ui untitled-ui-clipboard-check-line"></i>
+                                                    <h2>You don't have any Video Topics</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- KW explorer linkout -->
+                                <div class="tb-topic-container-right" style="width:305px;">
+                                    <div class="tb-topic-right-text">
+                                        <i class="untitled-ui untitled-ui-lightbulb-05-line"></i> Need inspiration?
+                                    </div>
+                                    <div id="tb-topic-beta-link" class="tb-topic-right-text" style="display: none">
+                                       
+                                    </div>
+                                    <div class="tb-topic-right-text">
+                                        <a id="tb-topic-generator-launch-keyword-explorer">Find the words - Keyword Explorer</a>
+                                    </div>  
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- add/update -->
+                        <div id="tb-topic-generator-update-container" >
+                            <div class="tb-margin-bottom10" style="margin-top: 12px;">
+                                <div class="tb-topic-add-text">Video Topic Title</div>
+                                <input id="tb-topic-generator-title-update" class="tb-material-input tb-move-left5" type="text" style="width:600px; padding-top:6px;" />
+                            </div>
+                            <div  class="tb-topic-add-text">Video Topic Notes</div>
+                            <div style="height:200px;margin-top: 8px;">
+                                <textarea rows="10" cols="100" id="tbtopicgeneratorselectededitor" ></textarea>
+                            </div>
+                            <div class="tb-topic-generator-selected-source-container tb-margin-top25"></div>
+                            <div class="tb-topic-generator-cb-container" style="display: flex; align-items: center">
+                                <label class="tb-checkbox" for="tb-topic-generator-isComplete-update">
+                                    <input type="checkbox" id="tb-topic-generator-isComplete-update" type="checkbox">
+                                    <span class="tb-checkbox__indicator"></span>
+                                </label>
+                                This video topic was created - Mark as complete
+                            </div>
+                            <div class="tb-topic-edit-footer-options" >
+<!--                                <div class="tb-material-checkbox-container">-->
+<!--                                    <label class="tb-material-checkbox-label">-->
+<!--                                        <input id="tb-topic-generator-isComplete-update" type="checkbox" class="tb-material-checkbox-input" />-->
+<!--                                        <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>-->
+<!--                                        Video completed?-->
+<!--                                    </label>-->
+<!--                                </div>-->
+                                <button id="tb-topic-generator-cancel-update" >
+                                    <i class="untitled-ui untitled-ui-arrow-left-line" ></i>
+                                </button>
+                                <div style="display:flex; align-items:center;">
+                                    <!-- edit mode -->
+                                    <button id="tb-topic-planner-delete-button" class="tb-topic-generator-list-remove tb-cursor-pointer tb-font-color-gray" style="display:flex;">
+                                        Delete
+                                    </button>
+                                    <button id="tb-topic-planner-save-changes" class="tb-topic-generator-save tb-video-edit-teal-button tb-video-edit-teal-button">
+                                        Save
+                                    </button>
+                                    <!-- add mode -->
+                                    <button id="tb-topic-generator-add-topic" class=" tb-video-edit-teal-button">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--End BASE Module Container-->
+
+            </div>
+
+        </div>
+        <!--End BASE Shadow-->
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-topic-template">
+            <li id="{0}" class="tb-topic-generator-list-item" style="{2}">
+                <div class="tb-topic-generator-list-content">
+                    <div class="tb-topic-generator-list-title-container">
+                        <div class="tb-topic-left">
+                            <div class="tb-topic-generator-list-handle tb-margin-right10" style="display: flex; align-items: center;">
+                                <i class="untitled-ui untitled-ui-move-line"></i>
+                            </div>
+                            <div class="tb-topic-generator-list-edit tb-cursor-pointer tb-font-color-gray">
+                                <div  title="{1}" class="tb-topic-title-name">{1}</div>
+                            </div>
+                        </div>
+                        <div class="tb-font-color-gray" style="max-width:54px; display:flex;">
+                            <a class="tb-topic-generator-list-remove tb-topic-generator-list-item-action tb-margin-right10" data-id="{0}" title="Delete" style="text-decoration:none;"><i class="untitled-ui untitled-ui-trash-01-line"></i></a>
+                           <div>{4}</div>
+                        </div>
+                    </div>
+                    <div style="white-space:nowrap; text-overflow: ellipsis; overflow:hidden;" class="tb-topic-desc-text">{3}</div>
+                </div>
+            </li>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-trending-topic-template">
+            <li class="tb-margin-bottom10">
+                <div>
+                    <a style="font-weight:500;cursor: pointer;" class="tb-topic-generator-trending-topic-explore tb-font-size18">
+                        {0}
+                    </a>
+                    <img data-title="{0}" data-url="{1}" data-type="2" title="add to topic" class="tb-cursor-pointer tb-topic-generator-add tb-move-down4" src="{PLUGIN_FILE_ROOT}/images/icons/add.png" style="height:16px;" />
+                </div>
+                <div>
+                    <span style="font-weight:500; font-size:14px; color:rgba(0,130,0,.7)">{2}</span>
+                    <a class="tb-margin-left5" href="{1}" target="_blank">
+                        <img class="tb-move-up2 tb-topic-generator-external-link" src="{PLUGIN_FILE_ROOT}/images/icons/external.png" />
+                    </a>
+                </div>
+            </li>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-related-template">
+            <li class="tb-margin-bottom10">
+                <div>
+
+                    <div style="float:left">
+                        <a href="{1}" target="_blank">
+                            <img class="tb-topic-planner-related-video-thumb" src="{2}" style="height:50px;" />
+                        </a>
+                    </div>
+                    <div class="tb-margin-left5" style="float:left">
+                        <div class="tb-font-size16" style="font-weight:500">
+                            <a href="{1}" target="_blank">
+                                <span class="tb-topic-planner-related-video-title">{0}</span>
+                            </a>
+                            <img data-title="{0}" data-url="{1}" data-type="0" title="add to topic" class="tb-move-down15 tb-cursor-pointer tb-topic-generator-add" src="{PLUGIN_FILE_ROOT}/images/icons/add.png" style="height:14px; position:relative; top:2px;" />
+
+                        </div>
+                        <div style="font-weight:500; font-size:14px; color:rgba(0,130,0,.7)">
+                            <span>{3} views</span>
+                        </div>
+                        <div>
+                            <span style="display: inline-block;overflow: hidden;white-space: nowrap; max-width:700px;" class="tb-font-size12">{4}</span>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </li>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-comments-template">
+            <li class="tb-margin-bottom10 tb-topic-planner-comment-list-item">
+                <div>
+                    <div style="float:left">
+                        <a href="https://www.youtube.com/channel/{1}" target="_blank">
+                            <img src="{3}" style="height:40px;" />
+                        </a>
+                    </div>
+                    <div class="tb-margin-left5 tb-font-size14" style="float:left">
+                        <a href="https://www.youtube.com/watch?v={2}" target="_blank">
+                            "<span class="tb-topic-planner-comment-text">{0}</span>"
+                        </a><br />
+                        <img data-title="{0}" data-url="https://www.youtube.com/watch?v={2}" data-type="1" title="add to topic" data-audience-id="{5}" class="tb-move-down10 tb-cursor-pointer tb-topic-generator-add" src="{PLUGIN_FILE_ROOT}/images/icons/add.png" style="height:14px; position:relative; top:5px; left:3px;" />
+
+                    </div>
+                    <div data-commentid="{4}" style="float:right" title="delete comment suggestion" class="tb-topic-generator-comments-remove tb-cursor-pointer tb-margin-right10">
+                        <img class="tb-topic-planner-delete-comment-suggestion" src="{PLUGIN_FILE_ROOT}/images/icons/close.png" />
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </li>
+        </div>
+
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-source-type-relatedVideo">
+            <div style="font-weight:500; font-size:11px; margin-top:5px; margin-bottom:2px; float:left;">SOURCE</div>
+            <div style="float:left" class="tb-margin-left5">
+                <a class="tb-topic-planner-source-image" href="{0}" title="{0}" target="_blank" style="display:inline-block; text-decoration:underline;max-width:110px;overflow:hidden;white-space: nowrap; ">
+                    <img style="height:30px" src="http://img.youtube.com/vi/{1}/mqdefault.jpg" />
+                </a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-source-type-comment">
+            <div style="font-weight:500; font-size:11px; margin-top:5px; margin-bottom:2px; float:left;">SOURCE</div>
+            <div style="float:left" class="tb-move-down3 tb-margin-left5">
+                <a href="{0}" title="{1}" target="_blank" style="text-decoration:underline;">
+                    <span style="display:inline-block;max-width:100px;overflow:hidden;white-space:nowrap;">{1}</span>
+                </a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-source-type-googletrends">
+            <div class="tb-margin-right5" style="font-weight:500; font-size:11px; margin-top:5px; margin-bottom:2px; float:left;">SOURCE</div>
+            <div class="tb-move-down3 ">
+                <a href="{0}" title="{1}" target="_blank" class="tb-topic-planner-source-channel" style="text-decoration:underline;"><span style="display:inline-block;max-width:110px;white-space:nowrap; text-overflow: ellipsis; overflow:hidden;">{1}</span></a>
+            </div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-topic-generator-source-type-custom">
+            <div>{0}</div>
+        </div>
+
+    </div>
+<!--End BASE Module Template-->
+

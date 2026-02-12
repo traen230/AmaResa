@@ -1,0 +1,161 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-search-ranking-container" class="tb-module-template draggable-container" style="display:none; width:900px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Search Rankings</h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=searchranking" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <div class="tb-thumbnail-sidebar">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-search-ranking-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-search-ranking-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <!-- Settings container -->
+                <div class="tb-search-ranking-settings-container">
+                    <!-- Upgrade license -->
+                    <div class="tb-search-ranking-settings-upgrade tb-margin-top-20 tb-margin-bottom-25" style="display: none; text-align:center">
+                        <div class="tb-font-cbold" style="font-size:16px; color: #424242;">Search Positions are only available to Pro license and above.<a style="cursor:pointer; color: #4A90E2;" target="_blank" class="tb-search-ranking-settings-upgrade-link">  Upgrade your License</a> to see historical search positions.</div>
+                        <img style="width:280px;" class="tb-margin-top-15" src="{PLUGIN_FILE_ROOT}/images/modules/metaupdates/upgrade.png" />
+                    </div>
+                    <!-- The selected video has no tags -->
+                    <div id="tb-search-ranking-no-tags" style="display: none;">
+                        <div class="no-tag-icon-wrapper">
+                            <i class="untitled-ui untitled-ui-tag-01-line"></i>
+                        </div>
+                        <h5>The video you selected doesn't have any Tags. Please select a video with Tags.</h5>
+                    </div>
+                    <!-- Loading information -->
+                    <div style="padding: 50px;" id="tb-search-ranking-loading">
+                        <span class="tb-positions-spinner"></span> Loading...
+                    </div>
+                    <!-- Tool not available -->
+                    <div class="tb-search-ranking-error" style="display:none; text-align:center; color: #FA3535;">
+                        <p class="tb-font-cbold tb-font-size-md">Search results/position aren't currently available...</p>
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png"  style="width:100px;" />
+                        <!--<a style="text-decoration:underline;line-height: 14px;font-size: 10px;position: relative;top: -3px;left: 10px;" href="https://tubebuddy.zendesk.com/hc/en-us/articles/9327172037403" target="_blank">WHY?</a>-->
+                    </div>
+
+                    <!-- Text input & button -->
+                    <div class="tb-search-ranking-add-term" style="display: none">
+                        <div class="tb-margin-bottom-5 tb-padding-left-2">
+                            Add your own Custom Search Terms to track
+                        </div>
+                        <div style="display: flex">
+                            <input placeholder="search term" id="tb-search-ranking-input" type="text" class="tb-input-textfield tb-search-ranking-add-input"/>
+                            <a id="tb-search-ranking-insert" class="tb-search-ranking-add-btn">
+                                Add
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Ranking main info -->
+                    <div id="tb-search-ranking-head" class="tb-search-ranking-row tb-margin-top-5" style="display: none;">
+                        <!-- Tags table -->
+                        <div class="tb-search-ranking-col-7">
+                            <div class="positions-table">
+                                <!-- Table titles -->
+                                <table class="tb-search-ranking-table-style">
+                                    <thead id="tb-search-ranking-thead">
+                                    <tr class="positions-table-header">
+                                        <th class="tb-font-cbold" style="width: 39px; cursor:pointer;">Type</th>
+                                        <th class="tb-font-cbold" style="width: 111px; cursor:pointer;">Video Tag</th>
+                                        <th class="tb-search-ranking-sort-rank tb-font-cbold" style="width: 275px; cursor:pointer; margin-left: 24px;">Search results</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                                <!-- Table body -->
+                                <div id="tb-table-data-container">
+                                    <table id="tb-search-ranking-table" class="tb-search-ranking-table-style">
+                                        <tbody id="tb-search-ranking-body"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Note & icons -->
+                            <div>
+                                <div class="tb-search-ranking-icons tb-margin-bottom-10">
+                                    <i class="untitled-ui untitled-ui-tag-01-line"></i><span class="tb-font-size12" style="color:grey">&nbsp;= Video Tag &nbsp;&nbsp;</span>
+                                    <i class="untitled-ui untitled-ui-pencil-01-line"></i><span class="tb-font-size12" style="color:grey">&nbsp;= Custom Search Term</span>
+                                </div>
+                                <div class="tb-position-notices">
+                                    <span>* First 20 search results are checked</span>
+                                    <span>** Ranking in search results are all proprietary calculations and not retrieved directly from the YouTube API.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Legacy off -->
+                <!-- Details -->
+                <div class="tb-search-ranking-details tb-search-ranking-col-5">
+                    <div id="tb-search-ranking-selected-term-container" class="tb-margin-left-25" style="display:none;">
+                        <div class="search-positions-term-label">Selected Search Term</div>
+                        <a id="tb-search-ranking-selected-term-link" target="_blank">
+                            <span id="tb-search-ranking-selected-term"></span>
+                            <i class="untitled-ui untitled-ui-link-external-01-line"></i>
+                        </a>
+                        <div class="search-positions-term-label" style="margin-top: 12px;">Historical</div>
+                        <div id="tb-search-ranking-historical-loading" class="tb-margin-top-20">
+                            <span class="tb-spinner"></span> Loading...
+                        </div>
+                        <div id="tb-search-ranking-historical-graph">
+                            <div id="tb-search-ranking-canvas-loading">
+                                <span class="tb-spinner"></span> Loading...
+                            </div>
+                            <div id="tb-search-ranking-actual-chart">
+                                <ul class="tb-search-ranking-actual-chart-list">
+                                    <li> One point each day that you viewed positions </li>
+                                    <li> Will show "21" if not in top 20 results</li>
+                                </ul>
+                                <div id="tb-search-ranking-canvas" style="display: none;"></div>
+                                <div class="tb-search-ranking-dates">
+                                    <span style="font-size:10px; padding-right:3px; position:relative; top:-2px;">&#9650;</span>
+                                    <span id="tb-search-rankings-start-date"></span>
+                                    <span class="tb-search-ranking-dates-today">Today</span>
+                                </div>
+                            </div>
+                            <div id="tb-search-ranking-no-history" style="display: none;">
+                                Looks like this is the first time you've viewed Search Positions for this video/search term combination. Come back tomorrow
+                                and you'll see a graph showing search position over time.
+                            </div>
+                            <div id="tb-search-ranking-no-rankings-ever" style="display:none;">
+                                There is no historical data to show because this video has never been positioned in the top 20 for the selected search term.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tb-search-ranking-settings-legacy-off">
+                    <div class="tb-search-ranking-legacy-off-container tb-font-cbold">
+                        <div style="text-align: center;">
+                            <p class="tb-font-size-md tb-font-color-red">Important Message from TubeBuddy!</p>
+                            <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png" class="tb-margin-15" style="width:150px;" />
+                        </div>
+                        <div class="tb-search-ranking-legacy-off-message">
+                            Due to YouTube's API Terms of Service, we can no longer
+                            offer Search Positions within TubeBuddy.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

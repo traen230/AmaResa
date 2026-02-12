@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>逆引きキーワード取得の準備</title>
+</head>
+<body>
+    <h2>🔍 逆引きキーワード取得の準備</h2>
+    <ol>
+        <li>Google Chrome が起動します</li>
+        <li>自動的に指定された <strong>Amazonのランキングページ</strong> に遷移します</li>
+        <li>ページ上で <strong>SellerSprite 拡張機能</strong> にログインし、「逆引きキーワード」の画面を表示してください</li>
+        <li>準備ができたら、以下の「OK」ボタンを押してください</li>
+    </ol>
+    <form action="{{ url_for('execute_reverse_research') }}" method="post">
+        <input type="hidden" name="ranking_url" value="{{ url }}">
+        <button type="submit">✅ OK（スクレイピング開始）</button>
+    </form>
+</body>
+</html>

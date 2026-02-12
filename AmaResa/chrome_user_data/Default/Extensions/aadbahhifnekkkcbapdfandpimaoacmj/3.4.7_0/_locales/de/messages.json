@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Mit ihm können Sie leicht Produktquellen auf Alibaba, AliExpress, 1688, Taobao und Yiwugo finden."
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPreissuche nach Bild für Alibaba"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Capture to search by image"
+   },
+   "context_menus_goote_trans": {
+      "message": "Seite übersetzen/Original anzeigen"
+   },
+   "context_menus_search_by_image": {
+      "message": "Suche nach Bild auf $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Aufnahme in $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Zum Übersetzen aufnehmen"
+   }
+}

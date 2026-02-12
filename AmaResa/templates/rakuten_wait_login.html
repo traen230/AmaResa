@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>🔑 楽天 ログイン確認</title>
+    <style>
+        body {
+            font-family: "メイリオ", sans-serif;
+            background-color: #fff8f0;
+            padding: 40px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #cc0000;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 18px;
+            font-size: 15px;
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #aa0000;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔑 楽天ログインの確認</h1>
+
+    <p>楽天サイトでログイン・認証が完了したら、以下のボタンを押してください。</p>
+    <p>検索キーワード：<strong>{{ keyword }}</strong></p>
+
+    <form method="post" action="{{ url_for('rakuten_research_execute') }}">
+        <input type="hidden" name="keyword" value="{{ keyword }}">
+        <input type="submit" value="🔍 リサーチを開始する">
+    </form>
+
+    <a href="{{ url_for('index') }}">← トップページに戻る</a>
+</body>
+</html>

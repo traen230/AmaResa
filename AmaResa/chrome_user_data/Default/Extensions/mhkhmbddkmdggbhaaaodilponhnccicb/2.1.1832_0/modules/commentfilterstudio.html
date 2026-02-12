@@ -1,0 +1,232 @@
+﻿<div style="display:none">
+    <div class="tb-comment-filter-studio-container tb-comment-filter-studio">
+        <div class="tb-comment-filter-studio-header">
+            <div class="tb-comment-filter-studio-header-top">
+                <div class="tb-comment-filter-studio-header-top-left">
+                    <div class="tb-margin-right10" style="height:40px;">
+                        <img src="{PLUGIN_FILE_ROOT}/images/branding/icon_medium.png" height="40" />
+                    </div>
+                    <!-- start basic options -->
+                    <div class="tb-comment-filter-studio-basic-select-container">
+                        Show Comments
+                        <select class="tb-comment-filter-studio-select-basic tb-comment-filter-studio-select">
+                            <option value="all">All</option>
+                            <option value="notreplied">That I have not replied to</option>
+                            <option value="needfollowup">That have replies which need to be followed up on</option>
+                            <option value="questions">That contain a question</option>
+                            <option value="questionsnoreplies">That contain a question that I have not replied to</option>
+                            <option value="links">That contain links (urls)</option>
+                            <option value="hearted">That I hearted</option>
+                            <option value="nothearted">That I have not hearted</option>
+                            <option value="notreacted">That I have not reacted to</option>
+                            <option value="haswords">That contain the word(s)...</option>
+                            <option value="-">--------</option>
+                            <option value="advanced">Advanced...</option>
+                        </select>
+                    </div>
+                    <div class="tb-comment-filter-studio-basic-select-container">
+                        <input style="display:none; position:relative; top:-8px;" class="tb-comment-filter-studio-words tb-comment-filter-studio-words-input" value="" placeholder="Comma Separated" />
+                    </div>
+                    <div class="tb-comment-filter-studio-select-auto-load-basic-container tb-comment-filter-studio-basic-select-container">
+                        Show
+                        <select class="tb-comment-filter-studio-select-auto-load tb-comment-filter-studio-select">
+                            <option value="5">5 results</option>
+                            <option value="10">10 results</option>
+                            <option selected value="20">20 results</option>
+                            <option value="50">50 results</option>
+                            <option value="100">100 results</option>
+                        </select>
+                    </div>
+                    <div class="tb-comment-filter-studio-go-container">
+                        <button class="tb-btn tb-btn-grey tb-comment-filter-studio-go">Go</button>
+                    </div>
+                    <!-- end basic options -->
+                    <div class="tb-comment-filter-studio-shown-container" style="display:none">
+                        <div class="tb-comment-filter-studio-shown-block">
+                            <span class="tb-comment-filter-studio-shown"></span>
+                            <span class="tb-comment-filter-studio-comment-text"></span>
+                            <span>of </span><span class="tb-comment-filter-studio-shown-of"></span>
+                            <span> searched</span>
+                        </div>
+                        <div class="tb-comment-filter-studio-max-block"><span style="display:none" class="tb-comment-filter-studio-max-seached-container">Max comments searched</span></div>
+                    </div>
+                </div>
+                <div class="tb-comment-filter-studio-header-top-right">
+                    <button style="display:none;margin: 0px 5px 0px 10px;" class="tb-btn tb-btn-grey tb-comment-filter-studio-refresh">
+                        Refresh
+                    </button>
+                    <div>
+                        <button class="tb-btn tb-btn-sm tb-btn-grey" id="tb-comment-filter-studio-word-cloud" data-tbtooltip="Word Cloud *powered by TubeBuddy">
+                            <i class="material-icons">cloud</i>
+                        </button>
+                        <button class="tb-btn tb-btn-sm tb-btn-grey" id="tb-comment-filter-studio-show-hidden-toggle" data-tbtooltip="Show Hidden *powered by TubeBuddy" disabled>
+                            <i class="material-icons" id="tb-comment-filter-studio-show-hidden-toggle-icon">visibility_off</i>
+                        </button>
+                        <span id="tb-comment-filter-studio-hidden-comment-count">-</span>
+                    </div>
+                </div>
+            </div>
+            <!-- start advanced options -->
+            <div class="tb-comment-filter-studio-advanced" style="display:none;">
+                <div class="tb-comment-filter-studio-advanced-header">Advanced</div>
+                <div class="tb-padding-bottom5">
+                    Started by
+                    <select class="tb-comment-filter-studio-started-by-select tb-comment-filter-studio-select">
+                        <option value="-">Anyone</option>
+                        <option value="me">Me</option>
+                        <option value="else">Someone Else</option>
+                        <option value="subscriber">Recent Subscriber [Legend Required]</option>
+                    </select>
+                </div>
+                <div class="tb-padding-bottom5 tb-margin-left10">
+                    that
+                    <select class="tb-comment-filter-studio-reply-select tb-comment-filter-studio-select">
+                        <option value="-">(no filter)</option>
+                        <option value="meno">I have NOT replied to</option>
+                        <option value="meyes">I HAVE replied to</option>
+                        <option value="noone">NO ONE has replied to</option>
+                        <option value="followup">REPLIES that need following up</option>
+                    </select>
+                </div>
+                <div class="tb-padding-bottom5 tb-margin-left10 tb-margin-right10">
+                    and contain
+                    <input type="checkbox" class="tb-comment-filter-studio-with" checked="checked" style="display:none;" />
+                    <select class="tb-comment-filter-studio-with-select tb-comment-filter-studio-select">
+                        <option value="-">(no filter)</option>
+                        <option value="questions">questions</option>
+                        <option value="profanity">profanity</option>
+                        <option value="positive">positive sentiment</option>
+                        <option value="negative">negative sentiment</option>
+                        <option value="hearted">hearted comment</option>
+                        <option value="words">the word(s)...</option>
+                    </select>
+                    <input style="width:200px; display:none;" class="tb-comment-filter-studio-words-advanced tb-comment-filter-studio-words-input tb-margin-left5 tb-margin-right5 tb-move-down1" value="" placeholder="Comma Separated" />
+                </div>
+                <div class="tb-padding-bottom5" style="display:flex; align-items:center;">
+                    <div class="tb-margin-right10">
+                        show
+                        <select class="tb-comment-filter-studio-select-auto-load-advanced tb-comment-filter-studio-select">
+                            <option value="5">5 results</option>
+                            <option value="10">10 results</option>
+                            <option selected value="20">20 results</option>
+                            <option value="50">50 results</option>
+                            <option value="100">100 results</option>
+                        </select>
+                    </div>
+
+                    <button class="tb-btn tb-btn-grey tb-comment-filter-studio-advanced-go tb-margin-left10 tb-margin-right5">Go</button>
+                </div>
+            </div>
+
+            <!-- end advanced options -->
+            <div style="display:none" class="tb-comment-filter-studio-empty-results tb-width100-percent">
+                <div>
+                    <span>No results found! Any results displayed below do not have TubeBuddy filters applied.</span><span class="tb-comment-filter-studio-empty-results-subscribers tb-margin-left20">Note: None of your recent subscribers have commented below.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="tb-comment-filter-studio-comment-menu-container tb-comment-filter-studio-menu-action" style="display:none">
+        <div class="tb-comment-filter-studio-comment-menu-container-1">
+            <div class="tb-comment-filter-studio-comment-menu-header">
+                <div class="tb-comment-filter-studio-comment-menu-header-text">CANNED RESPONSES</div>
+                <div class="tb-comment-filter-studio-comment-menu-header-tools">
+                    <a class="tb-comment-filter-studio-comment-menu-header-tools-settings" target="_blank" href="#"><img title="Canned Response Settings" class="tb-margin-right5 tb-cursor-pointer " src="{PLUGIN_FILE_ROOT}/images/icons/gear-white.png" /></a>
+                    <img title="Refresh Canned Responses" class="tb-cursor-pointer tb-comment-filter-studio-comment-menu-header-tools-refresh" src="{PLUGIN_FILE_ROOT}/images/icons/sync-white.png" />
+                </div>
+            </div>
+            <div class="tb-comment-filter-studio-comment-menu-body" style="display:none;">
+
+            </div>
+            <div class="tb-comment-filter-studio-comment-menu-loading">
+                <div class="tb-margin-top15 tb-margin-left15"> Loading...</div>
+            </div>
+            <div class="tb-comment-filter-studio-comment-menu-footer">
+                <div class="tb-comment-filter-studio-comment-menu-footer-text">VIDEO TOPIC PLANNER</div>
+                <div class="tb-comment-filter-studio-comment-menu-footer-topic-planner">
+
+
+                    <span class="tb-move-down10 tb-margin-left15 tb-comment-filter-studio-topic-planner-text">+ Add as comment suggestion</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-subscriberCountTemplate">
+        <div class="tb-comment-filter-studio-subscriberCount-Container">
+            <span>{0}</span>
+            <span>Subscribers</span>
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-channelInfoTemplate">
+        <div class="tb-comment-filter-studio-channelInfo {4}">
+            {0}
+            {1}
+            {2}
+            {3}
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-facebookTemplate">
+        <div class="tb-comment-filter-studio-social-container"> <a title="Facebook" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-left1" style="margin: auto;vertical-align: middle;display: inline-block; height:13px" src="{PLUGIN_FILE_ROOT}/images/icons/social/facebook_black1.png" /></a></div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-twitterTemplate">
+        <div class="tb-comment-filter-studio-social-container"><a title="Twitter" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-left1" style="margin: auto;vertical-align: middle;display: inline-block;  height:13px" src="{PLUGIN_FILE_ROOT}/images/icons/social/twitter_black1.png" /></a></div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-instagramTemplate">
+        <div class="tb-comment-filter-studio-social-container"><a title="Instagram" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-left1 tb-move-up1" style="margin: auto;vertical-align: middle;display: inline-block;  height:12px" src="{PLUGIN_FILE_ROOT}/images/icons/social/insta_black1.png" /></a></div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-comment-menu">
+
+        <div class="tb-comment-filter-studio-menu-container tb-comment-filter-studio-menu-action tb-move-down10" data-id="{0}">
+            <img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-grey-transparent.svg" />
+            <img class="tb-comment-filter-studio-menu-container-down" src="{PLUGIN_FILE_ROOT}/images/icons/arrow-down.png" />
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-menuButtonTemplate">
+        <div class="tb-comment-filter-studio-menu-cannedResponse" data-id="{0}">
+            <div class="tb-inline-block" style="width: 7%; vertical-align: middle;"></div>
+            <div class="tb-inline-block" style="width: 90%"><span>{1}</span></div>
+        </div>
+    </div>
+    <div style="display:none" id="tb-comment-filter-studio-menuButtonTemplate-fav">
+        <div class="tb-comment-filter-studio-menu-cannedResponse" data-id="{0}">
+            <div class="tb-inline-block" style="width: 7%; vertical-align: middle;"><i class="material-icons" style="color: #FFAA36; font-size: 16px;">star</i></div>
+            <div class="tb-inline-block" style="width: 90%;"><span>{1}</span></div>          
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-loading-screen-template">
+        <div class="tb-comment-filter-studio-loading">
+            <div class="tb-comment-filter-studio-spinner-container tb-move-down2">
+                <div class="tb-spinner"></div>
+            </div>
+            <span class="tb-font-size14">Searching Comments...</span>
+            <div class="tb-comment-filter-studio-yt-filter-detected tb-margin-top-5" style="display:none;">Warning: You currently have YouTube Filters set which will be applied on top of TubeBuddy's filtering. </div>
+        </div>
+        <div class="tb-margin-top15">
+            <button class="tb-btn tb-btn-grey tb-comment-filter-studio-loading-stop tb-btn-sm">Stop</button>
+            <div class="tb-comment-filter-studio-max-warning">Max of 500 comments searched</div>
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-subscriberTemplate">
+        <div class="tb-comment-filter-studio-subscriber-flag-Container tb-move-up3 tb-comment-filter-studio-flag">
+            <img class="tb-comment-filter-studio-subscribe-logo tb-height12 tb-move-down2" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+            <span>Subscribes to you</span>
+        </div>
+    </div>
+    <div id="tb-comment-filter-studio-menuButtonTemplateEmpty">
+        <div class="tb-comment-filter-studio-menu tb-comment-filter-studio-menu-cannedResponseEmpty">
+            None found. CLICK HERE to create one!
+        </div>
+        <div style="display:none" class="tb-margin-top20 tb-margin-left15 tb-comment-filter-studio-menu-cannedResponseEmpty-refresh">
+            Click here once you've created one.
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-comment-filter-studio-hide-commentTemplate">
+        <div class="tb-comment-filter-studio-hide-comment-toggle tb-margin-left10" data-id-temp="{0}" data-id="{1}">            
+            <a class="tb-comment-filter-studio-mark-as-read">
+                <i class="material-icons tb-font-color-gray tb-font-size18 tb-comment-filter-hide-comment-toggle-icon" data-tbtooltip="Hide Comment *powered by TubeBuddy" style="opacity:0.7; position:relative; top:9px;">visibility_off</i>
+                <span class="tb-spinner tb-hidden tb-move-down10" data-tbtooltip="saving"></span>
+            </a>
+        </div>
+    </div>
+</div>

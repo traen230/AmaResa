@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>キーワード出現カウント</title>
+</head>
+<body>
+    <h2>検索とカウント</h2>
+    <form method="post" action="/search">
+        <label>検索キーワード（例：大谷翔平）:</label><br>
+        <input type="text" name="search_keyword" required><br><br>
+        <label>カウント対象の単語（例：大谷）:</label><br>
+        <input type="text" name="count_keyword" required><br><br>
+        <button type="submit">実行</button>
+    </form>
+</body>
+</html>

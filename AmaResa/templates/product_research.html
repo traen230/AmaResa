@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>商品リサーチ</title>
+    <style>
+        body {
+            font-family: "Meiryo", "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #0f2a44, #1e4f7a);
+            margin: 0;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+        h1, h2, h3 {
+            margin: 0 0 12px;
+        }
+        .subtitle {
+            color: #cfe6ff;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d9ecff;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            padding: 11px 12px;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+        input[type="file"] {
+            padding: 8px 10px;
+        }
+        .hint {
+            font-size: 12px;
+            color: #cfe6ff;
+            line-height: 1.6;
+            margin-top: -6px;
+            margin-bottom: 12px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        button, .btn-link {
+            border: none;
+            border-radius: 10px;
+            padding: 11px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        button[name="shein"] {
+            background: linear-gradient(135deg, #ff6aa9, #e04d8c);
+        }
+        button[name="rakuten"] {
+            background: linear-gradient(135deg, #cc2f2f, #a42020);
+        }
+        .btn-link {
+            display: inline-block;
+            margin-top: 6px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .error {
+            margin-top: 10px;
+            color: #ffd8d8;
+            background: rgba(180, 20, 20, 0.2);
+            border: 1px solid rgba(255, 120, 120, 0.4);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .wait-message {
+            background: rgba(255, 220, 120, 0.18);
+            border: 1px solid rgba(255, 220, 120, 0.45);
+            color: #fff6d5;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>商品リサーチ</h1>
+        <div class="subtitle">Amazon CSVを基準に、SHEIN/楽天で類似商品を比較します。</div>
+
+        <form method="post" enctype="multipart/form-data">
+            <label for="amazon_csv">Amazon検索結果CSV (keyword_check_*.csv)</label>
+            <input type="file" id="amazon_csv" name="amazon_csv" accept=".csv">
+
+            <label for="keyword">検索キーワード</label>
+            <input type="text" id="keyword" name="keyword" placeholder="例: ワンピース" required value="{{ keyword if keyword is defined else '' }}">
+
+            <label for="threshold">最大類似度しきい値 (0.00 - 1.00)</label>
+            <input type="number" id="threshold" name="threshold" min="0" max="1" step="0.01" value="{{ ('%.2f' % threshold) if threshold is defined else '0.70' }}">
+            <div class="hint">0.70なら「それ以上に似ている商品」を除外します。厳しめにする場合は0.50などを指定してください。</div>
+
+            <div class="button-group">
+                <button type="submit" name="shein">SHEINで調査</button>
+                <button type="submit" name="rakuten">楽天で調査</button>
+            </div>
+
+            {% if error %}
+            <div class="error">{{ error }}</div>
+            {% endif %}
+        </form>
+    </div>
+
+    <div class="card">
+        <a class="btn-link" href="{{ url_for('index') }}">トップへ戻る</a>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function() {
+        const waitMsg = document.createElement("div");
+        waitMsg.className = "wait-message";
+        waitMsg.textContent = "画像比較と取得処理を実行中です。完了までこのままお待ちください...";
+        form.parentNode.insertBefore(waitMsg, form);
+    });
+});
+</script>
+</body>
+</html>

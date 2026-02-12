@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>逆引きキーワードリサーチ</title>
+    <style>
+        body {
+            font-family: "Meiryo", "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #0f2a44, #1e4f7a);
+            margin: 0;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+        h1, h2, h3 { margin: 0 0 12px; }
+        .subtitle {
+            color: #cfe6ff;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d9ecff;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            padding: 11px 12px;
+            font-size: 14px;
+        }
+        button, .btn-link {
+            display: inline-block;
+            margin-top: 12px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            background: linear-gradient(135deg, #1e90ff, #1c6fd5);
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .btn-link.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+        .logs {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .logs li {
+            margin-bottom: 6px;
+            color: #eaf4ff;
+            font-size: 14px;
+        }
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            background: rgba(10, 20, 35, 0.45);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 8px;
+            font-size: 13px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.12);
+            color: #d9ecff;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>🔍 逆引きキーワードリサーチ</h1>
+        <div class="subtitle">Amazon商品URLから関連キーワードを逆引きで取得します。</div>
+
+        <form action="/reverse/research" method="post">
+            <label for="ranking_url">Amazon商品URL</label>
+            <input id="ranking_url" type="text" name="ranking_url" placeholder="https://www.amazon.co.jp/..." required>
+            <button type="submit">Chrome起動 & Googleログインへ</button>
+        </form>
+    </div>
+
+    {% if logs %}
+    <div class="card">
+        <h3>実行ログ</h3>
+        <ul class="logs">
+            {% for log in logs %}
+            <li>{{ log }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="actions">
+            {% if csv_filename %}
+            <a class="btn-link" href="{{ url_for('download_file', filename=csv_filename) }}">CSVをダウンロード</a>
+            {% endif %}
+            <a class="btn-link secondary" href="{{ url_for('index') }}">トップへ戻る</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="card">
+        <a class="btn-link secondary" href="{{ url_for('index') }}">トップへ戻る</a>
+    </div>
+    {% endif %}
+
+    {% if results %}
+    <div class="card">
+        <h3>逆引きキーワード一覧</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>キーワード</th>
+                        <th>トラフィック指数</th>
+                        <th>商品数</th>
+                        <th>競合度</th>
+                        <th>タイプ</th>
+                        <th>自然順位</th>
+                        <th>広告順位</th>
+                        <th>自然順位数</th>
+                        <th>ページ位置</th>
+                        <th>検索数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        {% for col in row %}
+                        <td>{{ col }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

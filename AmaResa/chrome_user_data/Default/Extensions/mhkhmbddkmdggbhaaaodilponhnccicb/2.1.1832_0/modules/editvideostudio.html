@@ -1,0 +1,167 @@
+﻿<div style="display:none">
+    <style>
+        .char-counter {
+            visibility: visible !important;
+        }
+
+        /*.style-scope{
+            top: -5px;
+        }*/
+        .tb-edit-video-studio-thumbnail-analyzer{
+            display: inline;
+        }
+    </style>
+    <script>
+        document.getElementById("copy-button").style.top = "-5px";
+    </script>
+    <div class="tb-edit-video-studio-legend">
+        <div>
+            <div style="display:none;" class="tb-edit-video-studio-loading-tag-rankings">
+                <img src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" alt="loading spinner" /> <span>Loading Search Rankings...</span>
+            </div>
+            <div style="display:none;" class="tb-edit-video-studio-loading-tag-rankings-legend">
+            </div>
+            <div style="display:none;" class="tb-edit-video-studio-loading-tag-rankings-error">
+                <span>One or more search rank is not available  </span> <a style="" href="https://tubebuddy.zendesk.com/hc/en-us/articles/9327172037403" target="_blank">why?</a>
+            </div>
+        </div>
+
+        <div class="tb-edit-video-studio-tag-button-container">
+            <div class="tb-edit-video-studio-tag-button-header">
+                <div class="tb-edit-video-studio-tag-button-header-h1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472">
+                        <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                        <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+                    </svg>
+                    <span>Tag Tools</span>
+                </div>
+            </div>
+            <div>
+                <div class="tb-edit-video-studio-tag-tools-content">
+                    <div class="tb-edit-video-studio-tag-tools-buttons-container">
+                        <button class="tb-edit-video-studio-tag-button" data-action="copy">
+                            Copy
+                        </button>
+                        <button data-action="sort" class="tb-edit-video-studio-tag-button">
+                            Sort
+                        </button>
+                        <button data-action="import" class="tb-edit-video-studio-tag-button">
+                            Import
+                        </button>
+                        <button data-action="translate" class="tb-edit-video-studio-tag-button">
+                            Translate
+                        </button>
+                        <button class="tb-edit-video-studio-tag-button" data-action="explore">
+                            <span id="tb-edit-studio-ke-label">Keyword Explorer</span>
+                        </button>
+                        
+                        <button data-action="search" class="tb-btn-grey tb-edit-video-studio-tag-button tb-edit-video-studio-tag-ranking tb-margin-top5" style="display: none;">
+                            Show Search Rankings
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tb-edit-video-studio-suggested-tags-plugin">
+        </div>
+    </div>
+    
+    <div id="tb-edit-video-studio-loading-tag" type="text/template" style="display:none">
+        <div class="tb-edit-video-studio-tag-rank-studio" title="Where this video ranks in YouTube Search Results">
+            {0}
+        </div>
+    </div>
+
+    <div class="tb-edit-video-studio-cards-container tb-padding-5" >
+        <img class="tb-height11 tb-move-down4" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" alt="tubebbudy icon" />
+        <input class="tb-edit-video-studio-cards-template tb-move-down5" type="checkbox" />
+        <span class="tb-font-size-14 tb-move-down3">Set this Video as an <i>Cards Template</i></span>
+        &nbsp;
+        <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=cardtemplates">
+            <i class="small material-icons tb-icon-gray tb-icon-help tb-move-down4">help_outline</i>
+        </a>
+        <span class="tb-margin-left15 tb-move-down3 tb-edit-video-studio-cards-template-enabled">Template Name:</span>
+        <a maxlength="200" class="tb-edit-video-studio-cards-template-title-input tb-edit-video-studio-cards-template-enabled tb-move-down3"></a>
+
+        <span style="color:green; padding-left:10px; font-size:11px; display:none;" class="tb-video-cards-changes-saved tb-move-down2">
+            <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" alt="confirmed check" style="height:12px; position:relative; top:2px;" /> changes saved
+        </span>
+
+    </div>
+    <div class="tb-edit-video-studio-endscreens-container tb-padding-5" >
+        <img class="tb-height11 tb-move-down4" alt="tubebuddy icon" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+        <input class="tb-edit-video-studio-endscreens-template tb-move-down5" type="checkbox" />
+        <span class="tb-font-size-14 tb-move-down3">Set this Video as an <i>End Screen Template</i></span>
+        &nbsp;
+        <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=endscreentemplates">
+            <i class="small material-icons tb-icon-gray tb-icon-help tb-move-down4">help_outline</i>
+        </a>
+        <span class="tb-margin-left15 tb-move-down3 tb-edit-video-studio-template-enabled">Template Name:</span>
+        <a maxlength="200" class="tb-edit-video-studio-template-title-input tb-edit-video-studio-template-enabled tb-move-down3"></a>
+
+        <span style="color:green; padding-left:10px; font-size:11px; display:none;" class="tb-video-endscreens-changes-saved tb-move-down2">
+            <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" alt="check icon" style="height:12px; position:relative; top:2px;" /> changes saved
+        </span>
+
+    </div>
+    
+    <div style="display:none" id="tb-edit-video-studio-endscreens-template-button-template">
+        <button id="tb-edit-video-studio-apply-endscreen-template-button" class="tb-btn tb-btn-sm tb-btn-grey" title="Apply TubeBuddy End Screen Template">
+            
+            <img class="tb-height11 tb-move-down2 tb-margin-right-3" alt="tubebuddy icon" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+            Apply Template
+        </button>
+    </div>
+
+    <div style="display:none" id="tb-edit-video-studio-cards-template-button-template">
+        <div class="tb-flex tb-items-center tb-margin-left-20">
+            <button id="tb-edit-video-studio-apply-cards-template-button" class="tb-btn tb-btn-sm tb-btn-grey " title="Apply TubeBuddy Cards Template">
+                <img class="tb-height11 tb-move-down2 tb-margin-right-3" alt="tubeBuddy icon" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" />
+                Apply Template
+            </button>
+        </div>
+    </div>
+
+
+    <div style="display:none" id="tb-edit-video-studio-chapter-editor-template">
+        <div class="tb-edit-video-studio-chapter-editor-info" style="display:none;">
+            <h2>Add Chapters</h2>
+            <div id="tb-edit-video-studio-chapter-editor-desc">
+                Add Chapters to your videos to make it easier for your audience to navigate to and rewatch specific parts.
+            </div>
+            <button id="tb-edit-video-studio-chapter-editor-trigger" class="tb-video-edit-teal-button" title="Add Chapters">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472">
+                    <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                    <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+                </svg>
+                <span>Add Chapters</span>
+            </button>
+        </div>
+    </div>
+
+    <div style="display:none" id="tb-edit-video-studio-thumbnail-tools-template">
+        <div class="tb-edit-video-studio-thumbnail-tools-container">
+            <div class="tb-edit-video-studio-thumbnail-analyzer" style="display:none;">
+                <button data-action="thumbnail" class="tb-video-edit-teal-button tb-edit-video-studio-thumbnail-analyzer-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472">
+                        <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                        <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+                    </svg>
+                    <span>Thumbnail Analyzer</span>
+                </button>
+            </div>
+            <div class="tb-edit-video-studio-thumbnail-generator" style="display:none;">
+                <button data-action="thumbnail" class="tb-video-edit-teal-button tb-edit-video-studio-thumbnail-generator-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472">
+                        <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"></path>
+                        <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0"></path>
+                    </svg>
+                    <span>Create Thumbnail</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

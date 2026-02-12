@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "इसके साथ आप अलीबाबा, अलीएक्सप्रेस, 1688, Taobao और मेड-इन-चाइना पर उत्पाद स्रोत आसानी से पा सकते हैं।"
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPrice अलीबाबा के लिए छवि द्वारा खोज"
+   },
+   "context_menu_screenshot_search": {
+      "message": "छवि द्वारा खोज करने के लिए कैप्चर करें"
+   },
+   "context_menus_goote_trans": {
+      "message": "पेज का अनुवाद करें/मूल दिखाएँ"
+   },
+   "context_menus_search_by_image": {
+      "message": "$storeName$ पर छवि द्वारा खोजें",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "$storeName$ पर कब्जा",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "अनुवाद करने के लिए कैप्चर करें"
+   }
+}

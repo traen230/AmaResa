@@ -1,0 +1,65 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-tag-sorter-container" class="tb-module-template draggable-container tb-tag-sorter-modal" style="display:none; width:750px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <svg style="margin-left: 8px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F7F7F8"/>
+                <path d="M12.7502 23.3709C11.6717 23.3709 10.6022 23.3709 9.46697 23.3709V15.625H7.38281V12.3797H9.45988V8.61525H13.2841C13.2983 8.80026 13.3231 8.98149 13.3231 9.16084C13.3231 13.5747 13.316 18.3567 13.3338 22.7725C13.3338 23.2652 13.1865 23.3804 12.7502 23.369V23.3709ZM22.8322 21.8078C21.1737 23.3294 19.251 23.8542 17.1934 22.9178C15.0472 21.9418 13.9315 20.1181 13.9085 17.6129C13.8836 14.8245 13.896 12.0361 13.8925 9.24957V8.61525C15.1448 8.61525 16.303 8.6228 17.4577 8.61525C17.7912 8.61336 17.7593 8.84745 17.7593 9.07211V20.4579C19.1712 19.5706 20.5175 18.7267 21.917 17.8451C20.8048 17.1447 19.7618 16.4707 18.7011 15.8288C18.3677 15.6287 18.2045 15.4097 18.2275 14.9774C18.2648 14.2355 18.2524 13.4879 18.2311 12.744C18.2204 12.391 18.334 12.2758 18.6621 12.2249C20.8119 11.8926 23.1621 13.2594 24.12 15.4229C25.0937 17.6204 24.6077 20.1729 22.8304 21.8021V21.8059L22.8322 21.8078Z" fill="#2D3236"/>
+            </svg>
+            <h1 class="tb-module-title">Tag Sorter</h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=tagsorter" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div class="tb-center tb-font-size-sm tb-font-cbold tb-margin-top-20">
+                    Drag &amp; drop Tags in any order you'd like.
+                </div>
+                <div class="tb-tag-sorter-settings-container">
+                    <!-- Tags list -->
+                    <ul id="tb-tag-sorter-list" class="tb-sortable tb-margin-bottom-20 grid"></ul>
+
+                    <div class="tb-center" style="display:none;">
+                        <span class="tb-font-size-xs tb-font-cbold">
+                            (Current Position | Original Position)
+                        </span>
+                    </div>
+                    <div class="tb-center tb-flex tb-justify-center tb-padding-bottom-5">
+                        <a
+                          id="tb-tag-sorter-auto-remove-duplicates-button"
+                          class="tb-sorter-remove-duplicates"
+                        >
+                            Remove Duplicates
+                        </a>
+                        <a
+                          id="tb-tag-sorter-auto-sort-rank-button"
+                          class="tb-sorter-auto-sort tb-tag-sorter-auto-sort"
+                        >
+                            Auto-Sort by Rank
+                        </a>
+                    </div>
+                </div>
+                <!-- Apply button -->
+                <div class="tb-float-right">
+                    <a id="tb-tag-sorter-apply-close-button" class="tb-tag-sorter-apply">
+                        Apply &amp; Close
+                    </a>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+        <!--End BASE Footer-->
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

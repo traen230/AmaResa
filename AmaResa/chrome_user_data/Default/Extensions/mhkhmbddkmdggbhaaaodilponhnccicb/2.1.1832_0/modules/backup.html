@@ -1,0 +1,114 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-backup-container" class="tb-module-template draggable-container" style="display:none; width:500px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Channel Backup
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=channelbackup" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-overflow-hidden">
+                <div class="tb-font-book" style=" padding: 0 5px 0px 5px">
+                    <!-- Loading icon -->
+                    <div class="tb-margin-top-50" id="tb-backup-loading-channel">
+                        <span class="tb-spinner"></span><b>Loading Channel Info... &nbsp; </b>
+                    </div>
+                    <!-- Loaded channel -->
+                    <div id="tb-backup-loaded-channel" style="display:none">
+                        <!-- Channel thumbnail & name -->
+                        <div id="tb-channel-info" class="tb-margin-top-10 tb-padding-bottom-10">
+                            <img id="tb-backup-thumbnail" class="tb-backup-channel-thumbnail tb-margin-right-10"/>
+                            <div id="tb-backup-name" class="tb-font-cbold tb-font-size-sm tb-padding-top-2"></div>
+                            <div id="tb-backup-videos-count" style="font-size:12px; margin-top:4px;"></div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <!-- Before the backup -->
+                        <div id="tb-backup-before-start">
+                            <!-- Info -->
+                            <div class="tb-backup-list tb-margin-top-10 tb-border-bottom tb-padding-bottom-20">
+                                <div class="tb-line-height-14 tb-margin-bottom-15">
+                                    <p class="tb-line-height-18" style="font-size: 14px;">The following metadata will be backed up for all of your videos and available via CSV file download.</p>
+                                </div>                              
+                                    <!-- column 1 -->
+                                    <div class="tb-inline-block" style="width: 49%;">
+                                        <ul class="tb-backup-list-column tb-line-height-22">
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Video Id</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Channel Id</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Title</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Tags</p></li>
+                                        </ul>
+                                    </div>
+                                    <!-- column 2 -->
+                                    <div class="tb-inline-block" style="width: 49%;">
+                                        <ul class="tb-backup-list-column tb-line-height-22">
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Description</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Privacy</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Category</p></li>
+                                            <li><img src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-check-mark.png" alt="check-mark" class="tb-inline-block" /> <p class="tb-inline-block">Date Published</p></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <!-- Radio input -->
+                            <div class="tb-margin-top-15">
+                                <div class="tb-material-radio-container">
+                                    <input type="radio" value="1" id="r1" class="tb-material-radio" name="tb-backupType" checked="checked" />
+                                    <label class="tb-material-radio-label tb-font-size-lb" for="r1">Only backup videos since my last successful backup</label>
+                                </div>
+                                <div class="tb-material-radio-container">
+                                    <input type="radio" value="2" id="r2" class="tb-material-radio" name="tb-backupType" />
+                                    <label class="tb-material-radio-label tb-font-size-lb" for="r2">Backup my entire channel (every video)</label>
+                                </div>
+                                <!-- Start Backup button -->
+                                <div id="tb-backup-start" class="tb-margin-top-25 tb-text-align-center tb-margin-bottom-20">
+                                    <a id="tb-backup-start-button" class="tb-btn tb-btn-primary" style="padding:10px 65px;">START BACKUP!</a>
+                                </div>
+                            </div>
+                        </div>                      
+                        <!-- After Backup starts -->
+                        <div id="tb-backup-status" style="display: none;">
+                            <!-- Success bar -->
+                            <div id="status-bar" class="tb-success-status tb-backup-status-bar">
+                                <img src="{plugin_file_root}/images/modules/channelbackup/backup-status-check.png" class="tb-inline-block tb-status-check"/>
+                                <p class="tb-font-book tb-font-color-white tb-inline-block" style="margin: 0">Backup started!</p>
+                            </div>
+                            <!-- Message -->
+                            <div class="tb-backup-message">
+                                <div class="tb-backup-image tb-margin-bottom-25">
+                                    <img src="{plugin_file_root}/images/modules/channelbackup/file-backup-2.png" class="file-backup-img" />
+                                </div>
+                                <p>
+                                    It can take anywhere from 5 minutes to 24 hours to do a complete channel backup.
+                                    <br><br>
+                                    We'll shoot you an email with a download link once it's complete.
+                                    <br><br>
+                                    You can check the status (and download when available) from this URL at any time:
+                                </p>
+                                <div class="tb-backup-url-box">
+                                    <a href="" id="tb-backup-status-link" style="overflow-wrap: break-word;" target="_blank"></a>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+        <!--End BASE Footer-->
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>SellerSprite ログイン確認</title>
+</head>
+<body>
+    <h2>🔐 SellerSprite にログインしてください</h2>
+    <p>Chromeが開いた状態で、<strong>SellerSpriteにログイン</strong>したら、以下の「OK」ボタンを押してください。</p>
+
+    <form action="{{ next_action }}" method="post">
+        {% if keyword %}
+            <input type="hidden" name="keyword" value="{{ keyword }}">
+        {% endif %}
+        {% if review %}
+            <input type="hidden" name="review_threshold" value="{{ review }}">
+        {% endif %}
+        {% if sales %}
+            <input type="hidden" name="sales_threshold" value="{{ sales }}">
+        {% endif %}
+        {% if url %}
+            <input type="hidden" name="ranking_url" value="{{ url }}">
+        {% endif %}
+
+        <button type="submit">OK（ログイン完了）</button>
+    </form>
+</body>
+</html>

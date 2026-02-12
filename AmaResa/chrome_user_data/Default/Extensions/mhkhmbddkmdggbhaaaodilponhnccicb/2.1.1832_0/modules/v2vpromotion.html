@@ -1,0 +1,235 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-v2v-promote-container" class="tb-module-template draggable-container" style="display:none; width:640px; color: #424242;">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Vid2Vid Promotion</h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=vid2vid" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!-- Embed video -->
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-vid2vid-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-vid2vid-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-padding-0">
+                <!-- Warning -->
+                <div id="tb-v2v-promote-select-invideo-no" class="tb-v2v-promote-warning tb-margin-bottom-10" style="display: none;">
+                    Sorry, you can only do Featured Video promotions with your own videos.
+                </div>
+                <!-- First step: Promotion Methods -->
+                <div id="tb-v2v-promote-methods-container" class="tb-padding-15" style="display:none;">
+                    <div class="tb-font-cbold tb-font-size-sm">
+                        Which promotion methods would you like to use?
+                    </div>
+                    <div class="tb-v2v-promote-which-promotion">
+                        <!-- In video disabled -->
+                        <div id="tb-v2v-promote-select-invideo-disabled" style="display:none">
+                            <div class="tb-material-checkbox-container tb-inline-block">
+                                <label class="tb-material-checkbox-label">
+                                    <input type="checkbox" id="tb-v2v-promote-select-invideo" class="tb-material-checkbox-input" checked="" disabled="disabled" />
+                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check tb-margin-right-5"></span></span>
+                                    Featured Video Promotion
+                                </label>
+                            </div>
+                            <div class="tb-v2v-promote-what-is-this">
+                                <a href="https://www.tubebuddy.com/Tools?tool=vid2vid" target="_blank" class="tb-font-medium tb-font-size-lb">What's this?</a>
+                            </div>
+
+                            <div class="tb-v2v-promote-warning tb-margin-bottom-10">
+                                Warning: YouTube is removing Featured Promotions on December 14th!
+                                <div><a href="https://9to5google.com/2017/11/14/youtube-in-video-links-disabled-dec-14th/" target="_blank">Read More...</a></div>
+                            </div>
+                        </div>
+                        <!--Promotion Method: visible options-->
+                        <div class="tb-material-checkbox-container">
+                            <label class="tb-material-checkbox-label" style="font-size:14px;">
+                                <input type="checkbox" id="tb-v2v-promote-select-description" class="tb-material-checkbox-input" checked="checked" />
+                                <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check tb-margin-right-5"></span></span>
+                                Description Promotion
+                            </label>
+                        </div>
+                        <div class="tb-v2v-promote-what-is-this">
+                            <a href="https://www.tubebuddy.com/Tools?tool=vid2vid" target="_blank" class="tb-font-medium tb-font-size-lb">What's this?</a>
+                        </div>
+                        <div class="tb-margin-top-20">
+                            <div class="tb-inline-block" style="max-width:420px;font-size: 14px;">
+                                YouTube removed "In Video Programming" from their site so that feature is removed from TubeBuddy. Some day we might find more ways to improve Vid2Vid Promotion with new features.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Second step: Featured Video Promotion-->
+                <div id="tb-v2v-promote-featured-content-container" class="tb-padding-15" style="display:none;">
+                    <div class="tb-font-cbold tb-font-size-sm tb-margin-bottom-10">
+                        Featured Video Promotion
+                    </div>
+                    <div class="tb-margin-bottom-10 tb-margin-right-10" style="font-size:14px;">
+                        Increase views on
+                        <span class="tb-v2v-promote-video-title tb-font-cbold"></span>
+                        by sending people to this video when they are almost done watching one of your other videos.
+                        <div class="tb-margin-top-5" style="font-size: 14px;">
+                            Enter a message that will persuade the viewer to click and watch.
+                        </div>
+                        <div class="tb-v2v-promote-featured-note">
+                            Note: If a video already has an <span class="tb-font-cbold">Info Card</span> on it, then this Featured Video you set here won't show up.
+                        </div>
+                    </div>
+                    <div class="tb-v2v-promote-featured-img">
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/promote/featuredvideo.png" style="display:none">
+                        <div style="background-image:url({PLUGIN_FILE_ROOT}/images/modules/promote/featuredvideo.png); background-size:contain; height:179px; width:299px; position:relative; border-radius:4px;">
+                            <img id="tb-v2v-promote-featured-thumbnail" style="position:absolute; top:140px; height:28px; width:52px; left:0px;" />
+                        </div>
+                    </div>
+                    <div class="tb-margin-top-30 tb-padding-left-5 tb-margin-bottom-15">
+                        <div class="tb-font-cbold" style="font-size: 14px;">
+                            Enter a Message
+                        </div>
+                        <input type="text" id="tb-v2v-promote-invideo-message" class="tb-input-textfield" style="width:400px; margin-top:8px;" maxlength="40" value="Watch this video now!" />
+                    </div>
+                </div>
+
+                <!-- Second step: Description Promotion -->
+                <div id="tb-v2v-promote-bulk-description-updates-container" class="tb-padding-15" style="display:none;">
+                    <div class="tb-margin-bottom-10 tb-font-size-sm tb-font-cbold">
+                        Description Promotion
+                    </div>
+                    <div style="font-size: 14px;">
+                        Increase views on
+                        <span class="tb-v2v-promote-video-title tb-font-cbold"></span>
+                        by including a link to this video at the bottom (or top) of every other one of your videos.
+                        <div class="tb-margin-top-10" style="font-size: 14px;">
+                            Enter a message below that includes a link to this video and something that will persuade the user to click and watch. If you have an existing Description Promotion running,
+                            this one will replace it in all video descriptions.
+                        </div>
+                    </div>
+                    <div class="tb-padding-left-10 tb-margin-top-20">
+                        <div class="tb-font-cbold tb-margin-bottom-10" style="font-size: 14px;">
+                            Enter a Message
+                        </div>
+                        <textarea id="tb-v2v-promote-description-text" class="tb-v2v-promote-message-textarea tb-input-textfield tb-font-book" rows="4"></textarea>
+                    </div>
+                    <div class="tb-padding-left-10 tb-margin-top-20">
+                        <div class="tb-font-cbold tb-margin-bottom-5" style="font-size: 14px;">
+                            Message Position
+                        </div>
+                        <div>
+                            <div class="tb-material-radio-container">
+                                <input type="radio" class="tb-material-radio" name="description-position" value="random" id="tb-v2v-description-start" />
+                                <label class="tb-material-radio-label" for="tb-v2v-description-start">Start of Description</label>
+                            </div>
+                            <div class="tb-material-radio-container">
+                                <input type="radio" class="tb-material-radio" name="description-position" value="random" id="tb-v2v-description-end" checked="checked" />
+                                <label class="tb-material-radio-label" for="tb-v2v-description-end">End of Description</label>
+                            </div>
+                            <div class="tb-material-radio-container">
+                                <input type="radio" class="tb-material-radio" name="description-position" value="random" id="tb-v2v-description-remove" />
+                                <label class="tb-material-radio-label tb-font-color-red" for="tb-v2v-description-remove">Remove from Description</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Summary -->
+                <div id="tb-v2v-promote-summary-container" style="display:none;">
+                    <!-- Success message -->
+                    <div id="tb-v2v-promote-success" class="tb-v2v-promote-success-message">
+                        <div class="tb-font-medium tb-font-size-sm">
+                            <img id="tb-v2v-promote-bulk-descriptions-status-complete" src="{PLUGIN_FILE_ROOT}/images/modules/channelbackup/backup-status-check.png" style=" position:relative; top:2px; width: 15px;" /> Success!
+                        </div>
+                        Processing completed successfully :)<br />
+                        <textarea id="tb-v2v-failures" rows="4" class="tb-input-textfield tb-font-color-red" style="width:90%; display:none;"></textarea>
+                    </div>
+                    <!-- Free users limit -->
+                    <div id="tb-v2v-promote-toomany-free" style="display:none;">
+                        <span class="tb-font-cbold">LIMIT:</span> Due to YouTube API Quota Limitations,
+                        we can now only allow free users to run Vid2Vid promotions on a maximum of 250 videos.
+                        If you want to run a Vid2Vid promotion on up to 5,000 videos, you must <a class="tv-v2v-upgrade tb-font-medium" target="_blank">Upgrade</a> to
+                        a Pro or higher license.
+                    </div>
+                    <!-- Pro or higher license limit -->
+                    <div id="tb-v2v-promote-toomany-paid" style="display:none;">
+                        <span class="tb-font-cbold">LIMIT:</span>  Due to YouTube API Quota Limitations, we can now only allow users to run a Vid2Vid promotion on max of 5,000 videos.
+                    </div>
+
+                    <!-- Summary Table -->
+                    <div class="tb-padding-15">
+                        <div class="tb-font-cbold tb-font-size-sm tb-margin-bottom-10">
+                            Summary / Status
+                        </div>
+                        <!-- Table -->
+                        <table class="tb-v2v-promote-summary-table">
+                            <tr class="tb-font-cbold">
+                                <th class="tb-left tb-font-cbold" style="width:290px; font-size:14px; padding: 8px 5px;">Promotion Method</th>
+                                <th class="tb-center tb-font-cbold" style="font-size:14px; padding: 8px 5px;">Status</th>
+                            </tr>
+                            <!-- Featured Promotion -->
+                            <tr style="display:none">
+                                <td class="tb-left" style="padding: 8px 5px;">
+                                    &nbsp;Featured Video Promotion
+                                </td>
+                                <td class="tb-center">
+                                    <img id="tb-v2v-promote-featured-video-status-processing" src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" style="display:none; position:relative; top:3px;" />
+                                    <img id="tb-v2v-promote-featured-video-status-complete" src="{PLUGIN_FILE_ROOT}/images/icons/check.png" style="display:none" />
+                                    <span id="tb-v2v-promote-featured-video-status" class="tb-font-color-green"></span>
+                                </td>
+                            </tr>
+                            <!-- Description Promotion -->
+                            <tr>
+                                <td class="tb-left" style="padding: 8px 5px;">
+                                    &nbsp;Description Promotion
+                                    <span class="tb-v2v-remove-confirm tb-margin-left-2 tb-font-color-red" style="display:none;">(remove)</span>
+                                </td>
+                                <td class="tb-center" style="padding: 8px 5px;">
+                                    <span id="tb-v2v-promote-bulk-descriptions-status-processing" class="tb-spinner" style="display:none; position:relative; top:3px;"></span>
+                                    <img id="tb-v2v-promote-bulk-descriptions-status-complete" src="{PLUGIN_FILE_ROOT}/images/icons/check.png" style="display:none" />
+                                    <span id="tb-v2v-promote-bulk-descriptions-status" class="tb-font-color-green"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--VID2VID buttons-->
+                <div class="tb-padding-15">
+                    <div class="tb-v2v-promote-buttons ">
+                        <a class="tb-btn tb-btn-sm tb-btn-danger" id="tb-v2v-promote-cancel" style="float:left;margin-right:10px">
+                            Cancel
+                        </a>
+
+                        <a class="tb-btn tb-btn-sm tb-btn-secondary tb-float-left" id="tb-v2v-promote-back" style="display:none;">
+                            Back
+                        </a>
+
+                        <a class="tb-btn tb-btn-sm tb-btn-secondary tb-float-right" id="tb-v2v-promote-continue">
+                            Continue
+                        </a>
+
+                        <a class="tb-btn tb-btn-sm tb-btn-success tb-float-right" id="tb-v2v-promote-kickoff" style="display:none">
+                            Start Promotions!
+                        </a>
+                        <a class="tb-btn tb-btn-sm tb-btn-danger" id="tb-v2v-promote-stop" style="display:none;">
+                            Stop Processing
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div> 
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

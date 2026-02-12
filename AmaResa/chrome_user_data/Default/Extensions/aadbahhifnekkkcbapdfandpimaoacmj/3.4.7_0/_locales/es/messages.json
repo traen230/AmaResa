@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Con él, puede encontrar fácilmente fuentes de productos en Alibaba, AliExpress, 1688, Taobao y Yiwugo."
+   },
+   "EXTENSION_NAME": {
+      "message": "Búsqueda de AliPrice por imagen para Alibaba"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Capturar para buscar por imagen"
+   },
+   "context_menus_goote_trans": {
+      "message": "Traducir página/Mostrar original"
+   },
+   "context_menus_search_by_image": {
+      "message": "Búsqueda por imagen en $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Captura a $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Capturar para traducir"
+   }
+}

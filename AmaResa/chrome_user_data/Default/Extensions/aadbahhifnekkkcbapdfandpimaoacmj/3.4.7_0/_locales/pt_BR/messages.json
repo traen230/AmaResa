@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "A pesquisa AliPrice por imagem permite que você encontre facilmente os produtos de origem em sites de comércio eletrônico."
+   },
+   "EXTENSION_NAME": {
+      "message": "Pesquisa de imagens do Alibaba"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Pesquisa de captura de tela para o mesmo estilo"
+   },
+   "context_menus_goote_trans": {
+      "message": "Traduzir página/Mostrar original"
+   },
+   "context_menus_search_by_image": {
+      "message": "Pesquisa por imagem no $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Captura para $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Capture para traduzir"
+   }
+}

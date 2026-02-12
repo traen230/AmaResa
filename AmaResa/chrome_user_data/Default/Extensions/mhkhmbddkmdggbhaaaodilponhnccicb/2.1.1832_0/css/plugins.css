@@ -1,0 +1,326 @@
+﻿
+
+/*auto complete*/
+
+#tb-tagautocomplete-menu {
+    border-radius: 8px;
+    max-width: 320px;
+}
+
+#tb-tagautocomplete-menu > * {
+    font-family: var(--font-family-pn);
+}
+
+
+.tb-tagautocomplete-menu-container {
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+    -webkit-box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+.tb-tagautocomplete-content-container {
+    background: var(--color-brand-dark-blue-50);
+}
+.tb-tagautocomplete-element {
+    position: relative;
+}
+
+.tb-tagautocomplete-menu-item-highlight {
+    background-color: #f0f0f0;
+}
+
+
+.tb-tagautocomplete-menu-item-text {
+    font-weight: 600;
+}
+
+.tb-tagautocomplete-menu-items {
+    padding: 5px;
+    max-height: 250px;
+    min-width: 300px;
+    overflow-y: auto;
+    margin-left: 0.7em;
+}
+
+.tb-tagautocomplete-paywall-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    left: 0; 
+    top: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    backdrop-filter: blur(4px); 
+    background: rgb(255 255 255 / 10%);
+}
+
+.tb-tagautocomplete-paywall-message {
+    text-align: center; 
+    width: 70%;
+    padding: 20px;
+    color: #fff; 
+    border-radius: 10px; 
+    line-height: 1.5; 
+    box-shadow: 0 5px 10px 2px rgb(0,0,0,0.2);
+    background: #0C1942 url('chrome-extension://__MSG_@@extension_id__/images/rst-bg.png') no-repeat bottom;
+}
+
+.tb-kwe-upgrade-lock {
+    width: 24px;
+    height: 24px;
+    color: rgba(25, 52, 138, 1);
+}
+
+
+.tb-tagautocomplete-paywall-message a:not(.tb-tagautocomplete-paywall-cta) {
+    color: #fff;
+    text-decoration: underline;
+}
+.tb-tagautocomplete-paywall-message a:not(.tb-tagautocomplete-paywall-cta) strong {
+    color: #29DAC5;
+}
+
+.tb-tagautocomplete-paywall-message span {
+    font-weight: bold;
+}
+
+.tb-tagautocomplete-paywall-gradient {
+    background: #4CAAED;
+    background: linear-gradient(to top left, #4CAAED 0%, #29DAC5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.tb-tagautocomplete-paywall-cta {
+    display: inline-block; 
+    margin: 16px auto;
+    padding: 7px 30px; 
+    background: #68EFDA; 
+    border-radius: 99px; 
+    color: #1D2327;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tb-tagautocomplete-header {
+    color: white;
+    background-color: #1D2327;
+    border: none;
+    padding: 13px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tb-tagautocomplete-header-left {
+   display: flex;
+    align-items: center;
+}
+
+.tb-tagautocomplete-header svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    fill-rule: evenodd;
+    border-radius: 9999px;
+    padding: 5px;
+    fill: var(--color-text-primary);
+    background-color: var(--color-white);
+    margin-right: 3px;
+}
+
+.tb-tagautocomplete-header span {
+    vertical-align: middle; 
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 7px;
+    color: white;
+}
+
+.tb-tagautocomplete-header i {
+    vertical-align: middle;
+    text-decoration: none;
+    height: 24px;
+    width: 24px;
+}
+
+.tb-tagautocomplete-footer {
+    background-color: #FAFAFF;
+    padding: 16px 0;
+    border-top: solid 1px rgb(221, 221, 221);
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
+
+.tb-tagautocomplete-footer span {
+    color: #1D2327;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.tb-tagautocomplete-footer a {
+    color: var(--color-link-primary);
+    text-decoration: underline;
+}
+
+.tb-tagautocomplete-footer a:hover {
+    color: var(--color-neutral-700);
+    text-decoration: underline;
+}
+
+.tb-tagautocomplete-tag {
+    font-size: 13px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    color: var(--color-brand-dark-blue-900-default);
+    cursor: pointer;
+    height: 22px;
+    line-height: 8px;
+    padding: 0px 8px 0px 7px;
+    border: 1px solid var(--color-brand-dark-blue-200);
+    border-radius: 4px;
+    background: white;
+    margin-bottom: var(--spacing-8);
+    width: max-content;
+}
+
+.tb-tagautocomplete-tag.tb-autocomplete-selected{
+    color: var(--color-brand-dark-blue-900-default);
+    border: 1px solid var(--color-brand-dark-blue-900-default);
+    background-color: var(--color-brand-dark-blue-100);
+}
+
+.tb-tagautocomplete-tag i {
+ margin-right: var(--spacing-4);
+}
+
+.tb-tagautocomplete-tag:hover{
+    background-color: #ddd;
+}
+
+.tb-tagautocomplete-suggested-tags {
+    padding: 6px 14px !important;
+}
+
+.tb-tagautocomplete-header-right {
+    float: right;
+    opacity: .8;
+    cursor: pointer;
+} 
+
+.tb-tagautocomplete-header-right i {
+    font-size: 24px;
+  }
+
+  .tb-tagautocomplete-rst-descr {
+    margin: 1em;
+    color: #1D2327;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 372px;
+}
+
+.tb-tagautocomplete-rst-descr span {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 0.5em;
+}
+
+.tb-tagautocomplete-menu-upgrade {
+    text-align: center;
+    margin-top: 2px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: none;
+}
+ 
+.tb-tagautocomplete-menu-upgrade-img {
+    position: relative;
+    left: -4px;
+    z-index: 999;
+    top: -13px;
+}
+
+.tb-tagautocomplete-menu-upgrade-text {
+    z-index: 1000;
+    width: 300px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 200%;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid 2px #dadada;
+    border-radius: 7px;
+    padding:5px 0;
+}
+
+.tb-tagautocomplete-menu-upgrade-text img {
+    position: relative;
+    top: 3px;
+}
+
+.tb-tagautocomplete-menu-upgrade-text a {
+    cursor: pointer; 
+    font-weight: 500; 
+    padding: 2px 0 5px;
+}
+
+/*playlist select*/
+.playlistSelectMutliSelect {
+    display: none;
+    padding: 2px 15px 2px 5px;
+    top: 2px;
+    width: 454px;
+    list-style: none;
+    height: 150px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 3px;
+    overflow: auto;
+}
+
+.playlistSelectMutliSelectListItem {
+    padding: 6px 6px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.playlistSelectCount {
+    font-size: 11px;
+    color: green
+}
+
+
+
+.tbCommentFormatterBold {
+    font-weight: 500;
+}
+
+.tbCommentFormatterItalic {
+    font-style: italic;
+}
+
+.tbCommentFormatterStrikethrough {
+    text-decoration: line-through;
+}

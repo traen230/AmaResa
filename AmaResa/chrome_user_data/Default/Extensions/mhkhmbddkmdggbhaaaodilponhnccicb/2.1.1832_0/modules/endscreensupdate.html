@@ -1,0 +1,338 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-endscreens-update-container" class="tb-module-template draggable-container" style="display:none; width:700px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Bulk Update End Screen&nbsp;<span class="tb-endscreens-update-step-number"></span>
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkupdateendscreens" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div class="tb-endscreens-update-step1">
+                    <div>
+                        <div class="tb-margin-top10 tb-margin-left10">
+                            <div id="tb-endscreens-update-step-target-title" class="tb-font-size13 tb-margin-bottom10">
+                                <b>1) </b>Find
+                                <select class="tb-endscreens-update-elementtype-select tb-dropdown-menu tb-bulk-dropdown tb-width150">
+                                    <option selected="selected" value="video">Video Elements</option>
+                                    <option value="playlist">Playlist Elements</option>
+                                </select>
+                                where the
+                                <select class="tb-endscreens-update-target-select tb-dropdown-menu tb-bulk-dropdown tb-width125">
+                                    <option class="tb-endscreens-update-cardtype-video" selected="selected" value="videoUrl">Video URL</option>
+                                    <option class="tb-endscreens-update-cardtype-playlist" value="playlistUrl">Playlist URL</option>
+                                </select>
+                                is <input class="tb-endscreens-update-target-input-field tb-material-input tb-bulk-input tb-width250" type="text" />
+                            </div>
+
+                        </div>
+                        <div class="tb-margin-top20 tb-margin-left10">
+                            <div id="tb-endscreens-update-step-action-title" class="tb-margin-bottom10"><b>2) </b>Update Matching End Screen Elements:</div>
+                            <div style="display:none" class="tb-endscreens-update-cardtype-video-container">
+                                <div class="tb-margin-top10">
+                                    <div class="tb-material-checkbox-container">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" class="tb-endscreens-update-action-video tb-endscreens-update-action-option tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            <span class="tb-endscreens-update-action-option-playlistorvideourl">Set Video URL to</span>
+                                        </label>
+                                    </div>
+                                    <input class="tb-endscreens-update-action-video-input tb-endscreens-update-action-input tb-material-input tb-bulk-input tb-width350" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+
+                <div class="tb-endscreens-update-step2">
+                    <div id="tb-endscreens-update-step-2-title" class="tb-bulk-instructions">Which videos do you want to search?</div>
+                    <div class="tb-material-radio-container tb-margin-top10">
+                        <input name="tb-endscreens-update-method" data-method="3" id="tb-endscreens-update-method-full" type="radio" class="tb-material-radio" checked="checked"/>
+                        <label for="tb-endscreens-update-method-full" class="tb-material-radio-label tb-bulk-radio-label">
+                            I want to search a full list of <b>all</b> my videos
+                        </label>
+
+                        <div class="tb-margin-left25 tb-material-checkbox-container tb-bulk-checkbox-container">
+                            <label class="tb-material-checkbox-label tb-font-color-gray">
+                                <input id="tb-endscreens-update-onlyLoadFirstPage" class="tb-material-checkbox-input" type="checkbox" />
+                                <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                Only load my most recent
+                                <input id="tb-endscreens-update-onlyLoadFirstPage-number" class="tb-width35 tb-material-input tb-bulk-input" type="text" value="50" /> videos (faster)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container">
+                        <input name="tb-endscreens-update-method" data-method="0" id="tb-endscreens-update-method-ids" type="radio" class="tb-material-radio"/>
+                        <label for="tb-endscreens-update-method-ids" class="tb-material-radio-label">
+                            A list of Video IDs that I specify
+                        </label>
+                        <div class="tb-margin-left25">
+                            <input disabled="disabled" id="tb-endscreens-update-input-ids" class="tb-material-input tb-bulk-input" type="text" style="width: 300px;" placeholder="Example: gXDMoiEkyuQ, Cpc-t-Uwv1I, 8fE29CHJMCg" />
+                            <span class="tb-font-size11 tb-bold" id="tb-endscreens-update-input-ids-status"></span>
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container">
+                        <input name="tb-endscreens-update-method" data-method="1" id="tb-endscreens-update-method-playlist" type="radio" class="tb-material-radio" />
+                        <label for="tb-endscreens-update-method-playlist" class="tb-material-radio-label">
+                            All videos within one of my playlists
+                        </label>
+                        <!-- playlist select plugin -->
+                        <div id="tb-endscreens-update-input-playlist" style="margin-left:27px;"></div>
+                    </div>
+                    <div class="tb-material-radio-container">
+                        <input name="tb-endscreens-update-method" data-method="2" id="tb-endscreens-update-method-search" type="radio" class="tb-material-radio" />
+                        <label for="tb-endscreens-update-method-search" class="tb-material-radio-label">
+                            Search a list of videos that match my Search Phrase below.
+                        </label>
+                        <div class="tb-margin-left25">
+                            <input disabled="disabled" id="tb-endscreens-update-input-search" class="tb-material-input tb-bulk-input" type="text" style="width: 300px;" placeholder="Example: Avengers" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-endscreens-update-step3">
+                    <div class="tb-bulk-instructions tb-bulk-instructions--destination">
+                            <span id="tb-endscreens-update-what-videos2">
+                                Which videos do you want to update end screens on?
+                            </span>
+
+                        <div class="tb-bulk-filter">
+                            <span class="tb-bulk-filter-text">Filter</span>
+                            <select class="tb-endscreens-update-filter tb-dropdown-menu tb-dropdown-menu--small">
+                                <option value="all">Show All Videos</option>
+                                <option value="public">Only Public Videos</option>
+                                <option value="unlisted">Only Unlisted Videos</option>
+                                <option value="private">Only Private Videos</option>
+                                <option value="publicunlisted">Public and Unlisted Videos</option>
+                                <option value="privateunlisted">Private and Unlisted Videos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="tb-margin-bottom10">
+                        <div class="tb-bold tb-font-size15">
+                            Selected: (<span class="tb-endscreens-update-destination-selected-count">0</span>/<span class="tb-endscreens-update-destination-total-count">0</span>)
+                        </div>
+                        <br />
+                        <div>
+                            <a class="tb-endscreens-update-select-all-checkboxes">All</a> | <a style="" class="tb-endscreens-update-select-no-checkboxes">None</a>
+                        </div>
+                    </div>
+                    <div style="margin-top: 0px; height: 290px; overflow-y: scroll; overflow: auto;">
+                        <div class="tb-endscreens-update-loading-videos" style="margin-top: 40px; margin-left: 15px;">
+                            <span class="tb-spinner"></span><span style="position:relative; top:-3px;" class="tb-endscreens-update-loading-text"> Loading your videos...</span><br /><br /><span class="tb-endscreens-update-loading-text-search"></span>
+                            <div style="font-size: 12px; font-weight: bold; margin-left:20px" class="tb-endscreens-loading-count-container">
+                                <span class="tb-endscreens-update-loading-count">0</span> of
+                                <span class="tb-endscreens-update-loading-count-total">?</span> total Videos.
+                            </div>
+                        </div>
+                        <div class="tb-endscreens-update-no-videos" style="margin-top: 40px; margin-left: 15px; display:none;">
+                            No Videos with End Screen Elements found matching your criteria.
+                        </div>
+                        <div class="tb-endscreens-update-destination-list" style="display: none;">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-endscreens-update-step4">
+
+                    <div class="tb-endscreens-update-confirm" style="display: none">
+                        <div id="tb-endscreens-update-confirm-container">
+                            <div id="tb-endscreens-update-confirm-statement" class="tb-bulk-instructions">
+                                Please confirm that you want to update <span style="font-size: 1.2em" class="tb-endscreens-update-count"></span> End Screen Element<span class="tb-endscreens-update-count-s">s</span>.
+                            </div>
+                            <div class="tb-material-checkbox-container tb-bulk-checkbox-container tb-margin-top25">
+                                <label class="tb-material-checkbox-label tb-bulk-confirm-label">
+                                    <input type="checkbox" class="tb-endscreens-update-confirm-checkbox tb-material-checkbox-input" />
+                                    <span class="tb-material-checkbox-box tb-margin-right5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                    Yes, continue with bulk <span id="tb-endscreens-update-confirm-text">updating</span>.
+                                </label>
+                            </div>
+                            <div id="tb-cards-update-2k-warning" class="tb-margin10 tb-font-color-red" style="width: 470px; font-size:12px; line-height:17px; display:none;">
+                                <b>WARNING</b>
+                                You have selected more than 2,000 videos. We don't recommend processing more than 2,000 videos at a time because of browser limitations. Please <a target="_blank" href='https://tubebuddy.zendesk.com/hc/en-us/articles/9324421035547'>read more here</a> about bulk processing limits.
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tb-endscreens-update-status" style="display: none">
+
+                        <div class="tb-bulk-instructions">
+
+                            <div style="margin-left:20px; font-weight:normal; float:right; margin-right:15px;">
+                                <div id="tb-endscreens-update-done" class="tb-bulk-header-status tb-font-color-green" style="display:none;">
+                                    <i class="material-icons tb-font-size16 tb-margin-right4">check_circle_outline</i>
+                                    Processing complete!
+                                </div>
+                                <div id="tb-endscreens-update-stopped" class="tb-bulk-header-status tb-font-color-red" style="display:none;">
+                                    <i class="material-icons tb-font-size16 tb-margin-right4">error_outline</i>
+                                    Processing Stopped!
+                                </div>
+                            </div>
+
+                            <span id="tb-endscreens-update-working">
+                                    <span class="tb-spinner"></span>
+
+                                    <span style="display:none">
+                                        <img id="tb-endscreens-update-current-image"  alt="current video thumbnail" src="" style="height: 20px; position: relative; top: 5px;" />
+                                        <a id="tb-endscreens-update-current-video" target="_blank"></a>
+                                    </span>
+                                </span>
+
+                            <span class="tb-bold tb-font-size15">
+                                    Status:
+                                    <span id="tb-endscreens-update-status-count"></span>                                    
+                                </span>
+
+                            <div id="tb-endscreens-update-progress-container" class="tb-font-color-green tb-margin-top15 tb-font-size11 tb-bold"></div>
+
+                        </div>
+
+                        <div style="display:none">
+                            <div id="tb-endscreens-update-results" style="width:660px; height:200px; max-height:200px; overflow-y:scroll; margin-top:20px; padding-top:10px; padding-left:5px;">
+                                <div style="float: right; width: 330px;">
+                                    <b>Completed</b>
+                                    <div id="tb-endscreens-update-completed-list"></div>
+                                </div>
+                                <div style="">
+                                    <b>To be Processed</b>
+                                    <div id="tb-endscreens-update-queue-list"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="tb-endscreens-update-progress-v2-container">
+                            <div style="float: right; width: 330px;">
+
+                                <div class="tb-font-color-green tb-margin-bottom10 tb-bold">
+                                    Videos Completed Successfully
+
+                                    &nbsp;&nbsp; (<span style="" id="tb-endscreens-update-completed-list2-count">0</span>)
+                                </div>
+                                <div id="tb-endscreens-update-completed-list2" style="height:275px; overflow-y:auto; display:none;"></div>
+                                <div id="tb-endscreens-update-completed-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:15px;">
+                                    (none)
+                                </div>
+                            </div>
+
+                            <div style="width:330px;">
+                                <div class="tb-margin-bottom10 tb-bold">Next 3 Videos to be Processed</div>
+                                <div id="tb-endscreens-update-queue-complete-list2" style="display:none; padding:15px 10px; height:80px;">
+                                    (no more)
+                                </div>
+                                <div id="tb-endscreens-update-queue-list2" style="height:140px;">
+
+                                </div>
+
+                            </div>
+                            <div style="margin-top:15px; width:330px;">
+
+                                <div class="tb-margin-bottom10 tb-bold tb-font-color-red">
+                                    <div style="float:left">
+                                        Videos Completed with Errors
+
+                                        &nbsp;&nbsp; (<span style="" id="tb-endscreens-update-error-list2-count">0</span>)
+                                    </div>
+                                    <div id="tb-endscreens-update-error-copy-container" class="tb-cursor-pointer tb-font-color-blue" style="display:none;float:left;margin-left:5px;">
+                                        <a title="Copy video ids" id="tb-endscreens-update-error-copy" data-clipboard-text="">
+                                            <i class="material-icons tb-font-size16">file_copy</i>
+                                            <span class="tb-font-size10 tb-move-up4">Copy video ids</span>
+                                        </a>
+                                    </div>
+                                    <div style="clear:left"></div>
+                                </div>
+                                <div id="tb-endscreens-update-error-list2" style="height:120px; overflow:auto;">
+
+                                </div>
+                                <div id="tb-endscreens-update-error-none-list2" style="height:120px; overflow:auto; margin-left:10px; padding-top:15px;">
+                                    (none)
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer">
+            <div style="display:flex; justify-content:space-between;">
+                <div>
+                    <button class="tb-btn-grey tb-endscreens-update-back">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <button class="tb-btn-blue tb-endscreens-update-kickoff" style="display: none">
+                        Start Updating!
+                    </button>
+                    <button class="tb-btn-blue tb-endscreens-update-continue">
+                        Continue
+                    </button>
+                    <button class="tb-btn-red" id="tb-endscreens-update-stop" style="display: none;">
+                        Stop Copying
+                    </button>
+                    <button id="tb-endscreens-done-close" class="tb-btn-blue tb-module-close" style="display:none;">
+                        Done
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+<div style="display:none" type="text/template" id="tb-endscreens-update-destination-template">
+    <div data-video-id="{0}" class="tb-endscreens-update-destination-video-template tb-endscreens-update-destination-row tb-endscreens-destination-row tb-endscreens-destination-row-main" data-privacy="{6}">
+        <div style="display:flex; align-items:center; max-width:550px;">
+            <img data-video-id="{0}" src='{1}' alt="{3} video thumbnail" height="30" class="tb-margin-right5" />
+            <span class="tb-destination-video-title">{3}</span>
+            <a data-video-id="{0}" href="{2}" title="{2}" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+        </div>
+        <span style="position:relative; margin-right: 5px;float: right;"><strong>{4}</strong> {5} found</span>
+    </div>
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-endscreens-update-processing-template2 tb-bulk-processing-video-row" style="display: none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' alt="video thumbnail #VIDEOTITLE#" class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a data-video-id="#VIDEOID#" href="#HREF#" class="tb-bulk-view-video tb-margin-left10" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-endscreens-update-processed-success tb-bulk-processing-video-row tb-bulk-processing-video-row--success" style="display:none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' alt="#VIDEOTITLE# thumbnail" class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a href="#HREF#" class="tb-bulk-view-video tb-margin-left10" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-endscreens-update-processed-error tb-bulk-processing-video-row tb-bulk-processing-video-row--error" data-video-id="#VIDEOID#" style="display:none;">
+    <div style="display:flex; align-items:center;">
+        <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' alt="#VIDEOTITLE# thumbnail" class="tb-margin-right5" style="height: 30px;" />
+        <span class="tb-destination-video-title">#VIDEOTITLE#</span><a href="#HREF#" class="tb-bulk-view-video tb-margin-left10" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+    </div>
+    <div class="tb-red tb-font-size12 tb-padding-top5 tb-bulk-processing-error-msg" style="width:295px;">#ERROR#</div>
+</div>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>📦 楽天 商品リサーチ</title>
+    <style>
+        body {
+            font-family: "メイリオ", "Segoe UI", sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 { font-size: 28px; margin-bottom: 20px; }
+        h3 { margin-top: 30px; font-size: 20px; }
+        ul { list-style: none; padding-left: 0; }
+        ul li::before { content: "📌 "; margin-right: 4px; }
+        .error-log li::before { content: "❌ "; color: red; }
+        .success-log li::before { content: "✅ "; color: green; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #0070c0; color: white; }
+        img { max-width: 60px; height: auto; }
+        a { color: #0070c0; }
+        .controls {
+            margin: 16px 0 8px; padding: 12px; background: #fff;
+            border: 1px solid #ddd; border-radius: 8px;
+        }
+        .controls label { margin-right: 8px; }
+        .hint { font-size: 12px; color: #666; }
+        .downloads a { margin-right: 12px; }
+    </style>
+</head>
+<body>
+    <h1>📦 楽天 商品リサーチ</h1>
+
+    <!-- ★ 閾値入力フォーム（同ページPOST想定） -->
+    <form method="post" class="controls">
+        <label for="threshold">非類似の判定閾値（0～1）：</label>
+        <input id="threshold" name="threshold" type="number" min="0" max="1" step="0.01"
+               value="{{ ('%.2f' % threshold) if threshold is defined else '0.70' }}">
+        <button type="submit">再実行</button>
+        <div class="hint">※ 「最大コサイン類似度 &lt; 閾値」を抽出（デフォルト 0.70）</div>
+    </form>
+
+    {% if logs %}
+    <h3>📝 処理ログ</h3>
+    <ul>
+        {% for log in logs %}
+            {% if "エラー" in log %}
+                <li class="error-log">{{ log }}</li>
+            {% elif "完了" in log or "保存しました" in log or "取得しました" in log %}
+                <li class="success-log">{{ log }}</li>
+            {% else %}
+                <li>{{ log }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- 既存の単一CSVリンク（後方互換） -->
+    {% if csv_filename %}
+        <p><a href="{{ url_for('download_file', filename=csv_filename) }}">📄 CSVをダウンロード</a></p>
+    {% endif %}
+
+    <!-- 任意：バックエンドで full_csv / candidate_csv を渡している場合のリンク表示 -->
+    {% if full_csv or candidate_csv %}
+    <div class="downloads">
+        {% if full_csv %}
+            <a href="{{ url_for('download_file', filename=full_csv) }}">📄 類似比較・フル結果CSV</a>
+        {% endif %}
+        {% if candidate_csv %}
+            <a href="{{ url_for('download_file', filename=candidate_csv) }}">🧪 独自商品候補CSV（類似度 &lt; {{ '%.2f' % threshold if threshold is defined else '0.70' }}）</a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if results %}
+    <h3>🔎 検索結果一覧（抽出条件：最大類似度 &lt; {{ '%.2f' % threshold if threshold is defined else '0.70' }}）</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>商品名</th>
+                <th>評価数</th>
+                <th>商品URL</th>
+                <th>画像</th>
+                <th>評価値</th>
+                <th>ランキング</th>
+                <th>類似度</th> <!-- ★ 追加 -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td><a href="{{ row[2] }}" target="_blank">リンク</a></td>
+                <td><img src="{{ row[3] }}" alt="商品画像"></td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td> <!-- ★ 類似度 -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    <p><a href="{{ url_for('index') }}">← トップページに戻る</a></p>
+</body>
+</html>

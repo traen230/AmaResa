@@ -1,0 +1,517 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-cards-container" class="tb-module-template draggable-container" style="display:none; width:885px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 id="tb-cards-title-block" class="tb-module-title">
+
+            </h1>
+            <div class="tb-module-help">
+                <a id="tb-cards-help-link" style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkcopycards" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-cards-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-cards-title" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+
+                <div id="tb-delete-options" style="display:none;">
+
+                    <div>
+                        <div class="tb-bulk-instructions">What Cards do you want to delete in bulk from your videos?</div>
+                        <div class="tb-padding-bottom10">
+                            <div class="tb-material-radio-container tb-font-size14">
+                                <input id="tb-cards-delete-all-option" class="tb-material-radio" type="radio" name="tbCardsbulkDeleteType" checked="checked" />
+                                <label for="tb-cards-delete-all-option" class="tb-material-radio-label tb-bulk-radio-label"> Delete <b>All</b> Cards</label>
+                            </div>
+                            <div class="tb-material-radio-container tb-font-size14">
+                                <input id="tb-cards-delete-link-option" class="tb-material-radio" type="radio" name="tbCardsbulkDeleteType" />
+                                <label for="tb-cards-delete-link-option" class="tb-material-radio-label tb-bulk-radio-label">Only Delete Cards that contain a link to URL</label>
+                                <div>
+                                    <input class="tb-material-input tb-bulk-input tb-margin-left25" type="text" style="width:200px" id="tb-delete-url" /><br />
+                                </div>
+                            </div>
+                            <div class="tb-material-radio-container tb-font-size14">
+                                <input id="tb-cards-delete-text-option" class="tb-material-radio" type="radio" name="tbCardsbulkDeleteType" />
+                                <label for="tb-cards-delete-text-option" class="tb-material-radio-label tb-bulk-radio-label">Only Delete Cards that have Teaser Text</label>
+                                <div>
+                                    <input class="tb-material-input tb-bulk-input tb-margin-left25" type="text" style="width:200px" id="tb-delete-text" />
+                                </div>
+                            </div>
+
+                            <div id="tb-cards-delete-partial-matches-container" class="tb-material-checkbox-container tb-bulk-checkbox-container" style="display:none;">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-cards-delete-partial-matches" class="tb-material-checkbox-input" type="checkbox" checked="checked" />
+                                    <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                    <span class="tb-margin-left5 tb-bulk-radio-label">Include partial matches on URL</span>
+                                </label>
+                                <div class="tb-bulk-text-green tb-padding-top15">
+                                    <span style="font-weight:500"> TIP:</span> If you want to delete Video Cards or Playlist Cards in bulk, select the "Include partial matches on URL" checkbox and then enter the Video Id or Playlist Id in the text field above.
+                                </div>
+                            </div>
+                            <div id="tb-cards-delete-partial-matches-container-text" class="tb-material-checkbox-container tb-bulk-checkbox-container" style="display:none;">
+                                <label class="tb-material-checkbox-label">
+                                    <input id="tb-cards-delete-partial-matches-text" class="tb-material-checkbox-input" type="checkbox" checked="checked" />
+                                    <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                    <span class="tb-margin-left5 tb-bulk-radio-label">Include partial matches on Text</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- step 2 -->
+                <div id="tb-cards-source" style="display: none;">
+
+                    <div style="margin-left: 5px; font-size: 16px; margin-top: 0px; line-height: 20px;">
+
+                        <div id="tb-cards-fetching" class="tb-height200" style="margin: 15px 5px;">
+                            <span class="tb-spinner"></span> &nbsp;Loading Video Cards
+                        </div>
+
+                        <div id="tb-cards-none" style="color: red; margin-top: 20px; display: none; margin-left: 10px;">
+                            <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png " /> <b>Uh oh!</b><br /> This video doesn't contain any Cards.
+                            <div style="margin-top: 15px;">
+                                Try choosing a different video.
+                            </div>
+                            <br /><br />
+                        </div>
+                        <div id="tb-cards-has" style="display: none;">
+
+                            <div class="tb-bulk-copy-selected-menu tb-bulk-instructions">
+                                <div class="">
+                                    Click on the Cards that you want to Copy
+                                    <div style="font-size: 12px;">
+                                        You can update the default <i>Text</i> and <i>Links</i> values within the Card boxes below
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="tb-font-size15 tb-bold">
+                                        Selected (<span id="tb-cards-selected-count">0</span>/<span id="tb-cards-total-count">0</span>)
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <a id="tb-cards-select-all-cards">All</a> | <a id="tb-cards-select-none-cards">None</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="tb-cards-list" class="tb-card-item-list-container tb-card-item-list-container--bulk ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- step 3 -->
+                <div id="tb-cards-method" class="tb-margin-bottom10" style="display: none;">
+                    <div id="tb-cards-step-2-title" class="tb-bulk-instructions">Which videos do you want to copy the selected Card(s) to?</div>
+                    <div class="tb-material-radio-container tb-margin-top10 tb-font-size14">
+                        <input class="tb-material-radio" checked name="tb-cards-method" data-method="3" id="tb-cards-method-full" type="radio" />
+                        <label for="tb-cards-method-full" class="tb-material-radio-label tb-bulk-radio-label">I want to see a full list of all my videos</label>
+
+                        <div class="tb-margin-left25 tb-material-checkbox-container tb-bulk-checkbox-container">
+                            <label class="tb-material-checkbox-label tb-font-color-gray">
+                                <input class="tb-material-checkbox-input tb-font-size14" id="tb-cards-onlyLoadFirstPage" type="checkbox" />
+                                <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                Only load my most recent
+                                <input id="tb-cards-onlyLoadFirstPage-number" class="tb-material-input tb-bulk-input tb-width35" type="text" value="50" /> videos (faster)
+                            </label>
+
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input class="tb-material-radio" name="tb-cards-method" data-method="0" id="tb-cards-method-ids" type="radio" />
+                        <label for="tb-cards-method-ids" class="tb-material-radio-label tb-bulk-radio-label">A list of Video IDs that I specify</label>
+                        <div>
+                            <input class="tb-material-input tb-bulk-input tb-width300 tb-margin-left25" disabled="disabled" id="tb-cards-input-ids" type="text" placeholder="Example: gXDMoiEkyuQ, Cpc-t-Uwv1I, 8fE29CHJMCg" />
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input class="tb-material-radio" name="tb-cards-method" data-method="1" id="tb-cards-method-playlist" type="radio"/>
+                        <label for="tb-cards-method-playlist" class="tb-material-radio-label tb-bulk-radio-label">All videos within one of my playlists</label>
+
+                        <div>
+                            <div class="tb-margin-left20" id="tb-cards-input-playlist"></div>
+                            <span style="font-size: 11px; font-weight: bold;" id="tb-cards-input-playlist-status"></span>
+                        </div>
+
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input class="tb-material-radio" name="tb-cards-method" data-method="2" id="tb-cards-method-search" type="radio" />
+                        <label for="tb-cards-method-search" class="tb-material-radio-label tb-bulk-radio-label">Show a list of videos that match my Search Phrase below</label>
+                        <div>
+                            <input class="tb-material-input tb-bulk-input tb-width300 tb-margin-left25" disabled="disabled" id="tb-cards-input-search" type="text" placeholder="Example: Avengers" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- step 4 -->
+                <div id="tb-cards-destination" style="display: none">
+                    <div class="tb-bulk-instructions tb-bulk-instructions--destination">
+
+                        <span id="tb-cards-what-videos2">
+                            Which Video(s) do you want to copy the Cards to?
+                        </span>
+
+                        <div class="tb-bulk-filter">
+                            <span class="tb-bulk-filter-text">Filter</span>
+                            <select class="tb-cards-filter tb-dropdown-menu tb-dropdown-menu--small">
+                                <option value="all">Show All Videos</option>
+                                <option value="public">Only Public Videos</option>
+                                <option value="unlisted">Only Unlisted Videos</option>
+                                <option value="private">Only Private Videos</option>
+                                <option value="publicunlisted">Public and Unlisted Videos</option>
+                                <option value="privateunlisted">Private and Unlisted Videos</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="tb-bulk-destination-header">
+                        <div class="tb-bulk-destination-header-row tb-bold tb-font-size15 tb-margin-bottom10">
+                            <span>
+                                <span>Selected</span>&nbsp;(<span id="tb-cards-destination-selected-count">0</span>/<span id="tb-cards-destination-total-count">0</span>)
+                            </span>
+                            <span class="tb-bulk-expand">Expand</span>
+                        </div>
+                        <div class="tb-bulk-destination-header-row">
+                            <div>
+                                <a style="" id="tb-cards-select-all-checkboxes">All</a> | <a style="" id="tb-cards-select-no-checkboxes">None</a>
+                            </div>
+                            <div class="tb-bulk-expand">
+                                <a id="tb-cards-expand-all">All</a> | <a id="tb-cards-collapse-all">None</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 0px; height: 290px; overflow-y: scroll; overflow: auto; border-bottom: solid 1px #eee;">
+                        <div id="tb-cards-loading-videos" style="margin-top: 40px; margin-left: 15px;">
+                            <span class="tb-spinner"></span> Loading all your Videos
+                            <span style="font-size: 12px; font-weight: bold;" id="tb-cards-loading-count-container">
+                                <span id="tb-cards-loading-count">0</span> of
+                                <span id="tb-cards-loading-count-total">?</span> total Videos.
+                            </span>
+                            <div style="margin-top: 15px; display:none;" id="tb-cards-rendering">
+                                Rendering videos on screen (this can take a few seconds)...
+                            </div>
+
+                        </div>
+                        <div id="tb-cards-destination-list" style="display: none;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- step 5 -->
+                <div id="tb-cards-confirm" class="tb-bulk-confirm-container" style="display: none">
+
+                    <div id="tb-cards-confirm-container">
+                        <div id="tb-cards-confirm-statement" class="tb-bulk-instructions">
+                            Are you sure you want to copy <span style="font-size: 1.2em" id="tb-cards-copy-count"></span> card<span id="tb-cards-copy-count-s">s</span>
+                            to <span style="font-size: 1.2em" id="tb-cards-copy-destination-count"></span> video<span id="tb-cards-copy-destination-count-s">s</span>?
+                        </div>
+                        <div id="tb-cards-delete-existing-warning" class="tb-cards-bulk-warning">
+                            <b>WARNING:</b>
+                            You have chosen to automatically delete all existing cards from the destination videos before copying new cards to them.
+                        </div>
+                        <div class="tb-material-checkbox-container tb-bulk-checkbox-container" style="padding-left:0;">
+                            <label class="tb-material-checkbox-label tb-bulk-confirm-label">
+                                <input class="tb-material-checkbox-input" type="checkbox" id="tb-cards-confirm-checkbox" />
+                                <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                Yes, continue to bulk <span id="tb-cards-confirm-text">copying</span>
+                            </label>
+                        </div>
+                        <div id="tb-cards-2k-warning" class="tb-cards-bulk-warning" style="display:none;">
+                            <b>WARNING:</b>
+                            You have selected more than 2,000 videos. We don't recommend processing more than 2,000 videos at a time because of browser limitations. Please <a target="_blank" href='https://tubebuddy.zendesk.com/hc/en-us/articles/9324421035547'>read more here</a> about bulk processing limits.
+                        </div>
+
+                        <div style="display:block" id="tb-cards-additional-options-containers">
+                            <div class="tb-bold tb-font-size14 tb-padding-bottom5 tb-margin-top15">
+                                Additional Options
+                            </div>
+                            <div class="tb-material-checkbox-container tb-bulk-checkbox-container tb-bulk-radio-label tb-padding-bottom5 tb-margin-bottom5 tb-margin-top5 tb-red">
+                                <label class="tb-material-checkbox-label">
+                                    <input class="tb-material-checkbox-input" type="checkbox" id="tb-cards-delete-existing" />
+                                    <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                    Delete all existing cards from destination videos before copying.
+                                </label>
+
+                            </div>
+
+                            <div class="tb-material-checkbox-container tb-bulk-checkbox-container  tb-bulk-radio-label">
+                                <label class="tb-material-checkbox-label">
+                                    <input class="tb-cards-placeholders tb-material-checkbox-input" type="checkbox" />
+                                    <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                    Convert placeholders in URLs
+                                </label>
+                            </div>
+
+                            <div class="tb-material-checkbox-container tb-bulk-checkbox-container">
+                                <label class="tb-material-checkbox-label">
+                                    <input class="tb-material-checkbox-input" type="checkbox" id="tb-cards-skip-existing" />
+                                    <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                    <span class="tb-move-down2">Skip videos that already have cards.</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- processing -->
+                <div id="tb-cards-status" style="display: none">
+
+                    <div class="tb-bulk-instructions">
+
+                        <div style="margin-left:20px; font-weight:normal; float:right; margin-right:15px;">
+                            <div id="tb-cards-done" class="tb-bulk-header-status tb-bulk-text-green" style="display: none;">
+                                <i class="material-icons tb-font-size16 tb-margin-right4">check_circle_outline</i>
+                                Processing complete!
+                            </div>
+                            <div id="tb-cards-stopped" class="tb-bulk-header-status tb-red" style="display:none;">
+                                <i class="material-icons tb-font-size16 tb-margin-right4">error_outline</i>
+                                Processing Stopped!
+                            </div>
+                        </div>
+
+                        <span id="tb-cards-working">
+                            <span class="tb-spinner"></span>
+
+                            <span style="display:none">
+                                <img id="tb-cards-current-image" src="" style="height: 20px; position: relative; top: 5px;" />
+                                <a id="tb-cards-current-video" target="_blank"></a>
+                            </span>
+                        </span>
+
+                        <span class="tb-bold tb-font-size15">
+                            Status:
+                            <span id="tb-cards-status-count"></span>
+                        </span>
+
+
+                        <div id="tb-cards-progress-container" class="tb-bulk-text-green tb-margin-top15 tb-font-size11 tb-bold"></div>
+
+                    </div>
+
+
+                    <div id="tb-cards-progress-v2-container">
+                        <div style="float: right; width: 330px;">
+
+                            <div class="tb-bulk-text-green tb-margin-bottom10 tb-bold">
+                                Videos Completed Successfully
+                                &nbsp; (<span style="" id="tb-cards-completed-list2-count">0</span>)
+                            </div>
+                            <div id="tb-cards-completed-list2" style="height:275px; overflow-y:auto; display:none;"></div>
+                            <div id="tb-cards-completed-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:20px;">
+                                (none)
+                            </div>
+                        </div>
+
+                        <div style="width:330px;">
+                            <div class="tb-margin-bottom10 tb-bold">Next 3 Videos to be Processed</div>
+                            <div id="tb-cards-queue-complete-list2" style="display:none; margin-left:15px; padding-top:20px; height:80px;">
+                                (no more)
+                            </div>
+                            <div id="tb-cards-queue-list2" style="height:144px;">
+
+                            </div>
+
+                        </div>
+                        <div style="margin-top:15px; width:330px;">
+
+                            <div class="tb-margin-bottom10 tb-bold tb-red">
+                                <div style="float:left">
+                                    Videos Completed with Errors
+
+                                    &nbsp; (<span style="" id="tb-cards-error-list2-count">0</span>)
+                                </div>
+                                <div id="tb-cards-error-copy-container" style="display:none;" data-clipboard-text="" >
+                                    <a title="Copy video ids" id="tb-cards-error-copy">
+                                        <i class="material-icons tb-font-size16">file_copy</i>
+                                    </a>
+
+                                    <span class="tb-font-size10 tb-move-up4">Copy video ids</span></div>
+                                <div style="clear:left"></div>
+                            </div>
+                            <div id="tb-cards-error-list2" style="height:120px; overflow:auto;display:none;">
+
+                            </div>
+                            <div id="tb-cards-error-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:20px;">
+                                (none)
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer tb-bulk-footer">
+            <div>
+                <button class="tb-btn-grey tb-margin-right10" id="tb-cards-back-bulk" style="display: none;">
+                    Back
+                </button>
+
+                <button class="tb-btn-grey" id="tb-cards-back" style="display: none;">
+                    Back
+                </button>
+            </div>
+
+            <div>
+                <button class="tb-btn-blue tb-right" id="tb-cards-continue" disabled="disabled" style="display: none; float:right;">
+                    Continue
+                </button>
+                <button class="tb-btn-blue tb-right" id="tb-cards-kickoff" style="display: none; float:right;">
+                    Start Copying!
+                </button>
+                <button class="tb-btn-red tb-right" id="tb-cards-stop" style="display: none; float:right;">
+                    Cancel Copying
+                </button>
+                <button id="tb-cards-done-close" class="tb-btn-blue tb-right tb-module-close" style="display:none; float:right;">
+                    Done
+                </button>
+
+            </div>
+
+
+        </div>
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+<!-- templates -->
+<div style="display: none">
+    <div class="tb-cards-destination-row" data-privacy="#PRIVACY#">
+        <div class="tb-cards-destination-row-main">
+            <div style="display: flex; align-items: center; max-width:600px;">
+                <img src="#VIDEOTHUMBNAIL#" height="30" class="tb-margin-right5" />
+                <span class="tb-destination-video-title">#VIDEOTITLE#</span><a class="tb-bulk-view-video tb-margin-left10" target="_blank" href="https://www.youtube.com/watch?v=#VIDEOID#" title="https://www.youtube.com/watch?v=#VIDEOID#"><i class="material-icons tb-font-size13">open_in_new</i></a>
+            </div>
+            <a class="tb-cards-cards-item-customize" style="font-size: 10px;" #CUSTOMDISPLAY#" data-video-id="#VIDEOID#">Customize &#9660;</a>
+        </div>
+        <div data-video-id="#VIDEOID#" class="tb-cards-cards-item-options" style="display: none">#OPTIONS#</div>
+    </div>
+    <div class="tb-cards-destination-option-video-row tb-bulk-destination-row-customize" data-card-default-id="#DATA-CARD-DEFAULT-ID#" data-video-id="#VIDEOID#">
+        <div class="tb-card-item-type">Video</div>
+        <div>
+            <span class="tb-card-item-input-label">Video Id</span>
+            <input class="tb-cards-link-edit tb-cards-video-url tb-material-input tb-card-item-input" data-video-id="#VIDEOID#" data-card-id="#CARDLINKID#" type="text" value="#LINK#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Custom Message</span>
+            <input class="tb-cards-link-edit tb-cards-video-custom-message tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#CALL#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Teaser Text</span>
+            <input class="tb-cards-link-edit tb-cards-video-teaser tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#TEASER#" />
+        </div>
+    </div>
+    <div class="tb-cards-destination-option-playlist-row tb-bulk-destination-row-customize" data-card-default-id="#DATA-CARD-DEFAULT-ID#" data-video-id="#VIDEOID#">
+        <div class="tb-card-item-type">Playlist</div>
+        <div>
+            <span class="tb-card-item-input-label">Playlist Id</span>
+            <input class="tb-cards-link-edit tb-cards-playlist-url tb-material-input tb-card-item-input" data-video-id="#VIDEOID#" data-card-id="#CARDLINKID#" type="text" value="#LINK#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Custom Message</span>
+            <input class="tb-cards-link-edit tb-cards-playlist-custom-message tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#CALL#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Teaser Text</span>
+            <input class="tb-cards-link-edit tb-cards-playlist-teaser tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#TEASER#" />
+        </div>
+    </div>
+    <div class="tb-cards-destination-option-associated-row tb-bulk-destination-row-customize" data-card-default-id="#DATA-CARD-DEFAULT-ID#" data-video-id="#VIDEOID#">
+        <div class="tb-card-item-type">Link</div>
+        <div>
+            <span class="tb-card-item-input-label">Title</span>
+            <input class="tb-cards-link-edit tb-cards-associated-title tb-material-input tb-card-item-input" maxlength="50" data-video-id="#TITLEID#" data-card-id="#CARDTITLEID#" type="text" value="#TITLE#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Call to Action</span>
+            <input class="tb-cards-link-edit tb-cards-associated-custom-message tb-material-input tb-card-item-input" maxlength="30" data-video-id="#CALLID#" data-card-id="#CARDCALLID#" type="text" value="#CALL#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">URL</span>
+            <input class="tb-cards-link-edit tb-cards-associated-target-url tb-material-input tb-card-item-input" data-video-id="#VIDEOID#" data-card-id="#CARDLINKID#" type="text" value="#LINK#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Teaser Text</span>
+            <input class="tb-cards-link-edit tb-cards-associated-teaser tb-material-input tb-card-item-input" maxlength="30" data-video-id="#CALLID#" data-card-id="#CARDCALLID#" type="text" value="#TEASER#" />
+        </div>
+    </div>
+    <div class="tb-cards-destination-option-collaborator-row tb-bulk-destination-row-customize" data-card-default-id="#DATA-CARD-DEFAULT-ID#" data-video-id="#VIDEOID#">
+        <div class="tb-card-item-type">Channel</div>
+        <div>
+            <span class="tb-card-item-input-label">Title</span>
+            <input class="tb-cards-link-edit tb-cards-collaborator-title tb-material-input tb-card-item-input" maxlength="50" data-video-id="#VIDEOID#" data-card-id="#CARDTITLEID#" type="text" value="#TITLE#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Channel Id</span>
+            <input class="tb-cards-link-edit tb-cards-collaborator-channelurl tb-material-input tb-card-item-input" data-video-id="#VIDEOID#" data-card-id="#CARDLINKID#" type="text" value="#CHANNELURL#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Custom Message</span>
+            <input class="tb-cards-link-edit tb-cards-collaborator-custom-message tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#CALL#" />
+        </div>
+        <div>
+            <span class="tb-card-item-input-label">Teaser Text</span>
+            <input class="tb-cards-link-edit tb-cards-collaborator-teaser tb-material-input tb-card-item-input" maxlength="30" data-video-id="#VIDEOID#" data-card-id="#CARDCALLID#" type="text" value="#TEASER#" />
+        </div>
+    </div>
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-cards-processing-template2 tb-bulk-processing-video-row" style="display: none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-cards-processed-success tb-bulk-processing-video-row tb-bulk-processing-video-row--success" style="display:none;">
+    <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-cards-processed-error tb-bulk-processing-video-row tb-bulk-processing-video-row--error" style="display:none;">
+    <div style="display:flex; align-items:center;">
+        <img data-video-id="#VIDEOID#" src='#THUMBNAILURL#' class="tb-margin-right5" style="height: 30px;" />
+        <span class="tb-destination-video-title">#VIDEOTITLE#</span><a data-video-id="#VIDEOID#" href="#HREF#" target="_blank" class="tb-bulk-view-video tb-margin-left10"><i class="material-icons tb-font-size13">open_in_new</i></a>
+    </div>
+    <div class="tb-processed-error-container tb-red tb-font-size12 tb-padding-top5 tb-bulk-processing-error-msg">
+        #ERROR#
+    </div>
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-cards-skipped-success tb-bulk-processing-video-row tb-bulk-processing-video-row--success" style="display:none; ">
+    <img data-video-id="#VIDEOID#" class="tb-margin-right5" src='#THUMBNAILURL#' style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a href="#HREF#" class="tb-bulk-view-video tb-margin-left10" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>

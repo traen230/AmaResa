@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Z njim lahko preprosto najdete vire izdelkov na Alibaba, AliExpress, 1688, Taobao, Pinduoduo in Yiwugo"
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPrice iskanje po sliki na Alibabi"
+   },
+   "context_menu_screenshot_search": {
+      "message": "එකම ශෛලිය සඳහා තිරපිටපත් සෙවීම"
+   },
+   "context_menus_goote_trans": {
+      "message": "Prevedi stran/prikaži izvirnik"
+   },
+   "context_menus_search_by_image": {
+      "message": "Iskanje po sliki na $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Zajem v $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Posnemite za prevajanje"
+   }
+}

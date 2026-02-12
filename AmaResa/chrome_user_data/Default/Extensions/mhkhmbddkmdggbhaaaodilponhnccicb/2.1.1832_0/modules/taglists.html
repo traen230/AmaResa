@@ -1,0 +1,147 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-tag-lists-container" class="tb-module-template draggable-container tb-tag-lists-modal tb-width-635">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Tag Lists</h1>
+            <div class="tb-module-help">
+                <a class="tb-middle tb-font-decoration-none" target="_blank" href="https://www.tubebuddy.com/tools?tool=taglists" data-draggable="false" rel="noopener">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-tag-lists-settings-container tb-module-content">
+                <!-- Loading -->
+                <div class="tb-tag-lists-loading-container">
+                    <span class="tb-spinner"></span> Loading...
+                </div>
+                <!-- Main screen -->
+                <div class="tb-tag-lists-loading-done-container tb-margin-5">
+                    <!-- No tag lists -->
+                    <div class="tb-tag-lists-has-none-container">
+                        <div class="tb-margin-top-100 tb-margin-bottom-100">
+                            <div class="tb-tag-lists-no-lists-img">
+                                <img src="{PLUGIN_FILE_ROOT}/images/no-tag-list.png" />
+                            </div>
+                            <div id="tb-tag-lists-no-lists-message">
+                                <div class="tb-font-cbold tb-font-size-md">
+                                    You don't have any Tag Lists.<br />
+                                    <span class="tb-font-book">Enter a Tag List name and click the ADD button.</span>
+                                </div>
+                                <input id="tb-tag-list-emptystart-name-input" class="tb-input-textfield" type="text" placeholder="List name..." />
+                                <a id="tb-add-tag-list-button" class="tb-btn tb-btn-success tb-tag-list-emptystart-insert">ADD</a>
+                            </div>
+                        </div>                             
+                    </div>
+                    <!-- Existing Tag Lists -->
+                    <div class="tb-tag-lists-has-container">
+                        <!-- List of lists -->
+                        <div class="tb-tag-lists-has-lists-list tb-margin-top-10">
+                            <div id="tb-tag-lists-select-list" class="tb-tag-lists-select-container">
+                                <div class="tb-font-cbold tb-font-size-sm tb-margin-bottom-5">
+                                    Your Lists
+                                </div>
+                                <select size="10" class="tb-tag-lists-select tb-input-textfield"></select>
+                                <a id="tb-add-tag-list-small-link" class="tb-tag-lists-show-add tb-tag-list-link">
+                                    Add list +
+                                </a>
+                                <a id="tb-delete-tag-list-small-link" class="tb-tag-lists-delete-list tb-tag-list-delete-btn">
+                                    Delete list x
+                                </a>
+                            </div>                        
+                        </div>
+                        
+                        <!--Tags-->
+                        <div class="tb-tag-lists-tags">
+                            <!-- Sort -->
+                            <div class="tb-margin-top-10">
+                                <div class="tb-padding-left-4 tb-float-left">
+                                    <div class="tb-font-cbold tb-font-size-sm tb-margin-bottom-5 tb-margin-0">
+                                        Tags in selected list
+                                    </div>
+                                </div>
+                                <!-- Sorter -->
+                                <div class="tb-tag-list-filtering">
+                                    <span class="tb-tag-lists-all-none">
+                                        <a class="tb-tag-lists-all-tags tb-tag-list-link">All</a> | <a class="tb-tag-lists-none-tags tb-tag-list-link">None</a>
+                                    </span>
+                                    <select class="tb-tag-lists-tag-sort tb-input-textfield">
+                                        <option value="0">Sort A-Z</option>
+                                        <option value="7">Sort Z-A</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="tb-tag-list-clear-both"></div>
+                            <!-- Add tag -->
+                            <div class="tb-tag-lists-add-tag">
+                                <span class="tb-tag-lists-add-tag-text">
+                                    Add Tag to List:
+                                </span>
+                                <input id="tb-tag-list-tag-input-small-box" class="tb-tag-list-tag-input tb-input-textfield" type="text">
+                                <button id="tb-tag-list-add-tag-small-box-button" class="tb-btn tb-btn-sm tb-btn-success tb-tag-list-tag-insert">
+                                    ADD
+                                </button>
+                            </div>
+                            <!-- List of Tags -->
+                            <div id="tb-tag-lists-list-of-tags" class="tb-tag-lists-tag-list-tag-container">
+                            </div>
+                            <!-- Actions & selected tags -->
+                            <div class="tb-tag-lists-tag-selected-container tb-padding-bottom-10 tb-padding-top-10">
+                                <div class="tb-font-size-sm tb-font-cbold tb-float-left tb-center tb-width-105">
+                                    Tags Selected <br /> 
+                                    <span id="tb-tag-lists-selected-count" class="tb-tag-lists-selected-count"></span>
+                                </div>
+                                <div class="tb-float-right tb-font-cbold tb-font-size-sm">
+                                    Action<br />
+                                    <select id="tb-tag-lists-action-select-menu" class="tb-tag-lists-action-select">
+                                        <option class="tb-tag-lists-action-select-video" value="video">Insert into current video</option>
+                                        <option value="clipboard">Copy to clipboard</option>
+                                        <option value="remove" class="remove-option">Remove from List</option>
+                                    </select>
+                                    <button id="tb-tag-lists-copy-button" class="tb-btn tb-btn-sm tb-btn-primary tb-tag-lists-insert">
+                                        COPY
+                                    </button>
+                                </div>
+                                <div class="tb-tag-list-clear-both"></div>
+                            </div>
+
+                        </div>
+                        <div class="tb-tag-list-clear-both"></div>
+
+                    </div>
+                </div>
+                <!--Tag list row template-->
+                <!--Inline style needed for element:visible checks to work-->
+                <div style="display:none" class="tb-padding-left-5" type="text/template" id="tb-tag-list-tag-row">
+                    <div class="tb-float-left">
+                        <div class="tb-material-checkbox-container">
+                            <label class="tb-material-checkbox-label">
+                                <input type="checkbox" checked="checked" class="tb-tag-list-tag-row-checkbox tb-material-checkbox-input" data-tag-id="{1}" data-tag-value="{0}" />
+                                <span class="tb-material-checkbox-box tb-margin-right-5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                {0}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tb-tag-list-clear-both"></div>
+                </div>
+                <!--Empty list row template-->
+                <div class="tb-none" type="text/template" id="tb-tag-list-empty-row">
+                    <div class="tb-tag-list-empty-list">
+                        This list is empty <br /><br /> Add a Tag above...
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

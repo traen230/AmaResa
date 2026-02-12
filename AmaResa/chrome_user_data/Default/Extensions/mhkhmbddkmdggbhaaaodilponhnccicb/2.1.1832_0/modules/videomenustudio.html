@@ -1,0 +1,526 @@
+﻿<div style="display:none" type="text/template" id="tb-studio-video-edit-dropdown-template">
+    <div class="tb-studio-video-edit-dropdown tb-video-tools-menu-dropdown" id="tb-video-edit-studio-tools-menu-dropdown">
+        <div class="tb-dropdown-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" id="tb-icon-transparent" style="fill:#eee !important">
+                <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+                <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+            </svg>
+            <i id="tb-video-edit-caret-toggle" class="untitled-ui untitled-ui-chevron-down-line tb-video-edit-caret-ease"></i>
+        </div>
+    </div>
+
+</div>
+
+
+<div style="display:none" type="text/template" id="tb-video-tools-menu-studio-dropdown-template">
+
+    <div data-video-edit-container-id="{0}" id="tb-video-menu-studio-overview" class="tb-video-menu-overview yt-dialog-fg tb-hid tb-video-menu-studio-overview">
+        <!--MAIN CONTAINER-->
+        <div class="tb-video-details-page-menu-container">
+            <div class="tb-videoslist-menu">
+                <!-- TABS-->
+                <ul class="tabs tb-videoslist-tabs">
+                    <!-- TOOLS-->
+                    <li data-tab-id="tb-videosmenu-tools-tab" class="tb-video-menu-studio-tab-header selected tb-selected">
+                        <div class="tab-header-title tb-videoslist-tab-header-title">
+                            <i class="untitled-ui untitled-ui-tool-02-line"></i>
+                            <div>Tools</div>
+                        </div>
+                    </li>
+                    <!--  QUICK LINKS-->
+                    <li data-tab-id="tb-videosmenu-quicklinks-tab" class="tb-video-menu-studio-tab-header">
+                        <div class="tab-header-title tb-videoslist-tab-header-title">
+                            <i class="untitled-ui untitled-ui-link-01-line"></i>
+                            <div>Quick Links</div>
+                        </div>
+                    </li>
+                    <!-- INFO-->
+                    <li data-tab-id="tb-videosmenu-info-tab" class="tb-video-menu-studio-tab-header" data-id="{0}">
+                        <div class="tab-header-title tb-videoslist-tab-header-title">
+                            <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                            <div>Info</div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- TABS CONTENT-->
+                <div>
+                    <div id="tb-videosmenu-tools-tab" class="tb-video-edit-studio-menu-tab-container">
+                        <div>
+                            <div style="display: none" class="tb-videos-list-category-container tb-videos-menu-bulk-tools">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-flex-align-top-line"></i>
+                                    Cards
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-copy-cards" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Copy
+                                        </span>
+                                    </a>
+
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-apply-card-template" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Apply Template
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div style="display: none" class="tb-videos-list-category-container tb-videos-menu-bulk-tools">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-laptop-02-line"></i>
+                                    End Screen
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-copy-endscreen" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Copy
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-apply-endscreen-template" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Apply Template
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="tb-videos-list-category-container">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-circle-cut-line"></i>
+                                    Syndicate
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-export-to-facebook" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Publish to Facebook
+                                        </span>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="tb-videos-list-category-container">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-search-refraction-line"></i>
+                                    Video SEO
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-studio-seo-studio" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-yt-uix-button-content">
+                                            SEO Studio
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-captions" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Captions Service
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-search-ranking" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Search Positions
+                                        </span>
+                                    </a>
+
+                                </div>
+
+                                <div class="tb-video-menu-item-url tb-video-menu-item tb-video-tools-menu-dropdown-suggested-tags">
+                                    <a class="tb-videos-list-tool" target="_blank" href="#tb-edit-video-studio-recommended-tags-plugin">
+                                        <span class="yt-uix-button-content">
+                                            Recommended Tags
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item-url tb-video-menu-item tb-video-tools-menu-dropdown-tag-translator">
+                                    <a class="tb-videos-list-tool" target="_blank" href="https://www.youtube.com/edit?video_id={0}&tbaction=tagtranslator">
+                                        <span class="yt-uix-button-content">
+                                            Tag Translator
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-ab-test" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            A/B Test
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="tb-videos-list-category-container">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-announcement-03-line"></i>
+                                    Promote
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-share-tracker" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Share Tracker
+                                        </span>
+                                    </a>
+
+                                </div>
+                               
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-promote" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Vid2Vid Promotion
+                                        </span>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="tb-videos-list-category-container">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-calendar-line"></i>
+                                    Schedule
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-golive-video" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Scheduled Publish
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-sunset-video" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Sunset Video
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-scheduled-video-update-video" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Scheduled Video Update
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+
+                            <div class="tb-videos-list-category-container">
+                                <div class="tb-videoslist-section-header">
+                                    <i class="untitled-ui untitled-ui-colors-line"></i>
+                                    Misc
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-suggested-shorts" data-id="{0}" data-title="{1}" data-thumbnail="{2}" style="display:none;">
+                                    <a class="tb-videos-list-tool tb-suggested-shorts-link">
+                                        <span class="yt-uix-button-content">
+                                            Suggested Shorts <span id="subitem-highlight" class="tb-badge-new">New</span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-thumbnail-analyzer" data-id="{0}" data-title="{1}" data-thumbnail="{2}" style="display:none;">
+                                    <a class="tb-videos-list-tool tb-thumbnail-generator-link">
+                                        <span class="yt-uix-button-content">
+                                            Thumbnail Analyzer
+                                        </span>
+                                        <span class="tb-beta-tag">BETA</span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-title-generator" data-experiment-key="toolbox-title-generator" style="display:none;">
+                                    <a class="tb-videos-list-tool tb-title-generator-link">
+                                        <span class="yt-uix-button-content">
+                                            <span class="yt-uix-button-content">Title Generator</span><span class="tb-badge-new">new</span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-thumbnail-creator" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool tb-thumbnail-generator-link">
+                                        <span class="yt-uix-button-content">
+                                            Thumbnail Generator
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-embed" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool ">
+                                        <span class="yt-uix-button-content">
+                                            Advanced Embed
+                                        </span>
+                                    </a>
+
+                                </div>
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-pick-a-winner" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Pick a Winner
+                                        </span>
+                                    </a>
+
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-dropdown-comments" data-id="{0}" data-title="{1}" data-thumbnail="{2}">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-uix-button-content">
+                                            Export Comments
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="tb-video-menu-item tb-video-tools-menu-studio-chapter-editor" style="display:none;">
+                                    <a class="tb-videos-list-tool">
+                                        <span class="yt-yt-uix-button-content">
+                                            Chapter Editor
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tb-video-tools-menu-notes" style="display:none;">
+                            <div class="tb-videoslist-section-header">
+                                Notes
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-golive">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i>
+                                    Video is scheduled to be Published on&nbsp;<span class="tb-video-tools-menu-golive-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-facebook">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video was published to Facebook on&nbsp;<span class="tb-video-tools-menu-facebook-date"></span>
+                                    <a class="tb-video-tools-menu-view-facebook" target="_blank">
+                                        view
+                                        <img src="{PLUGIN_FILE_ROOT}/images/icons/external.png" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-is-annotation-template">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video is an &nbsp;<a href="https://www.tubebuddy.com/tools?tool=annotationtemplates" target="_blank">Annotation Template</a>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-is-card-template">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video is a &nbsp;<a href="https://www.tubebuddy.com/tools?tool=cardtemplates" target="_blank">Card Template</a>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-thumbnail-generated">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Last generated thumbnail&nbsp;<span class="tb-video-tools-menu-thumbnail-generated-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-share-tracker-items">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i>Video shared on:&nbsp;<span class="tb-video-tools-menu-share-tracker-items-list"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-wentlive">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video was published on&nbsp;<span class="tb-video-tools-menu-wentlive-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-sunset">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video will be Sunsetted on&nbsp;<span class="tb-video-tools-menu-sunset-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-sunsetted">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video was Sunsetted on&nbsp;<span class="tb-video-tools-menu-sunsetted-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-scheduledmetaupdate">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video will be Updated on&nbsp;<span class="tb-video-tools-menu-scheduledmetaupdate-date"></span>
+                                </div>
+                            </div>
+                            <div class="tb-video-tools-menu-subitem tb-video-tools-menu-scheduledmetaupdated">
+                                <div class="tb-video-list-subitem-container">
+                                    <i class="material-icons tb-notes-item-icon">check_circle</i> Video was Updated on&nbsp;<span class="tb-video-tools-menu-scheduledmetaupdated-date"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <!--INFO TAB-->
+                <div id="tb-videosmenu-info-tab" class="tb-video-edit-studio-menu-tab-container tb-videos-list-pad-container-left" style="display: none;">
+
+                    <div class="tb-videosmenu-info-video-id">
+                        <i class="untitled-ui untitled-ui-video-recorder-line"></i>
+                        <span>Video Id</span>
+                        <br/>
+                        <input readonly type="text" class="tb-videos-list-info-video-id tb-material-input" />
+                        <button title="Copy Video Id" class="tb-video-id-copy" data-clipboard-action="copy" data-clipboard-text="">
+                            <i class="untitled-ui untitled-ui-copy-07-line"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="tb-videosmenu-info-video-link">
+                        <i class="untitled-ui untitled-ui-link-03-line"></i>
+                        <span>Direct Video Link</span>
+                        <br/>
+                        <input readonly type="text" class="tb-videos-list-info-video-link tb-material-input" />
+                        <button title="Copy Direct Video Link" class="tb-video-link-copy" data-clipboard-action="copy" data-clipboard-text="">
+                            <i class="untitled-ui untitled-ui-copy-07-line"></i>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="tb-video-edit-studio-playlist-container" style="max-height:200px; min-width:100%; overflow:auto;">
+
+                    </div>
+                </div>
+                
+                <!--  QUICK LINKS TAB -->
+                <div id="tb-videosmenu-quicklinks-tab" 
+                     class="tb-video-edit-studio-menu-tab-container tb-videos-list-pad-container" style="display: none;">
+                    <div class="tb-video-edit-studio-menu-comments-link-container">
+                        <div class="tb-videoslist-section-header">
+                            <i class="untitled-ui untitled-ui-message-text-circle-02-line"></i>
+                            <span>Comments</span> 
+                        </div>
+                        <div class="tb-video-tools-menu-quick-link-comments-overview">
+                            <a target="new" href="https://studio.youtube.com/video/{0}/comments/inbox"
+                               class="tb-video-tools-menu-quick-link-header">
+                                Overview
+                            </a>
+                        </div>
+                        <div>
+                            <a target="new" href="https://www.youtube.com/edit?o=U&video_id={0}&feature=vm&tab=monetization"
+                               class="tb-video-tools-menu-quick-link-header tb-videoslist-section-header" style="display:none;">
+                                Monetization
+                            </a>
+                        </div>
+                    </div>
+                    <!--<div style="line-height:17px; margin-bottom:6px; float:left">
+                        <select class="tb-video-tools-menu-comment-filters" style="margin-left:16px; width:90px; margin-bottom:15px; font-size:12px; padding:2px 3px; white-space: nowrap;">
+                            <option value="filter">Filter...</option>
+                            <option value="notreplied">Comments that I have not replied to</option>
+                            <option value="needfollowup">Comments that have replies which need to be follow up on</option>
+                            <option value="questions">Comments that contain a question mark</option>
+                            <option value="questionsnoreplies">That contain a question that I have not replied to</option>
+                            <option value="links">That contain links (urls)</option>
+                            <option value="hearted">That I hearted</option>
+                            <option value="nothearted">That I have not hearted</option>
+                            <option value="notreacted">That I have not reacted to</option>
+                            <option value="haswords">Comments that contain the word(s)...</option>
+                        </select>
+                    </div>-->
+                    
+                    <div>
+                        <div class="tb-video-tools-menu-quick-link-header tb-videoslist-section-header">
+                            <i class="untitled-ui untitled-ui-line-chart-down-01-line"></i>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                    <div class="tb-videosmenu-quicklinks-tab-analytics">
+                        <div class="tb-videosmenu-quicklinks-tab-analytics-column">
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-overview/period-default"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Overview
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-overview/period-since_publish"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Realtime
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-earn_revenue/period-since_publish"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Earnings
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-interest_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=since_publish&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=WATCH_TIME&granularity=DAY&t_metrics[]=VIEWS&t_metrics[]=WATCH_TIME&t_metrics[]=AVERAGE_WATCH_TIME&t_metrics[]=LIKES_PER_LIKES_PLUS_DISLIKES_PERCENT&t_metrics[]=SHARINGS&v_metrics[]=VIEWS&v_metrics[]=WATCH_TIME&v_metrics[]=AVERAGE_WATCH_TIME&v_metrics[]=LIKES_PER_LIKES_PLUS_DISLIKES_PERCENT&v_metrics[]=SHARINGS&dimension=VIDEO&o_column=WATCH_TIME&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=undefined"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Watch Time
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-interest_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=AUDIENCE_RETENTION"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Audience Retention
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-build_audience/period-since_publish"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Demographics
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=WATCH_TIME&granularity=DAY&t_metrics[]=WATCH_TIME&t_metrics[]=VIEWS&t_metrics[]=AVERAGE_WATCH_TIME&dimension=PLAYBACK_LOCATION_TYPE&o_column=WATCH_TIME&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=false"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Playback Locations
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Traffic Sources
+                            </a>
+                            
+                        </div>
+                        <div class="tb-videosmenu-quicklinks-tab-analytics-column">
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=VIEWS&granularity=DAY&t_metrics[]=WATCH_TIME&t_metrics[]=VIEWS&t_metrics[]=AVERAGE_WATCH_TIME&dimension=DEVICE_PLATFORM_TYPE&o_column=WATCH_TIME&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=false"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Devices
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-overview/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=since_publish&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=SUBSCRIBERS_NET_CHANGE&granularity=DAY&t_metrics[]=VIEWS&t_metrics[]=WATCH_TIME&t_metrics[]=SUBSCRIBERS_NET_CHANGE&t_metrics[]=TOTAL_ESTIMATED_EARNINGS&t_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&v_metrics[]=VIEWS&v_metrics[]=WATCH_TIME&v_metrics[]=SUBSCRIBERS_NET_CHANGE&v_metrics[]=TOTAL_ESTIMATED_EARNINGS&v_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS&v_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&dimension=VIDEO&o_column=SUBSCRIBERS_NET_CHANGE&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=undefined"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Subscribers
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-overview/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=RATINGS_LIKES&granularity=DAY&t_metrics[]=RATINGS_LIKES&t_metrics[]=RATINGS_DISLIKES&t_metrics[]=LIKES_PER_LIKES_PLUS_DISLIKES_PERCENT&dimension=VIDEO&o_column=RATINGS_LIKES&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=undefined"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Likes and Dislikes
+                            </a>
+                            
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&ddr_dimension=TRAFFIC_SOURCE_TYPE&ddr_value=PLAYLIST&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=VIEWS&granularity=DAY&t_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics[]=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&t_metrics[]=VIEWS&t_metrics[]=AVERAGE_WATCH_TIME&t_metrics[]=WATCH_TIME&dimension=TRAFFIC_SOURCE_DETAIL&o_column=VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=undefined"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Playlists
+                            </a>
+                            
+                            <!--<a target="new" href="https://studio.youtube.com/video/{0},r=comments" class="tb-video-tools-menu-quick-link-sub-header">Comments</a><br />-->
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=SHARINGS&granularity=DAY&t_metrics[]=SHARINGS&dimension=SHARING_SERVICE&o_column=SHARINGS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=false"
+                               class="tb-video-tools-menu-quick-link-sub-header">Sharing
+                            </a>
+                            
+                            <!--<a target="new" href="https://studio.youtube.com/video/{0},r=annotations" class="tb-video-tools-menu-quick-link-sub-header">Annotations</a><br />-->
+                            <a target="new"
+                               href="https://studio.youtube.com/video/{0}/analytics/tab-reach_viewers/period-since_publish/explore?entity_type=VIDEO&entity_id={0}&time_period=lifetime&explore_type=TABLE_AND_CHART&chart_type=LINE_CHART&metric=INFO_CARD_TEASER_CLICKS&granularity=DAY&t_metrics[]=INFO_CARD_TEASER_CLICKS&t_metrics[]=INFO_CARD_TEASER_CLICK_RATE&t_metrics[]=INFO_CARD_CLICKS&t_metrics[]=INFO_CARD_CLICK_RATE&dimension=INFO_CARD_ID&o_column=INFO_CARD_TEASER_CLICKS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC&smooth_timelines=false"
+                               class="tb-video-tools-menu-quick-link-sub-header">
+                                Cards
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

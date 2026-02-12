@@ -1,0 +1,172 @@
+﻿<!--Start Base Module Template-->
+<div role="dialog" id="tb-twitter-post" class="tb-module-template draggable-container" style="display:none;">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <header role="heading" class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Share Video on Twitter
+            </h1>
+
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=shareontwitter" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help</i>
+                </a>
+            </div>
+
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </header><!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-twitter-post-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-twitter-post-title" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+
+                <!--start twitter post module-->
+                <div class="twitter-post">
+                    <div id="tb-twitter-post-success" class="twitter-post__success" style="display:none;">
+                        <div class="twitter-post-success">
+                            <p> Your tweet was successfully posted!</p>
+                        </div>
+                    </div>
+                    <div id="tb-twitter-post-error" class="twitter-post__error" style="display:none;">
+                        <div class="twitter-post-error">
+                            <p>Whoops! An error has occurred with your post, please try again.</p>
+                            <p>If it continues to happen, make sure the account is linked <a href="https://www.tubebuddy.com/account/Integrations" target="_blank">HERE</a>.</p>
+                        </div>
+                    </div>
+                    <!--Hidden items waiting to be appended -->
+                    <div style="display:none">
+                        <div class="twitter-post__link-account">
+                            <div class="link-account">
+
+                                <h3 class="link-account--header">Please link a Twitter account</h3>
+
+                                <p class="link-account--content">In order to share videos on Twitter, you must first link your Twitter account in TubeBuddy's social integrations section.</p>
+                                <img class="link-account--tweet-img" src="{PLUGIN_FILE_ROOT}/images/modules/twitterpost/twitter-post-tweet-login.png" alt="twitter post tweet link" />
+                                <a class="tb-btn-blue link-account-button link-account--action" target="_blank">
+                                    Link Twitter account
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="twitter-post__account-login">
+                            <div class="account-login">
+                                <h3 class="account-login--header">Please sign in to TubeBuddy.com</h3>
+                                <p class="account-login--content">In order to share videos on Twitter, you must be logged into TubeBuddy.com.</p>
+                                <img class="account-login--monitor-img" src="{PLUGIN_FILE_ROOT}/images/modules/twitterpost/twitter-post-tubebuddy-login.png" alt="twitter post tubebuddy login" />
+                                <a class="account-login-button tb-btn-blue account-login--action" target="_blank">
+                                    Sign in
+                                </a>
+                                <div class="account-login--refresh" style="display:none;">
+                                    After signing in, click
+                                    <a id="tb-twitter-check-sign-in" style="font-weight:400">
+
+                                        <span class="account-login--refresh-icon">
+                                            <i class="material-icons account-login--refresh-icon-refresh">
+                                                refresh
+                                            </i>
+                                            Refresh
+                                        </span>
+                                    </a>
+                                </div>
+                                <i class="tb-spinner account-login--refresh-icon-spinner" style="display:none">
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- twitter-post-account -->
+                    <div class="twitter-post-content twitter-post-account">
+                        <div class="account__dropdown has-tb-tooltip">
+                            <img src="https://www.tubebuddy.com/images/icons/social/twitter-share.png" class="account__dropdown-twitter">
+                            <a href="#" class="account__dropdown--btn twitter-account-selected">
+                                <!-- append twitter data -->
+                            </a>
+                            <ul role="list" id="tb-twitter-post-accounts" class="dropdown__list dropdown__list--toggle" style="display:none;">
+                                <!-- dynamic  account data -->
+                            </ul>
+                            <span class="tb-tooltip tb-tooltip-with-border tb-twitter-post-switch" id="tb-twitter-post-switch" role="tooltip">
+                                <i class="material-icons">account_box</i> Switch accounts
+                            </span>
+                        </div>
+                    </div>
+
+                    <!--twitter-post-share-->
+                    <div class="twitter-post-share">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End BASE Module Container-->
+    <!--Start BASE Footer Module-->
+
+
+
+    <ul style="display:none;">
+        <li role="listitem" class="dropdown__list--items tb-twitter-post-account-item twitter-account-identifier" data-twit-id="#ACCOUNT_ID#" data-account-id="#ACCOUNT_ID#">
+            <img class="tb-twitter-account-img dropdown__list--avatar" src="#THUMBNAIL_URL#" alt="twitter-profile" />
+            @#SCREEN_NAME#
+        </li>
+
+
+    </ul>
+
+    <div style="display:none">
+        <div class="tweet__form">
+            <div class="tweet__form-entry">
+
+                <textarea id="tb-twitter-post-message" class="tweet__form--message" placeholder="What's happening?"></textarea>
+                <span id="tb-twitter-post-count" class="tweet__form--char"></span>
+                <div class="form-group">
+                    <div class="form-group--left">
+                        <label for="tb-twitter-post-checkbox" class="form-group--left-label">
+                            Attach Thumbnail to Post
+                            <span class="tb-margin-left5" style="cursor:pointer" data-tbtooltip="Attaching your Thumbnail to your post will display it full size in the Twitter timeline instead of a small url snippet preview image.">
+                                <i class="material-icons tb-font-size13 tb-move-down2">help_outline</i>
+                            </span>
+                            <input id="tb-twitter-post-checkbox" type="checkbox" class="form-group--left-checkbox" checked="checked">
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group tb-margin-top10">
+
+                    <div class="form-group--left">
+                        <label for="tb-twitter-post-checkbox" class="form-group--left-label">
+                            Include "<i>Posted via @TubeBuddy</i>" at bottom of Tweet
+                            <input id="tb-twitter-post-via-checkbox" type="checkbox" class="form-group--left-checkbox tb-twitter-post-via-checkbox" checked="checked">
+                        </label>
+                    </div>
+                </div>
+                <div class="twitter-post-footer">
+                    <div class="tb-spinner tweet__form-spinner" style="display:none"></div>
+                    <button id="tb-twitter-post-submit" class="tb-btn-blue">Post Tweet</button>
+                </div>
+            </div>
+            <div class="tweet__form-success" style="display:none;">
+                You can view your Tweet at the link below.
+                <p>
+                    <a id="tb-twitter-post-success-link" target="_blank" class="twitter-post__success--link"></a>
+                </p>
+                <p class="tb-margin-top25">
+                    <a class="tb-btn-grey tweet__form-success-new-tweet">New Tweet</a>
+                    
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>

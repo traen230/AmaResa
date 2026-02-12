@@ -1,0 +1,121 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-tag-translator-container" class="tb-module-template draggable-container tb-tag-translator-modal" style="display:none; width:785px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Tag Translator</h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=autotranslator" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content" style="width: 95%;">
+                <!-- No tag lists -->
+                <div id="tb-tag-translator-no-tags">
+                    <div class="tb-margin-top-100 tb-margin-bottom-150">
+                        <div class="tb-translator-no-lists-img">
+                            <img src="{PLUGIN_FILE_ROOT}/images/no-tag-list.png" />
+                        </div>
+                        <div>
+                            <div class="tb-font-cbold tb-font-size-md">
+                                The video you selected doesn't have any Tags.<br />
+                                <span class="tb-font-book">Please select a video with Tags.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tb-tag-translator-head">
+                    <div class="tb-inline-block">
+                        <table class="tb-tag-translator-table-style">
+                            <thead id="tb-tag-translator-thead">
+                                <tr>
+                                    <th class="tb-font-cbold tb-font-size-sm tb-tag-translator-tag-header">Tag</th>
+                                    <th id="tb-tag-translators-rank-header" class="tb-font-cbold tb-font-size-sm">
+                                        Translate to:
+                                        <select class="tb-tag-translator-language tb-font-book tb-margin-left-5">
+                                            <option value="select">(Select Language)</option>
+                                            <option value="sq">Albanian</option>
+                                            <option value="ar">Arabic</option>
+                                            <option value="hy">Armenian</option>
+                                            <option value="be">Belarusian</option>
+                                            <option value="zh-CN">Chinese Simplified</option>
+                                            <option value="zh-TW">Chinese Traditional</option>
+                                            <option value="hr">Croatian</option>
+                                            <option value="cs">Czech</option>
+                                            <option value="da">Danish</option>
+                                            <option value="nl">Dutch</option>
+                                            <option value="en">English</option>
+                                            <option value="et">Estonian</option>
+                                            <option value="tl">Filipino</option>
+                                            <option value="fi">Finnish</option>
+                                            <option value="fr">French</option>
+                                            <option value="ka">Georgian</option>
+                                            <option value="de">German</option>
+                                            <option value="el">Greek</option>
+                                            <option value="iw">Hebrew</option>
+                                            <option value="hi">Hindi</option>
+                                            <option value="hu">Hungarian</option>
+                                            <option value="is">Icelandic</option>
+                                            <option value="id">Indonesian</option>
+                                            <option value="ga">Irish</option>
+                                            <option value="it">Italian</option>
+                                            <option value="ja">Japanese</option>
+                                            <option value="ko">Korean</option>
+                                            <option value="la">Latin</option>
+                                            <option value="lt">Lithuanian</option>
+                                            <option value="no">Norwegian</option>
+                                            <option value="fa">Persian</option>
+                                            <option value="pl">Polish</option>
+                                            <option value="pt">Portuguese</option>
+                                            <option value="ma">Punjabi</option>
+                                            <option value="ro">Romanian</option>
+                                            <option value="ru">Russian</option>
+                                            <option value="sr">Serbian</option>
+                                            <option value="sk">Slovak</option>
+                                            <option value="si">Slovenia</option>
+                                            <option value="es">Spanish</option>
+                                            <option value="sv">Swedish</option>
+                                            <option value="th">Thai</option>
+                                            <option value="tr">Turkish</option>
+                                            <option value="uk">Ukrainian</option>
+                                            <option value="vi">Vietnamese</option>
+                                            <option value="cy">Welsh</option>
+                                        </select>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <!-- Tags table -->
+                        <div id="table-translate-data-container" class="tb-margin-bottom-10 tb-table-data-container-firefox-width">
+                            <table id="tb-tag-translator-table" class="tb-tag-translator-table-style" style="width:760px;">
+                                <tbody id="tb-tag-translator-body"></tbody>
+                            </table>
+                        </div>
+                        <div id="languageContainer" style="display:none;">
+                            <div class="tb-language-container-header tb-font-cbold">
+                                Top 5 languages spoken by your channel's audience
+                            </div>
+                            <div id="languageGraph" class="tb-tag-translator-language-graph tb-margin-top-10"></div>
+                        </div>
+                        <!-- Loading Channel Language Data -->
+                        <div id="languageGraphLoading" class="tb-tag-translator-loading-lang-data tb-font-cbold">
+                            <span class="tb-spinner" style="position:relative;top: 3px;"></span>Loading Channel Language Data...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

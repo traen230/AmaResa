@@ -1,0 +1,47 @@
+﻿<div style="display:none">
+
+    <button class="tb-search-results-view-details">
+        <img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" class="tb-height11 tb-edit-video-studio-tag-button-header-logo">
+        <span>View</span> Details
+    </button>
+
+    <div style="display:none;" type="text/template" id="tb-search-results-insights-subscribers-container-template">
+        <span class="tb-search-results-details-subscribers tb-search-results-details">{0}</span>
+    </div>
+
+    <div style="display:none;" type="text/template" id="tb-search-results-insights-likes-container-template">
+        <span class="tb-search-results-details-like-dislike-container tb-search-results-details">
+            <span class="tb-search-results-details-like-dislike">
+                <i class="material-icons tb-margin-right-3">thumb_up</i>
+                <span>{0}</span>
+            </span>
+            <span class="tb-search-results-details-like-dislike tb-margin-left-15">
+                <i class="material-icons  tb-margin-right-3">thumb_down</i>
+                <span>{1}</span>
+            </span>
+        </span>        
+    </div>
+
+    <div style="display:none;" type="text/template" id="tb-search-results-insights-tags-container-template">
+        <div class="tb-search-results-details-tags-container-outer tb-search-results-details">
+
+            <div class="tb-search-results-details-tags-container" style="{0}">
+                <div class="tb-search-results-details-tags-header">
+                    <img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" class="tb-height11 tb-edit-video-studio-tag-button-header-logo">
+                    <span>Tags</span>
+                </div>
+                <div class="tb-search-results-details-tags-box">                  
+                </div>
+            </div>
+            <div>
+                <button class="tb-btn-grey tb-btn-sm tb-search-results-details-copy-tags-button" data-tags-list="{1}" data-metadata-width="{2}">Copy Tags</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none;" type="text/template" id="tb-search-results-insights-video-tag-container-template">
+        <div class="tb-search-results-details-tag"><span class="tb-search-results-details-tag-text">{0}</span><span class="tb-search-results-tag-explorer" title="Explore" data-tb-keyword="{0}"><i class="material-icons">search</i></span></div>
+    </div>
+    
+</div>
+
