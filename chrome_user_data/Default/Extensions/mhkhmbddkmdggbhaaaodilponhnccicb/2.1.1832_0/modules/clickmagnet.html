@@ -1,0 +1,710 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-ctrcenter-container" class="tb-module-template draggable-container tb-click-magnet-redesign" style="display:none; width:1000px; left:35%;">
+
+    <style>
+        #tb-cards-input-playlist {
+            display: none;
+        }
+        .playlistSelectInputDownCaret {
+            display: inline-block !important;
+            position: relative;
+            right: 30px;
+        }
+        #tb-cards-input-playlist .playlistSelectInput {
+            width: 350px !important;
+            border: solid 1px #B6BAC6;
+            border-radius: 4px;
+            padding: 14px 10px !important;
+            margin: 0 !important;
+        }
+        #tb-cards-input-playlist .playlistSelectInput:focus-visible {
+            border: solid 1px #B6BAC6;
+        }
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem:hover {
+            cursor: pointer;
+        }
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem input {
+            opacity: 0;
+        }
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem input:hover {
+            cursor: pointer;
+        }
+        #tb-cards-input-playlist .playlistSelectMutliSelect {
+            width: 96% !important;
+            margin: 0 !important;
+            padding: 2px;
+            text-align: left;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.11) 0 2px 5px !important;
+        }
+    </style>
+
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <div class="tb-clickmagnet-module-logo" data-draggable="false"></div>
+            <h1 class="tb-clickmagnet-module-title" id="tb-crt-title">
+                Click Magnet
+            </h1>
+            <div class="tb-clickmagnet-module-help">
+                <a target="_blank" href="https://www.tubebuddy.com/tools?tool=clickmagnet" data-draggable="false">
+                    <i class="untitled-ui untitled-ui-help-circle-line"></i>
+                </a>
+            </div>
+            <div class="tb-module-close tb-clickmagnet-module-close" data-draggable="false">
+                <i class="untitled-ui untitled-ui-x-close-line" data-draggable="false"></i>
+            </div>
+        </div>
+
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-overflow-hidden tb-clickmagnet-modal">
+                <div class="tb-clickmagnet-global-content">
+
+                    <div id="tb-ctr-options">
+
+                        <div class="tb-clickmagnet-container">
+                            <h1 class="tb-clickmagnet-landing-header" id="tb-selections-header">Click Magnet</h1>
+                            <img src="{PLUGIN_FILE_ROOT}/images/modules/clickmagnet/magnets.png" alt="magnets" />
+                            <div class="tb-clickmagnet-landing-content">
+                                <div>
+                                    <div class="tb-clickmagnet-landing-tagline" id="tb-ctr-description">
+                                        Expand your audience and drive more meaningful views by turning your videos into click magnets.
+                                    </div>
+                                    
+                                    <div class="tb-clickmagnet-playlist-selection-header">
+                                        Which videos/playlist would you like to analyze?
+                                    </div>
+                                    
+                                    <div class="tb-material-radio-container tb-font-size14" style="display:flex; width:fit-content; margin:auto;">
+                                        <!-- PLAYLIST Dropdown  -->
+                                        <div class="tb-clickmagnet-input-playlist" id="tb-cards-input-playlist" ></div>
+
+                                        <!-- Get Started Button -->
+                                        <div id="tb-ctr-start">
+                                            <a id="tb-ctr-gather-all-data" class="tb-clickmagnet-button">Get Started</a>
+                                        </div>
+                                        
+                                        <span style="font-size: 11px; font-weight: bold;" id="tb-cards-input-playlist-status"></span>
+                                        
+                                    </div>
+                                    
+                                    <!-- Loading Data on Landing Page -->
+                                    <div class="tb-clickmagnet-landing-loading" id="tb-ctr-gathering">
+                                        <div class="tb-spinner"></div>
+                                        <div class="tb-clickmagnet-landing-loading-text">
+                                            <b>Data Processing Status</b>
+                                            <div class="tb-clickmagnet-landing-loading-text-status" id="tb-ctr-wl-loading-status">
+                                                <span class="tb-ctr-status-label">Initializing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Data Gathering Disclaimer -->
+                                    <div id="tb-ctr-gathering-disclaimer" style="display: none;">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11 7V11M11 15H11.01M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z" stroke="#DA0800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p id="tb-ctr-gathering-disclaimer-text"></p> 
+                                    </div>
+                                    
+                                    <!-- error messages -->
+                                    <div class="tb-clickmagnet-gathering-failed" id="tb-ctr-gathering-failed" style="display: none;">
+                                        <div class="tb-clickmagnet-gathering-failed-error">Sorry, something went wrong &nbsp; :(</div>
+                                        <span id="tb-ctr-gathering-message">Please refresh the page and try again.</span>
+                                    </div>
+                                    
+                                    <div class="tb-clickmagnet-gathering-failed" id="tb-ctr-gathering-failed-only-shorts" style="display: none;">
+                                        <div class="tb-clickmagnet-gathering-failed-error">Since Click Through Rate doesn't apply to Shorts, only long-form content is analyzed. We were unable to find any long-form content in your recent videos.</div>
+                                        Please try again when your channel has recent long-form content.
+                                    </div>
+
+                                    <!-- Selections Page -->
+                                    <div id="tb-ctr-gathered" style="display:none;">
+
+                                        <div class="tb-clickmagnet-selections-gathered">
+                                            <div class="tb-clickmagnet-selections-row">
+                                                <div class="tb-clickmagnet-selections-box" id="tb-ctr-top-performers-button">
+                                                    <h1>Power Rankings</h1>
+                                                    If you want people to watch more of your videos, create content they crave.
+                                                </div>
+                                                <div class="tb-clickmagnet-selections-box" id="tb-ctr-element-inspector-button">
+                                                    <h1>Element Inspector</h1>
+                                                    Discover which elements of your video packaging are actually driving clicks.
+                                                </div>
+                                            </div>
+                                            <div class="tb-clickmagnet-selections-row">
+                                                <div class="tb-clickmagnet-selections-box" id="tb-ctr-opportunity-finder-button">
+                                                    <h1>CTR Opportunities</h1>
+                                                    Get the most bang for your buck when focusing on improving these videos.
+                                                </div>
+                                                <div class="tb-clickmagnet-selections-box" id="tb-ctr-analytics-button">
+                                                    <h1>Advanced Analytics</h1>
+                                                    View and export (to CSV) a variety of advanced metrics and video data.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Selections Second Page -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Analytics -->
+                                    
+                    <div id="tb-ctr-analytics-container" style="display:none;">
+                        <div class="tb-ctr-display-bodya">
+                            <div id="tb-ctr-wl-loaded" class="tb-clickmagnet-aa-container">
+                                
+                                <!-- Left Col -->
+                                    <div class="tb-ctr-display-left tb-clickmagnet-aa-left">
+                                        <div style="justify-content: flex-start;">
+                                            <div id="loadingtest" style="display:none;">LOADING</div>
+                                            <div class="tb-clickmagnet-aa-left-headers">
+                                                Time Frame
+                                            </div>
+                                            <select id="tb-ctr-tf-select" style="width:100%;" class="tb-dropdown-menu tb-clickmagnet-dropdown-menu">
+                                                <option value="Lifetime">Lifetime</option>
+                                                <optgroup label="Video's First...">
+                                                    <option value="1">24 Hours</option>
+                                                    <option value="2">48 Hours</option>
+                                                    <option value="7">7 Days</option>
+                                                    <option value="30">30 Days</option>
+                                                </optgroup>
+                                            </select>
+                                            
+                                            <div>
+                                                <div class="tb-clickmagnet-aa-left-headers">
+                                                    Traffic Source
+                                                </div>
+                                                <div id="tb-ctr-ts-na" class="tb-clickmagnet-aa-dropdown-note" style="display:none;">
+                                                    * Only available for the Lifetime time frame
+                                                </div>
+                                                <select id="tb-ctr-ts-select" style="width:100%;" class="tb-dropdown-menu tb-clickmagnet-dropdown-menu">
+                                                    <option value="All" selected>All</option>
+                                                    <option value="YT_SEARCH">Search</option>
+                                                    <option value="YT_RELATED">Suggested</option>
+                                                    <option value="SUBSCRIBER">Browse</option>
+                                                    <option value="PLAYLIST">Playlists</option>
+                                                </select>
+                                            </div>
+        
+                                            <div>
+                                                <div class="tb-clickmagnet-aa-left-headers">
+                                                    Min. Impressions
+                                                </div>
+                                                <select style="width:100%" id="tb-ctr-mi-select" class="tb-dropdown-menu tb-clickmagnet-dropdown-menu">
+                                                    <option selected value="0">None</option>
+                                                    <optgroup label="At least...">
+                                                        <option value="1">1</option>
+                                                        <option value="100">100</option>
+                                                        <option value="1000">1,000</option>
+                                                        <option value="10000">10,000</option>
+                                                        <option value="100000">100,000</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+    
+                                        <!-- Footer -->
+                                        <div class="tb-clickmagnet-footer">
+                                            <a class="tb-clickmagnet-footer-back-btn">Back</a>
+                                            
+                                            <a id="tb-ctrcenter-export" class="tb-clickmagnet-footer-csv" style="display: none;">
+                                                Export CSV <i class="untitled-ui untitled-ui-share-05-line"></i>
+                                            </a>
+                                            <a id="tb-ctrcenter-export-opportunity" class="tb-clickmagnet-footer-csv" style="display: none;">
+                                                Export CSV <i class="untitled-ui untitled-ui-share-05-line"></i>
+                                            </a>
+                                        </div>
+                                        <!-- End Footer-->
+                                    </div>
+                                
+                                    <div class="tb-ctr-display-right-aa">
+                                        <div id="tb-ctr-wl-table">
+                                            <div class="tb-clickmagnet-aa-right-container">
+                                                <div class="tb-clickmagnet-aa-right-header">
+                                                    Rank / Video
+                                                </div>
+                                                <div class="tb-ctr-sort-Views tb-cursor-pointer">
+                                                    <span class="tb-ctr-sort" data-ctr-sort="Clicks">
+                                                        Clicks
+                                                    </span>
+                                                    <br />
+                                                    <span class="tb-ctr-sort" data-ctr-sort="Impressions">
+                                                        <span class="tb-clickmagnet-aa-right-small-txt">Impressions</span>
+                                                    </span>
+                                                </div>
+                                                <div class="tb-ctr-sort-Duration tb-cursor-pointer">
+                                                    <span class="tb-ctr-sort" data-ctr-sort="Views">
+                                                        Views
+                                                    </span>
+                                                    <br />
+                                                    <span class="tb-ctr-sort" data-ctr-sort="YTFactor">
+                                                        <span class="tb-clickmagnet-aa-right-small-txt">Clicks/Views</span>
+                                                    </span>
+                                                </div>
+                                                <div class="tb-ctr-sort-Impressions tb-cursor-pointer">
+                                                    <span class="tb-ctr-sort tb-clickmagnet-aa-right-small-txt" data-ctr-sort="WatchTime">
+                                                        Avg Dur
+                                                    </span>
+                                                    <br />
+                                                    <span class="tb-ctr-sort" data-ctr-sort="WatchPercentage">
+                                                        <span class="tb-clickmagnet-aa-right-small-txt">Avg %</span>
+                                                    </span>
+                                                </div>
+                                                <div class="tb-ctr-sort-Clicks tb-cursor-pointer">
+                                                    <span class="tb-ctr-sort" data-ctr-sort="WTpI">
+                                                        WT<span class="tb-clickmagnet-aa-right-xsm-txt"> per </span>I
+                                                    </span>
+                                                    <br />
+                                                    <span class="tb-ctr-sort" data-ctr-sort="TotalWatchTime">
+                                                        <span class="tb-clickmagnet-aa-right-small-txt">Total WT</span>
+                                                    </span>
+    
+                                                </div>
+                                                <div class="tb-ctr-sort-CTR tb-cursor-pointer" data-ctr-sort="CTR">
+                                                    <span class="tb-ctr-sort" data-ctr-sort="CTR">
+                                                        CTR
+                                                    </span>
+                                                </div>
+                                                <div class="tb-ctr-sort-score tb-cursor-pointer" data-ctr-sort="Rank">
+                                                    <span class="tb-ctr-sort" data-ctr-sort="Rank">
+                                                        Pwr&nbsp;Rank
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Advanced Analytics Primary Content -->
+                                        <div id="tb-ctr-wl-container" class="tb-clickmagnet-pr-content-table">
+                                            <div id="tb-ctr-wl-data"></div>
+                                        </div>
+                                        
+                                        <div style=" border:solid 1px #ddd; padding:5px 8px; margin-top:15px; position: relative; display:none;">
+                                            <div id="tb-ctr-distribution-label" style="text-align: center;position:absolute;left: 240px;top: 90px;font-size:12px;font-weight:bold;z-index: 9;width: 150px;background: #f1f1f1;padding: 3px 3px;">
+                                                CTR
+                                                Distribution
+                                            </div>
+                                            <div id="tb-ctr-distribution" style="height: 90px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <!-- Element Inspector -->
+                                            
+                    <div id="tb-ctr-element-inspector-container" style="display:none;">
+                        <div class="tb-ctr-display-bodya">
+                            <div id="tb-ctr-element-inspector-loaded" class="tb-clickmagnet-pr-container">
+                                <div class="tb-ctr-display-left tb-clickmagnet-pr-left">
+
+                                    <div class="tb-clickmagnet-pr-left-selection-container">
+                                        <div class="tb-clickmagnet-pr-left-selection-one">
+                                            <div class="tb-clickmagnet-ei-left-header">
+                                                <i class="untitled-ui untitled-ui-face-smile-line tb-clickmagnet-ei-left-icons"></i> 
+                                                Faces
+                                            </div>
+                                            <div class="tb-clickmagnet-ei-left-selections">
+                                                <div id="tb-ctr-faces-option" data-cr-option="FaceCounts" class="tb-ctr-tab-option tb-ctr-tab-option-selected">
+                                                    Face vs no face
+                                                </div>
+        
+                                                <div data-cr-option="FaceEmotions" class="tb-ctr-tab-option">
+                                                    Emotions
+                                                </div>
+                                                <div data-cr-option="FaceAttributes" class="tb-ctr-tab-option">
+                                                    Sizes
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="tb-clickmagnet-ei-left-header">
+                                            <i class="untitled-ui untitled-ui-letter-spacing-01-line tb-clickmagnet-ei-left-icons"></i> 
+                                            Text
+                                        </div>
+                                        <div class="tb-clickmagnet-ei-left-selections">
+    
+                                            <div data-cr-option="TextAnalysis" class="tb-ctr-tab-option">
+                                                Text vs no Text
+                                            </div>
+                                            <div data-cr-option="WordAnalysis" class="tb-ctr-tab-option">
+                                                Words in titles
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="tb-clickmagnet-footer">
+                                        <a class="tb-clickmagnet-footer-back-btn">Back</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Element Inspector: Face vs no face -->
+                                <div class="tb-clickmagnet-ei-right-half">
+                                    <div data-tab-name="FaceCounts" class="tb-clickmagnet-ei-right-container">
+                                           
+                                        <!-- middle -->
+                                        <div class="tb-clickmagnet-ei-middle">
+                                            <div class="tb-clickmagnet-ei-middle-header">Aggregate Click Through Rates</div>
+                                            <div id="tb-ctr-grid-face-counts"></div>
+                                        </div>
+
+                                        <!-- right -->
+                                        <div class="tb-clickmagnet-ei-right">
+                                            <div class="tb-clickmagnet-ei-right-upper">
+                                                <div class="tb-clickmagnet-ei-right-header">
+                                                    Should you include a face in your thumbnails?
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-thumb-container">
+                                                    <div><img class="tb-clickmagnet-ei-right-thumb" src="https://img.youtube.com/vi/4cl-F3zAP7c/mqdefault.jpg" alt="Thumbnail with face"></div>
+                                                    <div class="tb-clickmagnet-ei-right-vs">VS.</div>
+                                                    <div><img class="tb-clickmagnet-ei-right-thumb" src="https://img.youtube.com/vi/81iqGxLh-a4/mqdefault.jpg" alt="Thumbnail without face"></div>
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    The general rule of thumb is that yes, the human element of a face, especially one with emotion, will drive more clicks to your videos.
+                                                </div>
+    
+                                                <div class="tb-clickmagnet-ei-right-your-channel">
+                                                    <img src="" class="tb-clickmagnet-channel tb-clickmagnet-ei-right-avatar" alt="Channel Avatar">Your Channel
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    <span id="tb-clickmagnet-face-analysis"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tb-clickmagnet-ei-right-info">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i> TubeBuddy ties into <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Amazon's Image Rekognition API</a>. It's not always 100% accurate.
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Element Inspector: Emotions -->
+                                    <div data-tab-name="FaceEmotions" class="tb-clickmagnet-ei-right-container">
+
+                                        <!-- middle -->
+                                        <div class="tb-clickmagnet-ei-middle">
+                                            <div class="tb-clickmagnet-ei-middle-emotions-tab">
+                                                <div class="tb-clickmagnet-ei-middle-header">Aggregate Click Through Rates</div>
+                                                <div id="tb-ctr-grid-face-emotions"></div>
+                                            </div>
+                                        </div>
+                                                
+                                        <!-- right -->
+                                        <div class="tb-clickmagnet-ei-right">
+                                            <div class="tb-clickmagnet-ei-right-upper">
+                                                <div class="tb-clickmagnet-ei-right-header">
+                                                    Which emotion drives the most clicks?
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-emotions-icons">
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/1.png" alt="Happy face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/35.png" alt="Sad face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/53.png" alt="Surprised face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/47.png" alt="Calm face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/45.png" alt="Angry face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/67.png" alt="Confused face icon" />
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/40.png" alt="Disgusted face icon" />
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnsX00B9UECvbeBQYm8nU3xBeW3qfUxgMjZ6D8xqEdKDK6Jx0s&s" alt="Mixed face icon" />
+                                                </div>
+                                                    
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    Every channel's audience is different.
+                                                    <br/><br/>
+                                                    Use the graph to the left to get an overall sense at how your audience responds to different emotions.
+                                                    <br/><br/>
+                                                    Each column is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain a thumbnail matching the emotion based on Amazon Image Rekognition (which isn't always perfect!).
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tb-clickmagnet-ei-right-info">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i> TubeBuddy ties into <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Amazon's Image Rekognition API</a>. It's not always 100% accurate.
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                    <!-- Element Inspector: Sizes -->
+                                    <div data-tab-name="FaceAttributes" class="tb-clickmagnet-ei-right-container">
+
+                                        <!-- middle -->
+                                        <div class="tb-clickmagnet-ei-middle">
+                                            <div class="tb-clickmagnet-ei-middle-sizes-tab">
+                                                <div class="tb-clickmagnet-ei-middle-header">Aggregate Click Through Rates</div>
+                                                <div id="tb-ctr-grid-face-attributes"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- right -->
+                                        <div class="tb-clickmagnet-ei-right">
+                                            <div class="tb-clickmagnet-ei-right-upper">
+                                                <div class="tb-clickmagnet-ei-right-header">
+                                                    What face size drives the most clicks?
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-three-faces">
+                                                    <div class="tb-clickmagnet-ei-right-three-faces-img">
+                                                        <img src="https://img.youtube.com/vi/rzGGpR2FYWE/mqdefault.jpg" alt="Far away faces"/><br/>
+                                                        Long Shot
+                                                    </div>
+                                                    <div class="tb-clickmagnet-ei-right-three-faces-img">
+                                                        <img src="https://img.youtube.com/vi/TdLwXYCt0fY/mqdefault.jpg" alt="Near face" /><br/>
+                                                        Medium Shot
+                                                    </div>
+                                                    <div class="tb-clickmagnet-ei-right-three-faces-img">
+                                                        <img src="https://img.youtube.com/vi/G9YFEteeqDg/mqdefault.jpg" alt="Close up face" /><br/>
+                                                        Close up
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    Don't take it personally, but putting yourself front and center isn't always best.
+                                                    <br/><br/>
+                                                    Certain types of channels (cooking, tech, etc), may do better focusing on the
+                                                    subject of the video whereas other types (vlogging, family, etc)
+                                                    rely on the personal connection and large faces can help.
+                                                    <br/><br/>
+                                                    Each column in the graph is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain a thumbnail matching the face size.
+                                                </div>
+                                            </div>
+
+                                            <div class="tb-clickmagnet-ei-right-info">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i> TubeBuddy ties into <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Amazon's Image Rekognition API</a>. It's not always 100% accurate.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Element Inspector: Text vs no text -->
+                                    <div data-tab-name="TextAnalysis" class="tb-clickmagnet-ei-right-container">
+
+                                        <!-- middle -->
+                                        <div class="tb-clickmagnet-ei-middle">
+                                            <div class="tb-clickmagnet-ei-middle-textvsnotext-tab">
+                                                <div class="tb-clickmagnet-ei-middle-header">Aggregate Click Through Rates</div>
+                                                <div id="tb-ctr-grid-text-analysis"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- right -->
+                                        <div class="tb-clickmagnet-ei-right">
+                                            <div class="tb-clickmagnet-ei-right-upper">
+                                                <div class="tb-clickmagnet-ei-right-header">
+                                                    Should you include text on your thumbnail?
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-thumb-container">
+                                                    <div><img class="tb-clickmagnet-ei-right-thumb" src="https://img.youtube.com/vi/MURPf_6r8z4/mqdefault.jpg" style="width: 110px;border: solid 3px #444;" alt="Thumbnail without text"></div>
+                                                    <div class="tb-clickmagnet-ei-right-vs">VS.</div>
+                                                    <div><img class="tb-clickmagnet-ei-right-thumb" src="https://img.youtube.com/vi/V_yDTSrsv5g/mqdefault.jpg" style="width: 110px;border: solid 3px #444;" alt="Thumbnail with text"></div>
+                                                </div>
+
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    The general rule of thumb is that <b>yes</b>, adding a few large words to your thumbnail will make it stand out
+                                                    and build curiosity or excitement and ultimately drive more clicks to your videos.
+                                                    <span id="tb-cm-consider-text">
+                                                        Consider running an <a href="https://www.tubebuddy.com/tools#videoabtests" target="_blank">A/B Test</a> to see what works best for your specific audience.
+                                                    </span>
+                                                </div>
+
+                                                <div class="tb-clickmagnet-ei-right-your-channel">
+                                                    <img src="" class="tb-clickmagnet-channel tb-clickmagnet-ei-right-avatar" alt="Channel Avatar">Your Channel
+                                                </div>
+                                                
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    <span id="tb-clickmagnet-text-analysis"></span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tb-clickmagnet-ei-right-info">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i> TubeBuddy ties into <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Amazon's Image Rekognition API</a>. It's not always 100% accurate.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Element Inspector: Words in titles -->
+                                    <div data-tab-name="WordAnalysis" class="tb-clickmagnet-ei-right-container">
+
+                                        <!-- middle -->
+                                        <div class="tb-clickmagnet-ei-middle">
+                                            <div class="tb-clickmagnet-ei-middle-emotions-tab-last">
+                                                <div class="tb-clickmagnet-ei-middle-header">Aggregate Click Through Rates</div>
+                                                <div id="tb-ctr-grid-word-analysis"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tb-clickmagnet-ei-right">
+                                            <div class="tb-clickmagnet-ei-right-upper">
+                                                <div class="tb-clickmagnet-ei-right-header">
+                                                    Which words in Titles drive the most clicks?
+                                                </div>
+
+                                                <div class="tb-clickmagnet-ei-right-text">
+                                                    It's not all about the thumbnail. The words (and topics) that you choose matter when considering click through rates.
+                                                    <br/><br/>
+                                                    Use the graph to the left to get an overall sense at how your audience responds to different words in your video titles.
+                                                    <br/><br/>
+                                                    Each column is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain the <b>word</b> below it in its title.
+                                                </div>
+                                            </div>
+
+                                            <div class="tb-clickmagnet-ei-right-info">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i> TubeBuddy ties into <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Amazon's Image Rekognition API</a>. It's not always 100% accurate.
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CTR Opportunities -->
+                    <div id="tb-ctr-opportunity-finder-container" style="display:none;">
+                        
+                        <div id="tb-ctr-of-loaded" class="tb-ctr-display-body">
+                            <!-- Left Col -->
+                            <div class="tb-ctr-display-left tb-clickmagnet-ctr-left">
+                                <div>
+                                    <div class="tb-clickmagnet-ctr-header">
+                                        Opportunities
+                                    </div>
+    
+                                    <div class="tb-clickmagnet-ctr-copy">
+                                        Where do your opportunities lie? Videos performing well (total watch time, impressions, avg view duration, etc) with a low CTR have the biggest potential for gain.
+                                        <br /><br />
+                                        They are proven winners but not enough people are clicking to watch.
+                                        <br /><br />
+                                        Focus on improving Titles and Thumbnails with the highest opportunity scores.
+                                    </div>
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="tb-clickmagnet-footer">
+                                    <a class="tb-clickmagnet-footer-back-btn">Back</a>
+                                </div>
+
+                            </div>
+
+                            <!-- Right Content -->
+                            <div class="tb-ctr-display-right tb-clickmagnet-ctr-right">
+                                <div id="tb-ctr-op-table" class="tb-clickmagnet-ctr-content-header-row">
+                                    <div class="tb-clickmagnet-ctr-content-header tb-clickmagnet-ctr-content-header-col-1">Video</div>
+                                    <div class="tb-clickmagnet-ctr-content-header tb-clickmagnet-ctr-content-header-col-2-3"><span id="tb-avg-ctr-analyzed"></span></div>
+                                    <div class="tb-clickmagnet-ctr-content-header tb-clickmagnet-ctr-content-header-col-2-3">Opportunity</div>
+                                </div>
+
+                                <div id="tb-ctr-op-container" class="tb-clickmagnet-ctr-content">
+                                    <div id="tb-ctr-op-data"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Power Rankings -->
+                    <div id="tb-ctr-top-performers-container" style="display: none;">
+                        <div class="tb-ctr-display-bodya">
+                            <div id="tb-ctr-of-loaded" class="tb-clickmagnet-pr-container">
+                                <div class="tb-ctr-display-left tb-clickmagnet-pr-left">
+                                    <div>
+                                        <div class="tb-margin-top-15">
+                                            <div class="tb-clickmagnet-left-header">
+                                                Traffic Source
+                                            </div>
+                                            <!-- dropdown -->
+                                            <select id="tb-bw-ts-select" style="width:100%;" class="tb-dropdown-menu tb-clickmagnet-dropdown-menu">
+                                                <option value="All" selected>All</option>
+                                                <option value="YT_SEARCH">YouTube Search</option>
+                                                <option value="YT_RELATED">Suggested Videos</option>
+                                                <option value="SUBSCRIBER">Browse Features</option>
+                                            </select>
+                                        </div>
+                                        <div class="tb-clickmagnet-left-text" id="tb-ctr-power-description">
+                                            Top performing videos in <b>All Traffic Sources</b>.<br /><br />If you want to grow your channel faster, focus on making videos similar to the top ranking videos.
+                                        </div>
+                                        <div class="tb-clickmagnet-left-metrics">
+                                            <h3>Metrics</h3>
+                                            <div class="tb-ctr-pc-g tb-clickmagnet-left-metrics-circles tb-ctr-pc-vh"></div> 90th Percentile<br />
+                                            <div class="tb-ctr-pc-g tb-clickmagnet-left-metrics-circles tb-ctr-pc-h"></div> 80th Percentile<br />
+                                            <div class="tb-ctr-pc-g tb-clickmagnet-left-metrics-circles tb-ctr-pc-a"></div> 70th Percentile<br />
+                                            <div class="tb-ctr-pc-g tb-clickmagnet-left-metrics-circles tb-ctr-pc-l"></div> 60th Percentile<br />
+                                            <div class="tb-ctr-pc-g tb-clickmagnet-left-metrics-circles tb-ctr-pc-vl"></div> Below 60th Percentile<br />
+                                            <div>Clicks are <a href="https://i.imgur.com/Aq7BdM1.png" target="_blank">counted here</a>.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Footer -->
+                                    <div class="tb-clickmagnet-footer">
+                                        <a class="tb-clickmagnet-footer-back-btn">Back</a>
+                                    </div>
+                                    
+                                </div>
+                                <!-- End Left Nav Power Rankings -->
+                                
+                                <!-- Content Power Rankings -->
+                                <div class="tb-ctr-display-right-pr">
+                                    <div class="tb-clickmagnet-pr-right-container">
+                                        <div id="tb-ctr-op-table" class="tb-clickmagnet-pr-content-header-row">
+                                            <div class="tb-clickmagnet-pr-content-header tb-clickmagnet-pr-content-header-col-1">Rank / Video</div>
+                                            <div class="tb-clickmagnet-pr-content-header tb-clickmagnet-pr-content-header-col-2-3">Metrics</div>
+                                            <div class="tb-clickmagnet-pr-content-header tb-clickmagnet-pr-content-header-col-2-3">Strength</div>
+                                        </div>
+                                        
+                                        <div id="tb-ctr-tp-container" class="tb-clickmagnet-pr-content-table">
+                                            <div id="tb-ctr-tp-data"></div>
+                                        </div>
+                                        
+                                        <div class="tb-clickmagnet-pr-content-footer-text">
+                                            * Overall Strength relative to other videos in the list.
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="float:left; width: 360px; margin-left:18px; display:none; ">
+                                        <table id="tb-ctr-op-table" style=" position:relative; top:0px; background:#f1f1f1; z-index:9;">
+                                            <tr>
+                                                <th class="tb-op-sort-Title tb-cursor-pointer" style="width: 405px; font-weight:normal; text-align:left; background:#f1f1f1; border-bottom:solid 2px #666; padding:5px; padding-left:10px; font-size:1.1em; ">
+                                                    BOTTOM Performers
+                                                </th>
+
+                                                <th class="tb-op-sort-CTR tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 135px;border-bottom:solid 2px #666;  padding:5px; font-size:1em;">
+                                                    Performance
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <div id="tb-ctr-bp-container" style="max-height:340px; height: 340px; overflow:auto; margin-bottom:15px; border-left:solid 1px #ddd; border-bottom:solid 1px #ccc;">
+                                            <table style="width:100%;" id="tb-ctr-bp-data">
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

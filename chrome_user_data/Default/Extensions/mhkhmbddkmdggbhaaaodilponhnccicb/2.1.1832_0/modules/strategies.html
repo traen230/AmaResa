@@ -1,0 +1,174 @@
+﻿<!-- START wrapper -->
+<div class="tb__strategies__wrapper">
+    <!-- START Toggle Strategies Button -->
+    <div id="tb-strategies-menu-button-container">
+        <div id="tb-strategies-menu-button" class="tb-strategies-slide-menu">
+            <i class="material-icons tb-strategies-menu-expand">
+                keyboard_arrow_left
+            </i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" id="tb-icon-transparent" class="tb-margin-right5">
+                <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+                <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+            </svg>
+            <div class="tb-strategies-btn-text tb-margin-left5 tb-font-size16">
+                Want to improve your channel?
+            </div>
+        </div>        
+    </div>
+
+    <!-- END Toggle Strategies Button -->
+    <!-- START strategies app container-->
+    <div id="tb-strategies-app">        
+        <div class="tb-strategies-app-container">
+            <div class="tb-strategies-app-header">
+                <img class="tb-strategies-logo" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+                <div class="tb-strategies-app-header-title">Strategies</div>
+                <div>                 
+                    <!-- zoom in/out (strategy context) -->
+                    <a class="tb-strategies-header-nav tb-strategies-zoom-in" title="zoom in" style="display:none;"><i class="material-icons">zoom_in</i></a>
+                    <a class="tb-strategies-header-nav tb-strategies-zoom-out" title="zoom out" style="display:none;"><i class="material-icons">zoom_out</i></a>
+                    <!-- settings -->
+                    <a class="tb-strategies-header-nav tb-strategies-settings" title="Settings" target="_blank"><i class="material-icons tb-font-size20 tb-move-up2">settings</i></a>
+                    <!-- hide strategies -->
+                    <a class="tb-strategies-header-nav tb-strategies-hide-strategies" style="display:none;" title="Hide Strategies">
+                        <i class="material-icons">minimize</i>
+                    </a>
+                    <!-- cancel strategy -->
+                    <a class="tb-strategies-header-nav tb-strategies-view-strategy tb-strategies-cancel-strategy" title="Cancel Strategy">
+                        <i class="material-icons">close</i>
+                    </a>
+                </div>
+            </div>
+            <div class="tb-strategies-app-sub-header tb-strategies-view tb-strategies-view-strategies-for-goal tb-strategies-view-strategy">
+                <div>
+                    <!-- back to goals list -->
+                    <a class="tb-strategies-header-nav tb-strategies-view tb-strategies-view-strategies-for-goal tb-strategies-back-to-goals tb-margin-right10" title="Back to Goals">
+                        <i class="material-icons">chevron_left</i>
+                    </a>
+                    <!-- back to strategies list -->
+                    <a class="tb-strategies-header-nav tb-strategies-view tb-strategies-view-strategy tb-strategies-back-to-strategies-list tb-margin-right10" title="Back to Strategies">
+                        <i class="material-icons">chevron_left</i>
+                    </a>
+                    <div class="tb-strategies-page-title tb-font-size14" title=""></div>
+                </div>                
+                <div class="tb-strategies-view tb-strategies-view-strategies-for-goal">
+                    <span class="tb-margin-right5">Your license </span>
+                    <img class="tb-strategies-user-license-badge" src="" alt="User License Badge" height="35"  title=""/>
+                </div>
+            </div>
+            <div class="tb-strategies-app-body">                                               
+                <!-- goals list page -->
+                <div class="tb-strategies-view tb-strategies-view-goals-list">
+                    <div class="tb-strategies-goals-list-header">
+                        What's your goal today?
+                    </div>
+                    <div id="tb-strategies-goals-list-container">
+
+                    </div>                        
+                </div>
+                <!-- strategies list page -->
+                <div id="tb-strategies-for-goal-container" class="tb-strategies-list tb-strategies-view tb-strategies-view-strategies-for-goal">
+                </div>
+                <!-- strategy details page -->
+                <div class="tb-strategy-step-list tb-strategies-view tb-strategies-view-strategy">
+                    <div class="tb-text-align-center tb-margin-top-10"><a class="tb-strategies-open-full-link tb-strategies-flex-align-center tb-strategies-flex-justify-center" target="_blank" href="">Open in new tab <i class="material-icons tb-font-size13 tb-margin-left-4">launch</i></a></div>
+                    <div class="tb-strategy-step-list-desc"></div>
+                    <div id="tb-strategies-steps-container"></div>                    
+                    <div class="tb-strategy-step-list-footer">
+                        <button class="tb-btn tb-btn-sm tb-btn-blue tb-strategies-finish-strategy">Finished</button>
+                    </div>
+                </div>
+                <!-- strategy finished confirmation page -->
+                <div class="tb-strategies-view tb-strategies-view-finished tb-padding-10">
+                    <div class="tb-margin-top50 tb-margin-bottom60" >
+                        <div class="tb-strategies-finished-header">
+                            <i class="material-icons tb-font-color-green tb-margin-right-5">check_circle</i>
+                            <span>Nice work!</span>
+                        </div>
+                        <div class="tb-strategies-finished-text tb-text-align-center tb-margin-top20 tb-font-size16 tb-padding-15"></div>
+                    </div>
+                    
+                    <div class="tb-margin-bottom5" style="text-align:end;">
+                        <button class="tb-btn tb-btn-sm tb-btn-blue tb-strategies-finished-action-button" data-action-type="back">New Strategy</button>
+                        <button class="tb-btn tb-btn-sm tb-btn-grey tb-strategies-finished-action-button" data-action-type="done">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- START strategies app container-->
+</div>
+<!-- END wrapper -->
+<!-- START splash screen template for first load -->
+<div style="display:none" type="text/template" id="tb-strategies-splash-screen-template">
+    <div class="tb-strategies-splash-screen-container">
+        <div class="tb-strategies-flex-align-center tb-strategies-flex-justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" class="tb-upload-studio-icon-transparent tb-upload-studio-icon-transparent--enabled tb-upload-studio-icon-transparent--bigger tb-margin-right15">
+                <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+                <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+            </svg>
+            <h2>Strategies</h2>
+        </div> 
+        
+        <div class="tb-margin-top40 tb-margin-bottom40 tb-font-size17  tb-line-height-25 tb-padding-left-30 tb-padding-right-30">
+            TubeBuddy Strategies will help you accomplish your goals on YouTube. Whether that's getting more views,
+            making more money, building your business or something else.
+        </div>
+        <div class="tb-margin-top40 tb-margin-bottom40 tb-font-size16 tb-font-bold">
+            Are you ready to give Strategies a try?
+        </div>
+        <div>
+            <button class="tb-btn tb-btn-blue tb-strategies-show-option" data-tb-show="true">YES, LET'S GET STARTED</button>
+            &nbsp;
+            <button class="tb-btn tb-btn-red tb-margin-top-10 tb-strategies-show-option" data-tb-show="false">NO, Take me to settings to hide Strategies</button>
+        </div>
+    </div>
+</div>
+<!-- END splash screen template for first load -->
+
+<div style="display:none;" type="text/template" id="tb-strategies-goal-item-template">
+    <div data-goal-id="{1}" class="tb-strategy-goal-item tb-strategies-goal-show-strategies">
+        <div class="tb-strategies-flex-align-center">
+            <img height="30" width="30" src="{PLUGIN_FILE_ROOT}/images/modules/strategies/{2}.png" class="tb-margin-right15" />
+            <div id="tb-strategies-goal-title">{0}</div>
+        </div>
+        <i class="material-icons">chevron_right</i>
+    </div>
+</div> 
+
+<div style="display:none;" id="tb-strategies-for-goal-template">
+    <div class="tb-strategy-list-item {8}">
+        <div class="tb-strategy-list-item-col">
+            <div class="tb-font-size17 tb-margin-bottom5 tb-margin-top10 tb-bold">{0}</div>
+            <div class="tb-strategy-list-item-description-container">
+                <a class="tb-strategies-description-toggle-details tb-margin-bottom-10">view details</a>
+                <div class="tb-strategies-strategy-description tb-padding-right-20 tb-font-size16 tb-line-height22" style="display:none;">
+                    <span>{1}</span>
+                </div>
+            </div>
+        </div>   
+        <div class="tb-strategy-list-item-col">
+            <div>
+                <button data-strategy-id="{2}" data-strategy-action="{7}" class="tb-show-strategy tb-btn tb-btn-sm tb-btn-primary{3}">{4}</button>
+                <div class="tb-strategy-upgrade-required tb-font-size-14 tb-margin-top-20 {5}">{6}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none;" type="text/template" id="tb-strategies-strategy-step-template">
+    <div class="tb-strategies-strategy-step-container">
+        <div class="tb-strategy-card-contents tb-strategy-step-item tb-strategy-card">
+            <div class="tb-strategy-item">
+                <div class="tb-font-size-md tb-bold tb-margin-bottom-10">Step {0}:</div>
+                <span class="tb-strategy-step-body">{1}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tb-strategies-image-full" style="display:none;">
+    <a class="tb-strategy-close-full-screen-image"><i class="material-icons tb-font-color-white">close</i></a>
+    <img src="#" alt=""/>
+</div>

@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Bununla birlikte, Alibaba, AliExpress, 1688, Taobao ve Yiwugo'daki ürün kaynaklarını kolayca bulabilirsiniz."
+   },
+   "EXTENSION_NAME": {
+      "message": "Alibaba için görsele göre AliPrice arama"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Aynı stil için ekran görüntüsü araması"
+   },
+   "context_menus_goote_trans": {
+      "message": "Sayfayı çevir/Orijinali göster"
+   },
+   "context_menus_search_by_image": {
+      "message": "$storeName$'da görselle ara",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "$storeName$'ya Yakala",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Çevirmek için yakalayın"
+   }
+}

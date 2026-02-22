@@ -1,0 +1,204 @@
+/* Destination Design System v1 */
+
+ html {
+    /* Buttons */
+    --color-button: #4BEAD7;
+
+    /* Buttons Hover */
+    --color-button-hover: #DBFBF7;
+    --color-button-hover-outline: #4BEAD7;
+    --color-button-secondary-hover: #4BEAD7;
+    --color-button-secondary-hover-outline: #3CBEAE;
+
+    /* Buttons Pressed */
+    --color-button-pressed: #B7F7EF;
+    --color-button-pressed-outline: #4BEAD7;
+    --color-button-secondary-pressed: #3CBEAE;
+
+    /* Text */
+    --color-text-primary: #1D2327;
+    --color-link-primary: #19348A;
+
+    /* Spacing */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-56: 56px;
+    --spacing-64: 64px;
+
+    /* Shadows
+    box-shadow property */
+    --shadow-xlow: 0px 1px 3px 0px rgba(27, 27, 32, 0.10), 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px -1px 2px -1px rgba(0, 0, 0, 0.10);
+    --shadow-low: 0px 2px 4px -2px rgba(27, 27, 32, 0.10), 0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px -2px 4px -2px rgba(0, 0, 0, 0.10);
+    --shadow-med: 0px 4px 6px -4px rgba(27, 27, 32, 0.10), 0px 10px 15px -3px rgba(0, 0, 0, 0.10), 0px -4px 8px -4px rgba(0, 0, 0, 0.10);
+    --shadow-high: 0px 8px 10px -6px rgba(27, 27, 32, 0.10), 0px 20px 25px -5px rgba(0, 0, 0, 0.10), 0px -6px 12px -8px rgba(0, 0, 0, 0.10);
+    --shadow-xhigh: 0px 25px 50px -12px rgba(0, 0, 0, 0.10), 0px -8px 16px -12px rgba(0, 0, 0, 0.10);
+
+    /* Corners
+    border-radius property */
+    --corner-sm: 4px;
+    --corner-med: 8px;
+    --corner-lg: 16px;
+    --corner-xlg: 999px;
+
+/* Colors */
+    /* primary */
+    --color-white: #ffffff;
+    --color-black: #1D2327;
+
+    /* brand teal */
+    --color-brand-teal-50: #EDFDFB;
+    --color-brand-teal-100: #DBFBF7;
+    --color-brand-teal-200: #B7F7EF;
+    --color-brand-teal-300: #93F2E7;
+    --color-brand-teal-400: #6FEEDF;
+    --color-brand-teal-500: #4BEAD7; /* main */
+    --color-brand-teal-600: #3CBEAE;
+    --color-brand-teal-700: #2D9185;
+    --color-brand-teal-800: #1F655D;
+    --color-brand-teal-900: #103834;
+
+    /* brand dark blue */
+    --color-brand-dark-blue-50: #FAFAFF;
+    --color-brand-dark-blue-100: #D8DFF9;
+    --color-brand-dark-blue-200: #B7C4F2;
+    --color-brand-dark-blue-300: #95A9EC;
+    --color-brand-dark-blue-400: #738EE6;
+    --color-brand-dark-blue-500: #5373DF;
+    --color-brand-dark-blue-600: #3058D9;
+    --color-brand-dark-blue-700: #2347BE;
+    --color-brand-dark-blue-800: #19348A;
+    --color-brand-dark-blue-900: #0C0F42;
+    --color-brand-dark-blue-900-default: #0C0F42;
+
+    /* neutral */
+    --color-neutral-50: #F7F7F8;
+    --color-neutral-100: #E1E1E2;
+    --color-neutral-200: #CACBCD;
+    --color-neutral-300: #B4B5B7;
+    --color-neutral-400: #9D9FA2;
+    --color-neutral-500: #878A8C;
+    --color-neutral-600: #707477;
+    --color-neutral-700: #5A5E61;
+    --color-neutral-800: #43484C;
+    --color-neutral-900: #2D3236;
+
+    /* error */
+    --color-danger-50: #FBE6E6;
+    --color-danger-100: #F8CECC;
+    --color-danger-200: #F09C99;
+    --color-danger-300: #E96B66;
+    --color-danger-400: #E13933;
+    --color-danger-500: #DA0800;
+    --color-danger-600: #AE0600;
+    --color-danger-700: #830500;
+    --color-danger-800: #570300;
+    --color-danger-900: #2C0200;
+
+    /* success */
+    --color-success-50: #E7FBD8;
+    --color-success-100: #F3FDEC;
+    --color-success-200: #CFF7B2;
+    --color-success-300: #B8F38B;
+    --color-success-400: #A0EF65;
+    --color-success-500: #88EB3E;
+    --color-success-600: #6FC032;
+    --color-success-700: #569526;
+    --color-success-800: #3C6A1A;
+    --color-success-900: #233F0E;
+    
+    /* other - orange */
+    --color-other-orange-100: #FFE7C8;
+    --color-other-orange-300: #FFC478;
+    --color-other-orange-500: #FFA22B;
+    --color-other-orange-700: #DB7709;
+    --color-other-orange-900: #A83200;
+    
+    /* other - yellow */
+    --color-other-yellow-100: #FFF3C5;
+    --color-other-yellow-300: #FFE680;
+    --color-other-yellow-500: #FFCC00;
+    --color-other-yellow-700: #EF9F03;
+    --color-other-yellow-900: #993E00;
+
+    /* other - blue */
+    --color-other-blue-100: #D8F2FA;
+    --color-other-blue-300: #9FE9FF;
+    --color-other-blue-500: #4ED0F8;
+    --color-other-blue-700: #049FCF;
+    --color-other-blue-800: #4A90E2;
+    --color-other-blue-900: #01526B;
+    
+    /* other - purple */
+    --color-other-purple-100: #F6E8FF;
+    --color-other-purple-300: #E8C2FF;
+    --color-other-purple-500: #D081FF;
+    --color-other-purple-700: #A642E1;
+    --color-other-purple-900: #570786;
+    
+    /* other - violet */
+    --color-other-violet-100: #ECEBFF;
+    --color-other-violet-300: #CDC9FF;
+    --color-other-violet-500: #A39CFF;
+    --color-other-violet-700: #6359FB;
+    --color-other-violet-900: #1E14B0;
+    
+    /* other - pink */
+    --color-other-pink-100: #FFD8E0;
+    --color-other-pink-300: #FFA1B6;
+    --color-other-pink-500: #F76887;
+    --color-other-pink-700: #B52644;
+    --color-other-pink-900: #900523;
+    
+    /*Color Badge Green*/
+    --color-badge-green-100: #D7F9EA;
+    --color-badge-green-200: #24BE78;
+    --color-badge-green-300: #017D45;
+    
+    /* Typography */
+    
+    /* Font Family */
+    --font-family-pn: 'Figtree', sans-serif;
+    
+    /* Headers */
+    --header1-font-size: 40px;
+    --header1-line-height: 48px;
+    --header2-font-size: 24px;
+    --header2-line-height: 40px;
+    --header3-font-size: 24px;
+    --header3-line-height: 32px;
+    --header4-font-size: 20px;
+    --header4-line-height: 28px;
+    --header5-font-size: 16px;
+    --header5-line-height: 24px;
+    --header6-font-size: 14px;
+    --header6-line-height: 20px;
+    --header7-font-size: 12px;
+    --header7-line-height: 16px;
+
+    /* Body */
+    --body-xlg-font-size: 24px;
+    --body-xlg-line-height: 32px;
+    --body-lg-font-size: 20px;
+    --body-lg-line-height: 28px;
+    --body-med-font-size: 16px;
+    --body-med-line-height: 24px;
+    --body-sm-font-size: 14px;
+    --body-sm-line-height: 20px;
+    --body-xsm-font-size: 12px;
+    --body-xsm-line-height: 18px;
+
+    /* All sizes */
+    --header-font-style: normal;
+    --header-font-weight: 600;
+    --body-font-style: normal;
+    --body-font-weight: 400;
+
+    --tb-red: '#D92145'
+}
+

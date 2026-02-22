@@ -1,0 +1,15 @@
+2025/06/15-08:56:19.120 5790 Reusing MANIFEST C:\Users\SOICHIRO SAHARA\Documents\BizBright\04 Script\Amazon\AmaResa_Web_R1\chrome_user_data\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/06/15-08:56:19.121 5790 Recovering log #3
+2025/06/15-08:56:19.121 5790 Reusing old log C:\Users\SOICHIRO SAHARA\Documents\BizBright\04 Script\Amazon\AmaResa_Web_R1\chrome_user_data\Default\Sync Data\LevelDB/000003.log 
+2025/06/15-08:57:10.623 389c Level-0 table #5: started
+2025/06/15-08:57:10.633 389c Level-0 table #5: 345499 bytes OK
+2025/06/15-08:57:10.642 389c Delete type=0 #3
+2025/06/15-08:57:20.123 389c Level-0 table #7: started
+2025/06/15-08:57:20.125 389c Level-0 table #7: 100694 bytes OK
+2025/06/15-08:57:20.126 389c Delete type=0 #4
+2025/06/15-08:57:27.958 389c Level-0 table #9: started
+2025/06/15-08:57:27.961 389c Level-0 table #9: 98076 bytes OK
+2025/06/15-08:57:27.963 389c Delete type=0 #6
+2025/06/15-08:57:31.122 510 Level-0 table #11: started
+2025/06/15-08:57:31.127 510 Level-0 table #11: 98239 bytes OK
+2025/06/15-08:57:31.129 510 Delete type=0 #8

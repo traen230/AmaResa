@@ -1,0 +1,320 @@
+﻿﻿<!--Start Base Module Template-->
+<div id="tb-publish-to-facebook-container" class="tb-module-template draggable-container" style="display:none; width:800px">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Publish Video to Facebook</h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=publishtofacebook" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-publish-to-facebook-video-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-publish-to-facebook-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container --->
+            <div class="tb-module-content">
+                <!-- Facebook API notice -->
+                <div class="tb-publish-to-facebook-api-update" style="padding:5px; background-color:#FFAA36; color: #fff; text-align:center; display:none;">
+                    <span class="tb-font-cbold">NOTE:</span> Due to Facebook program interface changes starting August 1st 2018 Facebook will no longer support publishing videos to <i>Facebook Profiles</i>. <br />Publishing to <i>Facebook Pages</i> will continue to be supported.
+                    Please select a <i>Facebook Page</i> or <a href="https://tubebuddy.zendesk.com/hc/en-us/articles/9345553857819" target="_blank" style="color: #fff; text-decoration:underline">read more about how to convert a Facebook Profile to a Page</a>
+                </div>
+
+                <div class="tb-publish-to-facebook-settings-container">
+                    <div class="tb-publish-to-facebook-published-template-container"></div>
+                    <div class="tb-publish-to-facebook-start-container">
+                        <!-- Loading screen -->
+                        <div class="tb-publish-to-facebook-loading-video">
+                            <span class="tb-spinner"></span>
+                            Loading video information...
+                        </div>
+                        <!-- Error publishing video -->
+                        <div class="tb-publish-to-facebook-autherror">
+                            <p class="tb-font-medium">Sorry, there was a problem publishing your video to Facebook.  This can occur if you've changed your Facebook password.</p>
+                            <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png" class="tb-margin-15" style="width:200px;" />
+                            <p class="tb-font-medium">To fix this problem trying re-linking the selected Facebook account <a target="_blank" href="https://www.tubebuddy.com/account/integrations" style="">here</a>.<br />After you've re-linked your Facebook account please try publishing again.</p>
+                        </div>
+
+                        <!-- Publish video to Facebook settings -->
+                        <div class="tb-publish-to-facebook-video-loaded">
+                            <!-- Publish video to Facebook settings Step 1-->
+                            <div class="tb-publish-to-facebook-video-loaded-step1">
+                                <div class="tb-publish-to-facebook-row">
+                                    <div class="tb-inline-block">
+                                        <img src="{PLUGIN_FILE_ROOT}/images/icons/social/facebook-round-icon.png" style="width: 30px;" />
+                                    </div>
+                                    <div class="tb-inline-block">
+                                        <select class="tb-publish-to-facebook-accounts tb-font-medium tb-font-color-gray">
+                                            <option>Loading...</option>
+                                        </select>
+                                        <div>
+                                            <a target="_blank" class="tb-publish-to-facebook-accounts-manage" href="#" style="">manage pages</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tb-publish-to-facebook-row">
+                                    <div class="tb-publish-to-facebook-col-9">
+                                        <!-- Title -->
+                                        <p class="tb-font-cbold tb-font-size-sm">Title</p>
+                                        <div class="tb-margin-top-8">
+                                            <label class="basic-info-form-input">
+                                                <span class="yt-uix-form-input-container yt-uix-form-input-text-container yt-uix-form-input-non-empty">
+                                                    <input style="width: 375px;" class="tb-input-textfield tb-publish-to-facebook-video-settings-title" name="title" value="" placeholder="Title" data-ita-enable="true" />
+                                                </span>
+                                            </label>
+                                            <p class="tb-font-size-xs tb-margin-top-5" style="color:#999; position: relative; left: 9px;">Note: Facebook does not allow emoticons in the Title</p>
+                                        </div>
+                                        <!-- Description -->
+                                        <div class="tb-margin-top-8">
+                                            <p class="tb-font-cbold tb-font-size-sm">Description</p>
+                                            <label class="basic-info-form-input">
+                                                <span class="yt-uix-form-input-container yt-uix-form-input-textarea-container">
+                                                    <textarea style="width:375px;" class="tb-input-textfield tb-margin-top-8 tb-publish-to-facebook-video-settings-description" name="description" placeholder="Description" data-ita-enable="true" rows="6" aria-label="Description"></textarea>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <!-- Thumbnail & Timeline-->
+                                        <div class="tb-margin-top-15">
+                                            <div id="tb-publish-to-facebook-thumbnailContainer" class="tb-inline-block tb-hid">
+                                                <p class="tb-font-cbold tb-font-size-sm">Thumbnail</p>
+                                                <div class="tb-margin-top-8">
+                                                    <img class="tb-publish-to-facebook-thumbnail" style="height:50px;" />
+                                                    <div class="tb-material-checkbox-container">
+                                                        <label class="tb-material-checkbox-label">
+                                                            <input id="tb-publish-to-facebook-useYouTubeThumbnail" type="checkbox" class="tb-material-checkbox-input" checked="checked" />
+                                                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                            Include Thumbnail
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tb-publish-to-facebook-timeline-container tb-inline-block tb-margin-left-15">
+                                                <p class="tb-font-cbold tb-font-size-sm">Timeline</p>
+                                                <div class="tb-material-checkbox-container">
+                                                    <label class="tb-material-checkbox-label">
+                                                        <input id="tb-publish-to-facebook-addToTimeline" type="checkbox" class="tb-material-checkbox-input" checked="checked" />
+                                                        <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                        Add to Timeline
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tb-publish-to-facebook-publish-container tb-publish-to-facebook-col-3">
+                                        <!-- Publish-->
+                                        <p class="tb-font-cbold tb-font-size-sm">Publish</p>
+                                        <div style="margin-bottom:15px">
+                                            <div class="tb-material-radio-container">
+                                                <input type="radio" value="now" class="tb-material-radio tb-publish-to-facebook-video-settings-publish-option tb-publish-to-facebook-video-settings-publish-option-now" name="scheduledPublishOption" id="tb-publish-to-facebook-now" checked="checked" />
+                                                <label class="tb-material-radio-label" for="tb-publish-to-facebook-now">Now</label>
+                                            </div>
+                                            <div class="tb-material-radio-container">
+                                                <input type="radio" value="draft" class="tb-material-radio tb-publish-to-facebook-video-settings-publish-option tb-publish-to-facebook-video-settings-publish-option-draft" name="scheduledPublishOption" id="tb-publish-to-facebook-draft" />
+                                                <label class="tb-material-radio-label" for="tb-publish-to-facebook-draft">Now as a Draft</label>
+                                            </div>
+                                            <div class="tb-material-radio-container">
+                                                <input type="radio" value="future" class="tb-material-radio tb-publish-to-facebook-video-settings-publish-option tb-publish-to-facebook-video-settings-publish-option-future" name="scheduledPublishOption" id="tb-publish-to-facebook-future" />
+                                                <label class="tb-material-radio-label" for="tb-publish-to-facebook-future">In the Future</label>
+                                            </div>
+
+                                            <div class="tb-publish-to-facebook-video-settings-publish-options tb-margin-top-8">
+                                                <div class="tb-moz-date-container tb-inline-block">
+                                                    <input type="date" id="tb-publish-to-facebook-video-settings-publish-date-mv3" class="tb-mv3-date" name="date" />
+                                                </div>
+                                                <div class="tb-inline-block" style="position: relative; top: 1px;">
+                                                    <select class="yt-uix-form-input-text tb-dropdown-menu tb-publish-to-facebook-video-settings-publish-options" id="tb-publish-to-facebook-video-settings-publish-time" style="width:95px;">
+                                                        <option value="00:00">12:00 AM</option>
+                                                        <option value="00:30">12:30 AM</option>
+                                                        <option value="01:00">1:00 AM</option>
+                                                        <option value="01:30">1:30 AM</option>
+                                                        <option value="02:00">2:00 AM</option>
+                                                        <option value="02:30">2:30 AM</option>
+                                                        <option value="03:00">3:00 AM</option>
+                                                        <option value="03:30">3:30 AM</option>
+                                                        <option value="04:00">4:00 AM</option>
+                                                        <option value="04:30">4:30 AM</option>
+                                                        <option value="05:00">5:00 AM</option>
+                                                        <option value="05:30">5:30 AM</option>
+                                                        <option value="06:00">6:00 AM</option>
+                                                        <option value="06:30">6:30 AM</option>
+                                                        <option value="07:00">7:00 AM</option>
+                                                        <option value="07:30">7:30 AM</option>
+                                                        <option value="08:00">8:00 AM</option>
+                                                        <option value="08:30">8:30 AM</option>
+                                                        <option value="09:00">9:00 AM</option>
+                                                        <option value="09:30">9:30 AM</option>
+                                                        <option value="10:00">10:00 AM</option>
+                                                        <option value="10:30">10:30 AM</option>
+                                                        <option value="11:00">11:00 AM</option>
+                                                        <option value="11:30">11:30 AM</option>
+                                                        <option value="12:00">12:00 PM</option>
+                                                        <option value="12:30">12:30 PM</option>
+                                                        <option value="13:00">1:00 PM</option>
+                                                        <option value="13:30">1:30 PM</option>
+                                                        <option value="14:00">2:00 PM</option>
+                                                        <option value="14:30">2:30 PM</option>
+                                                        <option value="15:00" selected="">3:00 PM</option>
+                                                        <option value="15:30">3:30 PM</option>
+                                                        <option value="16:00">4:00 PM</option>
+                                                        <option value="16:30">4:30 PM</option>
+                                                        <option value="17:00">5:00 PM</option>
+                                                        <option value="17:30">5:30 PM</option>
+                                                        <option value="18:00">6:00 PM</option>
+                                                        <option value="18:30">6:30 PM</option>
+                                                        <option value="19:00">7:00 PM</option>
+                                                        <option value="19:30">7:30 PM</option>
+                                                        <option value="20:00">8:00 PM</option>
+                                                        <option value="20:30">8:30 PM</option>
+                                                        <option value="21:00">9:00 PM</option>
+                                                        <option value="21:30">9:30 PM</option>
+                                                        <option value="22:00">10:00 PM</option>
+                                                        <option value="22:30">10:30 PM</option>
+                                                        <option value="23:00">11:00 PM</option>
+                                                        <option value="23:30">11:30 PM</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="tb-margin-top-5">
+                                                    <select style="width: 184px; word-wrap:normal" class="tb-dropdown-menu tb-publish-to-facebook-video-settings-publish-options tb-publish-to-facebook-video-timezones"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Video file-->
+                                        <div class="tb-publish-to-facebook-video-file">
+                                            <p class="tb-font-cbold tb-font-size-sm">Video File</p>
+                                            <div class="tb-margin-top-5">
+                                                <div>
+                                                    <!-- Upload local file -->
+                                                    <div class="tb-publish-to-facebook-upload-option">
+                                                        <div class="tb-material-radio-container tb-padding-0" style="margin: 0px 0 5px 6px">
+                                                            <input type="radio" class="tb-material-radio" name="facebook-upload-option" value="upload" id="tb-publish-to-facebook-local-file" checked="checked" />
+                                                            <label class="tb-material-radio-label" for="tb-publish-to-facebook-local-file">Upload Local File</label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Video file input -->
+                                                    <div class="">
+                                                        <p id="namefile" class="tb-margin-bottom-5 tb-font-cbold" style="word-break: break-all;">No file selected</p>
+                                                        <input id="tb-publish-to-facebook-upload-input" type="file" class="tb-input-file" data-multiple-caption="{count} files selected" multiple />
+                                                        <label for="tb-publish-to-facebook-upload-input"><span style="font-size:10px;">CHOOSE FILE</span></label>
+                                                    </div>
+
+                                                    <!-- Note with file name -->
+                                                    <div class="tb-publish-to-facebook-upload-filename-container tb-font-size-xs tb-margin-top-5" style="color:#999;">
+                                                        <span>Note: The name of the file that you originally uploaded to YouTube was: </span>
+                                                        <span class="tb-publish-to-facebook-upload-filename tb-font-cbold"></span>
+                                                    </div>
+                                                </div>
+                                                <!-- Automatically upload YT's copy -->
+                                                <div class="tb-margin-top-10">
+                                                    <div class="tb-publish-to-facebook-upload-option">
+                                                        <div class="tb-material-radio-container tb-padding-0" style="margin: 0px 0 5px 6px">
+                                                            <input type="radio" class="tb-material-radio" name="facebook-upload-option" value="auto" id="tb-publish-to-facebook-auto-file" />
+                                                            <label class="tb-material-radio-label" for="tb-publish-to-facebook-auto-file">Automatically Upload YouTube's Copy</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear:both"></div>
+                                <!-- Publish to Facebook button -->
+                                <div class="tb-float-right tb-margin-top-5 tb-margin-bottom-15">
+                                    <span style="display:none; left: -25px;" class="tb-publish-to-facebook-validation tb-red tb-margin-right-10 tb-relative">
+                                        Select A Video File
+                                    </span>
+                                    <button class="tb-btn tb-btn-sm tb-btn-success tb-publish-to-facebook-copy">
+                                        Publish to Facebook
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Upload complete -->
+                            <div class="tb-publish-to-facebook-video-loaded-complete tb-margin-top-50 tb-margin-bottom-15 tb-hid">
+                                <!-- Success bar -->
+                                <div id="status-bar" class="tb-success-status tb-copy-to-status-bar">
+                                    <img src="{plugin_file_root}/images/modules/channelbackup/backup-status-check.png" class="tb-inline-block tb-status-check" />
+                                    <p class="tb-font-book tb-font-color-white tb-inline-block" style="margin: 5px 0px;">Your Video was successfully published!</p>
+                                </div>
+                                <div class="tb-font-book tb-font-size-sm">
+                                    <p>Facebook is currently processing your video.</p>
+                                    <p>It can take up to <span class="tb-font-cbold">five minutes</span> for the video to be available.</p>
+                                </div>
+                                <div class="tb-margin-top-20 tb-margin-bottom-20">
+                                    <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/publish-video-to-facebook.png" style="width: 250px;" />
+                                </div>
+                                <div>
+                                    <img src="{PLUGIN_FILE_ROOT}/images/icons/social/facebook-round-icon.png" style="height:18px;position:relative; top:3px;" />
+                                    <a target="new" class="tb-publish-to-facebook-video-loaded-complete-link"></a>
+                                </div>
+                                <div class="tb-margin-top-10">
+                                    <p style="color:#999;"><span class="tb-font-cbold">Note:</span> This link will say "Page Not Found" until Facebook has completed processing the video</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Link Facebook account -->
+                    <div class="tb-publish-to-facebook-none tb-hid">
+                        <p class="tb-font-cbold">Sorry, you do not have any Facebook pages linked to TubeBuddy</p>
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/facebook-linked-account.png" class="tb-margin-15" style="width:250px;" />
+                        <div class="tb-margin-15 tb-add-facebook-account-div">
+                            <a class="tb-btn tb-btn-sm tb-btn-primary tb-add-facebook-accounts" href="https://www.tubebuddy.com/account/integrations" target="_blank">Add Facebook Page(s)</a>
+                        </div>
+                        <div class="tb-publish-to-facebook-refresh tb-margin-15" style="display:none;">
+                            <p class="tb-font-cbold tb-font-size-sm">After you've linked a Facebook account, click Refresh</p>
+                            <div class="tb-margin-top-15">
+                                <a class="tb-btn tb-btn-sm tb-btn-primary tb-font-size-lb">
+                                    <span><img src="{PLUGIN_FILE_ROOT}/images/icons/refresh-white.png" class="tb-publish-to-facebook-refresh-btn" /></span>
+                                    Refresh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Only public or unlisted videos -->
+                    <div class="tb-publish-to-facebook-private tb-hid">
+                        <p class="tb-font-medium">Sorry, publishing to Facebook only works with public or unlisted videos.</p>
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png" class="tb-margin-15" style="width:200px;" />
+                        <div class="tb-publish-to-facebook-private-upload tb-margin-top-15">
+                            <p class="tb-font-medium">Make sure you've clicked the 'Publish' button to make the video public.</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Ownership warning -->
+                    <div class="tb-publish-to-facebook-license tb-hid">
+                        <p class="tb-font-medium">Sorry, it appears that you don't own the content for this video, it has been claimed by a 3rd party or you have already downloaded it too many times today.</p>
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png" class="tb-margin-15" style="width:200px;" />
+                        <p class="tb-font-medium">In order to comply with YouTube's T.O.S. you are restricted from publishing this video to Facebook.</p>
+                    </div>
+                    <!-- Video too long warning -->
+                    <div class="tb-publish-to-facebook-length tb-hid">
+                        <p class="tb-font-medium">Sorry, this video is too long. The maximum length that the Facebook API allows is 45 minutes.</p>
+                        <img src="{PLUGIN_FILE_ROOT}/images/modules/publishtofacebook/warning-content-ownership.png" class="tb-margin-15" style="width:200px;" />
+                    </div>
+                </div>
+                <div style="display:none" type="text/template" id="tb-publish-to-facebook-published-template">
+                    <div style="padding: 5px; background-color: #FFAA36; color: #fff; text-align: center; position: relative; width: 101.5%; top: -10px; left: -10px;">
+                        <b>NOTE:</b> You already used the <i>Publish to Facebook</i> tool for this video on <strong>{0}</strong>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

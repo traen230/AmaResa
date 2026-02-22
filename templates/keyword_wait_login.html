@@ -1,0 +1,54 @@
+<!-- templates/keyword_wait_login.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キーワードリサーチ：ログイン待機</title>
+    <style>
+        body {
+            font-family: "メイリオ", sans-serif;
+            background-color: #f7f7f7;
+            padding: 30px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .info {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 SellerSprite にログインしてください</h2>
+        <p class="info">ChromeでSellerSpriteにログインし、SellerSpriteの各種数値が出力されたら、以下のボタンを押してリサーチを開始してください。</p>
+
+        <form action="{{ url_for('execute_keyword_research') }}" method="POST">
+            <input type="hidden" name="keyword" value="{{ keyword }}">
+            <input type="hidden" name="review_threshold" value="{{ review }}">
+            <input type="hidden" name="sales_threshold" value="{{ sales }}">
+            <button type="submit" class="button">✅ リサーチ開始</button>
+        </form>
+    </div>
+</body>
+</html>

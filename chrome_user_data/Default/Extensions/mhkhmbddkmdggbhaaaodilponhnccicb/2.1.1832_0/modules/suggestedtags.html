@@ -1,0 +1,333 @@
+﻿
+<div style="position: fixed; background-color: white; top: 55px; left: 50%; margin-left: -450px; z-index: 2000000003; border: solid 1px #ccc; padding: 8px 12px; border-radius: 3px; width: 900px; display: none;font-family:Roboto-Regular;" id="tb-suggested-tags-container" class="yt-dialog-fg draggable-container">
+
+    <div style="background-color: #f0f0f0; margin-left: -12px; margin-right: -12px; margin-top: -8px; padding: 10px; border-bottom: solid 1px #ddd; cursor:move" data-draggable="true">
+        <div style="float: right; text-align: right; position: relative; top: -3px; left: -3px;">
+            <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=suggestedtags" data-draggable="false">
+                <img src="{PLUGIN_FILE_ROOT}/images/icons/question.png" title="help" style="height: 18px; vertical-align: middle;" />
+            </a>
+            <span style="vertical-align: middle;text-decoration: none;" class="tb-suggested-tags-closex tb-cursor-pointer" data-draggable="false">
+                <img src="{PLUGIN_FILE_ROOT}/images/icons/close4.png" title="close" style="margin-left:4px;vertical-align: middle;" />
+            </span>
+        </div>
+        <img src="{PLUGIN_FILE_ROOT}/images/branding/icon_large.png" style="height: 24px; vertical-align: middle; margin-right: 2px;" />
+        <span style="vertical-align: middle; font-size: 20px;">Suggested Tags</span><br />
+    </div>
+    <div class="tb-suggested-tags-settings">
+        <div id="tb-suggested-tags-warning" style="padding:30px 15px;">
+            <div style=" width:325px; float:left; padding-right:25px;">
+
+                <div style="font-size:18px; font-weight:700">
+                    Changes Coming Soon!
+                </div>
+                <div style="font-size:16px; line-height:24px; margin-top:25px;">
+                    This "Suggested Tags" tool will soon be going away and the core functionality merged into our "Recommended Tags" tool.
+                </div>
+                <div style="font-size:16px; line-height:24px; margin-top:10px;">
+                    Right within Recommended Tags, you will be able to view and sort by the number of views that were driven to the
+                    video from Search Traffic  (see screenshot).
+                </div>
+                <div style="font-size:16px; line-height:24px; margin-top:40px; text-align:left; margin-left:25px;">
+                    <div id="tb-suggested-tags-warning-btn" class="tb-btn tb-btn-blue">
+                        Okay, got it.
+                    </div>
+                </div>
+            </div>
+            <div style=" width:500px; float:right;">
+                <img src="https://i.imgur.com/eDKubcd.png" style="max-width:100%;" />
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div id="tb-competitorx-analysis-data-table" style="margin-top:10px; display:none">
+            <div id="tb-suggested-tags-need-scope">
+                <div class="" style="margin-top:15px;background-color:red; padding:8px; text-align:center; color:white; font-size:14px; ">
+                    <img src="{PLUGIN_FILE_ROOT}/images/icons/error-white.png" style=" vertical-align:middle; position:relative; top:-1px; left:-1px;" />
+                    <span style=" vertical-align:middle;">
+                        TubeBuddy needs access to your Channel's analytics for these suggestions. <a class="tb-missing-token-oauth-relink" style="color:white; text-decoration:underline; font-size:1.1em;">CLICK HERE</a> to fix the problem.
+                    </span>
+                </div>
+            </div>
+            <div style=" width:430px; float:left;">
+                <div style="font-weight:500; padding:5px; font-size:16px;">
+                    Suggested for Search (Video)
+                    <div style="font-size: 14px; font-weight:normal;padding: 5px;color: #777; display:none;">
+                        Tags to help this video rank higher in YouTube search results and
+                        drive more views.
+                    </div>
+                </div>
+                <div class="tb-suggested-tags-search-container">
+                    <div style="max-height:283px;overflow-y:auto">
+                        <table class="suggested-tags-table" id="tb-suggested-tags-search-table">
+                            <thead style="text-align:center">
+                                <tr style="font-size:11px; text-transform:uppercase;">
+                                    <td style="width:40px" class="tb-suggested-tags-header-expand-all"></td>
+                                    <td class="tb-suggested-tags-headerSort" style="text-align:left">Tag</td>
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' title="Views received from this search term in YouTube" /></td>
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' title="Tags used by similar top ranking videos" /></td>
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' title="Words used in this video's title and description (first 200 characters)" /></td>
+                                </tr>
+                            </thead>
+                            <tbody id="tb-suggested-tags-search-body"></tbody>
+                        </table>
+                    </div>
+                    <div class="tb-suggested-tags-key" style="padding-left:10px; line-height:24px; padding-top:10px; display:none">
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' />Views received from this search term in YouTube<br />
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' />Tags used by similar top ranking videos<br />
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' /> Words used in this video's title and description (first 200 characters)<br />
+                    </div>
+                </div>
+                <div class="tb-suggested-tags-search-loading" style="font-size:13px; font-weight:bold; opacity:.75">
+
+                    <table class="suggested-tags-table">
+                        <thead style="text-align:center">
+                            <tr style="font-size:11px; text-transform:uppercase;">
+                                <td style="width:40px" class="tb-suggested-tags-header-expand-all"></td>
+                                <td class="tb-suggested-tags-headerSort" style="text-align:left">Tag</td>
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' title="Views received from this search term in YouTube" /></td>
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' title="Tags used by similar top ranking videos" /></td>
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' title="Words used in this video's title and description (first 200 characters)" /></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tb-suggested-tags-tag-row">
+                                <td colspan="5" style="padding:75px 40px 125px 40px;">
+                                    <img src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" />
+                                    <span style="position:relative;top:-3px; font-weight:500"> Running analysis...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tb-suggested-tags-search-none" style="display:none;font-size:13px; font-weight:bold; margin:20px 0 0 15px;height:370px; ">
+                    <span style="position:relative;top:-3px;"> No tag suggestions found</span>
+                </div>
+            </div>
+            <div style=" width:430px; float:right;">
+                <div style="font-weight:500; padding:5px; font-size:16px;">
+                    Suggested for Related (Channel)
+                    <div style="font-size: 14px; font-weight:normal;padding: 5px;color: #777; display:none;">
+                        Tags to help you show up more often in Related Videos areas and
+                        drive more views.
+                    </div>
+                </div>
+                <div class="tb-suggested-tags-related-container">
+                    <div style="max-height:283px;overflow-y:auto">
+                        <table class="suggested-tags-table" id="tb-suggested-tags-related-table">
+                            <thead style="text-align:center">
+                                <tr style="font-size:11px; text-transform:uppercase;">
+                                    <td style="width:40px" class="tb-suggested-tags-header-expand-all"></td>
+                                    <td class="tb-suggested-tags-headerSort" style="text-align:left">Tag</td>
+
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' title="Views received from this search term in YouTube" /></td>
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' title="Tags used by similar top ranking videos" /></td>
+                                    <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' title="Words used in this video's title and description" /></td>
+                                </tr>
+                            </thead>
+                            <tbody id="tb-suggested-tags-related-body"></tbody>
+                        </table>
+                    </div>
+                    <div class="tb-suggested-tags-key" style="padding-left:10px; line-height:24px; padding-top:10px;display:none;">
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' />Views received from this search term in YouTube <br />
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' />Tags used by videos related to this one<br />
+                        <img style="margin-right:10px" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' /> Words used in your Channel's title<br />
+                    </div>
+                </div>
+                <div class="tb-suggested-tags-related-loading" style="font-size:13px; font-weight:bold; opacity:.75; height:283px">
+                    <table class="suggested-tags-table">
+                        <thead style="text-align:center">
+                            <tr style="font-size:11px; text-transform:uppercase;">
+                                <td style="width:40px" class="tb-suggested-tags-header-expand-all"></td>
+                                <td class="tb-suggested-tags-headerSort" style="text-align:left">Tag</td>
+
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/eye.png' title="Views received from this search term in YouTube" /></td>
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/tag16.png' title="Tags used by similar top ranking videos" /></td>
+                                <td class="tb-suggested-tags-headerSort" style="width:30px"><img class="tb-move-down2 tb-opaticity60" src='{PLUGIN_FILE_ROOT}/images/icons/pen.png' title="Words used in this video's title and description" /></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tb-suggested-tags-tag-row">
+                                <td colspan="5" style="padding:75px 40px 125px 40px;">
+                                    <img src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" />
+                                    <span style="position:relative;top:-3px; font-weight:500"> Running analysis...</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tb-suggested-tags-related-none" style="display:none;font-size:13px; font-weight:bold; margin:20px 0 0 15px;height:283px">
+                    <span style="position:relative;top:-3px;"> No tag suggestions found</span>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+    </div>
+    <div style="margin-top: 15px; border-top: 1px solid #E2E2E2;">
+
+        <div style="margin-top: 10px; text-align:right;height:30px;">
+
+            <span id="tb-suggested-tags-inserted" style="display:none; color: green; border:solid 2px green; padding:3px 5px; margin-right:15px;">
+                <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png " style="position: relative; top: 2px;" />
+                Tag Inserted
+            </span>
+
+            <a style="height: 26px; margin-right: 10px; margin-left: 10px;" class="tb-button tb-button-destructive tb-suggested-tags-close">
+                Close
+            </a>
+
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-suggested-tags-row-template">
+        <table>
+            <tr data-tag="{0}" class="tb-suggested-tags-tag-row">
+                <td>
+                    <img data-tag="{0}" data-expanded="false" title="YouTube auto suggested searches and video search rank for this tag" class="tb-suggested-tags-details" src="{PLUGIN_FILE_ROOT}/images/icons/collapsed.png" data-tag-type="{6}" style="height:14px; cursor:pointer" />
+                    <img data-tag="{0}" title="add tag to video" class="tb-suggested-tags-tag-image {1}" src="{2}" style="height:14px;" />
+                </td>
+                <td class="tb-suggested-tags-tag {1}">
+                    {0}
+                    <img style='{7}' class='tb-suggested-tags-demonetization' title='tag may cause demonetization' src='{PLUGIN_FILE_ROOT}/images/icons/error.png' />
+                </td>
+                <td>
+                    <span>{3}</span>
+                </td>
+                <td>
+                    <span>{4}</span>
+                </td>
+                <td>
+                    <span>{5}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="display:none" type="text/template" id="tb-suggested-tags-details-template-search">
+        <table>
+            <tr class="tb-suggested-tags-details-row" data-tag="{0}">
+                <td class="tb-suggested-tags-details-row-td"></td>
+                <td class="tb-suggested-tags-details-row-td " data-origintag="{0}">
+                    <span class=""> <img src='{PLUGIN_FILE_ROOT}/images/general/loading1.gif' /><span class="tb-font-size11" style="position:relative;top:-4px; margin-left:5px;">Loading related tags...</span></span>
+                </td>
+                <td class="tb-suggested-tags-details-row-td" style="text-align: center !important;vertical-align: top !important;" colspan="3" id="{1}">
+                    <span class=""> <img src='{PLUGIN_FILE_ROOT}/images/general/loading1.gif' /><span class="tb-font-size11" style="position:relative;top:-4px; margin-left:5px;">Loading search rank...</span></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="display:none" type="text/template" id="tb-suggested-tags-details-template-related">
+        <table>
+            <tr class="tb-suggested-tags-details-row" data-tag="{0}">
+                <td class="tb-suggested-tags-details-row-td"></td>
+                <td class="tb-suggested-tags-details-row-td " data-origintag="{0}">
+                    <span class=""> <img src='{PLUGIN_FILE_ROOT}/images/general/loading1.gif' /><span class="tb-font-size11" style="position:relative;top:-4px; margin-left:5px;">Loading related tags...</span></span>
+                </td>
+                <td class="tb-suggested-tags-details-row-td" style="text-align: center !important;vertical-align: top !important;" colspan="3" id="{1}">
+                    <span class=""> <img src='{PLUGIN_FILE_ROOT}/images/general/loading1.gif' /><span class="tb-font-size11" style="position:relative;top:-4px; margin-left:5px;">Loading search rank...</span></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="display:none" type="text/template" id="tb-suggested-tags-related-template">
+
+        <span style="text-align:left">
+            <span style="position:relative; left:-0px">
+                <img data-tag="{0}" title="Add tag to video" class="tb-suggested-tags-tag-image {1}" src="{2}" style="height:14px; line-height:20px; margin:0 2px;" />
+            </span>
+            <span style="position:relative; left:0px; top:-3px; line-height:20px;" class="tb-suggested-tags-tag {1}">
+                {0}
+            </span>
+        </span>
+        <br />
+    </div>
+
+</div>
+
+<style>
+    .suggested-tag-added {
+        opacity: .5 !important;
+    }
+
+    #tb-suggested-tags-table {
+        display: table;
+        width: 900px;
+    }
+
+    #tb-suggested-tags-header {
+        display: table-header-group;
+        text-align: center;
+    }
+
+    .tb-suggested-tags-headerCell {
+        display: table-cell;
+        width: 300px;
+        font-weight: 500;
+        border-bottom: dashed 1px #ccc;
+    }
+
+    .tb-suggested-tags-row {
+        display: table-row;
+        border-right: 1px solid gray;
+    }
+
+    .tb-suggested-tags-cell {
+        display: table-cell;
+        width: 300px;
+        padding: 5px;
+        vertical-align: top;
+    }
+
+    .tb-suggested-tags-cell-inner {
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .suggested-tags-table {
+        font-size: 12px;
+        width: 100%;
+    }
+
+        .suggested-tags-table td {
+            border: solid 1px #ccc;
+            padding: 3px 5px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .suggested-tags-table thead {
+            background-color: #eee;
+            color: #555;
+        }
+
+    .suggested-tags-table-me {
+        background-color: #ffffaa !important;
+    }
+
+    .tb-suggested-tags-tag {
+        text-align: left !important;
+    }
+
+    .tb-suggested-tags-details-row {
+        background-color: #f2f2f2;
+    }
+
+    .tb-suggested-tags-details-row-td {
+        text-align: left !important;
+        vertical-align: top;
+    }
+
+    .suggested-tag {
+        cursor: pointer
+    }
+
+    .tb-suggested-tags-demonetization {
+        height: 15px;
+        vertical-align: middle;
+        margin-left: 3px;
+    }
+</style>
+
+

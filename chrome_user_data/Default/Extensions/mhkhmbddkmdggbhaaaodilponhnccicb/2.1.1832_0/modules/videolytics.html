@@ -1,0 +1,664 @@
+﻿<div class="tb-videolyitcs-tools-menu" style="display:none;">
+
+    <div>
+        <a class="tb-videolytics-tools-button" data-tool="search-rank">Search Rankings</a>
+    </div>
+    <div>
+        <a class="tb-videolytics-tools-button" data-tool="share-tracker">Share Tracker</a>
+    </div>
+    <div>
+        <a class="tb-videolytics-tools-button" data-tool="vid2vid-promotion">Vid2Vid Promotion</a>
+    </div>
+    <div>
+        <a class="tb-videolytics-tools-button" data-tool="advanced-embed">Advanced Embed</a>
+    </div>
+</div>
+
+<div style="display:none">
+    <div class="tb-videolytics-container">
+        <div class="tb-videolytics-container-body" style="display:none">
+            <div class="tb-videolytics-header" >
+                <div class="tb-videolytics-icon-header" >
+                    <svg fill="none" viewBox="0 0 32 32" height="24" width="24" xmlns="http://www.w3.org/2000/svg" >
+                        <path fill="#F7F7F8" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"></path>
+                        <path fill="#2D3236" d="M12.7502 23.3709C11.6717 23.3709 10.6022 23.3709 9.46697 23.3709V15.625H7.38281V12.3797H9.45988V8.61525H13.2841C13.2983 8.80026 13.3231 8.98149 13.3231 9.16084C13.3231 13.5747 13.316 18.3567 13.3338 22.7725C13.3338 23.2652 13.1865 23.3804 12.7502 23.369V23.3709ZM22.8322 21.8078C21.1737 23.3294 19.251 23.8542 17.1934 22.9178C15.0472 21.9418 13.9315 20.1181 13.9085 17.6129C13.8836 14.8245 13.896 12.0361 13.8925 9.24957V8.61525C15.1448 8.61525 16.303 8.6228 17.4577 8.61525C17.7912 8.61336 17.7593 8.84745 17.7593 9.07211V20.4579C19.1712 19.5706 20.5175 18.7267 21.917 17.8451C20.8048 17.1447 19.7618 16.4707 18.7011 15.8288C18.3677 15.6287 18.2045 15.4097 18.2275 14.9774C18.2648 14.2355 18.2524 13.4879 18.2311 12.744C18.2204 12.391 18.334 12.2758 18.6621 12.2249C20.8119 11.8926 23.1621 13.2594 24.12 15.4229C25.0937 17.6204 24.6077 20.1729 22.8304 21.8021V21.8059L22.8322 21.8078Z"></path>
+                    </svg><b class="tb-margin-left5 tb-font-size15">Videolytics</b>
+                </div>
+                <div>
+                    <span class="tb-cursor-pointer">
+                        <button class="tb-videolytics-tools-menu-button tb-videolytics-header-button" >
+                              <span style="margin-right: 4px">Tools</span><i class="untitled-ui untitled-ui-chevron-down-line  tb-header-button-icons"></i>
+                        </button>
+                    </span>
+                    <span class="tb-videolytics-compare-show tb-cursor-pointer tb-margin-right10">
+                        <button class="tb-videolytics-header-button tb-videolytics-compare-text">
+                           <i class="untitled-ui untitled-ui-bar-chart-02-line tb-header-button-icons"></i> <span class="tb-move-left3 tb-move-up1">Compare - off</span>
+                        </button>
+                    </span>
+                </div>
+               
+                <div>
+                    <button class="tb-videolyticsClear tb-videolytics-header-button" style="display:none;">Compare - on</button>
+                </div>
+                <div>
+                    <button style="display:none" class="tb-videolytics-compare-text-edit tb-videolytics-header-button">Edit</button>
+                </div>
+                <div class="tb-videolytics-header-carret tb-videolytics-disable-img" title="minimize" >
+                    <i class="untitled-ui untitled-ui-chevron-down-line"></i>
+                </div>
+                </div>
+            </div>
+            <div class="tb-videolytics-body">
+                <div class="tb-videolytics-compare-container" style="display:none;">
+                    <span stlye="font-weight:500">Compare this Video to:</span>
+                    <div class="tb-margin-left5 tb-margin-top10">
+                        <span class="tb-radio">
+                            <input style="display:none;"
+                                   id="compareVideolytics-radio1"
+                                   type="radio" 
+                                   name="tb-videolytics-compareVid"
+                                   value="0"
+                                   checked="checked"
+                            />
+                            <label for="compareVideolytics-radio1" class="tb-radio-label">This channel's most popular video</label>
+                        </span>
+                        <span class="tb-radio">
+                            <input style="display:none;"
+                                   id="compareVideolytics-radio2"
+                                   type="radio"
+                                   name="tb-videolytics-compareVid"
+                                   value="1"
+                            />
+                            <label for="compareVideolytics-radio2" class="tb-radio-label">My channel's most popular video</label>
+                        </span>
+                        <span class="tb-radio">
+                            <input style="display:none;"
+                                   id="compareVideolytics-radio3"
+                                   type="radio"
+                                   name="tb-videolytics-compareVid"
+                                   value="3"
+                            />
+                            <label for="compareVideolytics-radio3" class="tb-radio-label">Specific Video</label>
+                            <input id="videolyticsVideoId" type="text" value="" style="width:130px" /> (Enter ID or URL)
+                        </span>
+                        <div style="display:none" class="tb-margin-left30 tb-videolytics-compareVid-error-container">
+                            <span class="tb-videolytics-compareVid-error tb-red"></span>
+                        </div>
+                        <div>
+                            <div>
+                                <i style="display: none" class="untitled-ui untitled-ui-check-line tb-videolytics-checkbox-confirm "></i>
+                                <label class="tb-checkbox" for="tb-keyword-explorer-include-explored-tag"><input  class="tb-videolytics-savevideo" type="checkbox" id="tb-keyword-explorer-include-explored-tag" ><span class="tb-checkbox__indicator"></span></label>
+                                <span>Auto-run comparison on video watch pages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tb-vid-comparison-footer">
+                        <button class="tb-videolyticsCancel tb-margin-left5">Cancel</button>
+                        <button class="tb-videolyticsCompare tb-margin-right5" >Run comparison</button>
+                    </div>
+                </div>
+
+                <div class="tb-videolytics-image-compare-container" style="display:none;  padding:15px 0">
+                    <div class="tb-videolytics-image-title-container">
+                        <div class="tb-videolytics-vid-compare">
+                            <img class="tb-videolytics-image-compare tb-videolytics-image-compare-primary" />
+                        </div>
+                        <div>
+                            <span class="tb-videolytics-image-compare-title" data-type="primary"></span>
+                        </div>
+                    </div>
+                    <div class="tb-margin-left3 tb-margin-right3 tb-font-size20 tb-margin-top15" style="float:left; text-align:center;font-weight:bolder">
+                        <div class="tb-margin-top5 tb-margin-left10 tb-margin-right10 tb-videolytics-text">VS</div>
+                    </div>
+                    <div class="tb-videolytics-image-title-container">
+                        <div>
+                            <a class="tb-videolytics-image-compare-secondary-link tb-videolytics-vid-compare" target="_blank">
+                                <img class="tb-videolytics-image-compare tb-videolytics-image-compare-secondary" />
+                            </a>
+                        </div>
+                        <div>
+                            <a class="tb-videolytics-image-compare-secondary-link tb-videolytics-vid-compare" target="_blank">
+                                <span class="tb-videolytics-image-compare-title" data-type="secondary"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-videolytics-category-container">
+                    <div class="tb-videolytics-category-title">
+                        <div class="tb-videolytics-category-title-text">Summary</div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="summary">
+                        <div class="tb-videolytics-category-section">
+                            <div id="tt-total-views" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                                <div class="tb-views-container tb-primary-container">
+                                    <div data-name="views" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                    <div class="tb-videolytics-category-label">
+                                        Total Views
+                                    </div>
+                                </div>
+                                <div style="display:none;" class="views-compare-chart tb-compare-chart">
+                                    <div class="views-compare-chart-progress tb-chart-progress-container"></div>
+                                    <div class="tb-videolytics-category-section-compare-footer">
+                                        Total Views
+                                    </div>
+                                </div>
+                                <div data-name="views" data-type="secondary" class="tb-hidden"></div>
+                            </div>
+                        </div><div class="tb-videolytics-category-section">
+                        <div id="tt-comments" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-comments-container tb-primary-container">
+                                <div data-name="comments" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                <div class="tb-videolytics-category-label">
+                                    Comments
+                                </div>
+                            </div>
+                            <div data-name="comments" data-type="secondary" class="tb-hidden"></div>
+                            <div class="comments-compare-chart tb-compare-chart tb-hidden">
+                                <div class="comments-compare-chart-progress tb-chart-progress-container">
+                                </div>
+                                <div class="tb-videolytics-category-section-compare-footer">
+                                    Comments
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="tb-videolytics-category-section tb-videolytics-category-section-alt">
+                        <div id="tt-like-ratio" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-likeratio-container tb-primary-container">
+                                <div data-name="likeratio" data-type="primary">
+
+
+                                    <div data-name="up" class="tb-font-size28 up tb-videolytics-metrics" data-type="primary"></div>
+                                    <div class="tb-videolytics-category-label">
+                                        Likes
+                                    </div>
+
+                                </div>
+                                <div class="tb-videolytics-subitem" style="display:none">
+                                    <div data-name="likeratio" data-type="subitem">
+
+                                    </div>
+                                </div>
+                                <div data-name="likeratio" data-type="secondary" class="tb-hidden"></div>
+                            </div>
+                            <div class="likeratio-compare-chart tb-compare-chart tb-hidden">
+                                <div class="likeratio-compare-chart-progress tb-chart-progress-container"></div>
+                                <div class="tb-videolytics-category-section-compare-footer">
+                                    Likes
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+                <div id="tb-videolytics-watchtimecontainer" class="tb-videolytics-category-container" style="display:none">
+                    <div class="tb-videolytics-category-title">
+                        <div class="tb-videolytics-category-title-text">Views / Watch Time</div>
+
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="viewswatchtime">
+                        <div class="tb-videolytics-video-watch-time-row">
+                            <div class="tb-videolytics-category-section ">
+                                <div id="tt-average-view-duration" class="tb-videolytics-category-section-body tb-videolytics-compare" style="padding-top:5px">
+                                    <div class="tb-view-duration-container tb-primary-container">
+                                        <div data-name="view-duration" class="tb-font-size28" data-type="primary"></div>
+                                        <div class="tb-videolytics-category-label">
+                                            Avg View Dur
+                                        </div>
+                                        <div class="tb-videolytics-subitem" style="display:none">
+                                            <span class="tb-margin-left3">of </span><span data-name="view-duration" data-type="subitem"></span>
+                                        </div>
+                                        <div data-name="view-duration" data-type="secondary" class="tb-hidden"></div>
+                                    </div>
+                                    <div class="view-duration-compare-chart tb-compare-chart tb-hidden">
+                                        <div class="view-duration-compare-chart-progress tb-chart-progress-container"></div>
+                                        <div class="tb-videolytics-category-section-compare-footer">
+                                            Avg View Dur
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><div class="tb-videolytics-category-section tb-videolytics-category-section-alt">
+                            <div id="tt-average-percent-watched" class="tb-videolytics-category-section-body tb-videolytics-compare" style="padding-top:5px">
+                                <div class="tb-percent-watched-container tb-primary-container">
+                                    <div data-name="percent-watched" class="tb-font-size28" data-type="primary"></div>
+                                    <div class="tb-videolytics-category-label">
+                                        Avg % Watched
+                                    </div>
+                                    <div class="tb-videolytics-subitem" style="display:none">
+                                        <div data-name="percent-watched" data-type="subitem"></div>
+                                    </div>
+                                    <div data-name="percent-watched" data-type="secondary" class="tb-hidden"></div>
+                                </div>
+                                <div class="percent-watched-compare-chart tb-compare-chart tb-hidden">
+                                    <div class="percent-watched-compare-chart-progress tb-chart-progress-container"></div>
+                                    <div class="tb-videolytics-category-section-compare-footer">
+                                        Avg % Watched
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="tb-videolytics-category-section tb-videolytics-category-section-alt tb-videolytics-historical-block" style="padding-top:0px">
+                            <div id="tt-historical" style="height:60px" class="tb-videolytics-category-section-body">
+                                <div data-name="views-historical" style="height: 20px; width: 105px; margin-left:10px; margin-top:5px;"></div>
+                                <div class="tb-videolytics-category-label" style="margin-top:5px">
+                                    Historical
+                                </div>
+                                <div class="tb-videolytics-subitem" style="display:none">
+                                    <span data-name="views-historical" data-type="subitem"></span><span class="tb-margin-left3"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tb-videolytics-category-container">
+                    <div class="tb-videolytics-category-title">
+                        <div class="tb-videolytics-category-title-text">SEO</div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="seo">
+                        <div class="tb-videolytics-category-section">
+                            <div id="tt-creator-suggested" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                                <div class="tb-creatorsuggested-container tb-primary-container">
+                                    <div data-name="creatorsuggested" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                    <div class="tb-videolytics-category-label">
+                                        Creator Suggested
+                                    </div>
+                                </div>
+                                <div data-name="creatorsuggested" data-type="secondary" class="tb-hidden"></div>
+                                <div class="creatorsuggested-compare-chart tb-compare-chart tb-hidden">
+                                    <div class="creatorsuggested-compare-chart-progress tb-chart-progress-container"></div>
+                                    <div class="tb-videolytics-category-section-compare-footer">
+                                        Creator Suggested
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="tb-videolytics-category-section">
+                        <div id="tt-ranked-tags" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-rankedTags-container tb-primary-container">
+                                <div data-name="rankedTags" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                <div class="tb-videolytics-category-label">
+                                    Ranked Tags
+                                </div>
+                            </div>
+                            <div data-name="rankedTags" data-type="secondary" style="display:none;"></div>
+                            <div class="rankedTags-compare-chart tb-compare-chart tb-hidden">
+                                <div class="rankedTags-compare-chart-progress tb-chart-progress-container">
+                                </div>
+                                <div class="tb-videolytics-category-section-compare-footer">
+                                    Ranked Tags
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="tb-videolytics-category-section">
+                        <div id="tt-seoscore" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-seoscore-container tb-primary-container">
+                                <div id="tb-videolytics-seoscore-chart" class="tb-videolytics-metrics tb-font-size28" data-name="seoscore" data-type="primary"></div>
+                                <div class="tb-videolytics-category-label">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" class="tb-videolytics-icon-transparent">
+                                        <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+                                        <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+                                    </svg>
+                                    SEO Score 
+                                    <a class="tb-videolytics-seo-studio-score tb-margin-left-2 tb-videolytics-text tb-hidden"><i class="untitled-ui untitled-ui-pencil-01-line"></i></a>
+                                </div>
+                            </div>
+                            <div data-name="seoscore" data-type="secondary" class="tb-hidden"></div>
+                            <div class="seoscore-compare-chart tb-compare-chart tb-hidden">
+                                <div class="seoscore-compare-chart-progress tb-chart-progress-container">
+                                </div>
+                                <div class="tb-videolytics-category-section-compare-footer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" class="tb-videolytics-icon-transparent">
+                                        <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+                                        <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+                                    </svg>
+                                    SEO Score
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+                <div id="tb-videolytics-socialcontainer" class="tb-videolytics-category-container tb-videolytics-video-social-container">
+                    <div class="tb-videolytics-category-title">
+                        <div class="tb-videolytics-category-title-text">Social</div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="" style="margin-top:0px">
+                        <div class="tb-videolytics-video-social" style="display:none">
+                            <div class="tb-videolytics-category-section vid-social">
+                                <div id="tt-facebooklikes" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                                    <div class="tb-facebooklikes-container tb-primary-container">
+                                        <div data-name="facebooklikes" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                        <div class="tb-videolytics-category-label">
+                                            <i class="untitled-ui untitled-ui-facebook-logo-line"></i> Likes
+                                        </div>
+                                    </div>
+                                    <div style="display:none;" class="facebooklikes-compare-chart tb-compare-chart">
+                                        <div class="facebooklikes-compare-chart-progress tb-chart-progress-container"></div>
+                                        <div class="tb-videolytics-category-section-compare-footer">
+                                            <i class="untitled-ui untitled-ui-facebook-logo-line"></i> Likes
+                                        </div>
+                                    </div>
+                                    <div data-name="facebooklikes" data-type="secondary" class="tb-hidden"></div>
+                                </div>
+                            </div>
+                            <div class="tb-videolytics-category-section vid-social">
+                                <div id="tt-redditup" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                                    <div class="tb-redditup-container tb-primary-container">
+                                            <div data-name="redditup" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                        <div class="tb-videolytics-category-label">
+                                            <a class="tb-reddit-search" href="#" target="_blank" style="text-decoration:none;"><i style="margin-right: 4px" class="untitled-ui untitled-ui-reddit-logo-line"></i><span class="">Upvotes</span> <img src="{PLUGIN_FILE_ROOT}/images/icons/external.png" /></a>
+                                        </div>
+                                    </div>
+                                    <div style="display:none;" class="redditup-compare-chart tb-compare-chart">
+                                        <div class="redditup-compare-chart-progress tb-chart-progress-container"></div>
+                                        <div class="tb-videolytics-category-section-compare-footer">
+                                            <a class="tb-reddit-search" href="#" target="_blank" style="text-decoration:none;"><i style="margin-right: 4px" class="untitled-ui untitled-ui-reddit-logo-line"></i><span class="">Upvotes</span> <img src="{PLUGIN_FILE_ROOT}/images/icons/external.png" /></a>
+                                        </div>
+                                    </div>
+                                    <div data-name="redditup" data-type="secondary" class="tb-hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tb-videolytics-social-loading">
+                            <div class="tb-loader-container" style="font-size:12px; padding-top:5px; margin-top:10px; padding-bottom:5px;">
+                                <div class="tb-videolytics-spinner"></div> Loading Social...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tb-videolytics-category-container">
+                    <div class="tb-videolytics-category-title tb-videolytics-channel-header" style="margin-top:10px;">
+                        <div class="tb-videolytics-category-title-text">
+                            <span style="position:relative;"> Channel</span>
+                        </div>
+                        <a class="tb-videolytics-chart tb-cursor-pointer " >
+                           Go To Channelytics
+                        </a>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="channel">
+                        <div class="tb-videolytics-category-section tb-videolytics-category-section-alt">
+                            <div id="tt-channel-views" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                                <div class="tb-channel-views-container tb-primary-container">
+                                    <div data-name="channel-views" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                    <div class="tb-videolytics-category-label">
+                                        Total Views
+                                    </div>
+                                    <div class="tb-videolytics-subitem" style="display:none">
+                                        <span data-name="channel-views" data-type="subitem"></span><span> Avg per video</span>
+                                    </div>
+                                    <div data-name="channel-views" data-type="secondary" class="tb-hidden"></div>
+                                </div>
+                                <div class="channel-views-compare-chart tb-compare-chart tb-hidden">
+                                    <div class="channel-views-compare-chart-progress tb-chart-progress-container"></div>
+                                    <div class="tb-videolytics-category-section-compare-footer">
+                                        Total Views
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="tb-videolytics-category-section ">
+                        <div id="tt-channel-subscribers" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-subscribers-container tb-primary-container">
+                                <div data-name="subscribers" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                <div class="tb-videolytics-category-label tb-videolytics-subscribers-label">
+                                    Subscribers
+                                </div>
+                                <div class="tb-videolytics-subitem" style="display:none">
+                                    <span data-name="subscribers" data-type="subitem"></span><span> per day</span>
+                                </div>
+                                <div data-name="subscribers" data-type="secondary" class="tb-hidden"></div>
+                            </div>
+                            <div class="subscribers-compare-chart tb-compare-chart tb-hidden">
+                                <div class="subscribers-compare-chart-progress tb-chart-progress-container"></div>
+                                <div class="tb-videolytics-category-section-compare-footer tb-videolytics-subscribers-label">
+                                    Subscribers
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="tb-videolytics-category-section tb-videolytics-category-section-alt">
+                        <div id="tt-channel-videocount" class="tb-videolytics-category-section-body tb-videolytics-compare">
+                            <div class="tb-videocount-container tb-primary-container">
+                                <div data-name="videocount" class="tb-font-size28 tb-videolytics-metrics" data-type="primary"></div>
+                                <div class="tb-videolytics-category-label">
+                                    Videos
+                                </div>
+                                <div class="tb-videolytics-subitem" style="display:none">
+                                    <span data-name="videocount" data-type="subitem"></span><span> Avg per week</span>
+                                </div>
+                                <div data-name="videocount" data-type="secondary" class="tb-hidden"></div>
+                            </div>
+                            <div class="videocount-compare-chart tb-compare-chart tb-hidden">
+                                <div class="videocount-compare-chart-progress tb-chart-progress-container"></div>
+                                <div class="tb-videolytics-category-section-compare-footer">
+                                    Videos
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+                <div id="tb-videolytics-bestpracticescontainer" class="tb-videolytics-category-container tb-videolytics-video-bestpractices-container">
+                    <div class="tb-videolytics-category-title">
+                        <div class="tb-videolytics-category-title-text">Best Practices</div>
+
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="tb-videolytics-category-body" data-category-id="" style="margin-top:0px">
+                        <div class="tb-videolytics-video-bestpractices" style="display:none">
+                            
+                                <div class="tb-videolytics-best-practices-segment tb-videolytics-compare tb-margin-left5" >
+
+                                    <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-thumbnail"></span> <span>High Res. Thumbnail</span></div>
+                                    <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-info-cards"></span> <span>Info Cards Added</span></div>
+                                    <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-endscreens"></span> <span>End Screen Added</span></div>
+                                </div>
+                            <div class="tb-videolytics-best-practices-segment tb-videolytics-compare tb-margin-left5" >
+                                <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-pinned-comment"></span> <span>Comment Pinned</span></div>
+
+                                <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-facebook"></span> <span>Liked on Facebook</span></div>
+                                <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-captions"></span> <span>Captions Added</span></div>
+                            </div>
+                            <div class="tb-videolytics-best-practices-segment tb-videolytics-compare tb-margin-left5" >
+
+                                <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-hearted-comment"></span> <span>Comment Hearted</span></div>
+                                <div class="tb-videolytics-best-practice-row"><span class="tb-videolytics-best-practice-chapters"></span> <span>Chapters Added</span></div>
+                            </div>
+                            
+                        <div class="tb-videolytics-best-practices-loading">
+                            <div class="tb-loader-container" style="font-size:12px; padding-top:5px; margin-top:10px; padding-bottom:5px;">
+                                <div class="tb-videolytics-spinner"></div> Loading Best Practices...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+                <div>
+                    <div class="tb-videolytics-compare-tags">
+                        <div class="tb-videolytics-category-title">
+                            <div class="tb-videolytics-category-title-text">Tags <span style="display:none" class="tb-videolytics-compare-tags-label" data-type="primary"></span></div>
+                            <div class="tb-videolytics-tag-actions">
+                                <button title="Copy Tags" data-type="primary" class="tb-videolytics-copy-tags tb-width70" data-clipboard-action="copy" data-clipboard-text="">
+                                    <i class="untitled-ui untitled-ui-copy-07-line"></i> copy
+                                </button>
+                                <button title="Show search ranking for tags" style="margin-left: 10px; display:none;" data-type="primary" class="tb-videolytics-search-ranking">
+                                    <i class="untitled-ui untitled-ui-eye-line"></i>Show search rankings
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tb-videolytics-category-body tb-videolytics-tags-container" data-category-id="tagsprimary">
+                            <div id="tb-videolytics-tag-list-primary" class="tb-videolytics-tags tb-videolytics-tags-body tb-margin-left5 tb-margin-top5" data-type="primary">
+                            </div>
+                            <div class="tb-center">
+                                <div style="border-top:solid 1px #ccc; font-size:12px;  padding-top:5px; margin-top:5px; padding-bottom:5px;" class="tb-videolytics-loading-tag-rankings tb-loader-container" data-type="primary">
+                                    <div class="tb-videolytics-spinner"></div> Loading Search Rankings...
+                                </div>
+                                <div style="border-top:solid 1px #ccc; font-size:11px; padding-top:7px; margin-top:5px; padding-left:5px; padding-bottom:5px; display:none;" class="tb-videolytics-loading-tag-rankings-legend" data-type="primary">
+                                    <span style="opacity: .75; background-color:#4BEAD7; color:#1D2327;line-height: 14px;font-size: 10px;padding: 1px 5px 0px 4px;border-radius: 3px;position: relative;font-weight: 500;">X</span> = where this video ranks in YouTube Search for that Tag (* <a style="text-decoration:underline" href="https://tubebuddy.zendesk.com/hc/en-us/articles/9327172037403" target="_blank">for you</a>)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:none" class="tb-videolytics-compare-tags" data-type="secondary">
+                        <div class="tb-videolytics-category-title">
+                            <div class="tb-videolytics-category-title-text">Tags <span style="display:none" class="tb-videolytics-compare-tags-label" data-type="secondary"></span></div>
+                            <div class="tb-videolytics-tag-actions">
+                                <button title="Copy Tags" style="margin-left:10px; display:none" data-type="secondary" class="tb-videolytics-copy-tags" data-clipboard-action="copy" data-clipboard-text="">
+                                    <i class="untitled-ui untitled-ui-copy-07-line"></i> copy
+                                </button>
+                                <button title="Show search ranking for tags" style="margin-left: 10px; display:none" data-type="secondary" class="tb-videolytics-search-ranking" >
+                                    <i class="untitled-ui untitled-ui-eye-line"></i>Show search rankings
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tb-videolytics-category-body tb-videolytics-tags-container" data-category-id="tagssecondary">
+                            <div id="tb-videolytics-tag-list-secondary" class="tb-videolytics-tags tb-videolytics-tags-body tb-margin-left5 tb-margin-top5" data-type="secondary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="tb-videolytics-container-loading" style="height:470px;">
+        </div>
+    </div>
+    <div style="display: none" class="tb-videolytics-container-disabled">
+        <div class="tb-videolytics-header">
+            <div class="tb-videolytics-icon-header" >
+                <svg fill="none" viewBox="0 0 32 32" height="24" width="24" xmlns="http://www.w3.org/2000/svg" >
+                    <path fill="#F7F7F8" d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"></path>
+                    <path fill="#2D3236" d="M12.7502 23.3709C11.6717 23.3709 10.6022 23.3709 9.46697 23.3709V15.625H7.38281V12.3797H9.45988V8.61525H13.2841C13.2983 8.80026 13.3231 8.98149 13.3231 9.16084C13.3231 13.5747 13.316 18.3567 13.3338 22.7725C13.3338 23.2652 13.1865 23.3804 12.7502 23.369V23.3709ZM22.8322 21.8078C21.1737 23.3294 19.251 23.8542 17.1934 22.9178C15.0472 21.9418 13.9315 20.1181 13.9085 17.6129C13.8836 14.8245 13.896 12.0361 13.8925 9.24957V8.61525C15.1448 8.61525 16.303 8.6228 17.4577 8.61525C17.7912 8.61336 17.7593 8.84745 17.7593 9.07211V20.4579C19.1712 19.5706 20.5175 18.7267 21.917 17.8451C20.8048 17.1447 19.7618 16.4707 18.7011 15.8288C18.3677 15.6287 18.2045 15.4097 18.2275 14.9774C18.2648 14.2355 18.2524 13.4879 18.2311 12.744C18.2204 12.391 18.334 12.2758 18.6621 12.2249C20.8119 11.8926 23.1621 13.2594 24.12 15.4229C25.0937 17.6204 24.6077 20.1729 22.8304 21.8021V21.8059L22.8322 21.8078Z"></path>
+                </svg><b class="tb-margin-left5 tb-font-size15">Videolytics</b>
+            </div>
+            <div style="display: flex">
+                <span class="tb-cursor-pointer">
+                    <button class="tb-videolytics-tools-menu-button tb-videolytics-header-button" >
+                              <span style="margin-right: 4px">Tools</span><i class="untitled-ui untitled-ui-chevron-down-line  tb-header-button-icons"></i>
+                    </button>
+                </span>
+                <div class="tb-videolytics-enabled-img tb-videolytics-header-carret "  title="maximize">
+                    <i class="untitled-ui untitled-ui-chevron-up-line"></i>
+                </div>
+            </div>
+        </div>
+        <div class="tb-videolytics-body-2">
+                <div>
+                    <ul class="tb-videolytics-container-disabled-list">
+                        <li>View advanced statistics on the video you're watching</li>
+                        <li>Compare this video with other videos on YouTube</li>
+                        <li>View and copy this video's tags</li>
+                    </ul>
+                </div>
+            <span class="tb-margin-top-10"><button class="tb-videolytics-enabled-img tb-videolytics-header-button" style="cursor:pointer">Show Now</button></span>
+            </div>
+        </div>
+    </div>
+
+<!--    <div class="tb-videolytics-container-non-english">-->
+<!--        <div class="tb-videolytics-header">-->
+<!--            <div style="float:left;" class="tb-move-down4 tb-move-right4">-->
+<!--                <img src="{PLUGIN_FILE_ROOT}/images/branding/icon_tiny_white.png" /><b class="tb-margin-left5">Videolytics</b>-->
+<!--            </div>-->
+<!--            <div class="tb-move-left5 tb-move-up1" style="float:right;">-->
+
+<!--                <div class="tb-cursor-pointer">-->
+<!--                    <button class="tb-videolytics-tools-menu-button tb-button tb-button-default" style="width:80px;">-->
+<!--                        <img class="tb-move-down3 tb-move-left4" src="{PLUGIN_FILE_ROOT}/images/icons/caret-down.png" /> <span class="tb-move-left3 tb-move-up1">Tools</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div style="clear:both;">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="tb-margin-top10">-->
+<!--            <div class="tb-center tb-font-size12" style="color:#333; border: solid 1px #333; margin:10px -10px 15px -10px; padding:7px 12px;">-->
+<!--                Sorry, in YouTube's new design, Videolytics stats only work with English (US) at the moment. We-->
+<!--                are working on adding other languages. In the meantime, you can restore Classic YouTube.-->
+
+<!--                <div style="border-top:solid 1px #999; margin:10px 5px 0 5px; padding-top:0px; text-align:left;">-->
+<!--                    <div class="tb-videolytics-category-title">-->
+<!--                        <div class="tb-videolytics-category-title-text">Tags <span style="display:none" class="tb-videolytics-compare-tags-label" data-type="primary"></span></div>-->
+<!--                        <div class="tb-margin-right5" style="float:right;"> <img class="tb-videolytics-toggle-row tb-cursor-pointer" data-toggle-img="{PLUGIN_FILE_ROOT}/images/icons/caret-up.png" data-category-id="tagsprimary" src="{PLUGIN_FILE_ROOT}/images/icons/caret-down.png" /></div>-->
+<!--                        <div style="clear:both"></div>-->
+<!--                    </div><div class="tb-videolytics-category-body tb-videolytics-tags-container" data-category-id="tagsprimary">-->
+<!--                    <div class="tb-videolytics-tags tb-videolytics-tags-body tb-margin-left5 tb-margin-top5" data-type="primary">-->
+<!--                    </div>-->
+<!--                    <div style="text-align:right;">-->
+<!--                        <button title="Show search ranking for tags" style="margin-left: 10px; display:none; opacity:.75" data-type="primary" class="tb-videolytics-search-ranking tb-button tb-button-primary tb-move-up5 tb-width150">-->
+<!--                                <span class="yt-uix-button-content">-->
+<!--                                    Show Search Rankings-->
+<!--                                </span>-->
+<!--                        </button>-->
+<!--                        <button title="Copy Tags" style="margin-left:10px;" data-type="primary" class="tb-videolytics-copy-tags tb-width70 tb-button tb-button-default tb-button-primary tb-move-up5 tb-margin-right5" data-clipboard-action="copy" data-clipboard-text="">-->
+<!--                                <span class="yt-uix-button-content">-->
+<!--                                    Copy To...-->
+<!--                                </span>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <div class="tb-center">-->
+<!--                        <div style="border-top:solid 1px #ccc; font-size:12px; color:#666; padding-top:5px; margin-top:5px; padding-bottom:5px;" class="tb-videolytics-loading-tag-rankings" data-type="primary">-->
+<!--                            <div class="tb-spinner"></div> Loading Search Rankings...-->
+<!--                        </div>-->
+<!--                        <div style="border-top:solid 1px #ccc; font-size:11px; color:#666; padding-top:7px; margin-top:5px; padding-left:5px; padding-bottom:5px; display:none;" class="tb-videolytics-loading-tag-rankings-legend" data-type="primary">-->
+<!--                            <span style="opacity: .75;background-color:green; color:white;line-height: 14px;font-size: 10px;padding: 1px 5px 0px 4px;border-radius: 3px;position: relative;font-weight: 500;">X</span> = where this video ranks in YouTube Search for that Tag-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--            <div style="clear:both;">-->
+<!--            </div>-->
+
+
+<!--        </div>-->
+<!--    </div>-->
+    <div id="tb-videolytics-tags-template" type="text/template" style="display:none">
+        <span title="{0}" data-tag="{1}" class="tb-videolytics-tag">
+            {0}
+        </span>
+    </div>
+    <div id="tb-videolytics-na-template" type="text/template" style="display:none">
+        <span class="tb-videolytics-na">
+            na
+        </span>
+    </div>
+    <div class="tb-videolytics-word-cloud-button-container" style="display: none;">
+        <button class="tb-btn tb-btn-sm tb-btn-grey" id="tb-videolytics-word-cloud-btn" title="Word Cloud *powered by TubeBuddy">
+            <i class="material-icons">cloud</i>
+        </button>
+    </div>
+    <div id="tb-videolytics-seo-studio-kw-prompt-template" style="display:none;">
+        <div class="tb-videolytics-seo-studio-kw-prompt-container">
+            <div class="tb-videolytics-seo-studio-kw-prompt-header">
+                <a class="tb-videolytics-seo-studio-close-kw-prompt tb-font-color-gray"><i class="material-icons">close</i></a>
+            </div>
+            <div class="tb-videolytics-seo-studio-kw tb-margin-bottom-10 tb-hidden">
+                <span class="tb-font-color-red" style="display:flex;align-items:center;">
+                      <i class="untitled-ui untitled-ui-target-03-line"></i>
+                    <span>
+                        Target Keyword:
+                    </span>
+                </span>
+                <span class="tb-videolytics-seo-studio-kw-current tb-margin-left-5"></span>
+            </div>
+            <div class="tb-videolytics-flex-align-center-justify-space">
+                <div class="tb-videolytics-seo-studio-kw-prompt-cta-text">
+                    Build the perfect searchable Title, Description, and Tags for your video using SEO Studio
+                </div>
+                <div class="tb-kwe-launch-container"> 
+                    <a class="tb-videolytics-seo-studio-launch tb-videolytics-header-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

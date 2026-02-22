@@ -1,0 +1,177 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-video-scheduled-action-container" class="tb-module-template draggable-container tb-sunset-video-container">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <svg style="margin-left: 8px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F7F7F8"/>
+                <path d="M12.7502 23.3709C11.6717 23.3709 10.6022 23.3709 9.46697 23.3709V15.625H7.38281V12.3797H9.45988V8.61525H13.2841C13.2983 8.80026 13.3231 8.98149 13.3231 9.16084C13.3231 13.5747 13.316 18.3567 13.3338 22.7725C13.3338 23.2652 13.1865 23.3804 12.7502 23.369V23.3709ZM22.8322 21.8078C21.1737 23.3294 19.251 23.8542 17.1934 22.9178C15.0472 21.9418 13.9315 20.1181 13.9085 17.6129C13.8836 14.8245 13.896 12.0361 13.8925 9.24957V8.61525C15.1448 8.61525 16.303 8.6228 17.4577 8.61525C17.7912 8.61336 17.7593 8.84745 17.7593 9.07211V20.4579C19.1712 19.5706 20.5175 18.7267 21.917 17.8451C20.8048 17.1447 19.7618 16.4707 18.7011 15.8288C18.3677 15.6287 18.2045 15.4097 18.2275 14.9774C18.2648 14.2355 18.2524 13.4879 18.2311 12.744C18.2204 12.391 18.334 12.2758 18.6621 12.2249C20.8119 11.8926 23.1621 13.2594 24.12 15.4229C25.0937 17.6204 24.6077 20.1729 22.8304 21.8021V21.8059L22.8322 21.8078Z" fill="#2D3236"/>
+            </svg>
+            <h1 class="tb-module-title">Sunset Video</h1>
+            <div class="tb-module-help">
+                <a class="tb-flex tb-items-center tb-no-underline" target="_blank" href="https://www.tubebuddy.com/tools?tool=schedulegolive" data-draggable="false" rel="noopener">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close tb-flex tb-items-center" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-sunset-video-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-sunset-video-watch-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div class="tb-video-scheduled-action-settings-container">
+                    <!-- Loading span -->
+                    <div id="tb-video-scheduled-action-loading" class="tb-hidden">
+                        <span class="tb-spinner"></span> Loading the magic...
+                        <br />
+                        <br />
+                    </div>
+                    <!-- Upgrade screen -->
+                    <div id="tb-video-scheduled-action-upgrade" class="tb-hidden">
+                        <div class="tb-video-scheduled-action-upgrade-text">
+                            <p>Sorry, you cannot use Sunset Video unless you <a class="tb-sunset-video-upgrade-link">Upgrade your License.</a></p>
+                        </div>
+                    </div>
+                    <!-- Loaded settings -->
+                    <div id="tb-video-scheduled-action-loaded" class="tb-hidden tb-loaded-settings">
+                        <span id="tb-sunset-video-current" class="tb-hidden"></span>
+                        <div id="tb-sunset-video-edit" class="tb-video-scheduled-edit">
+                            <!-- Sunset date -->
+                            <div class="tb-margin-top-15 tb-margin-left-5">
+                                <p class="tb-font-cbold tb-margin-bottom-10">Sunset date</p>
+                                <div class="tb-inline-block">
+                                    <div class="tb-moz-date-container tb-inline-block">
+                                        <input id="tb-sunset-video-datepicker-mv3" type="date" class="tb-mv3-date" />
+                                    </div>
+                                    <div class="tb-at-circle"><p class="tb-inline-block tb-margin-0">at</p></div>
+                                </div>
+                                <div class="tb-inline-block">
+                                    <input id="tb-sunset-video-timepicker" class="tb-video-scheduled-input-textfield" type="text" name="timepicker" readonly />
+                                </div>
+                                <div class="tb-inline-block tb-margin-left-10">
+                                    <select id="tb-sunset-video-timezone-select" class="tb-video-scheduled-input-textfield tb-video-scheduled-select-opt"></select>
+                                </div>
+                            </div>
+                            <!-- Privacy settings -->
+                            <div class="tb-video-scheduled-action-privacy tb-margin-top-10">
+                                <p class="tb-font-cbold tb-margin-bottom-10 tb-inline-block">Set Privacy to:  </p>
+                                <div>
+                                    <div class="tb-material-radio-container tb-inline-block">
+                                        <input type="radio" class="tb-material-radio" name="privacy" id="sunset-private" value="0" checked />
+                                        <label class="tb-material-radio-label" for="sunset-private">Private</label>
+                                    </div>
+                                    <div class="tb-material-radio-container tb-inline-block">
+                                        <input type="radio" class="tb-material-radio" name="privacy" id="sunset-unlisted" value="1" />
+                                        <label class="tb-material-radio-label" for="sunset-unlisted">Unlisted</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Playlists -->
+                            <div class="tb-margin-top-25">
+                                <p class="tb-font-cbold">Playlists</p>
+                                <div class="tb-margin-top-10 tb-margin-left-10">
+                                    <div class="tb-material-checkbox-container tb-padding-0">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" id="tb-sunset-video-removeFromPlaylistOptions" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right-5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Remove video from playlists
+                                        </label>
+                                    </div>
+                                    <div id="tb-sunset-playlist-options" class="tb-margin-top-10">
+                                        <div class="tb-material-radio-container">
+                                            <input type="radio" class="tb-material-radio" name="tb-selection-type" value="random" id="tb-sunset-video-removeFromAllPlaylists" checked />
+                                            <label class="tb-material-radio-label" for="tb-sunset-video-removeFromAllPlaylists">All playlists</label>
+                                        </div>
+                                        <div class="tb-material-radio-container">
+                                            <input type="radio" class="tb-material-radio" name="tb-selection-type" value="random" id="tb-sunset-video-removeFromPlaylistIds" />
+                                            <label class="tb-material-radio-label" for="tb-sunset-video-removeFromPlaylistIds">Specific playlists...</label>
+                                        </div>
+                                        <div id="tb-sunset-playlists-wrapper" class="tb-hidden">
+                                            <div id="tb-sunset-video-playlist-ids"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tb-margin-top-25">
+                                <p class="tb-font-cbold tb-margin-bottom-10">Reminder</p>
+                                <div class="tb-margin-left-10">
+                                    <div class="tb-material-checkbox-container tb-padding-0">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" id="tb-sunset-video-emailreminder" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right-5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Email me a reminder 24 hours before the publish date
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="tb-margin-left-10">
+                                    <div class="tb-material-checkbox-container tb-padding-0 tb-margin-top-10">
+                                        <label class="tb-material-checkbox-label">
+                                            <input type="checkbox" id="tb-sunset-video-emailreminder-now" class="tb-material-checkbox-input" />
+                                            <span class="tb-material-checkbox-box tb-margin-right-5"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                            Email me a reminder right now
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Publish and cancel buttons -->
+                    <div class="tb-margin-top-30">
+                        <div class="tb-inline-block tb-float-right">
+                            <a class="tb-sunset-button tb-sunset-button-danger tb-sunset-video-cancel tb-hidden">
+                                Cancel Sunset Video
+                            </a>
+                            <a class="tb-sunset-button tb-sunset-video-save">
+                                Schedule Sunset
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tb-hidden" type="text/template" id="tb-sunset-video-currentTemplate">
+                    <div class="tb-video-scheduled-current">
+                        <!--Success bar-->
+                        <div id="status-bar" class="tb-success-status tb-video-scheduled-status-bar tb-margin-bottom-20">
+                            <img src="{plugin_file_root}/images/modules/channelbackup/backup-status-check.png" class="tb-inline-block tb-status-check" />
+                            <p class="tb-font-cbold tb-font-color-white tb-inline-block tb-margin-0">Success!</p>
+                        </div>
+                        <!--Success Scheduled Publish-->
+                        <div class="tb-font-size-lb tb-fc-gray-text tb-margin-bottom-20">
+                            <p class="tb-margin-bottom-15 tb-font-medium">Video scheduled to be sunsetted on:</p>
+                            <p class="tb-font-cbold tb-margin-left-15">{1} at {2} {3}</p>
+                        </div>
+                        <div class="tb-font-size-lb tb-fc-gray-text tb-margin-bottom-20">
+                            <p class="tb-margin-bottom-15">Privacy will be changed to:</p>
+                            <p class="tb-font-cbold tb-margin-left-15">{0}</p>
+                        </div>
+                        <div class="tb-font-size-lb tb-fc-gray-text tb-margin-bottom-20">
+                            <p class="tb-margin-bottom-15">Playlists:</p>
+                            <div class="tb-font-cbold tb-margin-left-15">{4}</div>
+                        </div>
+                        <div class="tb-font-size-lb tb-fc-gray-text tb-margin-bottom-20">
+                            <p class="tb-margin-bottom-15">Reminder:</p>
+                            <p class="tb-font-cbold tb-margin-left-15">{5}</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+       
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->
+

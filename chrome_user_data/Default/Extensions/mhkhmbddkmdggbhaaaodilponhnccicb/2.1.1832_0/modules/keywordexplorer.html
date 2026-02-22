@@ -1,0 +1,681 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-keyword-explorer-container" class="tb-module-template draggable-container tb-kwe-new" style="display:none;">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <svg style="margin-left: 8px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F7F7F8"/>
+                <path d="M12.7502 23.3709C11.6717 23.3709 10.6022 23.3709 9.46697 23.3709V15.625H7.38281V12.3797H9.45988V8.61525H13.2841C13.2983 8.80026 13.3231 8.98149 13.3231 9.16084C13.3231 13.5747 13.316 18.3567 13.3338 22.7725C13.3338 23.2652 13.1865 23.3804 12.7502 23.369V23.3709ZM22.8322 21.8078C21.1737 23.3294 19.251 23.8542 17.1934 22.9178C15.0472 21.9418 13.9315 20.1181 13.9085 17.6129C13.8836 14.8245 13.896 12.0361 13.8925 9.24957V8.61525C15.1448 8.61525 16.303 8.6228 17.4577 8.61525C17.7912 8.61336 17.7593 8.84745 17.7593 9.07211V20.4579C19.1712 19.5706 20.5175 18.7267 21.917 17.8451C20.8048 17.1447 19.7618 16.4707 18.7011 15.8288C18.3677 15.6287 18.2045 15.4097 18.2275 14.9774C18.2648 14.2355 18.2524 13.4879 18.2311 12.744C18.2204 12.391 18.334 12.2758 18.6621 12.2249C20.8119 11.8926 23.1621 13.2594 24.12 15.4229C25.0937 17.6204 24.6077 20.1729 22.8304 21.8021V21.8059L22.8322 21.8078Z" fill="#2D3236"/>
+            </svg>
+            <h1 class="tb-module-title">
+                Keyword Explorer
+            </h1>
+
+            <div style="font-size: 4px;" class="tb-module-help tb-tooltip" title="help">
+                <a target="_blank" href="https://www.tubebuddy.com/tools?tool=tagexplorer" data-draggable="false">
+                    <i class="untitled-ui untitled-ui-help-circle-line tb-destination-header-icons"></i>
+                </a>
+            </div>
+            <div class="tb-keyword-explorer-closex" data-draggable="false" title="close">
+                <i class="untitled-ui untitled-ui-x-close-line tb-destination-header-icons"></i>
+            </div>
+        </div>
+        <div class="tb-module-content tb-keyword-explorer-content">
+            <div class="tb-kwe-title">
+                <h2>Your keywords</h2>
+            </div>
+            <div class="tb-keyword-explorer-header">
+                <div class="tb-keyword-explorer-header-left">
+                    <div>
+                        <i class="untitled-ui untitled-ui-check-line tb-keyword-explorer-tag-checkbox-confirm tb-keyword-explorer-tag-checkbox-hidden"></i>
+                        <label class="tb-keyword-explorer-main-input tb-checkbox tb-margin-left-10" for="tb-keyword-explorer-include-explored-tag"><input disabled="disabled" type="checkbox" id="tb-keyword-explorer-include-explored-tag" class="tb-keyword-explorer-tag-checkbox tb-keyword-explorer-tag-checkbox-explore"><span class="tb-checkbox__indicator"></span></label>
+                    </div>
+                    <input placeholder="enter your keyword here" id="tb-keyword-explorer-input" autocomplete="off" type="text"/>
+                    <button class=" tb-margin-left-5 tb-kwe-explore-btn" id="tb-keyword-explorer-explore">
+                        Explore
+                    </button>
+                    <div class="tb-keyword-explorer-header-auto-complete" style="display:none;">
+                        <div class="tb-keyword-explorer-header-auto-complete-items">
+                        </div>
+                    </div>
+                    <div class="tb-margin-left-10 tb-keyword-explorer-header-characters" style="display:none">
+                        We've modified your keyword search. <a href="https://tubebuddy.zendesk.com/hc/en-us/articles/9325842108059" target="_blank">Why?</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tb-keyword-explorer-tab-none" class="tb-font-color-gray">
+                <div class="tb-kwe-telescope-wrapper"><i class="untitled-ui untitled-ui-telescope-line tb-kwe-telescope"></i></div>
+                <h5>No keywords have been explored...yet.</h5>
+                <span>Find ideas to drive more views to your videos by exploring one!</span>
+            </div>
+            <!-- Trending Topics -->
+            <div id="tb-keyword-explorer-trending-related-container">
+                <ul role="tablist" id="tb-keyword-explorer-trending-related-tabs-container" class="tb-font-color-gray">
+                    <!-- TODO: once others tabs are added, add class 'tb-keyword-explorer-trending-tab--active' to default tab -->
+                    <li role="tab" data-tab-id="1" class="tb-keyword-explorer-trending-tab tb-margin-left-10">
+                        What's Trending
+                        <select id="tb-keyword-explorer-trending-topic-country-select" class="tb-dropdown-menu"></select>
+                    </li>
+                </ul>
+
+                <div id="tb-keyword-explorer-trending-related-tabs-content-container">
+                    <div data-tab-id="1" class="tb-keyword-explorer-trending-tab-content">
+                        <div id="tb-keyword-explorer-trending-list"></div>
+                        <div id="tb-keyword-explorer-trending-list-loading" style="display: none;">
+                            <span class="tb-spinner tb-margin-right-5"></span> Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tb-keyword-explorer-tab-container" class="tb-keyword-explorer-tab-container-size" style="display:none;">
+                <div class="tb-center tb-keyword-explorer-tab-header-error tb-red tb-margin-top-5" style="display:none;">
+                    <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png">
+                    <span>Search results aren't currently available...</span> <a href="https://tubebuddy.zendesk.com/hc/en-us/articles/9327172037403" target="_blank">WHY?</a>
+                </div>
+                <div class="tb-kwe-tab-summary-result-container">
+                    <ul class="tb-tab2">
+                        <li id="tb-keyword-explorer-borrowed-tab-header" data-tab-id="tb-keyword-explorer-borrowed-tab" class="tb-tab2-header selected tb-keyword-explorer-tab-header tb-tabs2-nav-item">
+                            <div id="tb-keyword-explorer-summary-tab-title" class="tb-tab2-header-title">
+                                Summary
+                            </div>
+                            <div class="tab-header-icon-container">
+                                <span class="tab-header-icon yt-sprite"></span>
+                            </div>
+                        </li>
+                        <li id="tb-keyword-explorer-search-analysis-tab-header" data-tab-id="tb-keyword-explorer-search-analysis-tab" class="tb-tab2-header tb-keyword-explorer-tab-header tb-tabs2-nav-item">
+                            <div id="tb-keyword-explorer-results-tab-title" class="tab-header-title">
+                                Results
+                            </div>
+                            <div class="tab-header-icon-container">
+                                <span class="tab-header-icon yt-sprite"></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="tb-selected-kwe" style="display: none;">
+                        <span id="tb-keyword-explorer-selected-count-label" class="tb-keyword-explorer-selected-count"></span>
+                        Keywords Selected
+                    </div>
+                </div>
+                <div id="tb-popout-tabs-container">
+                    <div id="tb-keyword-explorer-borrowed-tab" class="tb-keyword-explorer-tab tb-padding-left-5">
+                        <div id="tb-keyword-explorer-borrowed-tab-results">
+                            <div>
+                                <div class="tb-keyword-explorer-clear"></div>
+                                <div id="tb-keyword-explorer-keyword-score-container-loading" class="tb-keyword-explorer-keyword-score-content-container">
+                                    <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+                                </div>
+                                <div id="tb-keyword-explorer-keyword-score-container" class="tb-keyword-explorer-keyword-score-content-container" style="display:none;">
+                                    <div class="tb-kwe-score-top">
+                                        <div class="tb-keyword-explorer-summary-title">
+                                            Overall Score
+                                        </div>
+                                        <div class="tb-keyword-explorer-keyword-score-weighted-desc-container">
+                                            <span class="tb-keyword-explorer-keyword-score-weighted-option tb-keyword-explorer-keyword-score-weighted-desc">
+                                                Weighted
+                                                <span class="tb-kwe-tooltip">
+                                                    <span>Weighted: Score for how good this keyword is to target for your specific channel, based on search volume,  competition, relevancy, and how you compare to  others currently ranking in search  (Pro license needed).</span>
+                                                    <span>Unweighted: Score for how good this keyword is to target, based on search volume and competition.</span>
+                                                </span>
+                                            </span>
+                                            <div class="tb-toggle-switch">
+                                              <span class="tb-toggle-knob"></span>
+                                            </div>
+                                            <span class="tb-keyword-explorer-keyword-score-unweighted-option tb-keyword-explorer-keyword-score-weighted-desc">
+                                                Unweighted
+                                                 <span class="tb-kwe-tooltip">
+                                                    <span>Weighted: Score for how good this keyword is to target for your specific channel, based on search volume,  competition, relevancy, and how you compare to  others currently ranking in search  (Pro license needed).</span>
+                                                    <span>Unweighted: Score for how good this keyword is to target, based on search volume and competition.</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="tb-keyword-explorer-keyword-score-top-conatiner tb-padding-bottom-0">
+                                        <div class="tb-kwe-overall-score-container">
+                                            <div id="tb-keyword-explorer-overall-score-chart" class="bars-container">
+                                            </div>
+                                            <div id="tb-keyword-explorer-total-score-container" class="tb-text-align-center">
+                                                <span id="tb-keyword-explorer-total-score-label"></span>
+                                                <span id="tb-keyword-explorer-total-score"></span>
+                                            </div>
+                                        </div>
+                                        <div class="tb-keyword-explorer-clear"></div>
+                                        <div>
+                                            <div class="tb-keyword-explorer-total-score-desc"></div>
+                                        </div>
+                                        <div>
+                                            <div class="tb-keyword-explorer-total-score-warning tb-margin-top5 tb-font-size-xs tb-margin-left-5" style="display:none;">
+                                                <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                <span>Choosing a keyword from the related searches list could potentially reach a higher score.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tb-keyword-explorer-keyword-weighted-score-container">
+                                  
+                                    <div id="tb-keyword-explorer-weighted-score-loading">
+                                        <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+                                    </div>
+                                    <div id="tb-keyword-explorer-weighted-score-container"  style="display:none;">
+                                        <div class="tb-keyword-explorer-summary-title tb-margin-left-10 tb-margin-top-0">
+                                            Score Analysis
+                                        </div>
+                                        <div class="tb-kwe-score-bars-wrapper">
+                                            <div class="tb-kwe-score-row">
+                                                <div class="tb-keyword-explorer-keyword-score-label">Search Volume</div>
+                                                <div id="tb-keyword-explorer-search-volume-chart" class="tb-kwe-bar-scores-container"></div>
+                                                <div class="tb-keyword-explorer-score-analysis-chart-label">
+                                                    <span class="tb-keyword-explorer-chart-label" id="tb-keyword-explorer-search-volume"></span>
+                                                </div>
+                                            </div>
+                                            
+                                          
+                                            <div style="display: flex; width: 100%">
+                                                <div class="tb-keyword-explorer-unweighted-score-area tb-keyword-explorer-keyword-score-label tb-kwe-score-row">
+                                                    <div class="tb-keyword-explorer-keyword-score-label">Unweighted competition </div>
+                                                    <span class="kwe-info">
+                                                    <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                        <span class="tb-kwe-info-tt">
+                                                            <span>
+                                                                Unweighted: Score for how good this keyword is to target, based on search volume and competition.
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                    
+                                                    <div id="tb-keyword-explorer-competition-chart" class="tb-kwe-bar-scores-container"></div>
+                                                    <div class="tb-keyword-explorer-score-analysis-chart-label"><span class="tb-keyword-explorer-chart-label" id="tb-keyword-explorer-unweighted-competition"></span></div>
+                                                </div>
+                                                
+                                                    <div class="tb-keyword-explorer-weighted-score-area tb-keyword-explorer-keyword-score-label tb-kwe-score-row">
+                                                        <div class="tb-keyword-explorer-keyword-score-label">Weighted competition</div>
+                                                        <span class="kwe-info">
+                                                         <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                        <span class="tb-kwe-info-tt">
+                                                            <span>
+                                                                Weighted: Score for how good this keyword is to target for your specific channel, based on search volume,  competition, relevancy, and how you compare to  others currently ranking in search  (Pro license needed).
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                        <div id="tb-keyword-explorer-weighted-competition-chart" class="tb-kwe-bar-scores-container"></div>
+                                                        <div class="tb-keyword-explorer-score-analysis-chart-label"><span class="tb-keyword-explorer-chart-label" id="tb-tag-weighted-competition"></span></div>
+                                                    </div>
+                                            </div>
+                                            
+                                            <div class="tb-kwe-score-row">
+                                                <div class="tb-keyword-explorer-keyword-score-label">Optimization Strength</div>
+                                                <span class="kwe-info-opt">
+                                                         <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                        <span class="tb-kwe-info-tt-opt">
+                                                            <span>
+                                                                Optimization strength: Indicates how well-optimized the top-ranking videos are for this search phrase. Low optimization means you have a chance to rank higher by including the keyword in your Title, Description, and Tags.
+                                                            </span>
+                                                        </span>
+                                                </span>
+                                                <div id="tb-keyword-explorer-keyword-count-chart" class="tb-kwe-bar-scores-container"></div>
+                                                <div class="tb-keyword-explorer-score-analysis-chart-label"><span class="tb-keyword-explorer-chart-label tb-keyword-explorer-keyword-count"></span></div>
+                                            </div>
+                                        </div>
+                                        <div class="tb-kwe-score-row">
+                                            <div id="tb-keyword-explorer-total-results-label" class="tb-keyword-explorer-keyword-score-label">
+                                                Videos in search results
+                                            </div>
+                                            <span class="kwe-info-sr">
+                                                         <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                        <span class="tb-kwe-info-tt-sr">
+                                                            <span>
+                                                                Videos in search results: Total number of search results on YouTube for this keyword.
+                                                            </span>
+                                                        </span>
+                                                </span>
+                                            <div class="tb-keyword-explorer-search-result-count-area">
+                                                <div>
+                                                    <span class="tb-keyword-explorer-chart-label tb-keyword-explorer-search-result-count tb-font-size-sm"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tb-kwe-score-row">
+                                            <div id="tb-keyword-explorer-search-volume-amount-label" class="tb-keyword-explorer-keyword-score-label tb-keyword-explorer-search-volume-amount-row">
+                                                Monthly search estimate
+                                            </div>
+                                            <span class="kwe-info-me">
+                                                         <i class="untitled-ui untitled-ui-info-circle-line"></i>
+                                                        <span class="tb-kwe-info-tt-me">
+                                                            <span>
+                                                                Monthly search estimate: Estimated average number of global searches for this exact keyword on YouTube per month, provided by KeywordTool.
+                                                            </span>
+                                                        </span>
+                                                </span>
+                                            <div class="tb-keyword-explorer-search-volume-amount-container tb-keyword-explorer-search-volume-amount-row">
+                                               <span id="tb-keyword-explorer-search-volume-amount" class="tb-keyword-explorer-chart-label tb-font-size-sm"></span>
+                                            </div>
+                                        </div>
+                                       
+                                        <div  style="display: flex;">
+                                        <div id="tb-keyword-explorer-you-vs-top" class="tb-keyword-explorer-keyword-score-label tb-keyword-explorer-weighted-score-area">
+                                            You vs. Top ranked videos
+                                        </div>
+                                        <div class="tb-keyword-explorer-weighted-score-area tb-keyword-explorer-weighted-score-area-chart">
+                                            <div class="tb-keyword-explorer-weighted-views">
+                                            </div>
+                                        </div>
+                                            <div class="tb-kwe-chart-bg" style="display: none">
+                                                <div class="tb-keyword-explorer-custom-analysis-upgrade-container tb-keyword-explorer-upgrade-container">
+                                                    <div class="tb-kwe-upgrade-msg">
+                                                        <i class="untitled-ui untitled-ui-lock-01-line tb-kwe-upgrade-lock"></i><p>See customized keyword scores for your channel and see how you stack up against top ranking videos by upgrading your license to Pro level (or higher).</p>
+                                                    </div>
+                                                    
+                                                    <button class="tb-kwe-upgrade-btn">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                        <path d="M8.94531 16.2856C13.3636 16.2856 16.9453 12.7039 16.9453 8.28564C16.9453 3.86737 13.3636 0.285645 8.94531 0.285645C4.52703 0.285645 0.945312 3.86737 0.945312 8.28564C0.945312 12.7039 4.52703 16.2856 8.94531 16.2856Z" fill="#1D2327"/>
+                                                        <path d="M7.64449 11.6123C7.10206 11.6123 6.56409 11.6123 5.99311 11.6123V7.76616H4.94482V6.1548H5.98954V4.28565H7.91303C7.92016 4.37751 7.93265 4.4675 7.93265 4.55655C7.93265 6.74816 7.92909 9.12256 7.93801 11.3151C7.93801 11.5598 7.86396 11.6169 7.64449 11.6113V11.6123ZM12.7155 10.8361C11.8813 11.5916 10.9142 11.8522 9.87934 11.3873C8.79983 10.9027 8.23866 9.99714 8.22707 8.75323C8.21458 7.36871 8.22082 5.98419 8.21904 4.60061V4.28565C8.8489 4.28565 9.43148 4.2894 10.0123 4.28565C10.18 4.28471 10.1639 4.40095 10.1639 4.5125V10.1659C10.8741 9.7253 11.5512 9.30629 12.2551 8.86853C11.6958 8.52076 11.1712 8.18611 10.6377 7.8674C10.4699 7.76804 10.3879 7.6593 10.3995 7.44464C10.4182 7.07625 10.412 6.70504 10.4012 6.33571C10.3959 6.16042 10.453 6.10324 10.618 6.07793C11.6993 5.91295 12.8814 6.59162 13.3632 7.66586C13.853 8.75698 13.6085 10.0243 12.7146 10.8333V10.8352L12.7155 10.8361Z" fill="#FAFAFF"/>
+                                                        </svg>
+                                                        <a class="tb-keyword-explorer-custom-analysis-upgrade-link">Upgrade Now</a>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                   <div id="tb-keyword-explorer-keyword-related-keywords-container">
+                                        <div class="tb-keyword-explorer-related-keyword-tab-container  ">
+                                            <div class="tb-keyword-explorer-related-keywords-container">
+                                                <div id="tb-kwe-tabs-container">
+                                                    <span class="tb-keyword-explorer-related-youtube-option tb-keyword-explorer-related-keyword-desc tb-keyword-explorer-tab-active" data-tab-id="youtube">YouTube</span>
+                                                    <span class="tb-keyword-explorer-related-google-option tb-keyword-explorer-related-keyword-desc" data-tab-id="google">Google</span>
+                                                    <span class="tb-keyword-explorer-related-related-option tb-keyword-explorer-related-keyword-desc" data-tab-id="related">Topics</span>
+                                                    <span class="tb-keyword-explorer-related-common-option tb-keyword-explorer-related-keyword-desc" data-tab-id="common">Tags</span>
+                                                </div>
+                                                <div class="tb-kwe-time-toggle-container" style="display: none">
+                                                    <span class="tb-keyword-explorer-keyword-trends-history-option tb-keyword-explorer-keyword-trends-history-option-active tb-kwe-1-m" data-history-months="today 1-m">30 Days</span>
+                                                    <div class="tb-toggle-switch-time">
+                                                        <span class="tb-toggle-knob-time"></span>
+                                                    </div>
+                                                    <span class="tb-keyword-explorer-keyword-trends-history-option tb-kwe-12-m" data-history-months="today 12-m">12 Months</span>
+                                                </div>
+                                            </div>
+                                          
+                                            <div class="tb-keyword-explorer-related-keyword-tab-container-youtube-content tb-keyword-explorer-related-keyword-tab-container-youtube" style="display:none">
+                                                <div class="tb-keyword-explorer-related-keywords-loading tb-keyword-explorer-related-keyword-tab-container-youtube-loading">
+                                                    <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+                                                </div>
+                                                <div class="tb-keyword-explorer-trends-section">
+                                                    <div class="tb-keyword-explorer-keyword-trends-row">
+                                                        <div style="margin-top: 12px; ">Interest over time</div>
+                                                        <div id="tb-keyword-explorer-keyword-trends-history">
+                                                            <iframe id="tb-keyword-explorer-keyword-trends-history-frame-youtube" class="tb-keyword-explorer-keyword-trends-history-frame">
+                                                            </iframe>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tb-keyword-explorer-keyword-trends-data-container">
+                                                        <div class="tb-margin-right-25 tb-kwe-num-container">
+                                                            <span class="tb-margin-right-4 tb-font-bold">New Videos:</span>
+                                                            <span class="tb-keyword-explorer-keyword-trends-new-count"></span> 
+                                                            / 
+                                                            <span class="tb-keyword-explorer-keyword-trends-new-count-total"></span>
+                                                            <span class="tb-kwe-num-of-kw-tooltip">
+                                                               Number of top search results published within the last 3 days.
+                                                            </span>
+                                                        </div>
+                                                        <div class="tb-kwe-match-container">
+                                                            <span class="tb-margin-right-10 tb-font-bold"># Exact Matches:</span>
+                                                            <span class="tb-keyword-explorer-search-result-keyword-count"></span>
+                                                            <span class="tb-kwe-num-of-match-tooltip">
+                                                               Total number of exact keyword matches found in the Top Results.
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tb-keyword-explorer-select-option-container-youtube" style="display:none">
+                                                    <div class="tb-keyword-explorer-related-searches-header">Related Searches</div>
+                                                    <span class="tb-font-size-lb tb-padding-right-15" style="display: flex;">
+                                                        <i class="untitled-ui untitled-ui-filter-funnel-02-line" style="font-size: 18px; font-weight: 600; margin-right: 3px;"></i>
+                                                        <select class="tb-keyword-explorer-tag-selector">
+                                                            <option  disabled selected hidden>Filter</option>
+                                                            <option  data-target-id="youtube" class="tb-keyword-explorer-all-tags">All</option>
+                                                            <option  data-target-id="youtube" class="tb-keyword-explorer-none-tags">None</option>
+                                                            <option  data-target-id="youtube" class="tb-keyword-explorer-limit-tags">to Video Tag Limit</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                                <div class="tb-keyword-explorer-related-keyword-tab-youtube-list" style="display:none;">
+                                                </div>
+                                            </div>
+
+                                            <div class="tb-keyword-explorer-related-keyword-tab-container-google" style="display:none">
+                                                <div class="tb-keyword-explorer-related-keywords-loading tb-keyword-explorer-related-keyword-tab-container-google-loading">
+                                                    <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+                                                </div>
+                                                <div class="tb-keyword-explorer-related-keyword-tab-container-google-content" style="display:none">
+                                                    <div class="tb-keyword-explorer-trends-section">
+                                                        <div class="tb-keyword-explorer-keyword-trends-row">
+                                                            <div  style="margin-top: 12px;">Interest over time</div>
+                                                            <div id="tb-keyword-explorer-keyword-trends-history">
+                                                                <iframe id="tb-keyword-explorer-keyword-trends-history-frame-google" class="tb-keyword-explorer-keyword-trends-history-frame">
+                                                                </iframe>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tb-keyword-explorer-keyword-trends-container">
+                                                            <div id="tb-keyword-explorer-video-carousel-check-container">
+                                                                <span class="tb-margin-right-10 tb-font-bold">Vid Carousel:</span>
+                                                                <span class="tb-keyword-explorer-keyword-trends-carousel-confirm">
+                                                                    <i class="material-icons tb-font-color-green tb-font-size-md tb-keyword-explorer-help">done</i>
+                                                                </span>
+                                                                <span class="tb-keyword-explorer-keyword-trends-carousel-reject">
+                                                                    <i class="material-icons tb-font-color-red tb-font-size-md tb-keyword-explorer-help">close</i>
+                                                                </span>
+                                                                <span class="tb-kwe-vid-carousel-tooltip">
+                                                                    <span>Indicates whether a video carousel appears on the Google search results page for the selected keyword.</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tb-keyword-explorer-select-option-container-google" style="display:none;">
+                                                            <div class="tb-keyword-explorer-related-searches-header">Related Searches</div>
+                                                            <span class="tb-font-size-lb tb-padding-right-15" style="display: flex;">
+                                                        <i class="untitled-ui untitled-ui-filter-funnel-02-line" style="font-size: 18px; font-weight: 600; margin-right: 3px;"></i>
+                                                        <select class="tb-keyword-explorer-tag-selector">
+                                                            <option  disabled selected hidden>Filter</option>
+                                                            <option  data-target-id="google" class="tb-keyword-explorer-all-tags">All</option>
+                                                            <option  data-target-id="google" class="tb-keyword-explorer-none-tags">None</option>
+                                                            <option  data-target-id="google" class="tb-keyword-explorer-limit-tags">to Video Tag Limit</option>
+                                                        </select>
+                                                        </span>
+                                                    </div>
+                                                    <div class="tb-keyword-explorer-related-keyword-tab-google-list" style="display:none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tb-keyword-explorer-related-keyword-tab-container-related" style="display:none">
+                                                <div class="tb-keyword-explorer-related-keywords-loading tb-keyword-explorer-related-keyword-tab-container-related-loading">
+                                                    <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+                                                </div>
+                                                <div class="tb-keyword-explorer-select-option-container-related tb-font-size-xs tb-margin-bottom-5 tb-line-height-15" style="display:none;">
+                                                    <div class="tb-keyword-explorer-related-searches-header">Related Searches</div>
+                                                    <span class="tb-font-size-lb tb-padding-right-15" style="display: flex;">
+                                                        <i class="untitled-ui untitled-ui-filter-funnel-02-line" style="font-size: 18px; font-weight: 600; margin-right: 3px;"></i>
+                                                        <select class="tb-keyword-explorer-tag-selector">
+                                                            <option  disabled selected hidden>Filter</option>
+                                                            <option  data-target-id="related" class="tb-keyword-explorer-all-tags">All</option>
+                                                            <option  data-target-id="related" class="tb-keyword-explorer-none-tags">None</option>
+                                                            <option  data-target-id="related" class="tb-keyword-explorer-limit-tags">to Video Tag Limit</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                                <div class="tb-keyword-explorer-related-keyword-tab-related-list" style="display:none;">
+                                                </div>
+                                            </div>
+
+                                            <div class="tb-keyword-explorer-related-keyword-tab-container-common" style="display:none">
+
+                                                <div id="tb-keyword-explorer-most-used-tags-loading" class="tb-keyword-explorer-most-used-tags-continer">
+                                                    <div class="tb-keyword-explorer-loading-img"><span class="tb-spinner tb-margin-right-5"></span> Loading...</div>
+
+                                                    <div id="tb-keyword-explorer-long-loading" style="display:none;">
+                                                        Hmmm... this is taking a while. There is a likely a problem.
+                                                        <div>
+                                                            The first thing to try is to click this link: <a target="_blank" href="https://www.youtube.com/results?search_query=tubebuddy">https://www.youtube.com/results?search_query=tubebuddy</a>. If you get a "CAPTCHA" response, solve the CAPTCHA then come back here and try to explore a tag again.
+                                                        </div>
+                                                        <div>
+                                                            If it still fails, you can copy all of the information from the box below and paste it into an
+                                                            email to <span class="tb-font-bold">support@tubebuddy.com</span>. Thanks!!
+                                                        </div>
+                                                        <textarea id="tb-keyword-explorer-long-loading-text" rows="3">
+                                                    </textarea>
+                                                    </div>
+                                                </div>
+                                                <div id="tb-keyword-explorer-most-used-tags" style="display:none" class="tb-keyword-explorer-most-used-tags-continer">
+                                                    <!-- option to open Common tags tab by default -->
+                                                    <div id="tb-keyword-explorer-common-tags-default-container">
+                                                            <label class="tb-checkbox" for="tb-keyword-explorer-common-tags-default">
+                                                                <input type="checkbox" id="tb-keyword-explorer-common-tags-default">
+                                                                <span class="tb-checkbox__indicator"></span>
+                                                            </label>
+                                                            <span class="tb-margin-left-5 tb-margin-top-2">Set as default tab</span>
+                                                    </div>
+                                                    <div class="tb-font-size-xs">
+                                                        <div class="tb-font-size-lb tb-padding-right-15">
+                                                            <div class="tb-keyword-explorer-related-searches-header">Related Searches</div>
+                                                            <span class="tb-font-size-lb tb-padding-right-15" style="display: flex;">
+                                                                <i class="untitled-ui untitled-ui-filter-funnel-02-line" style="font-size: 18px; font-weight: 600; margin-right: 3px;"></i>
+                                                                <select class="tb-keyword-explorer-tag-selector">
+                                                                    <option  disabled selected hidden>Filter</option>
+                                                                    <option  data-target-id="common" class="tb-keyword-explorer-all-tags">All</option>
+                                                                    <option  data-target-id="common" class="tb-keyword-explorer-none-tags">None</option>
+                                                                    <option  data-target-id="common" class="tb-keyword-explorer-limit-tags">to Video Tag Limit</option>
+                                                                </select>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tb-keyword-explorer-most-used-tags-list" class="tb-keyword-explorer-most-used-tags-list-continer"></div>
+                                                    <div id="tb-keyword-explorer-borrowed-tab-no-results" style="display:none">
+                                                        <span>Not enough search volume to show results.<br>Try exploring a more broad Keyword.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tb-keyword-explorer-most-used-upgrade-container tb-keyword-explorer-upgrade-container">
+                                                <div class="tb-kwe-upgrade-msg">
+                                                    <i class="untitled-ui untitled-ui-lock-01-line tb-kwe-upgrade-lock"></i><p>Only 3 of <span id="tb-kwe-most-used-tags-results"></span> total results are shown. <br />Upgrade your License to view all results. <br> </p>
+                                                </div>
+                                                <button class="tb-kwe-upgrade-btn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                        <path d="M8.94531 16.2856C13.3636 16.2856 16.9453 12.7039 16.9453 8.28564C16.9453 3.86737 13.3636 0.285645 8.94531 0.285645C4.52703 0.285645 0.945312 3.86737 0.945312 8.28564C0.945312 12.7039 4.52703 16.2856 8.94531 16.2856Z" fill="#1D2327"/>
+                                                        <path d="M7.64449 11.6123C7.10206 11.6123 6.56409 11.6123 5.99311 11.6123V7.76616H4.94482V6.1548H5.98954V4.28565H7.91303C7.92016 4.37751 7.93265 4.4675 7.93265 4.55655C7.93265 6.74816 7.92909 9.12256 7.93801 11.3151C7.93801 11.5598 7.86396 11.6169 7.64449 11.6113V11.6123ZM12.7155 10.8361C11.8813 11.5916 10.9142 11.8522 9.87934 11.3873C8.79983 10.9027 8.23866 9.99714 8.22707 8.75323C8.21458 7.36871 8.22082 5.98419 8.21904 4.60061V4.28565C8.8489 4.28565 9.43148 4.2894 10.0123 4.28565C10.18 4.28471 10.1639 4.40095 10.1639 4.5125V10.1659C10.8741 9.7253 11.5512 9.30629 12.2551 8.86853C11.6958 8.52076 11.1712 8.18611 10.6377 7.8674C10.4699 7.76804 10.3879 7.6593 10.3995 7.44464C10.4182 7.07625 10.412 6.70504 10.4012 6.33571C10.3959 6.16042 10.453 6.10324 10.618 6.07793C11.6993 5.91295 12.8814 6.59162 13.3632 7.66586C13.853 8.75698 13.6085 10.0243 12.7146 10.8333V10.8352L12.7155 10.8361Z" fill="#FAFAFF"/>
+                                                    </svg>
+                                                    <a class="tb-keyword-explorer-custom-analysis-upgrade-link">Upgrade Now</a>
+                                                </button>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div id="tb-keyword-explorer-historical-tab" class="tb-keyword-explorer-tab tb-padding-left-0" style="display: none;">
+                        <div id="tb-video-info-historical-container-blocked" class="tb-line-height-17 tb-margin-left-5" style="display: none;">
+                            <img src="{PLUGIN_FILE_ROOT}/images/modules/tagexplorer/history.png" />
+                        </div>
+
+                        <div id="tb-video-info-historical-container" class="tb-line-height-17 tb-margin-left-5">
+                            <iframe id="tb-keyword-explorer-h-frame" height="430" width="865"></iframe>
+                        </div>
+                        <div id="tb-video-info-historical-container-none" class="tb-text-align-center" style="display: none;">
+                            <span>Sorry, not enough search volume to show results</span>
+                        </div>
+                        <div class="tb-keyword-explorer-data-sources">
+                            <span> Data Sources: <a href="" target="_blank">YouTube.com</a>, <a href="" target="_blank">Google.com</a>, <a href="https://trends.google.com/trends" target="_blank">Google Trends</a></span>
+                        </div>
+                        <div id="tb-video-info-historical-container-apiquota" class="tb-text-align-center" style="display: none;">
+                            <span>Unfortunately Google limits the amount of data we can show you from their Google Trends website and you've reached that limit. Please try again in a few minutes to see if Google has removed the restriction. </span>
+                        </div>
+
+                    </div>
+                    <div id="tb-keyword-explorer-map-tab" class="tb-keyword-explorer-tab tb-padding-left-0" style="display: none;">
+                        <div id="tb-video-info-map-container">
+                            <div id="tb-video-info-map-container-blocked" class="tb-line-height-17 tb-margin-left-5"style="display: none;">
+                                <img src="{PLUGIN_FILE_ROOT}/images/modules/tagexplorer/map.png" />
+                            </div>
+                            <div id="tb-keyword-explorer-map-data-container" style="display:none;"></div>
+                            <div id="tb-video-info-map-container">
+                                <iframe id="tb-keyword-explorer-m-frame" height="415" width="865"></iframe>
+                            </div>
+                            <div id="tb-video-info-map-container-none" class="tb-text-align-center" style="display: none;">
+                                <span>Sorry, not enough search volume to show results</span>
+                            </div>
+                        </div>
+                        <div class="tb-keyword-explorer-data-sources">
+                            <span> Data Sources: <a href="" target="_blank">YouTube.com</a>, <a href="" target="_blank">Google.com</a>, <a href="https://trends.google.com/trends" target="_blank">Google Trends</a></span>
+                        </div>
+                        <div id="tb-video-info-map-container-apiquota" class="tb-text-align-center" style="display: none;">
+                            <span>Unfortunately Google limits the amount of data we can show you from their Google Trends website and you've reached that limit. Please try again in a few minutes to see if Google has removed the restriction. </span>
+                        </div>
+                    </div>
+                    <div id="tb-keyword-explorer-search-analysis-tab" class="tb-keyword-explorer-tab" style="display: none;">
+                        <div id="tb-keyword-explorer-top-ranking-container" class="tb-keyword-explorer-section-container">
+                           <span class="tb-keyword-explorer-summary-title">
+                            Top Ranking in Search
+                           </span>
+                            <div class="tb-top-search-content">
+                                <div id="tb-keyword-explorer-top-channel-container">
+                                    <img id="tb-keyword-explorer-top-channel-thumbnail" class="tb-keyword-explorer-channel-thumbnail" src="https://i.ytimg.com/i/UCo33niDKpTpgwZ_dohqvylg/0.jpg"/>
+                                    <div>
+                                    <a target="_blank" id="tb-keyword-explorer-top-channel"></a>
+                                    <div id="tb-keyword-explorer-top-channel-how-many" class="tb-keyword-explorer-channel-how-many"></div>
+                                    </div>
+                                </div>
+                                <div id="tb-keyword-explorer-your-channel-container">
+                                    <img id="tb-keyword-explorer-your-channel-thumbnail" class="tb-keyword-explorer-channel-thumbnail"/>
+                                    <div>
+                                        <a target="_blank" id="tb-keyword-explorer-your-channel"></a>
+                                        <div id="tb-keyword-explorer-your-channel-how-many" class="tb-keyword-explorer-channel-how-many">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-margin-right-10 tb-float-right tb-text-align-center" id="tb-keyword-explorer-search-results-tab-results">
+                                    <span class="tb-font-size-xs tb-font-bold tb-margin-top-5 tb-kwe-results-label">Total Search Results</span><br />
+                                    <span class="tb-keyword-explorer-search-result-count"></span>
+                                </div>
+                                <div class="tb-float-right tb-text-align-center tb-keyword-explorer-search-result-keyword-count-container tb-margin-right-30" style="display:none;">
+                                    <span class="tb-font-size-xs tb-font-bold tb-margin-top-5 tb-kwe-results-label">Exact Matches in Top Results</span><br />
+                                    <span class="tb-keyword-explorer-search-result-keyword-count"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tb-keyword-explorer-clear"></div>
+                        <br />
+                        <div class="tb-keyword-explorer-section-container">
+                            <span class="tb-keyword-explorer-summary-title">
+                                Search Results
+                            </span>
+                            <div id="tb-keyword-explorer-top-hits" class="tb-kwe-video-result-template">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tb-module-footer" id="tb-keyword-explorer-footer" style="display: none">
+                    <div class="tb-kwe-footer-buttons">
+                        <div id="tb-keyword-explorer-footer-left">
+                            <i  id="tb-keyword-explorer-back" class="untitled-ui untitled-ui-arrow-left-line"></i>
+                            <div class="tb-keyword-explorer-recent-list-container" style="display:none">
+                                <span class="tb-margin-left-10">
+                                      <i class="untitled-ui untitled-ui-clock-refresh-line  tb-kwe-recent-icon"></i>
+                                </span>
+                                <div id="tb-keyword-explorer-recent-list"></div>
+                            </div>
+                        </div>
+                        <span id="tb-layout-tag-inserted" style="display: none;">
+                    <img src="{PLUGIN_FILE_ROOT}/images/icons/check.png" />
+                    Inserted
+                </span>
+
+                        <div id="tb-keyword-explorer-action-dropup-menu" style="display:none;">
+                       
+                            <div class="tb-keyword-explorer-action-dropup-menu-item" data-option="videotopicplanner">
+                                Add to Topic Planner
+                            </div>
+                            <div class="tb-keyword-explorer-action-dropup-menu-item" data-option="seostudio">
+                                Optimize in SEO Studio
+                            </div>
+                            <div class="tb-keyword-explorer-action-dropup-menu-item" data-option="addtovideo">
+                                Insert into Current Video
+                            </div>
+                            <div class="tb-keyword-explorer-action-dropup-menu-item" data-option="clipboard">
+                                Copy to Clipboard
+                            </div>
+                            <div id="tb-keyword-explorer-copy-to-list-header">Copy To Tag List</div>
+                            <div class="tb-keyword-explorer-lists-container">
+                                <span class="tb-spinner tb-margin-right-5 tb-margin-left-5"></span>Loading lists...
+                            </div>
+                            <div id="tb-keyword-explorer-new-list-container">
+                                <a class="tb-keyword-explorer-action-dropup-menu-item tb-font-size-lb" data-option="newlist">
+                                    + New List
+                                </a>
+                            </div>
+                            <hr />
+                        </div>
+
+                        <button id="tb-keyword-explorer-action-dropup-button" class="tb-margin-left-5 tb-margin-right-5" style="display:none;">
+                            Action  <i class="untitled-ui untitled-ui-chevron-down-line tb-kwe-action-btn-icon"></i>
+                        </button>
+                    </div>
+                    <span class="tb-kwe-score-notice">
+                        Note: Overall Score, Search Volume, Competition, Optimization Strength, and Most Used Tags are each proprietary TubeBuddy calculations, and are not retrieved directly from the YouTube API.
+                    </span>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+
+    <div style="display: none">
+        <div class="tb-keyword-explorer-loading-section">
+            <span class="tb-spinner tb-margin-right-5"></span>
+            Loading
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-keyword-explorer-video-template">
+        <div class="tb-kwe-video-result-content">
+            <div style="height: 100%">
+             <span class="tb-keyword-explorer-result-rank"> {7}</span>
+            </div>
+                <div>
+                    <img class="tb-keyword-explorer-search-result-thumbnail" src="https://img.youtube.com/vi/{0}/mqdefault.jpg" />
+                </div>
+                <div class="tb-keyword-explorer-search-result-metadata-container tb-margin-left-10">
+                    <a class="tb-keyword-explorer-search-result-video-title" target="_blank" href="{1}">{2}</a><br />
+                    <a class="tb-keyword-explorer-video-result-channel-link tb-font-color-gray" target="_blank" href="{5}">{4}</a><span class="tb-margin-left-15">{3}</span>
+                    <span>{6}</span>
+                </div>
+        </div>
+    </div>
+    
+    <div style="display:none" type="text/template" id="tb-keyword-explorer-channel-template">
+        <div class="tb-kwe-video-result-content">
+                <span class="tb-keyword-explorer-result-rank">{4}</span>
+                <div>
+                    <img class="tb-keyword-explorer-search-result-thumbnail" src="{1}" />
+                </div>
+                <div class="tb-margin-left-10">
+                    <a class="tb-keyword-explorer-search-result-channel-title" target="_blank" href="{2}">{3}</a>
+                </div>
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-keyword-explorer-trending-template">
+        <div class="tb-keyword-explorer-trending-item-container">
+            <div class="tb-keyword-explorer-trending-item-left">
+                <a href="{1}" target="_blank">
+                    <img src="{2}"/>
+                </a>
+            </div>
+            <div class="tb-keyword-explorer-trending-item-right">
+                <div class="tb-keyword-explorer-trending-item-metadata tb-font-size-md">
+                    <a data-title="{0}" data-url="{1}" data-type="2" class="tb-margin-right-5 tb-keyword-explorer-trending-topic-explore">
+                        <span class="tb-keyword-explorer-trending-item-title" title="Explore">{0}</span>
+                    </a>
+
+                    <a target="_blank" href="{1}" class="tb-keyword-explorer-trending-item-open tb-btn tb-btn-small tb-font-color-gray">
+                        <i class="untitled-ui untitled-ui-arrow-square-up-right-line tb-kwe-launch"></i>
+                    </a>
+
+                </div>
+               
+                <div class="tb-keyword-explorer-trending-item-description">
+                    <p class="tb-font-size-xs tb-font-color-gray">
+                        <span class="tb-keyword-explorer-trending-item-searches">{3} searches - </span>
+                        {4}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

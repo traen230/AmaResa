@@ -1,0 +1,248 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-endscreen-studio-templates-container" class="tb-module-template draggable-container tb-endscreen-studio-templates-modal" style="display:none; width:885px;">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Apply End Screen Template
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=endscreentemplates" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-endscreen-studio-templates-thumbnail" alt="" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-endscreen-studio-templates-title" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div id="tb-endscreen-studio-templates-loading-container" style="display:none; height:200px; font-size:16px; padding:20px;">
+                    <span class="tb-spinner"></span>Loading End Screen Templates...
+                </div>
+
+                <div id="tb-endscreen-studio-templates-none" style="display:none; height:200px; padding:30px 100px 0 20px; font-size:14px; line-height:19px;">
+                    <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png" alt="error icon" style="position:relative; top: 2px; color:coral" />
+                    You haven't set any of your other videos as an End Screen Template yet.<br /><br />
+                    Go to the end screen Tab of any video that contains a set of End Screen Elements
+                    that you want to use as a Template for other videos. Then check the box <a href="https://www.tubebuddy.com/assets/images/tools/endscreentemplateswhere2.png" target="_blank">
+                    at the bottom
+                    of that webpage
+                </a> to set that video as a End Screen Template.<br />
+
+                    <br />
+                    More info here: <a target="_blank" href="https://www.tubebuddy.com/tools?tool=endscreentemplates">https://www.tubebuddy.com/tools?tool=endscreentemplates</a>
+                </div>
+
+                <div id="tb-endscreen-studio-templates-apply-container" style="display:none;">
+
+                    <div class="tb-endscreen-studio-templates-header">Template:</div>
+                    <div id="tb-endscreen-studio-templates-template-menu">
+                        <select id="tb-endscreen-studio-templates-select" class="tb-dropdown-menu"></select>
+                        <a id="tb-endscreen-studio-templates-reload-templates"><i class="material-icons" style="color:black;">sync</i></a>
+                        <div class="tb-inline-block">
+                            <a id="tb-endscreen-studio-templates-edit-template" class="tb-font-size11" target="_blank">EDIT</a>
+                            <span class="tb-font-size11">/</span>
+                            <a id="tb-endscreen-studio-templates-delete-template" class="tb-font-size11 tb-red">DELETE</a>
+                        </div>
+                    </div>
+
+                    <div id="tb-endscreen-studio-templates-selected-menu">
+                        <div class="tb-endscreen-studio-templates-header tb-inline-block">Select/Edit Cards</div>
+                        <div class="tb-inline-block">
+                            <span id="tb-endscreen-studio-templates-how-many" class="tb-endscreen-studio-templates-header"></span>
+                            <a id="tb-endscreen-studio-templates-select-all">All</a><span>&nbsp;|&nbsp;</span><a id="tb-endscreen-studio-templates-select-none">None</a>
+                        </div>
+                    </div>
+                    <div id="tb-endscreen-studio-templates-list-container">
+                    </div>
+                    <div class="tb-material-checkbox-container tb-endscreen-studio-template-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-font-size14">
+                            <input type="checkbox" id="tb-endscreen-studio-templates-delete-all" class="tb-material-checkbox-input" />
+                            <span class="tb-material-checkbox-box tb-endscreen-studio-templates-check"><span class="tb-check tb-material-checkbox-check tb-endscreen-studio-templates-check"></span></span>
+                            Remove all existing End Screen Elements on Video before applying Template
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container tb-endscreen-studio-template-checkbox-container" style="display:none">
+                        <label class="tb-material-checkbox-label tb-font-size14">
+                            <input class="tb-material-checkbox-input" checked="checked" id="tb-endscreen-studio-templates-confirm-unpublish" type="checkbox" />
+                            <span class="tb-material-checkbox-box tb-endscreen-studio-templates-check"><span class="tb-check tb-material-checkbox-check tb-endscreen-studio-templates-check"></span></span>
+                            Delete any Annotations from destination video so End Screen can be created
+                        </label>
+                    </div>
+                    <div class="tb-margin-top5 tb-margin-bottom5 tb-right tb-margin-right20">
+                        <a class="tb-btn-green" id="tb-endscreen-studio-templates-apply">
+                            Apply Selected End Screens
+                        </a>
+                        <span id="tb-endscreen-studio-templates-working" style="display:none">
+                            Applying End Screens...<span class="tb-spinner"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <!--<div id="tb-endscreen-studio-templates-footer"class="tb-module-footer">
+            <a class="tb-btn-grey tb-module-close" id="tb-endscreen-studio-templates-close">Close</a>
+
+        </div>-->
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-channel-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Channel</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Channel Url</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-channel-channelurl tb-endscreen-studio-template-input tb-material-input" type="text" data-element-default-id="{0}" value="{1}" />
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Custom Message</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-channel-custom-message tb-endscreen-studio-template-input tb-material-input" type="text" maxlength="30" data-element-default-id="{0}" value="{2}" />
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{3}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-subscribe-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Subscribe</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{1}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-website-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Link</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Title</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-website-title tb-endscreen-studio-template-input tb-material-input" type="text" data-element-default-id="{0}" value="{1}" />
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Url</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-website-url tb-endscreen-studio-template-input tb-material-input" type="text" data-element-default-id="{0}" value="{4}" />
+            </div>
+            <!--<div>
+                <div class="tb-endscreen-studio-template-input-label">Call To Action</div>
+                <div class="tb-margin-left5 tb-margin-top5">{2}</div>
+            </div>-->
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{3}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-recent_upload-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Dynamic Element</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Video Type</div>
+                <div class="tb-margin-left5 tb-margin-top5">Most recent upload</div>
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{1}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-fixed-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Video</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Video Url</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-fixed-url tb-endscreen-studio-template-input tb-material-input" type="text" data-element-default-id="{0}" value="{1}" />
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{2}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-best_for_viewer-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Dynamic Element</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Video Type</div>
+                <div class="tb-margin-left5 tb-margin-top5">Best for viewer</div>
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{1}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-playlist-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Playlist</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Playlist</div>
+                <input class="tb-cards-default-setting tb-endscreen-studio-template-elementType-playlist-url tb-material-input tb-endscreen-studio-template-input" type="text" data-element-default-id="{0}" value="{1}" />
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{2}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" type="text/template" id="tb-endscreen-studio-template-elementType-merch-template">
+    <div class="tb-endscreen-studio-template-element-item" data-element-default-id="{0}">
+        <div class="tb-endscreen-studio-template-element-item-inner tb-endscreen-studio-template-element-item-inner-selected">
+            <div class="tb-endscreen-studio-template-type">Merchandise</div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Best for viewer</div>
+            </div>
+            <div>
+                <div class="tb-endscreen-studio-template-input-label">Start Time</div>
+                <div class="tb-margin-left5 tb-margin-top5">{1}</div>
+            </div>
+        </div>
+    </div>
+</div>

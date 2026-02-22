@@ -1,0 +1,313 @@
+﻿<div style="display: none">
+
+
+
+    <!-- drop down and modal next to each comment-->
+    <div class="yt-uix-button-group tb-comments-drop-down" style="float: right; margin: 5px; position: relative;">
+
+        <div class="tb-commenter-action-icon" style="background-color: #fff; z-index: 20000; cursor: pointer; position:absolute; right:25px;">
+            <img class="tb-commenter-social-accounts-tb tb-height11" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" style="position: relative; top:4px; opacity:.4" />
+            <span class="tb-commenter-social-accounts-down" style="position: relative; top: 1px; font-size: 11px; color: #555">
+                <span class="tb-commenter-contact-status-loading" data-status="loading" title="Loading" style="display: inline-block; cursor: pointer; height: 8px; width: 8px; border-radius: 50%; position: relative; top: 6px; left: 3px; margin-left: 1px; margin-right: 2px; background-color: white; border: solid 1px #ccc; float: right;"></span>
+                <span class="tb-commenter-contact-status-sent" data-status="sent" title="Sent" style="display: none; cursor: pointer; height: 10px; width: 10px; border-radius: 50%; position: relative; top: 5px; background-color: green; margin-left: 1px; left: 3px; margin-right: 2px; float: right;"></span>
+                <span class="tb-commenter-contact-status-not-sent" data-status="notsent" title="Not Sent" style="display: none; cursor: pointer; height: 10px; width: 10px; border-radius: 50%; position: relative; top: 5px; background-color: #ccc; left: 3px; margin-left: 1px; margin-right: 2px; float: right;"></span>
+            </span>
+        </div>
+
+        <!--modal window-->
+        <div class="tb-video-commenter-info" style="width: 400px; z-index:200002; position:absolute; float:right;  right:3px; background-color:white;  display: none; border-radius: 3px;">
+            <div style="position: relative; top: -20px; box-shadow:0px -0px 20px -5px #888888; -moz-box-shadow:0px 10px 20px -5px #888888; border: solid 1px #ccc; padding: 0px;">
+                <div style="background-color: #f1f1f1; padding: 3px 3px 2px 3px; border-bottom: solid 1px #ccc; height:93px;">
+                    <div style="font-size: 16px; padding: 3px 3px 0px 0px; position: relative; z-index: 20000; line-height: 20px;">
+
+                        <img class="tb-video-commenter-info-close" style="float: right; cursor: pointer;" src="{PLUGIN_FILE_ROOT}/images/icons/close.png" />
+
+                        <span class="tb-commenter-contact-status-loading" data-status="loading" title="Loading" style="display: inline-block; cursor: pointer; height: 8px; width: 8px; border-radius: 50%; position: relative; top: 2px; left: 0px; margin-left: 1px; margin-right: 5px; background-color: white; border: solid 1px #ccc; float: right;"></span>
+                        <span class="tb-commenter-contact-status-sent" data-status="sent" title="Sent" style="display: none; cursor: pointer; height: 10px; width: 10px; border-radius: 50%; position: relative; top: 2px; background-color: green; margin-left: 1px; left: 0px; margin-right: 5px; float: right;"></span>
+                        <span class="tb-commenter-contact-status-not-sent" data-status="notsent" title="Not Sent" style="display: none; cursor: pointer; height: 10px; width: 10px; border-radius: 50%; position: relative; top: 2px; background-color: #ccc; left: 0px; margin-left: 1px; margin-right: 5px; float: right;"></span>
+
+                        <a target="_blank" class="tb-video-commenter-thumbnail-link">
+                            <img class="tb-video-commenter-thumbnail" style="height: 86px; margin-right: 5px; float: left; margin-left: 3px;" />
+                        </a>
+                        <a class="tb-video-commenter-name" target="_blank" style="font-size: 16px; overflow: hidden; max-width: 260px;overflow: hidden;display: inline-block;text-overflow: ellipsis;white-space: nowrap;"></a>
+                        <div style="font-size: 12px; margin-top: -3px;">
+                            Subs:<span class="tb-video-commenter-subscriber-count" style="font-weight: bold">-</span>
+                            &nbsp;&nbsp;&nbsp;
+                            Views: <span class="tb-video-commenter-views-count" style="font-weight: bold">-</span>
+                            &nbsp;&nbsp;&nbsp;
+                            Uploads: <span class="tb-video-commenter-upload-count" style="font-weight: bold">-</span>
+                        </div>
+                        <div class="tb-commenter-suspended" style="display: none; color:Red; padding:10px; font-size:12px; line-height:17px; position:relative; top:-3px; left:5px;">
+                            <b>YouTube Channel not found.</b><br />
+                            (most likely the channel has been suspended)
+                        </div>
+                        <span class="tb-commenter-social-accounts" style="margin-left: 2px; position: relative; top: 2px;"></span>
+                        <img style="position: relative;" src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" class="tb-commenter-social-accounts-loading" />
+                        <div style="text-align: left">
+
+                            <img class="video-commenter-subscribeToChannel" src="{PLUGIN_FILE_ROOT}/images/buttons/subscribe.png" style="margin: 0px 2px 0 0; cursor: pointer; display: none; height: 22px;" />
+                            <span class="video-commenter-subscribeToChannel-processing" style="width: 88px; display:none; height: 22px; text-align: center; margin: 0px 1px 0; ">
+                                <img src="{PLUGIN_FILE_ROOT}/images/general/loading1.gif" style="position:relative; top:-5px;" />
+                            </span>
+                            <img class="video-commenter-subscribedToChannel" src="{PLUGIN_FILE_ROOT}/images/buttons/subscribe-subscribed.png" style="margin: 0px 2px 0 0; opacity: .5; display: none; height: 22px;" />
+                            <img class="tb-video-commenter-followOnTwitter" src="{PLUGIN_FILE_ROOT}/images/buttons/follow.png" style="margin: 0px 3px 0 0; cursor: pointer; height: 22px; display:none;" />
+                            <img class="tb-video-commenter-followedOnTwitter" src="{PLUGIN_FILE_ROOT}/images/buttons/follow-followed.png" style="margin: 0px 3px 0 0; opacity: .5; display: none; height: 22px;" />
+                        </div>
+                    </div>
+
+                </div>
+                <div style="clear:both"></div>
+                <div style="padding: 3px 5px 5px 5px">
+
+                    <div style="padding-right: 5px; padding-left: 3px;" class="tb-video-commenter-contact">
+
+                        <div style="font-size: 12px; color: #777; padding:5px 2px 2px 2px;">
+                            <b style="font-size:11px;">COMMENT: </b> "<span class="tb-commenter-comment"></span>"
+                        </div>
+                        <div id="tb-commenter-show-campaigns-container" style="text-align: left; font-size: 11px; margin-top: 5px; float: right">
+                            <a class="tb-commenter-show-campaigns">Canned Response &#9660;</a>
+                            <div class="tb-commenter-campaign-dropdown" style="position: absolute; z-index: 200000000; display: none; font-size: 13px; line-height: 17px; width: 200px; background-color: white; right: 2px; border: solid 2px #ddd; padding: 3px 5px;">
+                                <img class="tb-commenter-campaign-dropdown-close" src="{PLUGIN_FILE_ROOT}/images/icons/close.png" style="height:12px; cursor:pointer; float:right;" />
+                                <div class="tb-commenter-campaign-dropdown-list"></div>
+                                <div class="tb-commenter-manage-campaigns-container" style="border-top: solid 1px #ccc; padding-top: 3px; margin-top: 3px; display:none;">
+                                    <a class="tb-commenter-manage-campaigns" style="font-size: 11px; text-transform: uppercase; color: green;">Manage Canned Responses...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{PLUGIN_FILE_ROOT}/images/icons/social/youtube.png " style="position:relative; top:6px;" />
+                        <b style="font-size: 13px; position: relative; top: 3px;">
+                            Send Private Message
+                        </b>
+                        <textarea class="tb-video-commenter-message" rows="4" style="width: 100%; border: solid 1px blue; margin-top: 3px;"></textarea>
+
+                        <div class="tb-commenter-send-history" style="float:left; opacity: .75; width:230px; font-size:11px; line-height:14px; margin-top:4px; padding-left:5px;"></div>
+                        <div style="float:right; margin-bottom: 3px;">
+                            <button style="cursor: pointer; margin-right: 1px; margin-top: 6px; display: none;" class="tb-commenter-send-message-button d-k-l b-c b-c-Ba b-c-da-ja tb-button tb-button-primary">
+                                <span class="tb-commenter-send-message-button-send yt-uix-button-content">Send</span>
+                                <span class="tb-commenter-send-message-button-working yt-uix-button-content" style="display:none">Sending...</span>
+                            </button>
+                            <button style="cursor: not-allowed; opacity: .5; margin-right: 1px; margin-top: 6px;" class="tb-commenter-send-message-button-disabled d-k-l b-c b-c-Ba b-c-da-ja tb-button tb-button-primary">
+                                <span class="yt-uix-button-content">
+                                    Send
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+
+    <!--canned responses module html below-->
+
+    <div id="tb-commentsCannedResponse-menuMenuTemplate" style="">
+        <div class="tb-commentsCannedResponse-cannedResponse-menu-row">
+            <span title="canned responses" class="tb-commentsCannedResponse-icons tb-cursor-pointer tb-commentsCannedResponse-cannedResponse-menu">
+                <img class="tb-height11" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-grey-transparent.svg" style="margin-left:6px;">
+                <span style="color:#999;" class="mod-arrow">&#x25bc;</span>
+            </span>
+            <span title="channelytics" style="padding-left:5px; padding-right:5px;position:relative; top:4px;" class="tb-commentManager-chart tb-cursor-pointer">
+                <img src="{PLUGIN_FILE_ROOT}/images/icons/menu/barchart.png">
+            </span>
+        </div>
+    </div>
+
+    <div id="tb-commentsCannedResponse-menuContainerTemplate" style="">
+
+        <div style="display: none;" class="tb-commentsCannedResponse-cannedResponse-menu-list tb-hid">
+            <div class="tb-commentsCannedResponse-cannedResponse-menu-list-header tb-margin-left5" tabindex="0">
+                <div style="float:left; font-size:14px; color:#999;">Canned Responses</div>
+                <div style="float:right; position:relative; top:-3px; text-align:right;opacity:.40;">
+                    <a title="add update or delete your canned responses" target="_blank" class="tb-commentsCannedResponse-manage-cannedResponses" style="text-decoration:none">
+                        <img class="tb-commentsCannedResponse-refresh-cannedResponses-image" style="position:relative; top:4px" src="{PLUGIN_FILE_ROOT}/images/icons/settings.png">
+                    </a>
+                    &nbsp;
+                    <a title="refresh list of canned responses" class="tb-commentsCannedResponse-refresh-cannedResponses">
+                        <img class="tb-commentsCannedResponse-refresh-cannedResponses-image" style="position:relative; top:4px" src="{PLUGIN_FILE_ROOT}/images/icons/refresh_small.png">
+                    </a>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="tb-commentsCannedResponse-cannedResponses-container" style="max-height: 230px; overflow-y: scroll;">
+                {0}
+            </div>
+            <div class="tb-commentsCannedResponse-cannedResponse-menu-list-header tb-commentsCannedResponse-topicgenerator-menu-list-header tb-margin-left5" tabindex="1">
+                <div style="float:left; font-size:14px; color:#999;">Video Topic Planner</div>
+                <div style="clear:both"></div>
+            </div>
+            <div>
+                <input class="tb-commentsCannedResponse-topicgenerator-input tb-margin-left10" disabled="disabled" type="checkbox" /><span class="tb-move-up2"> Add as Comment Suggestion</span>
+            </div>
+        </div>
+
+    </div>
+    <div style="display:none" id="tb-commentsCannedResponse-menuButtonTemplate">
+        <div class="tb-commentsCannedResponse-menu-cannedResponse" data-id="{0}" style="cursor: pointer;">
+            <div class="tb-inline-block tb-margin-left3 tb-margin-top3" style="width: 7%; vertical-align: middle;"></div>
+            <div class="tb-inline-block" style="width: 90%"><span>{1}</span></div>
+        </div>
+    </div>
+    <div style="display:none" id="tb-commentsCannedResponse-menuButtonTemplate-fav">
+        <div class="tb-commentsCannedResponse-menu-cannedResponse" data-id="{0}" style="cursor: pointer;">
+            <div class="tb-inline-block tb-margin-left3 tb-margin-top3" style="width: 7%; vertical-align: middle;"><i class="material-icons" style="color: #FFAA36; font-size: 16px;">star</i></div>
+            <div class="tb-inline-block" style="width: 90%;"><span>{1}</span></div>
+        </div>
+    </div>
+     <!--<div id="tb-commentsCannedResponse-menuButtonTemplate">
+        <button class="tb-commentManager-menu tb-commentsCannedResponse-menu-cannedResponse" style="display:block;width:100%; text-align:left" data-id="{0}">
+            {1}
+        </button>
+    </div>-->
+    <script type="text/template" id="tb-commentsCannedResponse-menuButtonTemplate">
+        <div class="tb-commentsCannedResponse-menu-cannedResponse" data-id="{0}" style="cursor: pointer;">
+            <div class="tb-inline-block" style="width: 7%; vertical-align: middle;"></div>
+            <div class="tb-inline-block" style="width: 90%"><span>{1}</span></div>
+        </div>
+    </script>
+    <script type="text/template" id="tb-commentsCannedResponse-menuButtonTemplate-fav">
+        <div class="tb-commentsCannedResponse-menu-cannedResponse" data-id="{0}" style="cursor: pointer;">
+            <div class="tb-inline-block" style="width: 7%; vertical-align: middle;"><i class="material-icons" style="color: #FFAA36; font-size: 16px;">star</i></div>
+            <div class="tb-inline-block" style="width: 90%;"><span>{1}</span></div>
+        </div>
+    </script>
+    <div id="tb-commentsCannedResponse-menuButtonTemplateEmpty">
+        <button class="tb-commentManager-menu tb-commentsCannedResponse-menu-cannedResponseEmpty" style="display:block;width:100%; text-align:left; padding: 8px 12px 8px 8px;">
+            None found. CLICK HERE to create one!
+        </button>
+    </div>
+    <div id="tb-commentsCannedResponse-menuButtonTemplateNotOwner">
+        <span style="display:block;width:100%; text-align:left; padding: 8px 12px 8px 8px;">
+            Canned responses are only available on videos you own
+        </span>
+    </div>
+    <div style="display:none" type="text/template" id="tb-commentsCannedResponse-channelInfoTemplate">
+        <div class="tb-commentsCannedResponse-channelInfo {4}">
+            {0}
+            {1}
+            {2}
+            {3}
+        </div>
+    </div>
+    <div style="display:none" type="text/template" id="tb-commentsCannedResponse-subscriberCountTemplate">
+        <span>{0}</span>
+        <span>Subscribers</span>
+    </div>
+    <div style="display:none" type="text/template" id="tb-commentsCannedResponse-facebookTemplate">
+        <a title="Facebook" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-up2" style="margin: auto;vertical-align: middle;display: inline-block;" src="{PLUGIN_FILE_ROOT}/images/icons/social/facebooknew.png" /></a>
+    </div>
+    <div style="display:none" type="text/template" id="tb-commentsCannedResponse-twitterTemplate">
+        <a title="Twitter" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-up2" style="margin: auto;vertical-align: middle;display: inline-block;" src="{PLUGIN_FILE_ROOT}/images/icons/social/twitternew.png" /></a>
+    </div>
+    <div style="display:none" type="text/template" id="tb-commentsCannedResponse-instagramTemplate">
+        <a title="Instagram" class="tb-margin-left5" href="{0}" target="_blank"><img class="tb-move-up2" style="margin: auto;vertical-align: middle;display: inline-block;" src="{PLUGIN_FILE_ROOT}/images/icons/social/instagramnew.png" /></a>
+    </div>
+    <style>
+        .tb-commentsCannedResponse-channelInfo {
+            display: inline-block;
+            font-size: 11px;
+            margin-left: 10px;
+            vertical-align: bottom;
+            font-weight: 500
+        }
+
+        .tb-commentsCannedResponse-cannedResponse-menu {
+        }
+
+        .tb-commentsCannedResponse-cannedResponse-menu-row {
+            display: inline-block;
+            position: relative;
+            left: -2px;
+            top: -4px
+        }
+
+        .tb-commentsCannedResponse-icons:hover {
+            opacity: .8;
+        }
+
+        .tb-commentsCannedResponse-icons {
+            opacity: .6;
+        }
+
+        .tb-commentsCannedResponse-cannedResponse-menu-list {
+            border: 1px solid #ccc;
+            padding: 2px 0;
+            background-color: #fff;
+            white-space: nowrap;
+            min-width: 290px;
+            z-index: 2000000100 !important;
+            max-width: 350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tb-commentsCannedResponse-cannedResponse-menu-list-header {
+            font-weight: 500;
+            color: #999;
+            font-size: 10px;
+            padding: 5px 5px 1px 5px;
+            border-bottom: solid 1px #eee;
+            margin-right: 4px;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .tb-commentsCannedResponse-menu-cannedResponse {
+            /*line-height: 190%;*/
+            padding: 6px 5px;
+        }
+
+        .tb-commentsCannedResponse-menu-cannedResponse:hover {
+            color:#4A90E2;
+        }
+
+        .tb-commentsCannedResponse-manage-cannedResponses {
+            text-transform: none;
+            font-size: 11px;
+        }
+
+        .tb-commentsCannedResponse-refresh-cannedResponses {
+            text-transform: none;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .mod-list-button {
+            padding: 4px 12px 4px 29px;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+            .mod-list-button:hover {
+                background-color: #555;
+                color: #fff;
+            }
+
+        .tb-commentManager-chart {
+            opacity: .5;
+            cursor: pointer;
+        }
+
+            .tb-commentManager-chart:hover {
+                opacity: .7;
+            }
+
+        .tb-commentManager-menu {
+            padding: 4px 12px 4px 29px;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            border: none;
+        }
+
+            .tb-commentManager-menu:hover {
+                background-color: #555;
+                color: #fff;
+            }
+    </style>
+
+</div>

@@ -1,0 +1,111 @@
+﻿<!--Start Base Module Template--> 
+<div id="tb-pick-a-winner-container" class="tb-module-template draggable-container tb-pick-a-winner">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Pick A Winner
+            </h1>
+            <div class="tb-module-help">
+                <a target="_blank" href="https://www.tubebuddy.com/tools?tool=pickawinner" data-draggable="false">
+                    <i class="small material-icons tb-icon-white">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close tb-cursor-pointer" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-pick-a-winner-video-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-pick-a-winner-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div class="tb-pick-a-winner-settings-container">
+                    <div class="tb-pick-a-winner-start-container">
+                        <div id="tb-pick-a-winner-description">
+                            <div class="tb-pick-a-winner-description-header">
+                                Running a contest on this video?
+                            </div>
+                            Click the button below to pick a random commenter!
+                        </div>
+                        <div>
+                            <div class="tb-material-radio-container">
+                                <input type="radio" class="tb-material-radio" name="tb-selection-type" value="random" id="tb-random" checked />
+                                <label class="tb-material-radio-label" for="tb-random">Choose from all comments</label>
+                            </div>
+                            <div class="tb-material-radio-container">
+                                <input type="radio" class="tb-material-radio" name="tb-selection-type" value="contains-text" id="tb-contains-text" />
+                                <label class="tb-material-radio-label" for="tb-contains-text">Comment must contain word(s):</label>
+                                <input type="text" name="tb-comment-contains" id="tb-comment-contains-text" class="tb-material-input" placeholder="search text" />
+
+                            </div>
+                        </div>
+                        <div class="tb-center tb-margin-top25 tb-margin-bottom5" id="tb-pick-a-winner-button-container">
+                            <button disabled class="tb-btn-green tb-pick-a-winner-start">
+                                <div class="tb-spinner tb-hid"></div>
+                                <span id="tb-pick-a-winner-text">Pick a Winner</span>
+                            </button>
+                        </div>
+
+                        <div id="tb-pick-a-winner-commenter-winner-container" class="tb-hid">
+                            <div class="tb-pick-a-winner-winner-is">
+                                <b><i>...and the winner is...</i></b>
+                            </div>
+                            <div class="tb-pick-a-winner-commenter-winner-channelThumbnail-container tb-absolute">
+                                <img class="tb-pick-a-winner-commenter-winner-channelThumbnail tb-width60" alt="" src="#" />
+                            </div>
+                            <div class="tb-padding-left85" id="tb-pick-a-winner-commenter-winner-detail">
+                                <div class="tb-margin-bottom5">
+                                    <a target="new" class="tb-pick-a-winner-commenter-winner-channelUrl">
+                                        <img class="tb-pick-a-winner-commenter-winner-icon tb-margin-left5" src="{PLUGIN_FILE_ROOT}/images/icons/external.png" />
+                                    </a><br />
+                                    <div class="tb-padding-top4" id="tb-pick-a-winner-social">
+
+                                    </div>
+                                </div>
+                                <div class="tb-pick-a-winner-truncate">
+                                    <i><span class="tb-pick-a-winner-commenter-winner-comment"></span></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tb-pick-a-winner-no-comments-found-with-input-text" class="tb-hid tb-margin-top25 tb-margin-bottom5 tb-center">
+                            <span class="tb-red">Sorry, no comments found containing the specified text</span>
+                        </div>
+                    </div>
+                    <div id="tb-pick-a-winner-none" class="tb-hid tb-red tb-margin-top50 tb-center tb-font-size16">
+                        <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png" id="tb-pick-a-winner-none-icon" />
+                        Sorry, this video doesn't contain any comments.
+                        <div class="tb-margin-top15">
+                            This tool requires a video that has comments.
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="tb-pick-a-winner-finish-container tb-hid">
+
+                    </div>
+                </div>
+
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer">
+            <a class="tb-btn-grey tb-module-close">Close</a>
+        </div>
+        <!--End BASE Footer-->
+        <!--End BASE Shadow-->
+    </div>
+</div>
+<!--End BASE Module Template-->

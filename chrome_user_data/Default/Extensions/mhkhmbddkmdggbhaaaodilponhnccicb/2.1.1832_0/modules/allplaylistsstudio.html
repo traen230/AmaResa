@@ -1,0 +1,127 @@
+﻿
+<!-- TB Button - display on hover -->
+<div style="display:none" type="text/template" id="tb-all-playlists-dropdown-template">
+    <span class="tb-studio-all-playlists-dropdown" data-playlist-id="{0}" data-playlist-title="{1}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.76 472" id="tb-icon-transparent">
+            <path class="a" d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06" />
+            <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+        </svg>
+        <i class="material-icons tb-studio-all-playlists-menu-carat tb-move-down3">expand_more</i>
+    </span>
+</div>
+
+<!-- Playlist Action Menu -->
+<div style="display:none;" type="text/template" id="tb-playlist-action-menu-template">
+    <div class="tb-studio-playlist-action-menu" data-playlist-id="{0}" data-playlist-title="{1}" style="">
+        <!-- Header -->
+        <div class="tb-studio-playlist-actions-header">
+            <div style="display:flex;align-items:center;">
+                <!-- Title & logo icon -->
+                <img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" class="tb-studio-playlist-actions-logo" />
+                <span id="tb-playlist-action-menu-title-template" class="tb-font-size-sm">Playlist Actions | <font class="tb-font-size-ms">{1}</font></span>
+            </div>
+            <!-- Help & close icons -->
+            <div class="tb-studio-playlist-actions-header-icons">
+                <a target="_blank" href="https://www.tubebuddy.com/tools?tool=playlistactions">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+                <span class="tb-studio-playlistactions-templates-closex tb-cursor-pointer">
+                    <i class="medium material-icons tb-icon-white">close</i>
+                </span>
+            </div>
+            
+        </div>
+        <!-- Main container -->
+        <div class="tb-studio-playlist-actions-settings-container">
+            <div class="tb-studio-videos-list-category-container">
+                <!-- Playlist privacy -->
+                <div class="tb-margin-bottom-15">
+                    <span class="tb-font-cbold tb-font-size-sm">Playlist privacy:</span>
+                    <select id="tb-studio-playlist-privacy-list" class="tb-studio-playlist-actions-dropdown-menu tb-studio-playlist-privacy tb-margin-left-40">
+                        <option value="NONE">(No change)</option>
+                        <option value="Private">Set to Private</option>
+                        <option value="Public">Set to Public</option>
+                        <option value="Unlisted">Set to Unlisted</option>
+                    </select>
+                </div>
+                <!--Video ordering-->
+                <div class="tb-margin-bottom-15">
+                    <span class="tb-font-cbold tb-font-size-sm">Video ordering:</span>
+                    <select id="tb-studio-playlist-ordering-list" class="tb-studio-playlist-actions-dropdown-menu tb-studio-playlist-ordering tb-margin-left-40">
+                        <option value="NONE">(No change)</option>
+                        <optgroup label="Standard">
+                            <option value="MostPopular">Most popular (views)</option>
+                            <option value="DateAddedNewest">Date added (newest)</option>
+                            <option value="DateAddedOldest">Date added (oldest)</option>
+                            <option value="DatePublishedNewest">Date published (newest)</option>
+                            <option value="DatePublishedOldest">Date published (oldest)</option>
+                        </optgroup>
+                        <optgroup label="Misc">
+                            <option value="Alphabetical">Alphabetical</option>
+                            <option value="MineFirst">My channel's videos first</option>
+                            <option value="Privacy">Privacy (pub > unl > priv)</option>
+                            <option value="Random">Random</option>
+                            <option value="Reverse">Reverse current order</option>
+                        </optgroup>
+                        <optgroup label="Analytics (High to Low)">
+                            <option value="HighestAvgViewDuration">Avg view duration (watch time)</option>
+                            <option value="HighestAvgViewPercentage">Avg view percentage</option>
+                            <option value="MostCommented">Comments</option>
+                            <option value="MostLiked">Likes</option>
+                            <option value="MostShared">Shares</option>
+                            <option value="MostSubscribersGenerated">Subscribers gained</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <!-- Remove videos -->
+                <div>
+                    <span class="tb-font-cbold tb-font-size-sm">Remove videos:</span>
+                    <select id="tb-studio-playlist-filtering-list" class="tb-studio-playlist-actions-dropdown-menu tb-studio-playlist-filtering tb-margin-left-40">
+                        <option value="NONE">(No change)</option>
+                        <option value="RemoveDeleted">Deleted videos</option>
+                        <option value="RemovePrivate">Private videos</option>
+                        <option value="RemovePrivateAndDeleted">Private + deleted videos</option>
+                        <option value="RemoveUnlisted">Unlisted videos</option>
+                        <option value="RemoveNotMine">Videos that aren't mine</option>
+                        <option value="Duplicates">Duplicate Videos</option>
+                    </select>
+                </div>
+            </div>
+           
+            <!-- Apply button -->
+            <div style="display: flex;"class="tb-studio-playlist-actions-apply-btn">
+                <div style="max-width: 400px;">
+                    <b>Note: </b> Due to YouTube API limitations we don't recommend running playlist action on playlists with more than 1k videos.
+                </div>
+                <div>
+                    <a id="tb-studio-all-playlists-apply-button" class="tb-btn tb-btn-sm tb-btn-primary tb-studio-all-playlists-apply">
+                        Apply
+                    </a>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <!-- Confirmation message -->
+            <div class="tb-studio-all-playlists-processing-container" style="display:none;">
+                <!-- Processing complete -->
+                <div id="tb-studio-all-playlists-processing-complete-message" class="tb-studio-all-playlists-processing-complete" style="display:none;">
+                    <div>
+                        <span class="tb-font-color-green">
+                            PROCESSING COMPLETE!
+                        </span><br />
+                        Please
+                        <a class="tb-studio-all-playlists-refresh tb-font-cbold">refresh</a>
+                        page to see changes.
+                    </div>
+                </div>
+                <!-- Processing playlist -->
+                <div class="tb-studio-all-playlists-processing">
+                    <span class="tb-spinner"></span>Processing playlist updates
+                </div>
+
+                <div id="tb-studio-all-playlists-processing-results-message" style="display:none;" class="tb-studio-all-playlists-processing-results"></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

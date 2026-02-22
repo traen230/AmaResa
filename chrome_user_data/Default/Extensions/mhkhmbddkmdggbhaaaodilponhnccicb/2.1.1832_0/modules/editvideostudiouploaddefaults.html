@@ -1,0 +1,123 @@
+﻿<div style="display:none;" id="tb-edit-video-studio-upload-defaults-template">
+    <div class="tb-edit-video-studio-upload-defaults-container">
+        <!--  --------------  HEADER --------------  -->
+        <div class="tb-edit-video-studio-upload-defaults-header">
+            <!-- TITLE-->
+            <div class="tb-edit-video-studio-upload-defaults-title">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 587.76 472"
+                >
+                    <path
+                            class="a"
+                            d="M353,383.06l144.7-86.14L370.52,225V120.44S512.28,91.58,571.25,225s-56.88,212.44-83.64,226.66-108.73,37.63-174,0S220.8,358,220.8,296.92V0H353V383.06"
+                    />
+                    <path class="a" d="M69.42,0H200.73V465.86H69.42V225H0V120.44H69.42V0" />
+                </svg>
+                <span>Upload Defaults</span>
+            </div>
+            <!-- INFORMATION -->
+            <div class="tb-edit-video-studio-upload-defaults-icons">
+                <a class="tb-edit-video-studio-upload-defaults-help" href="https://www.tubebuddy.com/tools?tool=defaultuploadprofiles" target="_blank">
+                    <i class="untitled-ui untitled-ui-help-circle-line" title="help"></i>
+                </a>
+                <!-- CHEVRON DOWN/UP -->
+                <a class="tb-edit-video-studio-upload-defaults-toggle">
+                    <i class="untitled-ui untitled-ui-chevron-down-line" id="tb-edit-video-studio-upload-defaults-toggle-icon"></i>
+                </a>
+            </div>
+            
+        </div>
+        <!--  --------------  BODY/CONTENT --------------  -->
+        <div class="tb-edit-video-studio-upload-defaults-body" style="display:none;">
+            <!-- CHANNEL HAS PROFILES -->
+            <div id="tb-edit-video-studio-upload-defaults-has-profiles">
+                <div class="tb-edit-video-studio-upload-defaults-select-row">
+                    <span>
+                        Profile:
+                    </span>
+                    <select class="tb-edit-video-studio-upload-defaults-select">
+                    </select>
+                </div>
+                <!-- CHECKBOXES-->
+                <div class="tb-edit-video-studio-upload-defaults-checkbox-group">
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-title" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Title</span>
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-description" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Description</span>
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-tags" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Tags</span>
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-margin-top2">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-visibility" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Visibility</span>
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container tb-hid">
+                        <label class="tb-material-checkbox-label tb-margin-top2">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-monetization" disabled="disabled" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Monetization</span>
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container">
+                        <label class="tb-material-checkbox-label">
+                            <input type="checkbox" class="tb-material-checkbox-input" id="tb-edit-video-studio-upload-defaults-update-advanced" />
+                            <span class="tb-material-checkbox-box"><span class="tb-material-checkbox-check"></span></span>
+                            <span class="tb-material-checkbox-title">Advanced Settings</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- APPLY -->
+                <button class="tb-edit-video-studio-apply-upload-default">Apply</button>
+            </div>
+            <!-- CHANNEL HAS NO PROFILES -->
+            <div id="tb-edit-video-studio-upload-defaults-no-profiles">
+                <span>
+                    You haven't added any custom 
+                    <a class="tb-edit-video-studio-upload-defaults-settings">
+                    Upload Default</a> profiles yet.
+                </span>
+                <button class="tb-edit-video-studio-upload-defaults-refresh">Refresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div type="text/template" id="tb-edit-video-studio-upload-defaults-block-message-template">
+    <div class="tb-edit-video-studio-upload-defaults-block-message-container">
+        <span class="tb-spinner tb-margin-right10"></span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_488_75974)">
+                <path d="M8.00044 0C3.58223 0 0 3.58223 0 8.00044C0 12.4186 3.58223 16 8.00044 16C12.4186 16 16 12.4186 16 8.00044C16 3.58223 12.4186 0 8.00044 0ZM6.39509 11.4214H4.7731V7.82606H3.74347V6.32061H4.76959V4.57243H6.65885C6.66586 4.65831 6.67813 4.74243 6.67813 4.82655C6.67813 6.87529 6.6755 9.09491 6.68339 11.1437C6.68339 11.3724 6.61153 11.4267 6.39509 11.4214ZM11.3759 10.6941V10.6959C10.5565 11.4022 9.60666 11.6458 8.59017 11.2111C7.52988 10.7581 6.9787 9.9116 6.9673 8.74878C6.95416 7.45539 6.96117 6.16113 6.95854 4.86686V4.57243C7.5772 4.57243 8.14941 4.57594 8.71986 4.57243C8.88461 4.57155 8.86883 4.68021 8.86883 4.78449V10.0702C9.56635 9.65836 10.2314 9.26666 10.9237 8.85744C10.3743 8.53322 9.85903 8.21951 9.33501 7.92157C9.17027 7.82869 9.08965 7.72704 9.10105 7.52637C9.11945 7.18199 9.11331 6.83499 9.1028 6.48973C9.09754 6.32674 9.15362 6.27241 9.31573 6.24875C10.3787 6.09453 11.5389 6.72896 12.0129 7.73317C12.494 8.75316 12.2539 9.93789 11.3759 10.6941Z" fill="#1D2327"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_488_75974">
+                    <rect width="16" height="16" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+        <span class="tb-upload-studio-block-msg-text">
+            Applying metadata and upload settings from 
+            <span>{0}.</span>
+            <span id="tb-edit-video-studio-upload-default-status"></span>
+            <a id="tb-edit-video-studio-upload-defaults-cancel-apply-defaults">cancel</a>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,394 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-scheduled-meta-updates-video-container" class="tb-module-template draggable-container">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">Scheduled Video Update</h1>
+            <div class="tb-module-help">
+                <a href="https://www.tubebuddy.com/tools?tool=scheduledvideoupdate" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div> 
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-scheduled-meta-updates-video-thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-scheduled-meta-updates-video-link" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!-- Success bar -->
+            <div id="tb-scheduled-meta-updates-status-bar" class="tb-success-status tb-scheduled-meta-updates-video-status-bar">
+                <img src="{plugin_file_root}/images/modules/channelbackup/backup-status-check.png" class="tb-inline-block tb-status-check" />
+                <p class="tb-font-book tb-font-color-white tb-inline-block tb-margin-0">Video scheduled successfully!</p>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-scheduled-meta-updates-video-settings-container">
+                <!-- Loading -->
+                <div id="tb-scheduled-meta-updates-video-loading">
+                    <span class="tb-spinner"></span>Loading...
+                </div>
+                <!-- Upgrade license msg -->
+                <div id="tb-scheduled-meta-updates-video-upgrade" class="tb-hid">
+                    <p class="tb-font-cbold tb-padding-0-20"> Sorry, you cannot Schedule a Video Update unless you <a class="tb-scheduled-meta-updates-video-upgrade-link tb-scheduled-meta-updates-video-pointer">Upgrade your License.</a></p>
+                    <img class="tb-margin-top-15 tb-width-250" src="{PLUGIN_FILE_ROOT}/images/modules/metaupdates/upgrade.png" />
+                </div>
+
+                <!-- Loaded -->
+                <div id="tb-scheduled-meta-updates-video-loaded" class="tb-hid tb-padding-top-3">
+                    <div id="tb-scheduled-meta-updates-video-current" class="tb-hid tb-center"></div>
+                    <div id="tb-scheduled-meta-updates-video-edit">
+                        <p class="tb-font-cbold tb-padding-left-10 tb-font-size-lb">What changes would you like to schedule for this video?</p>
+                        <!-- Tabs container -->
+                        <div class="tb-tabs-container" id="tb-tabs-sample-container">
+                            <!-- Tabs -->
+                            <ul class="tb-tabs-menu-container tb-padding-left-10 tb-margin-top-10">
+                                <li class="tb-tabs-menu-item-container tb-tabs-selected-menu-item tb-tab-1" data-tab="tb-tab-1">
+                                    <div class="tb-tabs-menu-item">
+                                        <div class="tb-tab-menu-item-title">
+                                            Basic Info
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tb-tabs-menu-item-container tb-margin-left-15 tb-tab-2" data-tab="tb-tab-2">
+                                    <div class="tb-tabs-menu-item">
+                                        <div class="tb-tabs-menu-item-title">
+                                            Playlists
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="tb-tabs-menu-item-container tb-margin-left-15 tb-tab-3" data-tab="tb-tab-3">
+                                    <div class="tb-tabs-menu-item">
+                                        <div class="tb-tabs-menu-item-title">
+                                            Options
+                                        </div>
+                                    </div>
+                                </li>
+                                <span class="tb-meta-blue-bar"></span>
+                            </ul>
+                            <!-- Tabs content -->
+                            <div id="tb-scheduled-meta-updates-video-tab-content" class="tb-tabs-content-container">
+                                <!-- Tab 1 -->
+                                <div id="tb-tab-1" data-tab="1" class="tb-tabs-content tb-scheduled-meta-updates-video-main-content tb-scheduled-meta-updates-video-main-content-options">
+                                    <!-- Title Checkbox -->
+                                    <div>
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                            <div class="tb-scheduled-meta-updates-video-col-12">
+                                                <div class="tb-material-checkbox-container">
+                                                    <label class="tb-material-checkbox-label tb-font-cbold">
+                                                        <input type="checkbox" id="tb-scheduled-meta-updates-video-title-option" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                        <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                        &nbsp;Title
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Textfield & dropdown menu -->
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5 tb-height-30">
+                                            <div class="tb-scheduled-meta-updates-video-col-9">
+                                                <input id="tb-scheduled-meta-updates-video-title-change tb-width-315" maxlength="100" class="tb-input-textfield" type="text" disabled />
+                                            </div>
+                                            <div class="tb-scheduled-meta-updates-video-col-3">
+                                                <select id="tb-scheduled-meta-updates-video-title-update-types" class="tb-input-textfield" disabled>
+                                                    <option value="1">Overwrite</option>
+                                                    <option value="2">Add After</option>
+                                                    <option value="3">Add Before</option>
+                                                </select>
+                                                <img
+                                                    alt="question icon"
+                                                    id="tb-scheduled-meta-updates-video-title-tooltip"
+                                                    data-tbtooltip="OVERWRITE: Completely replace your existing Title with this one. ADD AFTER: Adds your text to the end of your Title. ADD BEFORE: Inserts your text before the beginning of the Title. NOTE: If you are adding before or after, make sure to include a space to the beginning or end to ensure the text doesn't butt up against existing text."
+                                                    class="tb-cursor-pointer tb-scheduled-meta-updates-video-tooltip-position tb-scheduled-meta-updates-video-tooltip"
+                                                    src="{PLUGIN_FILE_ROOT}/images/icons/question.png"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Description Checkbox -->
+                                    <div>
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                            <div class="tb-scheduled-meta-updates-video-col-12">
+                                                <div class="tb-material-checkbox-container">
+                                                    <label class="tb-material-checkbox-label tb-font-cbold">
+                                                        <input type="checkbox" id="tb-scheduled-meta-updates-video-description-option" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                        <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                        &nbsp;Description
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Textfield & dropdown menu -->
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5">
+                                            <div class="tb-scheduled-meta-updates-video-col-9">
+                                                <textarea id="tb-scheduled-meta-updates-video-description-change" maxlength="5000" class="tb-input-textfield tb-width-315" cols="40" rows="3" disabled></textarea>
+                                            </div>
+                                            <div class="tb-scheduled-meta-updates-video-col-3">
+                                                <select id="tb-scheduled-meta-updates-video-description-update-types" class="tb-input-textfield" disabled>
+                                                    <option value="1">Overwrite</option>
+                                                    <option value="2">Add After</option>
+                                                    <option value="3">Add Before</option>
+                                                    <option value="4">Remove</option>
+                                                </select>
+                                                <img
+                                                    alt="question icon"
+                                                    id="tb-scheduled-meta-updates-video-desc-tooltip"
+                                                    data-tbtooltip="OVERWRITE: Completely replace your existing Description with this one. ADD AFTER: Adds your text to the end of your Description. ADD BEFORE: Inserts your text before the beginning of the Description. REMOVE: Removes matching text from your Description. NOTE: If you are adding before or after, make sure to include a line break at the beginning or end to ensure the text doesn't butt up against existing text if you want it to appear on a new line."
+                                                    class="tb-cursor-pointer tb-scheduled-meta-updates-video-tooltip-position tb-scheduled-meta-updates-video-tooltip"
+                                                    src="{PLUGIN_FILE_ROOT}/images/icons/question.png"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tags Checkbox -->
+                                    <div>
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                            <div class="tb-scheduled-meta-updates-video-col-12">
+                                                <div class="tb-material-checkbox-container">
+                                                    <label class="tb-material-checkbox-label tb-font-cbold">
+                                                        <input type="checkbox" id="tb-scheduled-meta-updates-video-tags-option" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                        <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                        &nbsp;Tags
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Textfield & dropdown menu -->
+                                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5 tb-height-30">
+                                            <div class="tb-scheduled-meta-updates-video-col-9">
+                                                <input id="tb-scheduled-meta-updates-video-tags-change" class="tb-input-textfield tb-width-315" type="text" disabled />
+                                            </div>
+                                            <div class="tb-scheduled-meta-updates-video-col-3">
+                                                <select id="tb-scheduled-meta-updates-video-tags-update-types" class="tb-input-textfield tb-width-104" disabled>
+                                                    <option value="1">Overwrite</option>
+                                                    <option value="2">Add</option>
+                                                    <option value="3">Remove</option>
+                                                </select>
+                                                <img
+                                                    alt="question icon"
+                                                    id="tb-scheduled-meta-updates-video-tags-tooltip"
+                                                    data-tbtooltip="Instructions: Add a comma-separate list of Tags to be added or removed at the scheduled date."
+                                                    class="tb-cursor-pointer tb-scheduled-meta-updates-video-tooltip-position tb-scheduled-meta-updates-video-tooltip"
+                                                    src="{PLUGIN_FILE_ROOT}/images/icons/question.png"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Privacy & Thumbnail -->
+                                    <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5">
+                                        <div class="tb-scheduled-meta-updates-video-col-6">
+                                            <!-- Privacy Checkbox -->
+                                            <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                                <div class="tb-scheduled-meta-updates-video-col-12">
+                                                    <div class="tb-material-checkbox-container">
+                                                        <label class="tb-material-checkbox-label tb-font-cbold">
+                                                            <input type="checkbox" id="tb-scheduled-meta-updates-video-privacy-option" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                            &nbsp;Privacy
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Dropdown menu -->
+                                            <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5">
+                                                <div class="tb-scheduled-meta-updates-video-col-12">
+                                                    <select id="tb-scheduled-meta-updates-video-privacy-type" class="tb-input-textfield tb-width-150" disabled>
+                                                        <option value="1">Private</option>
+                                                        <option value="2">Unlisted</option>
+                                                        <option selected="" value="3">Public</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail -->
+                                        <div class="tb-scheduled-meta-updates-video-col-6">
+                                            <!-- Thumbnail Checkbox -->
+                                            <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                                <div class="tb-scheduled-meta-updates-video-col-12">
+                                                    <div class="tb-material-checkbox-container">
+                                                        <label class="tb-material-checkbox-label tb-font-cbold">
+                                                            <input type="checkbox" id="tb-scheduled-meta-updates-video-thumbnail-option" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                            <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                            &nbsp;Thumbnail
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- File input -->
+                                            <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5">
+                                                <div class="tb-scheduled-meta-updates-video-col-12">
+                                                    <input id="tb-scheduled-meta-updates-video-thumbnail-upload" type="file" class="tb-input-file" disabled />
+                                                    <label for="tb-scheduled-meta-updates-video-thumbnail-upload" class="custom-file-label tb-padding-5-20"><span class="tb-scheduled-meta-updates-video-font-10">CHOOSE FILE</span></label>
+                                                    <p id="tb-scheduled-meta-updates-video-namefile" class="tb-margin-bottom-5 tb-margin-left-5 tb-font-cbold tb-inline-block">No file selected</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab 2 -->
+                                <div id="tb-tab-2" data-tab="2" class="tb-scheduled-meta-updates-video-main-content tb-scheduled-meta-updates-video-main-content-options tb-margin-top-15 tb-tabs-content tb-hid">
+                                    <!-- Add to playlists -->
+                                    <div class="tb-scheduled-meta-updates-video-row">
+                                        <!-- checkbox -->
+                                        <div class="tb-scheduled-meta-updates-video-col-12">
+                                            <div class="tb-material-checkbox-container">
+                                                <label class="tb-material-checkbox-label">
+                                                    <input type="checkbox" id="tb-scheduled-meta-updates-video-addToPlaylists" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                    &nbsp;Add to the following playlists
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tb-scheduled-meta-updates-video-row">
+                                        <!-- Dropdown & radio btns -->
+                                        <div class="tb-scheduled-meta-updates-video-col-12">
+                                            <div id="tb-scheduled-meta-updates-video-add-playlist-ids" class="tb-margin-left15 "></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Remove from playlists -->
+                                    <div class="tb-scheduled-meta-updates-video-row tb-margin-top-15">
+                                        <!-- checkbox -->
+                                        <div class="tb-scheduled-meta-updates-video-col-12">
+                                            <div class="tb-material-checkbox-container">
+                                                <label class="tb-material-checkbox-label">
+                                                    <input type="checkbox" id="tb-scheduled-meta-updates-video-removeFromPlaylistOptions" class="tb-material-checkbox-input tb-scheduled-meta-updates-video-option-checkbox" />
+                                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                    &nbsp;Remove video from playlists
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tb-scheduled-meta-updates-video-row tb-margin-top-5">
+                                        <!-- Dropdown & radio btns -->
+                                        <div class="tb-scheduled-meta-updates-video-col-12">
+                                            <!-- Radio button 1 -->
+                                            <div class="tb-material-radio-container">
+                                                <input type="radio" class="tb-material-radio" name="playlist" id="tb-scheduled-meta-updates-video-removeFromAllPlaylists" checked />
+                                                <label class="tb-material-radio-label" for="tb-scheduled-meta-updates-video-removeFromAllPlaylists">All playlists</label>
+                                            </div>
+                                            <!-- Radio button 2 -->
+                                            <div class="tb-material-radio-container">
+                                                <input type="radio" class="tb-material-radio" name="playlist" id="tb-scheduled-meta-updates-video-removeFromPlaylistIds" checked />
+                                                <label class="tb-material-radio-label" for="tb-scheduled-meta-updates-video-removeFromPlaylistIds">The following playlists</label>
+                                            </div>
+                                            <div class="tb-margin-left15 " id="tb-scheduled-meta-updates-video-remove-playlist-ids"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Tab 3 -->
+                                <div id="tb-tab-3" class="tb-scheduled-meta-updates-video-main-content tb-margin-top-10 tb-tabs-content tb-hid">
+                                    <div class="tb-scheduled-meta-updates-video-row">
+                                        <div class="tb-scheduled-meta-updates-video-col-12">
+                                            <p class="tb-font-cbold tb-inline-block">Rollback these changes to the original?</p>
+                                            <img
+                                                alt="question icon"
+                                                id="tb-scheduled-meta-updates-video-rollback-tooltip"
+                                                data-tbtooltip="How it Works: All of the changes that you have scheduled will be rolled back to their original values at the date you select."
+                                                class="tb-cursor-pointer tb-move-down5 tb-margin-left-5 tb-scheduled-meta-updates-video-tooltip"
+                                                src="{PLUGIN_FILE_ROOT}/images/icons/question.png"
+                                            />
+                                        </div>
+                                        <div class="tb-scheduled-meta-updates-video-col-12 tb-margin-top-15">
+                                            <div class="tb-material-checkbox-container">
+                                                <label class="tb-material-checkbox-label">
+                                                    <input type="checkbox" class="tb-material-checkbox-input" id="tb-scheduled-meta-updates-video-revert-option" />
+                                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                    &nbsp; Rollback video changes to original at
+                                                </label>
+                                            </div>
+                                            <input type="date" id="tb-scheduled-meta-updates-video-datepicker-revert"  class="tb-mv3-date tb-margin-top-0 tb-margin-right-3 tb-margin-bottom-0 tb-margin-left-3 tb-width-90" disabled>
+                                            <input id='tb-scheduled-meta-updates-timepicker-revert' type='text' name='timepicker' class="tb-input-textfield tb-width-80" disabled />
+                                        </div>
+
+                                        <div class="tb-scheduled-meta-updates-video-col-12 tb-margin-top-15">
+                                            <p class="tb-font-cbold tb-inline-block">Would you like a reminder?</p>
+                                        </div>
+
+                                        <div class="tb-scheduled-meta-updates-video-col-12 tb-margin-top-15">
+                                            <div class="tb-material-checkbox-container">
+                                                <label class="tb-material-checkbox-label">
+                                                    <input type="checkbox" class="tb-material-checkbox-input" id="tb-scheduled-meta-updates-video-emailreminder" />
+                                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                    &nbsp; Email me a reminder 24 hours before the publish date
+                                                </label>
+                                            </div>
+                                            <div class="tb-material-checkbox-container tb-margin-top-10">
+                                                <label class="tb-material-checkbox-label">
+                                                    <input type="checkbox" class="tb-material-checkbox-input" id="tb-scheduled-meta-updates-video-emailreminder-now" />
+                                                    <span class="tb-material-checkbox-box"><span class="tb-check tb-material-checkbox-check"></span></span>
+                                                    &nbsp; Email me a copy of scheduled changes right now
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="blue-bar"></span>
+                            </div>
+                        </div>
+                        <!-- Date & time picker -->
+                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-25 tb-padding-left-10 tb-z-index-999 ">
+                            <div class="tb-scheduled-meta-updates-video-col-12 tb-z-index-999 tb-z-index-999">
+                                <p class="tb-font-cbold">When would you like to publish these changes?</p>
+                            </div>
+                        </div>
+                        <div class="tb-scheduled-meta-updates-video-row tb-margin-top-10 tb-padding-left-10 tb-z-index-999">
+                            <div class="tb-scheduled-meta-updates-video-col-6 tb-z-index-999">
+                                <div class="tb-moz-date-container tb-inline-block">
+                                    <input id="tb-scheduled-meta-updates-video-datepicker-mv3" type="date" class="tb-mv3-date tb-inline-block tb-width-120">
+                                </div>
+                                at
+                                <input id='tb-scheduled-meta-updates-timepicker' type='text' name='timepicker' class="tb-input-textfield tb-width-80" />
+                            </div>
+                            <div class="tb-scheduled-meta-updates-video-col-6 tb-z-index-999">
+                                <select class="tb-input-textfield tb-width-230 tb-ward-warp-normal" id="tb-scheduled-meta-updates-video-timezone-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publish/Cancel button -->
+                <div class="tb-margin-top-10 tb-padding-right-10 tb-float-right">
+                    <a class="tb-btn tb-btn-sm tb-btn-danger tb-scheduled-meta-updates-video-cancel tb-margin-bottom-10 hid">
+                        CANCEL SCHEDULE VIDEO UPDATE
+                    </a>
+                    <a id="tb-scheduled-meta-updates-video-save" class="tb-btn tb-btn-sm tb-btn-success tb-margin-top-10">
+                        SCHEDULE VIDEO UPDATE
+                    </a>
+                </div>
+
+            </div>
+            <!--End BASE Module Container-->
+
+            <div class="tb-none" type="text/template" id="tb-scheduled-meta-updates-video-summary-template">
+                <!-- Success content-->
+                <div class="tb-scheduled-meta-updates-video-summary-template tb-center">
+
+                    <div class="tb-scheduled-meta-updates-video-summary-template-option tb-margin-top10 tb-margin-bottom10"><strong>{8}</strong></div>
+                    <div class="tb-margin-bottom-10 tb-margin-top-30">
+                        <p class="tb-margin-bottom-5">Video scheduled to be updated on:</p>
+                        <span class="tb-font-medium tb-font-size-sm tb-font-color-blue">{0} at {1} {2}</span>
+                    </div>
+                    <div class="tb-scheduled-meta-updates-video-summary-template-option tb-margin-top-15 tb-margin-bottom-15">{3}</div>
+                    <div class="tb-scheduled-meta-updates-video-summary-template-option tb-margin-top10 tb-margin-bottom10">{4}</div>
+                    <div class="tb-scheduled-meta-updates-video-summary-template-option tb-margin-top10 tb-margin-bottom10">{5}</div>
+                    <div class="tb-margin-top10 tb-scheduled-meta-updates-video-summary-template-option tb-margin-top10 tb-margin-bottom10">{6}</div>
+                    <div class="tb-scheduled-meta-updates-video-summary-template-option tb-margin-top10 tb-margin-bottom10">{7}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Найти товар по фото на Алибаба, Таобао, Алиэкспресс, 1688 и др."
+   },
+   "EXTENSION_NAME": {
+      "message": "Алибаба поиск по фото"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Скриншот поиска в том же стиле"
+   },
+   "context_menus_goote_trans": {
+      "message": "Перевести/Показать оригинал"
+   },
+   "context_menus_search_by_image": {
+      "message": "Поиск по изображению на $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Захватить в $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Захват для перевода"
+   }
+}

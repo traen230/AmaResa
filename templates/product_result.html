@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>🎯 候補商品一覧</title>
+    <style>
+        body {
+            font-family: "メイリオ", sans-serif;
+            background-color: #f9f9f9;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .item-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        img {
+            width: 160px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .info {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎯 候補商品一覧</h1>
+
+{% for item in results %}
+    <div class="item-card">
+        <img src="{{ item['画像URL'] }}" alt="商品画像">
+        <div class="title">{{ item['商品名'] }}</div>
+        <div class="info">類似度: {{ item['類似度'] }}</div>
+        {% if item.get('販売数') %}
+            <div class="info">販売数: {{ item['販売数'] }}</div>
+        {% endif %}
+        {% if item.get('評価数') %}
+            <div class="info">評価数: {{ item['評価数'] }}</div>
+        {% endif %}
+        {% if item.get('評価値') %}
+            <div class="info">評価値: {{ item['評価値'] }}</div>
+        {% endif %}
+        {% if item.get('ランキング') %}
+            <div class="info">ランキング掲載: {{ item['ランキング'] }}</div>
+        {% endif %}
+        <div class="info"><a href="{{ item['商品URL'] }}" target="_blank">▶ 商品ページを見る</a></div>
+    </div>
+{% endfor %}
+
+<a href="{{ url_for('index') }}">← トップページへ戻る</a>
+
+</body>
+</html>

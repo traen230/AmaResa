@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AmaResa｜BizBright Amazonリサーチ母艦</title>
+    <style>
+        body {
+            font-family: "Meiryo", "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #0f2a44, #1e4f7a);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #cfe6ff;
+        }
+
+        .trend-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .trend-box h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #9fd0ff;
+        }
+
+        .trend-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px 14px;
+            font-size: 14px;
+        }
+
+        .trend-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 6px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .trend-empty {
+            font-size: 13px;
+            color: #cfe6ff;
+            opacity: 0.8;
+        }
+
+        .trend-actions {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .trend-actions p {
+            margin: 0 0 8px;
+            font-size: 12px;
+            color: #cfe6ff;
+            opacity: 0.9;
+        }
+
+        .fetch-btn {
+            width: auto;
+            margin-top: 4px;
+            padding: 10px 16px;
+            font-size: 14px;
+        }
+
+        .main {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu form {
+            margin: 14px 0;
+        }
+
+        button {
+            width: 100%;
+            font-size: 17px;
+            padding: 14px 0;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #1e90ff, #1c6fd5);
+            color: #ffffff;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 144, 255, 0.4);
+        }
+
+        .focus-market {
+            width: 320px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .focus-market h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #ffd27d;
+        }
+
+        .market-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .market-empty {
+            font-size: 13px;
+            color: #ffe2a8;
+            opacity: 0.85;
+        }
+
+        .footer {
+            position: fixed;
+            right: 20px;
+            bottom: 12px;
+            font-size: 12px;
+            color: #bcd6f0;
+            opacity: 0.85;
+        }
+
+        .brand {
+            margin-top: 12px;
+            font-size: 11px;
+            color: #9fc3e8;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .focus-market {
+                width: auto;
+            }
+
+            .trend-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>AmaResa</h1>
+        <div class="subtitle">BizBright｜Amazon Market Research Mother System</div>
+    </div>
+
+    <div class="trend-box">
+        <h2>📈 Amazon向け単語キーワード（Google Trends由来）</h2>
+
+        {% if trend_keywords %}
+        <div class="trend-list">
+            {% for kw in trend_keywords %}
+            <div class="trend-item">{{ kw }}</div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="trend-empty">未取得です。「キーワード入手」を押してください。</div>
+        {% endif %}
+
+        <div class="trend-actions">
+            <p>起動時には取得しません。「キーワード入手」を押したときだけ最新を取得します。</p>
+            <form action="/trends/fetch" method="post">
+                <button class="fetch-btn" type="submit">キーワード入手</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="menu">
+            <form action="/ranking/research" method="get">
+                <button type="submit">🏆 ランキングリサーチ</button>
+            </form>
+
+            <form action="/reverse/research" method="get">
+                <button type="submit">🔍 逆引きリサーチ</button>
+            </form>
+
+            <form action="/keyword/research" method="get">
+                <button type="submit">🧠 キーワードリサーチ</button>
+            </form>
+
+            <form action="/product/research" method="get">
+                <button type="submit">🛍️ 商品リサーチ</button>
+            </form>
+        </div>
+
+        <div class="focus-market">
+            <h3>🔥 今月の注目市場</h3>
+
+            {% if focus_markets %}
+                {% for market in focus_markets %}
+                <div class="market-item">・{{ market }}</div>
+                {% endfor %}
+            {% else %}
+                <div class="market-empty">未取得です。「キーワード入手」を押してください。</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="brand">BizBright Research Tools</div>
+</div>
+
+<div class="footer">🕒 最終更新：{{ last_updated }}</div>
+</body>
+</html>

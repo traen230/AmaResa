@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>カテゴリリサーチ</title></head>
+<body>
+    <h2>ランキングリサーチ</h2>
+
+    <!-- カテゴリ選択ボタン -->
+    <form method="get" action="/category/select">
+        <button type="submit">カテゴリ選択</button>
+    </form>
+
+    <!-- 選択されたカテゴリ表示 -->
+    {% if selected_category.label %}
+        <p>『{{ selected_category.label }}』を選択しました。</p>
+
+        <!-- ✅ ライバル調査ボタン -->
+        <form method="post" action="/rival/check">
+            <input type="hidden" name="category_url" value="{{ selected_category.url }}">
+            <button type="submit">ライバル調査</button>
+        </form>
+    {% endif %}
+
+    <br><a href="/">← トップに戻る</a>
+</body>
+</html>

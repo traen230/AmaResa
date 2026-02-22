@@ -1,0 +1,515 @@
+﻿<!--Start Base Module Template-->
+    <div id="tb-SeoStudio-container" class="tb-module-template draggable-container" style="display:none;">
+
+        <!--Start Base Module Shadow-->
+        <div class="tb-module-shadow">
+
+            <!--Start BASE Module Header-->
+            <div class="tb-module-header" data-draggable="true">
+                <img class="tb-module-logo" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+                <h1 class="tb-module-title">
+                    SEO Studio - <span style="font-style: italic;">BETA</span>
+                </h1>
+                <div class="tb-module-help">
+                    <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=seostudio" data-draggable="false">
+                        <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                    </a>
+                </div>
+                <div class="tb-module-close tb-seo-studio-close" data-draggable="false">
+                    <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+                </div>
+            </div>
+            <!--End Base Module Header-->
+
+            <div class="tb-module-container">
+                <div class="tb-module-embed-video" style=" position: relative; ">
+                    <div class="tb-embed-video-thumbnail-container">
+                        <img id="tb-SeoStudio-video-thumbnail" class="tb-embed-video-thumbnail" />
+                    </div>
+                    <div class="tb-embed-video-link-container tb-padding-0 tb-padding-top-5">
+                        <a id="tb-SeoStudio-video-link" class="tb-embed-video-link" target="_blank"></a>
+                    </div>
+                    <div class="tb-SeoStudio-beta-feedback tb-line-height-17">
+                        <span>Help us improve SEO Studio!</span>
+                        <div class="tb-padding-top-10 tb-padding-bottom-10">We want <b>your</b> feedback &amp; ideas. </div>
+                        <a target="_blank" href="https://forms.gle/3r5gmE5rP4DEYCSh6">Submit them HERE!</a>
+
+                    </div>
+                </div>
+                <!--Start Base Module Container-->
+
+                <div class="tb-module-content tb-padding0">
+                    <div id="tb-seo-studio-step1" class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-around tb-seo-studio-flex-align-center tb-margin-top40 tb-margin-bottom40 tb-seo-studio-height-325">
+                        <div style="width:360px;">
+                            <div class="tb-margin-bottom15 tb-font-size22">
+                                Build the perfect searchable <b class="tb-bold">Title</b>, <b class="tb-bold">Description</b> and <b class="tb-bold">Tags</b> for your video.
+                            </div>
+                            <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-margin-bottom50 tb-relative">
+                                <div id="tb-seo-studio-kt-explain" class="tb-absolute" style="top:43px; font-size:.9em; opacity:.8; left:5px;"><a class="tb-cursor-pointer" style="color:#888;">What's a "Target Keyword"?</a></div>
+                                <input id="tb-seo-studio-target-keyword-input" type="text" class="tb-seo-studio-input tb-width250 tb-move-left3" placeholder="Enter your Target Keyword" spellcheck="false" data-gramm_editor="false" />
+                                <button id="tb-seo-studio-start-optimization" class="tb-btn tb-btn-green tb-margin-left5">Start</button>
+                            </div>
+                            <a class="tb-seo-studio-step-1-option" id="tb-seo-studio-launch-keyword-explorer-alt" data-start-option="keyword-explorer">Help me find the right Target Keyword...</a>
+                            <a id="tb-seo-studio-show-saved" class="tb-seo-studio-step-1-option" data-start-option="saved" style="display:none;">Load from saved draft...</a>
+                            <span id="tb-seo-studio-saved-optimizations-loading" class="tb-seo-studio-flex tb-font-size15 tb-font-color-blue tb-margin-top20"><span class="tb-spinner tb-margin-right5"></span>Checking for saved drafts</span>
+                            <a id="tb-seo-studio-step1-suggestions" class="tb-seo-studio-step-1-option" data-start-option="suggested" style="display:none;">Show me a few suggestions...</a>
+                        </div>
+
+                        <div class="tb-width400 tb-seo-studio-flex tb-seo-studio-flex-justify-center tb-seo-studio-flex-align-center">
+                            <div id="tb-seo-studio-serch-results-screenshot" class="tb-text-align-center">
+                                <img src="{PLUGIN_FILE_ROOT}/images/screenshots/seo-studio-first-screen-green-arrows.png" alt="YouTube Search Results page example" class="tb-seo-studio-height-325" />
+                                <div class="tb-font-size18 tb-relative tb-font-color-gray" style="top:-8px;">Boost your Rank in Search Results!</div>
+                            </div>
+                            <div class="tb-seo-studio-step1-option-detail tb-seo-studio-flex tb-seo-studio-flex-justify-center tb-seo-studio-flex-col tb-seo-studio-flex-align-center tb-seo-studio-width-75-percent" id="tb-seo-studio-step1-keyword-explorer" style="display:none;">
+                                <div class="tb-margin-bottom20 tb-font-size15 tb-text-align-center">
+                                    Find a keyword with a high overall score (using Keyword Explorer) to help get your video ranked higher in search results.
+                                </div>
+                                <button class="tb-btn tb-btn-blue tb-width250" id="tb-seo-studio-launch-keyword-explorer">Launch Keyword Explorer</button>
+                            </div>
+                            <div class="tb-seo-studio-step1-option-detail tb-width350" id="tb-seo-studio-step1-saved" style="display:none;">
+                                <ul role="tablist" id="tb-seo-studio-saved-optimizations-tabs" class="tb-seo-studio-tablist tb-seo-studio-flex tb-seo-studio-flex-justify-space-between tb-padding-0 tb-font-size14">
+                                    <li class="tb-seo-studio-saved-optimization-tab-header tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-seo-studio-tab-header tb-seo-studio-tab-header--active tb-seo-studio-width-50-percent" data-tab-id="drafts">
+                                        Drafts
+                                    </li>
+                                    <li class="tb-seo-studio-saved-optimization-tab-header  tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-seo-studio-tab-header tb-seo-studio-width-50-percent" data-tab-id="applied">
+                                        Applied
+                                    </li>
+                                </ul>
+                                <div id="tb-seo-studio-saved-optimizations--loading" class="tb-padding-top20 tb-text-align-center"><span class="tb-spinner tb-margin-right5"></span>Loading...</div>
+                                <div id="tb-seo-studio-saved-optimizations-list--drafts" class="tb-seo-studio-saved-optimization-tab-content" role="tabpanel">
+                                </div>
+                                <div id="tb-seo-studio-saved-optimizations-list--applied" class="tb-seo-studio-saved-optimization-tab-content" role="tabpanel" style="display:none;">
+                                </div>
+                                <div class="tb-seo-studio-message tb-seo-studio-message--success" id="tb-seo-studio-optimization-saved-message" style="display:none;">
+                                    <div style="text-align:right;">
+                                        <a class="tb-seo-studio-message-close">
+                                            <i class="material-icons tb-font-size18 tb-margin-right3">close</i>
+                                        </a>
+                                    </div>
+                                    <div class="tb-seo-studio-message-text">
+                                        Optimization saved successfully. Launch SEO Studio from a Video Edit Page or Uploads to apply to a video.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tb-seo-studio-step1-option-detail" id="tb-seo-studio-step1-suggested" style="display:none;">
+                                <div id="tb-seo-studio-suggested-kw-list" class="tb-width350 tb-font-color-blue">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tb-seo-studio-tabs-container" style="display:none;">
+                        <div class="tb-width100-percent tb-seo-studio-flex tb-seo-studio-flex-justify-space-between">
+                            <ul role="tablist" id="tb-seo-studio-metadata-tabs" class="tb-seo-studio-tablist tb-width100-percent tb-seo-studio-flex tb-seo-studio-flex-justify-space-between tb-padding-0">
+                                <li role="tab" class="tb-seo-studio-metadata-tab tb-seo-studio-tab-header tb-width30-percent tb-seo-studio-tab-header--active" data-tab-id="step2" data-step-id="2">
+                                    <span>Step 1:</span>&nbsp; Title & Description
+                                    <i id="tb-seo-studio-title-desc-done" class="tb-seo-studio-section-done material-icons tb-margin-left5 tb-font-color-green" style="display:none;">check_circle</i>
+                                </li>
+                                <li role="tab" class="tb-seo-studio-metadata-tab tb-seo-studio-tab-header tb-seo-studio-width-20-percent" data-tab-id="step3" data-step-id="3">
+                                    <span>Step 2:</span>&nbsp; Tags
+                                    <i id="tb-seo-studio-tags-done" class="tb-seo-studio-section-done material-icons tb-margin-left5 tb-font-color-green" style="display:none;">check_circle</i>
+                                </li>
+                                <li role="tab" class="tb-seo-studio-metadata-tab tb-seo-studio-tab-header tb-seo-studio-width-25-percent" data-tab-id="step4" data-step-id="4">
+                                    <span>Step 3:</span>&nbsp; Thumbnail
+                                    <i id="tb-seo-studio-preview-done" class="tb-seo-studio-section-done material-icons tb-margin-left5 tb-font-color-green" style="display:none;">check_circle</i>
+                                </li>
+                                <li role="tab" class="tb-seo-studio-metadata-tab tb-seo-studio-tab-header tb-seo-studio-width-25-percent" data-tab-id="step5" data-step-id="5">
+                                    <span>Step 4:</span>&nbsp; Apply to Video
+                                    <i id="tb-seo-studio-options-done" class="tb-seo-studio-section-done material-icons tb-margin-left5 tb-font-color-green" style="display:none;">check_circle</i>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="tb-seo-studio-metadata-tab-content-container">
+                            <div id="tb-seo-studio-step2-container" role="tabpanel" class="tb-seo-studio-tab-content tb-seo-studio-flex tb-seo-studio-flex-justify-space-between">
+                                <div class="tb-margin-top5 tb-seo-studio-width-61-percent">
+                                    <span class="tb-font-size14"><b class="tb-bold">Title</b></span>
+                                    <span id="tb-seo-studio-title-error" class="tb-margin-left5 tb-font-color-red tb-absolute" style="display:none;">
+                                        <i class="material-icons tb-font-size18">error_outline</i>
+                                        <span id="tb-seo-studio-title-error-text" class="tb-move-up5"></span>
+                                    </span>
+                                    <div id="tb-seo-studio-title-container" class="tb-seo-studio-textarea-outer tb-margin-bottom15">
+                                        <div id="tb-seo-studio-title-wrapper" class="tb-seo-studio-textarea-wrapper">
+                                            <div id="tb-seo-studio-title-backdrop" class="tb-seo-studio-textarea-backdrop">
+                                                <div id="tb-seo-studio-title-highlights" class="tb-seo-studio-textarea-highlights" style="font-size:1.3em"></div>
+                                            </div>
+                                            <textarea id="tb-seo-studio-optimized-title" class="tb-seo-studio-textarea-input" spellcheck="false" data-gramm_editor="false" rows="1"></textarea>
+                                        </div>
+                                        <div id="tb-seo-studio-optimized-title-char-count-container">
+                                            <div id="tb-seo-studio-optimized-title-char-count" class="tb-seo-studio-char-count">0/100</div>
+                                        </div>
+                                    </div>
+                                    <span class="tb-font-size14"><b class="tb-bold">Description</b></span>
+                                    <span id="tb-seo-studio-description-error" class="tb-margin-left5 tb-font-color-red tb-absolute" style="display:none;">
+                                        <i class="material-icons tb-font-size18">error_outline</i>
+                                        <span id="tb-seo-studio-description-error-text" class="tb-move-up5"></span>
+                                    </span>
+                                    <div id="tb-seo-studio-description-container" class="tb-seo-studio-textarea-outer">
+                                        <div id="tb-seo-studio-description-wrapper" class="tb-seo-studio-textarea-wrapper">
+                                            <div id="tb-seo-studio-description-backdrop" class="tb-seo-studio-textarea-backdrop">
+                                                <div id="tb-seo-studio-description-highlights" class="tb-seo-studio-textarea-highlights"></div>
+                                            </div>
+                                            <textarea id="tb-seo-studio-optimized-description" class="tb-seo-studio-textarea-input" spellcheck="false" data-gramm_editor="false"></textarea>
+                                        </div>
+                                        <div id="tb-seo-studio-optimized-description-char-count-container">
+                                            <div id="tb-seo-studio-optimized-description-char-count" class="tb-seo-studio-char-count">0/5000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-seo-studio-width-35-percent">
+                                    <div id="tb-seo-studio-improve-step2" class="tb-seo-studio-improve-panel tb-seo-studio-card tb-padding-bottom5">
+                                        <div class="tb-seo-studio-card-header">
+                                            <img src="{PLUGIN_FILE_ROOT}/images/icons/lightbulb.png" alt="lightbulb" height="20" class="tb-move-up2 tb-margin-right5" />
+                                            <b class="tb-bold">How to Improve Your Score</b>
+                                        </div>
+                                        <div class="tb-seo-studio-card-supporting-text tb-margin-top5">
+                                            <div class="tb-seo-studio-score-items-container"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tb-seo-studio-step3-container" role="tabpanel" class="tb-seo-studio-tab-content tb-seo-studio-flex tb-seo-studio-flex-justify-space-between" style="display:none;">
+                                <div class="tb-margin-top5 tb-seo-studio-width-61-percent">
+                                    <span class="tb-font-size14"><b class="tb-bold">Tags</b></span>
+                                    <span id="tb-seo-studio-tags-error" class="tb-margin-left5 tb-font-color-red tb-absolute" style="display:none;">
+                                        <i class="material-icons tb-font-size18">error_outline</i>
+                                        <span id="tb-seo-studio-tags-error-text" class="tb-move-up5">Your tags exceed the character limit.</span>
+                                    </span>
+                                    <span id="tb-seo-studio-tags-invalid-error" class="tb-margin-left5 tb-font-color-red tb-absolute" style="display:none;">
+                                        <i class="material-icons tb-font-size18">error_outline</i>
+                                        <span id="tb-seo-studio-tags-invalid-error-text" class="tb-move-up5">Your tags cannot contain angled brackets.</span>
+                                    </span>
+                                    <div id="tb-seo-studio-tags-input-container" class="tb-seo-studio-tags-container tb-margin-bottom5">
+                                        <div id="tb-seo-studio-tags-list">
+                                            <input type="text" name="tb-seo-studio-tags-input" id="tb-seo-studio-optimized-tags-input" class="tb-seo-studio-tags-input tb-margin-5 tb-width150" spellcheck="false" data-gramm_editor="false" />
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div id="tb-seo-studio-optimized-tags-char-count" class="tb-seo-studio-char-count">0/500</div>
+                                    </div>
+                                    <span class="tb-font-size14"><b class="tb-bold">Populate with Suggested Tags</b><span class="tb-font-color-gray tb-margin-left2">- consider adding only if relevant</span></span>
+                                    <div class="tb-seo-studio-tags-container" id="tb-seo-studio-suggested-tags-container">
+                                        <div id="tb-seo-studio-suggested-tags-header" class="tb-width100-percent tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-between">
+                                            <div class="tb-margin-left5 tb-font-size13 tb-seo-studio-flex tb-seo-studio-flex-align-center">
+                                                Sort by:
+                                                <div class="tb-material-radio-container tb-padding-top-0 tb-padding-bottom-0">
+                                                    <input type="radio" checked="checked" name="tb-seo-studio-suggested-tags-sortby" id="tb-seo-studio-suggested-tags-sortby-relevance" data-sort-type="relevance" class="tb-material-radio tb-seo-studio-suggested-tags-sortby" />
+                                                    <label class="tb-material-radio-label tb-font-size13" for="tb-seo-studio-suggested-tags-sortby-relevance">Relevance</label>
+                                                </div>
+                                                <div class="tb-material-radio-container tb-padding-top-0 tb-padding-bottom-0">
+                                                    <input type="radio" name="tb-seo-studio-suggested-tags-sortby" id="tb-seo-studio-suggested-tags-sortby-score" data-sort-type="score" class="tb-material-radio tb-seo-studio-suggested-tags-sortby" />
+                                                    <label class="tb-material-radio-label tb-font-size13" for="tb-seo-studio-suggested-tags-sortby-score">Score</label>
+                                                </div>
+                                            </div>
+                                            <div class="tb-margin-5">
+                                                <button class="tb-btn tb-btn-grey" id="tb-seo-studio-add-to-tag-limit">Add to Tag Limit</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div id="tb-seo-studio-suggested-tags-list">
+                                            </div>
+                                            <div id="tb-seo-studio-suggested-tags-list-loading" class="tb-seo-studio-flex tb-seo-studio-flex-justify-center tb-seo-studio-flex-align-center" style="display:none;">
+                                                <span class="tb-spinner"></span><span class="tb-margin-left5">Loading</span>
+                                            </div>
+                                            <div id="tb-seo-studio-suggested-tags-list-none" class="tb-seo-studio-flex tb-seo-studio-flex-justify-center tb-seo-studio-flex-align-center" style="display:none;">
+                                                <span>Sorry, no suggestions found</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-seo-studio-width-35-percent">
+                                    <div id="tb-seo-studio-improve-step3" class="tb-seo-studio-improve-panel tb-seo-studio-card tb-padding-bottom5">
+                                        <div class="tb-seo-studio-card-header">
+                                            <img src="{PLUGIN_FILE_ROOT}/images/icons/lightbulb.png" alt="lightbulb" height="20" class="tb-move-up2 tb-margin-right5" />
+                                            <b class="tb-bold">How to Improve Your Score</b>
+                                        </div>
+                                        <div class="tb-seo-studio-card-supporting-text tb-margin-top5">
+                                            <div class="tb-seo-studio-score-items-container"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tb-seo-studio-step4-container" role="tabpanel" class="tb-seo-studio-tab-content tb-seo-studio-flex tb-seo-studio-flex-justify-space-between" style="display:none;">
+                                <div class="tb-seo-studio-width-61-percent">
+                                    <div class="tb-seo-studio-thumbnail-container">
+                                        <div id="tb-seo-studio-thumbnail-search-header" class="tb-width100-percent tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-between">
+                                            <input id="tb-seo-studio-thumbnail-search-input" type="text" />
+                                            <button id="tb-seo-studio-thumbnail-search-btn" class="tb-btn tb-btn-grey">Search</button>
+                                        </div>
+                                        <div id="tb-seo-studio-thumbnail-results-container" style="display:none;">
+
+                                        </div>
+                                        <div id="tb-seo-studio-thumbnail-results-loading" class="tb-seo-studio-flex tb-seo-studio-flex-justify-center tb-seo-studio-flex-align-center">
+                                            <span class="tb-spinner"></span><span class="tb-margin-left5">Loading</span>
+                                        </div>
+                                    </div>
+                                    <div id="tb-seo-studio-thumbnail-button-container" class="tb-seo-studio-flex tb-seo-studio-flex-justify-space-between">
+                                        <div class="tb-width225 tb-seo-studio-custom-thumbnail-option">
+                                            Keep your existing Thumbnail or create/upload a new one.
+                                        </div>
+                                        <div class="tb-seo-studio-flex tb-seo-studio-custom-thumbnail-option">
+                                            <form class="tb-seo-studio-hidden-upload-input">
+                                                <input type="file" id="tb-seo-studio-upload-thumbnail-input" accept=".png" />
+                                                <label for="tb-seo-studio-upload-thumbnail-input" id="tb-seo-studio-upload-thumbnail-button" class="tb-btn tb-btn-grey tb-btn-sm tb-text-align-center">Upload Thumbnail</label>
+                                            </form>
+                                            <button class="tb-seo-studio-launch-thumbnail-generator tb-btn tb-btn-grey tb-btn-sm tb-margin-left5">Create Thumbnail</button>
+                                        </div>
+                                        <div class="tb-seo-studio-custom-thumbnail-disabled" style="display:none;">
+                                            <span class="tb-font-color-red">
+                                                <i class="material-icons tb-font-size-14 tb-margin-right-2 tb-move-down2">warning</i>
+                                                <span>
+                                                    Your channel does not have custom thumbnails enabled. You will need to
+                                                    <a href="https://www.youtube.com/verify" target="_blank" class="tb-seo-studio-custom-thumbnail-verify">verify</a> your channel in order to enable custom thumbnails.
+                                                    <a class="tb-seo-studio-custom-thumbnail-recheck tb-margin-left-2">Refresh</a>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-seo-studio-width-35-percent">
+                                    <div id="tb-seo-studio-improve-step4" class="tb-seo-studio-improve-panel">
+                                        <div class="tb-seo-studio-card">
+                                            <div class="tb-seo-studio-card-header">
+                                                <img src="{PLUGIN_FILE_ROOT}/images/icons/lightbulb.png" alt="lightbulb" height="20" class="tb-move-up2 tb-margin-right5" />
+                                                <b class="tb-bold">Thumbnail Tips</b>
+                                            </div>
+                                            <div class="tb-seo-studio-card-supporting-text tb-margin-top5">
+                                                <div class="tb-seo-studio-card-list-item tb-seo-studio-flex tb-move-left5">
+                                                    <img src="{PLUGIN_FILE_ROOT}/images/icons/caret-right.png" alt="caret-right" class="tb-seo-studio-caret-right" />
+                                                    <div>Use bright colors and high contrast images.</div>
+                                                </div>
+                                                <div class="tb-seo-studio-card-list-item tb-seo-studio-flex tb-move-left5">
+                                                    <img src="{PLUGIN_FILE_ROOT}/images/icons/caret-right.png" alt="caret-right" class="tb-seo-studio-caret-right"/>
+                                                    <div>Include a close up of a human face whenever possible.</div>
+                                                </div>
+                                                <div class="tb-seo-studio-card-list-item tb-seo-studio-flex tb-move-left5">
+                                                    <img src="{PLUGIN_FILE_ROOT}/images/icons/caret-right.png" alt="caret-right" class="tb-seo-studio-caret-right"/>
+                                                    <div>Ensure text is large enough to read on any device.</div>
+                                                </div>
+                                                <div class="tb-seo-studio-card-list-item tb-seo-studio-flex tb-move-left5">
+                                                    <img src="{PLUGIN_FILE_ROOT}/images/icons/caret-right.png" alt="caret-right" class="tb-seo-studio-caret-right" />
+                                                    <div>Use fonts, colors, shapes that are consistent with your brand.</div>
+                                                </div>
+                                                <div class="tb-font-size12 tb-margin-top10 tb-padding-top10 tb-border-top">
+                                                    Thumbnails don't impact search ranking, but a professional thumbnail can impact your click through rate.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tb-seo-studio-step5-container" role="tabpanel" class="tb-seo-studio-tab-content tb-seo-studio-flex tb-seo-studio-flex-col tb-seo-studio-flex-justify-space-around" style="display:none;">
+                                <div class="tb-font-size18">
+                                    <b class="tb-bold">Great job! Your optimized Title, Description, and Tags are ready.</b>
+                                </div>
+                                <!-- non-video context -->
+                                <div id="tb-seo-studio-confirm-non-video-context" class="tb-seo-studio-confirmation-section tb-seo-studio-card tb-seo-studio-confirmation-page-card" style="display:none;">
+                                    <div class="tb-seo-studio-confirmation-page-card-header tb-font-color-blue">
+                                        <!--Apply this optimization to a video later.-->
+                                        Apply this optimization on a Video Details or Upload page.
+                                    </div>
+                                    <div class="tb-seo-studio-confirmation-page-card-body">
+                                        <!--To apply this Optimization to a video, you must be uploading a new video or editing an existing one. <br /><br />-->
+                                        <!--During either of those processes, open SEO Studio and select 'Load from Saved Draft' on the first screen to select this Optimization and apply it to your video.-->
+                                        <!--<span class="tb-bold">To apply this Optimization:</span>-->
+                                        <ol class="tb-margin-left-25">
+                                            <li>Click on Save Draft</li>
+                                            <li>Open SEO Studio from a Video Details or Upload page</li>
+                                            <li>Select 'Load from Saved Draft' to retrieve this optimization and apply it in Step 4</li>
+                                        </ol>
+                                    </div>
+                                    <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-top10">
+                                        <button class="tb-seo-studio-save-draft tb-btn tb-btn-blue">Save Draft</button>
+                                    </div>
+                                </div>
+                                <!-- video upload context -->
+                                <div id="tb-seo-studio-confirm-video-upload-context" class="tb-seo-studio-confirmation-section" style="display:none;">
+                                    <div class="tb-font-size26 tb-margin-top15" style="color:#666;">Would you like to apply this Optimization to your upload?</div>
+                                    <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-between">
+                                        <div class="tb-seo-studio-card tb-seo-studio-confirmation-page-card">
+                                            <div class="tb-seo-studio-confirmation-page-card-header tb-font-color-blue">
+                                                No, I'm not finished...
+                                            </div>
+                                            <div class="tb-seo-studio-confirmation-page-card-body">
+                                                If you plan to come back and work on this Optimization later, save it as a draft. <br /><br />
+                                                You can then apply it from the Video Details page when editing this upload in the future.
+                                            </div>
+                                            <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-top10">
+                                                <button class="tb-seo-studio-save-draft tb-btn tb-btn-blue">Save Draft</button>
+                                            </div>
+                                        </div>
+                                        <div class="tb-seo-studio-card tb-seo-studio-confirmation-page-card">
+                                            <div class="tb-seo-studio-confirmation-page-card-header tb-font-color-green">
+                                                Yes, apply to my upload now.
+                                            </div>
+                                            <div class="tb-seo-studio-confirmation-page-card-body">
+                                                This Optimization will be applied to the video you're currently uploading.
+                                            </div>
+                                            <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-top10">
+                                                <button class="tb-seo-studio-apply-to-video tb tb-btn tb-btn-green">Apply to Video</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- video edit context -->
+                                <div id="tb-seo-studio-confirm-video-edit-context" class="tb-seo-studio-confirmation-section" style="display:none;">
+                                    <div class="tb-font-size26 tb-margin-top15 tb-font-color-gray">Would you like to apply this Optimization to your video?</div>
+                                    <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-between">
+                                        <div class="tb-seo-studio-card tb-seo-studio-confirmation-page-card">
+                                            <div class="tb-seo-studio-confirmation-page-card-header tb-font-color-blue">
+                                                No, I'm not finished...
+                                            </div>
+                                            <div class="tb-seo-studio-confirmation-page-card-body">
+                                                If you plan to come back and work on this Optimization later, save it as a draft and it will be here when you return for this video.
+                                            </div>
+                                            <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-top10">
+                                                <button class="tb-seo-studio-save-draft tb-btn tb-btn-blue">Save Draft</button>
+                                            </div>
+                                        </div>
+                                        <div class="tb-seo-studio-card tb-seo-studio-confirmation-page-card">
+                                            <div class="tb-seo-studio-confirmation-page-card-header tb-font-color-green">
+                                                Yes, apply to my video now.
+                                            </div>
+                                            <div class="tb-seo-studio-confirmation-page-card-body">
+                                                This Optimization will be applied to the video you're currently editing. <br /><br />
+                                                <b class="tb-bold">NOTE: You must still save changes on YouTube's site </b>afterwards for the changes to take effect. <span class="tb-seo-studio-thumbnail-notice" style="display:none;">Your custom thumbnail will also be applied.</span>
+                                            </div>
+                                            <div class="tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-top10">
+                                                <button class="tb-seo-studio-apply-to-video tb tb-btn tb-btn-green">Apply to Video</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-seo-studio-thumbnail-notice tb-font-size16 tb-margin-top20 tb-font-color-yellow" style="display:none;">
+                                    NOTE: Your custom thumbnail will also be applied when you save changes on YouTube's site.
+                                </div>
+                            </div>
+                            <div id="tb-seo-studio-step6-container" class="tb-center tb-margin-top-70 tb-margin-bottom40" style="display:none;">
+                                <div class="tb-font-color-green tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-center tb-margin-bottom-20">
+                                    <i class="material-icons tb-margin-right10">check_circle</i>
+                                    <span class="tb-font-size18">Optimization successfully applied!</span>
+                                </div>
+                                <span class="tb-font-size14">
+                                    Please<a id="tb-seo-studio-close-done" class="tb-seo-studio-close tb-btn tb-btn-green tb-btn-sm tb-margin-left5 tb-margin-right5">Close Seo Studio</a>then click<b class="tb-seo-studio-save-changes-text tb-margin-left4 tb-margin-right4 tb-bold">Save</b>to keep your changes.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div id="tb-seo-studio-keyword-score-container" class="tb-seo-studio-flex tb-seo-studio-flex-justify-space-between">
+                            <div class="tb-seo-studio-width-61-percent"></div>
+                            <div class="tb-seo-studio-width-35-percent">
+                                <div class="tb-margin-top5 tb-seo-studio-flex tb-seo-studio-flex-col tb-seo-studio-flex-align-center">
+                                    <div class="tb-font-size16"><b class="tb-bold">TubeBuddy SEO Score</b></div>
+                                    <div id="tb-seo-studio-score-chart"></div>
+                                </div>
+                                <div class="tb-seo-studio-card tb-padding-top-5 tb-padding-bottom-5 tb-margin-top5 tb-margin-bottom10">
+                                    <div class="tb-font-color-red tb-seo-studio-flex tb-seo-studio-flex-align-center tb-seo-studio-flex-justify-space-between">
+                                        <span class="tb-seo-studio-flex tb-seo-studio-flex-align-center">
+                                            <i class="material-icons tb-margin-right5 tb-font-size18">my_location</i>
+                                            <b class="tb-bold">TARGET KEYWORD</b>
+                                        </span>
+                                        <a id="tb-seo-studio-change-kw">change keyword</a>
+                                    </div>
+                                    <div id="tb-seo-studio-target-keyword" class="tb-font-bold tb-padding-left-25 tb-padding-top-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--End BASE Module Container-->
+
+            </div>
+            <!--Start BASE Footer Module-->
+            <div id="tb-seo-studio-footer" class="tb-module-footer tb-seo-studio-flex tb-seo-studio-flex-justify-space-between tb-seo-studio-flex-align-center" style="display:none; background-color:white;">
+                <div class="tb-seo-studio-flex">
+                    <button id="tb-seo-studio-back" class="tb-btn tb-btn-grey tb-margin-right10">Back</button>
+                    <div id="tb-seo-studio-apply-defaults-container" class="tb-seo-studio-flex">
+                        <select class="tb-dropdown-menu tb-seo-studio-dropdown-menu tb-margin-left10" id="tb-seo-studio-upload-default-select">
+                            <option value="0">Apply Upload Default...</option>
+                        </select>
+                        <button id="tb-seo-studio-apply-upload-defaults" class="tb-btn tb-btn-blue tb-margin-left-10" style="display:none;">Apply</button>
+                    </div>
+                    <!-- channel has no upload default profiles -->
+                    <div id="tb-seo-studio-upload-defaults-no-profiles" style="display:none;">
+                        <span>You haven't added any custom Upload Default profiles yet. <a class="tb-seo-studio-upload-defaults-settings" target="_blank" href="https://www.tubebuddy.com/tools?tool=defaultuploadprofiles"><i class="material-icons">help_outline</i></a></span>
+                    </div>
+                </div>
+                <div>
+                    <button id="tb-seo-studio-save-footer" class="tb-seo-studio-save-draft tb-btn tb-btn-blue" style="display:none;">Save Draft</button>
+                    <button id="tb-seo-studio-next" class="tb-seo-studio-next tb-btn tb-btn-green">Next</button>
+                </div>
+
+            </div>
+            <!--End BASE Footer-->
+
+        </div>
+        <!--End BASE Shadow-->
+        <div style="display:none" type="text/template" id="tb-seo-studio-tag-template">
+            <span class="tb-seo-studio-tag tb-seo-studio-tag--added" data-is-suggested="{1}">
+                <i class="material-icons tb-font-size-14 tb-seo-studio-tag-move">drag_indicator</i>
+                <span class="tb-seo-studio-tag-text tb-seo-studio-tag-text--added">{0}</span>
+                <input type="text" class="tb-margin-5 tb-seo-studio-tags-input tb-seo-studio-tag-edit-input" value="{0}" style="display:none;" />
+                <a class="tb-seo-studio-tag-action tb-seo-studio-tag-remove">
+                    <i class="material-icons tb-font-size16">close</i>
+                </a>
+            </span>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-seo-studio-suggested-tag-template">
+            <span class="tb-seo-studio-tag tb-seo-studio-tag--suggested" data-relevance="{1}" data-score="{2}">
+                <a class="tb-seo-studio-tag-action tb-seo-studio-tag-add-suggested">
+                    <i class="material-icons tb-font-size16">add</i>
+                </a>
+                <span class="tb-seo-studio-tag-text">{0}</span>
+                <span class="tb-seo-studio-tag-score" title="tag score" style="{3}">{2}</span>
+            </span>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-seo-studio-search-preview-template">
+            <div class="tb-seo-studio-search-preview {7} tb-width100-percent tb-seo-studio-flex tb-seo-studio-flex-justify-space-between tb-margin-bottom5">
+                <img class="tb-seo-studio-search-preview-thumbnail tb-width200" src="{0}" />
+                <div class="tb-font-color-gray tb-seo-studio-search-preview-metadata-container tb-margin-left10">
+                    <div class="tb-margin-bottom2">
+                        <a class="tb-font-size15 tb-seo-studio-search-preview-title" target="_blank" href="{1}">{2}</a>
+                    </div>
+                    <div class="tb-margin-bottom2">
+                        <a target="_blank" class="tb-font-color-gray" href="{3}">{4}</a><span class="tb-margin-left15" id="tb-seo-studio-search-preview-views">{5}</span>
+                    </div>
+                    <div class="tb-line-height-14 tb-seo-studio-search-preview-description">
+                        {6}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-seo-studio-saved-optimization-draft-template">
+            <div class="tb-seo-studio-saved-optimization tb-seo-studio-flex-justify-space-between" data-kw="{0}" data-id="{1}">
+                <span class="tb-font-color-blue">{0}</span>
+                <a class="tb-seo-studio-saved-optimization-delete"><i class="material-icons tb-font-color-light-gray">cancel</i></a>
+            </div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-seo-studio-saved-optimization-applied-template">
+            <div class="tb-seo-studio-saved-optimization tb-font-color-gray" data-kw="{0}" data-id="{1}">
+                <span>{0}</span><small class="tb-margin-left10">({2})</small>
+            </div>
+        </div>
+
+        <div style="display:none" type="text/template" id="tb-seo-studio-improve-list-item-template">
+            <div id="{0}" class="tb-seo-studio-improve-list-item tb-seo-studio-improve-list-item--incomplete tb-seo-studio-flex tb-seo-studio-flex-justify-space-between">
+                <div class="tb-seo-studio-flex">
+                    <i class="material-icons tb-font-size13 tb-margin-right2 tb-seo-studio-improve-list-item-status tb-move-down2">close</i>
+                    <span class="tb-seo-studio-improve-text">{1}</span>
+                </div>
+                <span data-tbtooltip="{2}">
+                    <i class="material-icons tb-font-size13 tb-margin-left2">help_outline</i>
+                </span>
+            </div>
+        </div>
+    </div>
+<!--End BASE Module Template-->

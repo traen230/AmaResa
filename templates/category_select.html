@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, label, input, button {
+    font-family: 'メイリオ', sans-serif;
+    font-size: 11px;
+}
+a.category-link {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <h2>カテゴリを選んでください</h2>
+    <div class="_p13n-zg-nav-tree-all_style_zg-browse-root__-jwNv" role="tree">
+        <div class="_p13n-zg-nav-tree-all_style_zg-root-browse-item__2WmBB _p13n-zg-nav-tree-all_style_zg-browse-height-small__nleKL" role="treeitem">
+            <span class="_p13n-zg-nav-tree-all_style_zg-selected__1SfhQ">すべてのカテゴリー</span>
+        </div>
+        <form id="categoryDrilldownForm" method="get" action="/category/select">
+            <div role="group" class="_p13n-zg-nav-tree-all_style_zg-browse-group__88fbz">
+                {% for label, url in category_list %}
+                <div style="margin: 4px 0;">
+                    <input type="radio" id="cat{{ loop.index }}" name="category_url" value="{{ url }}" data-label="{{ label }}">
+                    <label for="cat{{ loop.index }}">
+                        <a class="category-link" href="/category/select?url={{ url }}">{{ label }}</a>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+    <br>
+    <form id="categoryConfirmForm" method="post" action="/category/confirm">
+        <input type="hidden" name="category_url" id="selected_category_url">
+        <input type="hidden" name="category_label" id="selected_category_label">
+        <button type="button" onclick="confirmCategory()">カテゴリ決定</button>
+    </form>
+    <br>
+    <script>
+    function confirmCategory() {
+        const radios = document.getElementsByName("category_url");
+        for (let i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                document.getElementById("selected_category_url").value = radios[i].value;
+                document.getElementById("selected_category_label").value = radios[i].dataset.label;
+                document.getElementById("categoryConfirmForm").submit();
+                return;
+            }
+        }
+        alert("カテゴリを選択してください。");
+    }
+
+    // ライバル調査用の選択値反映
+    const radios = document.getElementsByName("category_url");
+    for (let i = 0; i < radios.length; i++) {
+        radios[i].addEventListener("change", function() {
+            document.getElementById("rival_category_url").value = this.value;
+        });
+    }
+    </script>
+    <br>
+    <a href="/">← トップに戻る</a>
+</body>
+</html>

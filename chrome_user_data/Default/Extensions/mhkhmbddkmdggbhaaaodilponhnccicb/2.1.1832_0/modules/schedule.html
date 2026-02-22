@@ -1,0 +1,144 @@
+﻿<div style="display:none">
+
+    <!--<ul>
+        <li role="menuitem" class="tb-schedule-buttons">
+            <span href="ed" class="yt-uix-button-menu-item menu-item-top-divider" style="position:relative; top:5px;">
+                <img class="tb-height11" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" style="position:relative; top:1px; left:-2px;"> Scheduled
+            </span>
+        </li>
+    </ul>-->
+
+    <a class="yt-uix-button yt-uix-button-default yt-uix-button-size-default tb-schedule-button" style="margin-left:6px;">
+        <span class="yt-uix-button-content" style="vertical-align: middle;">
+            <img class="tb-height12" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" style="margin-right: 2px; vertical-align: text-bottom;">
+            <img src="{PLUGIN_FILE_ROOT}/images/icons/menu/calendar.png" style="height: 16px;position: relative;top: -1px;left: 1px;">
+        </span>
+    </a>
+
+    <div class="tb-schedule-template" style="position: relative;left: 55px;margin-bottom:20px;width: 480px;">
+        <div style="border:4px solid #f1f1f1; margin-bottom:5px;border-radius:5px;">
+            <span style="border-right: 8px solid #f1f1f1; border-bottom: 8px solid transparent;border-top: 8px solid transparent;display: block;height: 0;left: -12px;position: absolute;top: 13px;width: 0;"></span>
+            <span class="timeline-icon #TYPEICON#" style="position:absolute; left:-50px; top:5px;">
+                <img  class="tb-schedule-icon" />
+            </span>
+            <div style="width:52px; position: absolute;right: -60px; text-align:left; line-height:16px; font-size:11px;">
+                <span style="font-size:11px; text-transform:uppercase; opacity:.7; color:#COLOR#">#CURPRIVACY#</span>
+                <div><img src="{PLUGIN_FILE_ROOT}/images/icons/caret-down.png" style="margin-left:2px; height:10px;" /></div>
+                <span style="font-size:11px; font-weight:500; text-transform:uppercase; color:#COLOR#">#PRIVACY#</span><br />
+                <!--<span style="font-size:11px; font-weight:500; text-transform:uppercase; color:#333;">#PLAYLISTS#</span><br />-->
+                <a class="#CLASS#" data-video-id="#VIDEOID#" data-title="#VIDEOTITLE#" style="font-size:11px; cursor:pointer; position:relative; left:1px;">edit</a>
+            </div>
+
+            <table style="border:0; width:470px;">
+                <tr>
+                    <td style="width:150px; text-align:center; color:#111; background-color:#f1f1f1;vertical-align:top;" rowspan="2">
+                        <div style="position:relative; font-size:20px;">#DAY#<br />#DATE#</div>
+                        <span style="background-color:#f1f1f1; color:#333; border-radius:5px; padding:4px 6px; font-size:16px;">#TIME#</span>
+                        <div style="background-color:#f1f1f1; color:#999; border-radius:5px; padding:4px 6px; font-size:11px; max-width:145px; overflow:hidden;">#TIMETYPE#</div>
+                    </td>
+                    <td style="width:80px; padding:6px 0px 6px 8px; vertical-align:top;">
+                        <img class="tb-calendar-type0" src="#VIDEOTHUMBNAIL#" style="height:50px; margin-right:5px;">
+                    </td>
+                    <td style="width:260px; padding:6px 0px; vertical-align:top; text-align:left; vertical-align:top;">
+                        <a href="https://www.youtube.com/edit?o=U&video_id=#VIDEOID#" target="_blank">
+                            #VIDEOTITLE#
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="border-top:dashed 1px #ccc; margin:-10px 5px 0 5px;">
+                        <table style="border:0; width:100%; margin:5px 8px 8px 8px;">
+                            <tr>
+                                <td style="width:40%; margin-right:15px; vertical-align:top;">
+                                    <div style="font-weight:500; font-size:.9em;">Current Playlists</div>
+                                    #PLAYLISTS#
+                                </td>
+                                <td style="width:142px; margin-right:15px; vertical-align:top; display:#ADDDISPLAY#">
+                                    <div style="font-weight:500; font-size:.9em;">Add to Playlists</div>
+                                    #ADDPLAYLISTS#
+                                </td>
+                                <td style="width:142px; margin-right:15px; vertical-align:top; display:#REMOVEDISPLAY#">
+                                    <div style="font-weight:500; font-size:.9em;">Remove from Playlists</div>
+                                    #REMOVEPLAYLISTS#
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!--Start Base Module Template-->
+<div id="tb-schedule-container" class="tb-module-template draggable-container" style="display:none; width:1100px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Schedule
+            </h1>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+
+        <!--Start Base Module Container-->
+        <div class="tb-module-content tb-schedule-module-content">
+            <div class="tb-schedule-settings-container">
+                <div style="height:400px;">
+                    <div id="tb-schedule-loading">
+                        <span class="tb-spinner tb-margin-right5"></span>Loading...
+                    </div>
+                    <div id="tb-schedule-loaded-none-found">
+                        You don't have any videos scheduled to be published or to be sunsetted.
+                        <div id="tb-schedule-learn-more">
+                            Learn more about our <a href="https://www.tubebuddy.com/tools#schedulegolive" target="_blank">Scheduled Publish</a> and <a href="https://www.tubebuddy.com/tools#sunsetvideos" target="_blank">Sunset Video</a> tools.
+                        </div>
+                    </div>
+                    <div id="tb-schedule-view-all" style="display:none;">
+                        <div class="tb-schedule-timeline" id="tb-schedule-loaded">
+                            <div style="clear:both"></div>
+                            <div id="tb-schedule-list-container">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tb-schedule-monthly-view">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--End BASE Module Container-->
+
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer" id="tb-schedule-footer">
+            <button id="tb-schedule-view-toggle" class="tb-btn tb-btn-blue">View All</button>
+            <div id="tb-schedule-legend" style="display:none;">
+                <span class="tb-schedule-legend-item tb-margin-right5">
+                    <img src="{PLUGIN_FILE_ROOT}/images/modules/schedule/golive.png" style="height:20px;" />
+                    <span class="tb-margin-left3">Publish</span>
+                </span>
+                <span  class="tb-schedule-legend-item">
+                    <img src="{PLUGIN_FILE_ROOT}/images/modules/schedule/sunset.png" style="height:20px;" />
+                    <span class="tb-margin-left3">Sunset</span>
+                </span>
+            </div>        
+            
+        </div>
+        <!--End BASE Footer-->
+
+        </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->

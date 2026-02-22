@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>カテゴリ選択確認</title></head>
+<body>
+    <h2>このカテゴリを選択しますか？</h2>
+    <form method="post" action="/category/confirm">
+        <input type="hidden" name="category_url" value="{{ url }}">
+        <input type="hidden" name="category_label" value="{{ label }}">
+        <p>{{ label }}</p>
+        <button type="submit">このカテゴリを選択</button>
+    </form>
+</body>
+</html>

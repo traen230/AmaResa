@@ -1,0 +1,411 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-bulkthumbnail-container" class="tb-module-template draggable-container" style="display:none; width:auto;">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Bulk Thumbnail Overlays
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkthumbnailoverlays" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+
+                <!-- step 1 -->
+                <div id="tb-bulkthumbnail-source" class="tb-bulkthumbnail-grid-col2" style="display:none;">                    
+                    <div class="tb-bulkthumbnail-source-container">
+                        <div id="tb-bulkthumbnail-source-selection-container" style="width: 512px;">
+                            <div style="min-height: 150px;">
+                                <div >
+                                    <div class="tb-bulk-thumbnail-header-text tb-margin-bottom15 tb-margin-top5">
+                                        I want to...
+                                    </div>
+
+                                    <div class="tb-bulkthumbnail-flex-row tb-margin-bottom10">
+                                        <div class="tb-bulkthumbnail-action tb-margin-right5" data-action-type="add">
+                                            <div class="tb-bulkthumbnail-overlay-icon-container">
+                                                <i class="material-icons tb-font-size60" style="z-index:1; position:absolute; opacity:.8;">insert_photo</i>
+                                                <div class="tb-bulkthumbnail-overlay-icon" style="z-index:2; position:relative; top:-10px; left:10px;"></div>
+                                            </div>
+                                            <div class="tb-font-size16">Add Overlay</div>
+                                        </div>
+                                        <div class="tb-bulkthumbnail-action tb-margin-left5" data-action-type="remove">
+                                            <div class="tb-bulkthumbnail-overlay-icon-container">
+                                                <i class="material-icons tb-font-size60">insert_photo</i>
+                                                <div class="tb-bulkthumbnail-overlay-icon tb-bulkthumbnail-flex-row tb-bulkthumbnail-flex-row--justify-center">
+                                                    <i class="material-icons tb-font-size30 tb-red">clear</i>
+                                                </div>
+                                            </div>
+                                            <div class="tb-font-size16">Remove Overlay</div>
+                                        </div>
+                                    </div>
+
+                                    <div id="tb-bulk-thumbnails-source-image" class="tb-margin-top20 tb-margin-bottom30"style="display:none;">
+
+                                        <div class="tb-bulk-thumbnail-header-text tb-margin-bottom15 tb-margin-top15 tb-bulkthumbnail-flex-row">
+                                            <span>Next, select an Image to overlay.</span>
+                                            <span id="tb-bulkthumbnail-required-size">Required Image Size: 1280x720 or 1920x1080</span>
+                                        </div>
+
+                                        <div class="tb-bulkthumbnail-flex-row tb-margin-bottom15">
+                                            <div class="tb-material-radio-container tb-padding-left15 tb-padding-right0">
+                                                <input id="tb-bulk-thumbnail-overlay-source-upload" class="tb-material-radio tb-bulk-thumbnails-source" type="radio" name="tb-overlay-source" value="upload" />
+                                                <label for="tb-bulk-thumbnail-overlay-source-upload" class="tb-material-radio-label">Upload image from computer</label>
+                                            </div>
+                                            <div class="tb-material-radio-container tb-padding-left0 tb-padding-right15">
+                                                <input id="tb-bulk-thumbnail-overlay-source-onweb" class="tb-material-radio tb-bulk-thumbnails-source" type="radio" name="tb-overlay-source" value="onweb" />
+                                                <label for="tb-bulk-thumbnail-overlay-source-onweb" class="tb-material-radio-label">Enter a URL to an image</label>
+                                            </div>
+                                        </div>
+
+                                        <div id="tb-bulk-thumbnails-source-web" style="display:none; overflow:hidden;">
+                                            <div class="tb-bulkthumbnail-flex-row">
+                                                <input id="tb-bulkthumbnail-overlay" class="tb-material-input tb-bulk-input" style="width: 90%; margin-left:0px;" placeholder="Enter URL to image" />
+                                                <a id="tb-bulkthumbnail-load" style="margin-left:4px; text-decoration:none;">Load</a>
+                                            </div>
+                                            <div id="tb-recent-image-urls" style="display:none;">
+
+                                            </div>
+                                        </div>
+                                        <div id="tb-bulk-thumbnails-source-computer" style="display:none;">
+                                            <form>
+                                                <input id="tb-bulk-thumbnail-upload-input" class="tb-bulkthumbnail-file-input" type="file" accept=".png" />
+                                                <label for="tb-bulk-thumbnail-upload-input" class="tb-btn-blue" style="width:92%; text-align:center;">Choose a file</label>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="tb-bulkthumbnail-source-preview-container" style="width:360px;">
+                            <div style="margin-left:30px; min-height: 150px;">
+                                <div>
+                                    <div class="tb-bulk-thumbnail-header-text tb-bulkthumbnail-flex-row tb-bulkthumbnail-flex-row--justify-start">
+                                        <span>Image Preview</span>
+                                        <i id="tb-bulk-thumbnails-valid-image" class="material-icons tb-bulk-text-green tb-margin-left5 tb-font-size20" style="display:none;">check_circle</i>
+                                    </div>
+                                    <div id="tb-bulk-thumbnails-preview-container" style="margin-top: 10px; display:none;">
+                                        <div id="tb-bulk-thumbnail-loading-preview" style="display:none;">
+                                            <span class="tb-spinner"></span> Loading...
+                                        </div>
+                                        <img id="tb-bulkthumbnail-overlay-preview" style="height: 185px; border: solid 1px #ccc; display:none;" />
+                                        <div id="tb-bulkthumbnail-invalid" style="color: Red; display: none;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- step 2 -->
+                <div id="tb-bulkthumbnail-method" style="display: none; width:670px;">
+                    <div class="tb-bulk-instructions tb-bulk-thumbnail-header-text">Which videos would you like to apply the overlay to?</div>
+
+                    <div class="tb-material-radio-container tb-margin-top10 tb-font-size14">
+                        <input checked="checked" name="tb-bulkthumbnail-method" data-method="3" id="tb-bulkthumbnail-method-full" type="radio" class="tb-material-radio" />
+                        <label for="tb-bulkthumbnail-method-full" class="tb-material-radio-label tb-bulk-radio-label">I want to see a full list of <b>all</b> my videos and I will pick and choose which ones to copy to.</label>
+
+                        <div class="tb-material-checkbox-container tb-margin-left25 tb-bulk-checkbox-container">
+                            <label class="tb-material-checkbox-label">
+                                <input id="tb-bulkthumbnail-onlyLoadFirstPage" type="checkbox" class="tb-material-checkbox-input" />
+                                <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                Only load my most recent
+                                <input id="tb-bulkthumbnail-onlyLoadFirstPage-number" class="tb-material-input tb-bulk-input tb-width35" type="text" value="50" />
+                                videos (faster)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input name="tb-bulkthumbnail-method" data-method="0" id="tb-bulkthumbnail-method-ids" class="tb-material-radio" type="radio" />
+                        <label for="tb-bulkthumbnail-method-ids" class="tb-material-radio-label tb-bulk-radio-label">
+                            A list of Video IDs that I specify
+                        </label>
+                        <div>
+                            <input disabled="disabled" id="tb-bulkthumbnail-input-ids" class="tb-material-input tb-bulk-input tb-margin-left25" placeholder="Example: gXDMoiEkyuQ, Cpc-t-Uwv1I, 8fE29CHJMCg" type="text" style="width: 300px;" />
+                            <span style="font-size:11px; font-weight:bold;" id="tb-bulkthumbnail-input-ids-status"></span>
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input name="tb-bulkthumbnail-method" data-method="1" id="tb-bulkthumbnail-method-playlist" class="tb-material-radio" type="radio" />
+                        <label for="tb-bulkthumbnail-method-playlist" class="tb-material-radio-label tb-bulk-radio-label">
+                            All videos within one of my playlists
+                        </label>
+                        <div>
+                            <div class="tb-margin-left25" id="tb-bulkthumbnail-input-playlist"></div>
+                            <span style="font-size: 11px; font-weight: bold;" id="tb-bulkthumbnail-input-playlist-status"></span>
+                        </div>
+                    </div>
+                    <div class="tb-material-radio-container tb-font-size14">
+                        <input name="tb-bulkthumbnail-method" data-method="2" class="tb-material-radio" id="tb-bulkthumbnail-method-search" type="radio" />
+                        <label for="tb-bulkthumbnail-method-search" class="tb-material-radio-label tb-bulk-radio-label">
+                            Show a list of videos that match my Search Phrase below and I will choose which ones to copy to.
+                        </label>
+                        <div>
+                            <input disabled="disabled" id="tb-bulkthumbnail-input-search" type="text" class="tb-material-input tb-bulk-input tb-margin-left25" placeholder="Example: Avengers" style="width: 300px;" />
+                        </div>
+                        <div class="tb-font-bold tb-text-yellow-400 tb-flex tb-items-end">
+                            <i class="small material-icons tb-icon-yellow-400 tb-pr-2" data-draggable="false">warning</i>
+                            Every day, YouTube permits 100 thumbnail changes per channel.
+                        </div>
+                    </div>
+                </div>
+                <!-- step 3 -->
+                <div id="tb-bulkthumbnail-destination" style="display: none; width: 871px;">
+                    <div class="tb-bulk-instructions tb-padding-bottom0 tb-margin-bottom10">
+                        <div>
+                            <span id="tb-bulkthumbnail-whatvideos-text" class="tb-bulk-thumbnail-header-text">
+                                What Video(s) do you want to apply the overlay to?
+                            </span>
+                        </div>
+                        <div class="tb-margin-top5" style="display:flex; justify-content:space-between; align-items:center;">
+                            <div style="font-size: 14px; margin-right: 20px;">
+                                <span id="tb-bulkthumbnail-selected-text" class="tb-bulk-thumbnail-header-text">
+                                    <span> Selected</span> (<span id="tb-bulkthumbnail-destination-selected-count">0</span>)
+                                </span>
+                                <span id="tb-bulkthumbnail-selected-text2">
+                                    <a style="color: #167ac6; text-decoration:none;" id="tb-bulkthumbnail-select-all-checkboxes">All</a> | <a style="color: #167ac6; text-decoration:none;" id="tb-bulkthumbnail-select-no-checkboxes">None</a>
+                                </span>
+                            </div>
+                            <div class="tb-bulk-filter tb-bulk-filter--thubmnail-destination">
+                                <span class="tb-bulk-filter-text">Filter</span>
+                                <select class="tb-bulkthumbnail-filter tb-dropdown-menu tb-dropdown-menu--small">
+                                    <option value="all">Show All Videos</option>
+                                    <option value="public">Only Public Videos</option>
+                                    <option value="unlisted">Only Unlisted Videos</option>
+                                    <option value="private">Only Private Videos</option>
+                                    <option value="publicunlisted">Public and Unlisted Videos</option>
+                                    <option value="privateunlisted">Private and Unlisted Videos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 0px; height: 290px; overflow-y: scroll; overflow: auto;">
+
+                        <div id="tb-bulkthumbnails-add-description" style="width:55%; padding-bottom:10px; margin-bottom:10px; padding-left:10px; padding-right:10px; color:#666; display:none;">
+                            <div id="tb-bulkthumbnail-please-note" class="tb-margin-bottom5">Please note</div>
+                            If your original thumbnail is not 1280x720 or 1920x1080 in size, it can cause the overlay
+                            to be placed in the wrong position.
+                        </div>
+                        <div id="tb-bulkthumbnail-loading-videos" style="text-align:center; margin:25px;">
+                            <span class="tb-spinner"></span> Loading your Videos
+                        </div>
+                        <div id="tb-bulkthumbnail-destination-list" style="display: none;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- step 4 -->
+                <div id="tb-bulkthumbnail-confirm" style="display: none; height: 100%; width:700px">
+
+                    <div id="tb-bulkthumbnail-confirm-container" style="height:100%;">
+                        <div id="tb-bulkthumbnail-confirmation-text" class="tb-bulk-instructions tb-bulk-thumbnail-header-text"></div>
+                        <div style="display: none">
+                            <b>Example:</b> This is what the actual final thumbnail will look like<br />
+
+                            <div id="tb-bulk-thumbnails-confirm-preview">
+                                <span class="tb-spinner"></span>Loading...
+                            </div>
+
+                            <img id="tb-bulkthumbnail-final-preview" style="height: 70px;" />
+                        </div>
+
+                        <div class="tb-material-checkbox-container tb-padding-top20" style="display:flex; flex-direction:column; justify-content:center">
+                            <label class="tb-material-checkbox-label tb-bulk-confirm-label">
+                                <input class="tb-material-checkbox-input" type="checkbox" id="tb-bulkthumbnail-confirm-checkbox" />
+                                <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                                Yes, do it.
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- step 5 -->
+                <div id="tb-bulkthumbnail-status" style="display: none; width: 700px;">
+
+                    <div class="tb-bulk-instructions">
+
+                        <div style="margin-left:20px; font-weight:normal; float:right; margin-right:15px;">
+                            <div id="tb-bulkthumbnail-done" class="tb-bulk-header-status tb-bulk-text-green" style=" display: none;">
+                                <i class="material-icons tb-font-size16 tb-margin-right4">check_circle_outline</i>
+                                Processing complete!
+                            </div>
+                            <div id="tb-bulkthumbnail-stopped" class="tb-bulk-header-status tb-red" style="display:none;">
+                                <i class="material-icons tb-font-size16 tb-margin-right4">error_outline</i>
+                                Processing Stopped!
+                            </div>
+                        </div>
+
+                        <span id="tb-bulkthumbnail-working">
+                            <span class="tb-spinner"></span>
+
+                            <span style="display:none">
+                                <img id="tb-bulkthumbnail-current-image" src="" style="height: 20px; position: relative; top: 5px;" />
+                                <a id="tb-bulkthumbnail-current-video" target="_blank"></a>
+                            </span>
+                        </span>
+
+                        <span class="tb-bold tb-font-size15">
+                            Status:
+                            <span id="tb-bulkthumbnail-status-count" style="font-weight:normal; font-size:14px; margin-left:5px; position:relative; top:-1px;"></span>
+                        </span>
+
+
+                        <div id="tb-bulkthumbnail-progress-container" style="font-size:11px; font-weight:bold;  color:green;"></div>
+
+                    </div>
+
+
+                    <div id="tb-bulkthumbnail-progress-v2-container">
+                        <div style="float: right; width: 330px;">
+
+                            <div class="tb-bulk-text-green tb-margin-bottom10 tb-bold">
+                                Videos Completed Successfully
+
+                                &nbsp;&nbsp; (<span style="" id="tb-bulkthumbnail-completed-list2-count">0</span>)
+                            </div>
+                            <div id="tb-bulkthumbnail-completed-list2" style="height:275px; overflow-y:auto; display:none;"></div>
+                            <div id="tb-bulkthumbnail-completed-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:20px;">
+                                (none)
+                            </div>
+                        </div>
+
+                        <div style="width:330px;">
+                            <div class="tb-margin-bottom10 tb-bold">Next 3 Videos to be Processed</div>
+                            <div id="tb-bulkthumbnail-queue-complete-list2" style="display:none; height:80px; margin-left:15px; padding-top:20px;">
+                                (no more)
+                            </div>
+                            <div id="tb-bulkthumbnail-queue-list2" style="height:144px;">
+
+                            </div>
+
+                        </div>
+                        <div style="margin-top:15px; width:330px;">
+
+                            <div class="tb-margin-bottom10 tb-bold tb-red">
+                                <div style="float:left">
+                                    Videos Completed with Errors
+
+                                    &nbsp;&nbsp; (<span style="" id="tb-bulkthumbnail-error-list2-count">0</span>)
+                                </div>
+                                <div id="tb-bulkthumbnail-error-copy-container" class="tb-cursor-pointer" style="display:none;">
+                                    <a id="tb-bulkthumbnail-error-copy" title="Copy video ids" class="tb-margin-left4" data-clipboard-text="">
+                                        <i class="material-icons tb-font-size16">file_copy</i>
+                                        <span class="tb-font-size10 tb-move-up4">Copy video ids</span>
+                                    </a>
+                                </div>
+                                <div style="clear:left"></div>
+                            </div>
+                            <div id="tb-bulkthumbnail-error-list2" style="height:120px; overflow:auto; display:none;">
+
+                            </div>
+                            <div id="tb-bulkthumbnail-error-none-list2" style="height:120px; overflow:auto; margin-left:15px; padding-top:20px;">
+                                (none)
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+            <!--End BASE Module Container-->
+
+        </div>
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer tb-bulk-footer">
+            <div>
+                <button class="tb-btn-grey" id="tb-bulkthumbnail-back" style="display: none;">
+                    Back
+                </button>
+            </div>
+            <div>
+                <button class="tb-btn-blue" id="tb-bulkthumbnail-continue">
+                    Continue
+                </button>
+                <button class="tb-btn-blue" id="tb-bulkthumbnail-kickoff" style="display: none">
+                    Start!
+                </button>
+                <button class="tb-btn-red" id="tb-bulkthumbnail-stop" style="display: none;">
+                    Stop
+                </button>
+                <button class="tb-btn-grey" id="tb-bulkthumbnail-close">
+                    Done
+                </button>
+            </div>
+        </div>
+        <!--End BASE Footer-->
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->
+
+
+<div style="display: none">
+    <div class="tb-bulkthumbnail-destination-row" data-privacy="#PRIVACY#" style="width:24%; margin-bottom:15px;">
+        <div>
+            <div style="display:flex;align-items:center">
+                <div class="tb-material-checkbox-container tb-margin-right10">
+                    <label class="tb-material-checkbox-label">
+                        <input class="tb-bulkthumbnail-checkbox-include tb-material-checkbox-input" data-video-id="#VIDEOID#" style="#DISPLAYCHECKBOX#" type="checkbox" />
+                        <span class="tb-material-checkbox-box tb-bulk-check"><span class="tb-material-checkbox-check tb-bulk-check"></span></span>
+                    </label>
+                </div>
+                <span class="yt-uix-tooltip tb-red" data-tooltip-text="No matches found" style="font-size: 12px; font-weight: bold; display: inline-block; width: 17px; text-align: center; position: relative; left: 2px; top: -4px; margin-right: 3px; #DISPLAYX#">X</span>
+                <div style="position:relative; width:100%;">
+                    <img class="overlayimg" style="height: 68px; width:120px; display:none; z-index:1; position: absolute; background:url('#OVERLAYIMAGE#'); background-size:contain; border-radius:2px;" />
+                    <img data-video-id="#VIDEOID#" class="tb-bulkthumbnails-video" style="height: 68px; width:120px; display:block;  background:url('#VIDEOTHUMBNAIL#') center no-repeat; border-radius:2px;" />
+                </div>
+            </div>
+            <div class="tb-margin-top5" style="width:120px; margin-left: 25px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <a style="color: #167ac6; cursor: pointer; text-decoration: none;position: relative; vertical-align:top;" target="_blank" href="https://www.youtube.com/watch?v=#VIDEOID#" title="https://www.youtube.com/watch?v=#VIDEOID#">#VIDEOTITLE#</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div data-video-id="#VIDEOID#" class="tb-bulkthumbnail-processing-template2 tb-bulk-processing-video-row" style="display: none;">
+    <img data-video-id="#VIDEOID#" class="tb-margin-right5" src='#THUMBNAILURL#' style="height: 30px; " />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a class="tb-bulk-view-video tb-margin-left10" data-video-id="#VIDEOID#" href="#HREF#" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-bulkthumbnail-processed-success tb-bulk-processing-video-row tb-bulk-processing-video-row--success" style="display:none;">
+    <img data-video-id="#VIDEOID#" class="tb-margin-right5" src='#THUMBNAILURL#' style="height: 30px;" />
+    <span class="tb-destination-video-title">#VIDEOTITLE#</span><a class="tb-bulk-view-video tb-margin-left10" data-video-id="#VIDEOID#" href="#HREF#" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+</div>
+<div class="tb-bulkthumbnail-processed-error tb-bulk-processing-video-row tb-bulk-processing-video-row--error" data-video-id="#VIDEOID#" style="display:none;">
+    <div style="display:flex; align-items:center;">
+        <img data-video-id="#VIDEOID#" class="tb-margin-right5" src='#THUMBNAILURL#' style="height: 30px;" />
+        <span class="tb-destination-video-title">#VIDEOTITLE#</span><a class="tb-bulk-view-video tb-margin-left10" data-video-id="#VIDEOID#" href="#HREF#" target="_blank"><i class="material-icons tb-font-size13">open_in_new</i></a>
+    </div>
+    <div class="tb-red tb-font-size12 tb-padding-top5 tb-bulk-processing-error-msg">
+        #ERROR#
+    </div>
+</div>

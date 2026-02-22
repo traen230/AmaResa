@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Med den kan du enkelt hitta produktkällor på Alibaba, AliExpress, 1688, Taobao, Pinduoduo och Yiwugo"
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPrice sök efter bild på Alibaba"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Skärmdumpsökning för samma stil"
+   },
+   "context_menus_goote_trans": {
+      "message": "Översätt sida/Visa original"
+   },
+   "context_menus_search_by_image": {
+      "message": "Sök efter bild på $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Fånga till $storeName$",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Fånga för att översätta"
+   }
+}

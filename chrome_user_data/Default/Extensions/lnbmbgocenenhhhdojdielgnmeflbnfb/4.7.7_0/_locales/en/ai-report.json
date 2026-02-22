@@ -1,0 +1,89 @@
+{
+  "ai_report_page_title": {
+    "message": "AI解读|卖家精灵"
+  },
+  "ai_report_description": {
+    "message": "我是AI解读描述文字"
+  },
+  "ai_report_confirm": {
+    "message": "确认"
+  },
+  "ai_report_copy_link": {
+    "message": "复制链接"
+  },
+  "ai_report_tip": {
+    "message": "智能解读关键词 x Keepa趋势分析 x 全方位市场洞察 x 竞品动态追踪，用数据逻辑替代经验盲选，提升决策精准度！"
+  },
+  "ai_report_reset": {
+    "message": "重新生成"
+  },
+  "ai_report_reset_tip": {
+    "message": "重新生成报告将覆盖当前内容，确定重新生成吗？"
+  },
+  "ai_report_share_title": {
+    "message": "分享"
+  },
+  "ai_report_share": {
+    "message": "分享给小伙伴吧，链接于 <span style='font-size: 13px;color: #FB8C1E'>{time}</span> 前有效",
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "ai_report_loading_text": {
+    "message": "正在生成AI解读报告… 预计需要2～5分钟"
+  },
+  "ai_report_loading_tip": {
+    "message": "您可以先收藏本页，7天内随时回来查看完整报告"
+  },
+  "ai_report_create_text": {
+    "message": "数据解读"
+  },
+  "ai_report_button_tip": {
+    "message": "卖家精灵 × DeepSeek-R1满血版，强强联合<br>点击获取AI智能数据解读吧！"
+  },
+  "ai_report_button_re_tip": {
+    "message": "重新生成AI解读报告"
+  },
+  "ai_report_load_error": {
+    "message": "挤爆了！卖家精灵云游火星啦，请稍后再试试吧～<br /> <div style='color: #ff9300'>本次分析不扣除次数</div>"
+  },
+  "ai_report_load_over_time": {
+    "message": "链接失效，报告不见啦～<br>试试在“工具”中，用卖家精灵AI一键生成全新解读报告吧！"
+  },
+  "ai_report_support": {
+    "message": "卖家精灵 （https://www.sellersprite.com)"
+  },
+  "ai_report_date": {
+    "message": "数据周期："
+  },
+  "ai_report_analysisDate": {
+    "message": "分析日期："
+  },
+  "ai_report_support_title": {
+    "message": "数据支持："
+  },
+  "ai_report_free_toast": {
+    "message": "Hi～今日AI解读次数已用完（10次/日），升级付费套餐解锁（100次/日）哦～"
+  },
+  "ai_report_limit_toast": {
+    "message": "Hi～今日AI解读次数已用完（100次/日），明天自动恢复哦～"
+  },
+  "ai_report_button_share": {
+    "message": "分享给好友"
+  },
+  "ai_report_button_export": {
+    "message": "导出PDF"
+  },
+  "ai_report_waring_tip": {
+    "message": "本报告由人工智能系统自动生成，内容仅供参考"
+  },
+  "ai_report_pay_times": {
+    "message": "当天剩余{times}次",
+    "placeholders": {
+      "times": {}
+    }
+  },
+  "ai_report_pay_free_times": {
+    "message": "升级套餐立享100次/天 <a style='color: #ff9300' href='https://www.sellersprite.com/price' target='_blank'>点击这里</a>"
+  }
+}

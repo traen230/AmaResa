@@ -1,0 +1,1042 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-ctrcenter-container" class="tb-module-template draggable-container" style="display:none; width:1000px; left:35%;">
+
+    <style>
+
+        .tb-clickmagnet-playlist-selection-header{
+            display:none;
+            width: 50%;
+            font-size: 16px;
+            margin-top:25px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        #tb-ctr-description{
+            font-size:25px;
+            font-weight:600;
+            width: 450px;
+            line-height:32px;
+            margin:150px auto 0;
+        }
+
+        #tb-ctr-gathering{
+            width:600px;
+            display:none;
+            margin:150px auto 0;
+            text-align:center;
+        }
+
+        #tb-ctr-gathering .tb-spinner{
+            width: 40px;
+            height: 40px;
+            border-width: 8px;
+        }
+
+        #tb-ctr-gathering-disclaimer{
+            padding: 15px 0px;
+            background-color: #FBE6E6;
+            border: none;
+            border-radius: 4px;
+            width: 70%;
+            margin: 35px auto 15px auto;
+            display: none;
+        }
+        #tb-ctr-gathering-disclaimer svg {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #tb-ctr-gathering-disclaimer p {
+            display: inline-block;
+            vertical-align: super;
+            font-size: 14px;
+        }
+
+        #tb-ctr-start {
+            width: auto;
+            height: auto;
+        }
+
+        #tb-cards-input-playlist{
+            display: none;
+        }
+        .playlistSelectInputDownCaret{
+            display: inline-block !important;
+            position: relative;
+            right: 30px;
+        }
+        #tb-cards-input-playlist .playlistSelectInput{
+            width: 350px !important;
+            border: solid 1px #B6BAC6;
+            border-radius: 4px;
+            padding: 14px 10px !important;
+            margin: 0px !important;
+        }
+
+        #tb-cards-input-playlist .playlistSelectInput:focus-visible{
+            border: solid 1px #B6BAC6;
+        }
+
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem:hover{
+            cursor: pointer;
+        }
+
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem input{
+            opacity: 0;
+        }
+
+        #tb-cards-input-playlist .playlistSelectMutliSelectListItem input:hover{
+            cursor: pointer;
+        }
+
+
+        #tb-cards-input-playlist .playlistSelectMutliSelect{
+            width: 96% !important;
+            margin: 0 !important;
+            padding: 2px;
+            text-align: left;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.11) 0px 2px 5px !important;
+        }
+
+        #tb-ctr-gather-all-data {
+            display: flex;
+            padding: 22px 20px;
+            font-size: 12px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            background: #1156EE;
+        }
+
+        .tb-clickmagnet-greyside {
+            height: 410px;
+            overflow: hidden;
+            float: right;
+            padding: 15px;
+            background: #f1f1f1;
+            border: solid 1px #ddd;
+        }
+
+        .tb-clickmagnet-whiteside {
+            height: 410px;
+            overflow: hidden;
+            float: left;
+            padding: 15px;
+        }
+
+        .tb-clickmagnet-outside {
+            /*border: solid 1px #ccc;*/
+            margin: 25px 5px 0 0;
+        }
+
+        .tb-clickmagnet-ctr {
+            text-align: center;
+            height: 35px;
+            position: relative;
+            top: -5px;
+            font-size: 16px;
+        }
+
+        .tb-cm-title-tt {
+            font-size: 11px;
+            line-height: 14px;
+            margin-bottom: 3px;
+            max-width: 280px;
+            max-height: 28px;
+            overflow: hidden;
+        }
+
+        .tb-ctr-feature-container {
+            border: solid 1px #eee;
+            box-shadow: 0 1px 1px rgba(100,100,100,0.12), 0 2px 2px rgba(100,100,100,0.12), 0 4px 4px rgba(100,100,100,0.12), 0 8px 8px rgba(100,100,100,0.12), 0 16px 16px rgba(100,100,100,0.12);
+            margin-right: 15px;
+            margin-bottom: 15px;
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        .tb-ctr-feature-container:hover {
+            cursor: pointer;
+            box-shadow: 0 1px 1px rgba(25,25,25,0.12), 0 2px 2px rgba(25,25,25,0.12), 0 4px 4px rgba(25,25,25,0.12), 0 8px 8px rgba(25,25,25,0.12), 0 16px 16px rgba(25,25,25,0.12);
+            border: solid 1px #63c7ff;
+        }
+
+        .tb-ctr-pc-vl {
+            background-color: #F40000;
+        }
+
+        .tb-ctr-pc-l {
+            background-color: #F87E00;
+        }
+
+        .tb-ctr-pc-a {
+            background-color: #aaa;
+        }
+
+        .tb-ctr-pc-h {
+            background-color: #7FD500;
+        }
+
+        .tb-ctr-pc-vh {
+            background-color: #00AE00;
+        }
+
+        .tb-ctr-pc-g {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            top: 4px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            cursor: help;
+        }
+
+
+        .tb-ctr-clr-vl {
+            color: #F40000;
+        }
+
+        .tb-ctr-clr-l {
+            color: #F87E00;
+        }
+
+        .tb-ctr-clr-a {
+            color: #aaa;
+        }
+
+        .tb-ctr-clr-h {
+            color: #7FD500;
+        }
+
+        .tb-ctr-clr-vh {
+            color: #00AE00;
+        }
+
+
+        .tb-ctr-sort {
+            cursor: pointer;
+        }
+
+        .tb-ctr-section-container {
+            height: 75px;
+            padding: 5px;
+        }
+
+        .tb-ctr-section-container:hover {
+            border-color: #aaa;
+        }
+
+        .tb-ctr-section-header {
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 6px;
+        }
+
+        .tb-ctr-display-header {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px 0px 12px 10px;
+        }
+
+        .tb-ctr-section-body {
+            font-size: 13px;
+            line-height: 19px;
+            color: #777;
+            padding-bottom: 5px;
+        }
+
+        .tb-ctr-section-button {
+            float: right;
+            margin: 15px;
+            margin-right: 10px;
+        }
+
+        .tb-ctr-section-img {
+            height: 60px;
+            width: 60px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .tb-ctr-back-container {
+            padding-bottom: 10px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .tb-ctr-tab-option {
+            border: solid 1px #eee;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            z-index: 99;
+            background: white;
+        }
+
+        .tb-ctr-tab-option:hover {
+            border-color: #aaa;
+            cursor: pointer;
+        }
+
+        .tb-ctr-tab-option-header {
+            font-size: 16px;
+            color: #222;
+        }
+
+        .tb-ctr-tab-option-selected {
+            background-color: rgba(49, 134, 198, 0.15) !important;
+            border-color: rgb(74, 144, 226) !important;
+            cursor: default !important;
+        }
+
+        .tb-ctr-display-left {
+            position: absolute;
+            width: 135px;
+            top: 5px;
+            z-index: 999;
+        }
+
+        .tb-ctr-display-right {
+            padding-left: 170px;
+            position: relative;
+            top: -15px;
+        }
+
+        .tb-cr-element-section {
+            display: none;
+        }
+
+        .tb-ctr-tab-option-body-show {
+            display: block !important;
+        }
+
+        .tb-ctr-sort-item .material-icons {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .tb-ctr-display-body {
+            border-radius: 5px 5px 0 0;
+            border: solid 1px #ddd;
+            padding: 15px 15px 10px 15px;
+            min-height: 320px;
+        }
+
+        .tb-ctr-status-label:after {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+            -webkit-animation: tbellipsis steps(4,end) 900ms infinite;
+            animation: tbellipsis steps(4,end) 900ms infinite;
+            content: "\2026"; /* ascii code for the ellipsis character */
+            width: 0px;
+        }
+
+        @keyframes tbellipsis {
+            to {
+                width: 1.25em;
+            }
+        }
+
+        @-webkit-keyframes tbellipsis {
+            to {
+                width: 1.25em;
+            }
+        }
+    </style>
+
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title" id="tb-crt-title">
+                Click Magnet
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=clickmagnet" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+
+        <!--End Base Module Header-->
+        <div class="tb-module-container">
+            <!--Start Base Module Container-->
+            <div class="tb-module-content tb-overflow-hidden">
+                <div class="tb-font-book" style=" padding: 0 5px 0px 5px">
+
+                    <div id="tb-ctr-options">
+
+                        <div style="position:relative; padding:10px 0 0 0; min-height:400px">
+                            <img src="{PLUGIN_FILE_ROOT}/images/modules/clickmagnet/back2.png" style="position:absolute; z-index:0;" />
+                            <!--<div style="width: 200px; height:299px; border:solid 0px #ddd; padding:10px 10px 50px 10px; margin:10px; text-align:center; font-size:40px; line-height:70px; font-weight:bold; float:left;">
+                                <img src="https://i.imgur.com/hdgPGd4.png" style="margin-top:20px; width:180px" />
+                            </div>-->
+                            <div style="position:relative; z-index:9; text-align:center;">
+                                <div>
+                                    <div id="tb-ctr-description" >
+                                        Expand your audience and drive more meaningful views by turning your videos into click magnets.
+                                    </div>
+
+                                    <div class="tb-clickmagnet-playlist-selection-header">
+                                        Which videos/playlist would you like to analyze?
+                                    </div>
+
+                                    <div class="tb-material-radio-container tb-font-size14" style="display:flex; width:fit-content; margin:auto;">
+                                        <!-- PLAYLIST Dropdown  -->
+                                        <div class="tb-clickmagnet-input-playlist" id="tb-cards-input-playlist" ></div>
+
+                                        <div id="tb-ctr-start">
+                                            <a id="tb-ctr-gather-all-data" class="tb-button tb-button-primary" style="">Get Started
+                                            </a>
+                                        </div>
+
+                                        <span style="font-size: 11px; font-weight: bold;" id="tb-cards-input-playlist-status"></span>
+
+                                    </div>
+
+                                    <div id="tb-ctr-gathering">
+                                        <div style="">
+                                            <div class="tb-spinner"></div>
+                                        </div>
+                                        <div style="padding-top:30px;">
+                                            <b>Data Processing Status</b>
+                                            <div class="tb-margin-top-5 tb-margin-left-1" id="tb-ctr-wl-loading-status">
+                                                <span class="tb-ctr-status-label">Initializing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Data Gathering Disclaimer -->
+                                    <div id="tb-ctr-gathering-disclaimer" style="display: none;">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11 7V11M11 15H11.01M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z" stroke="#DA0800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p id="tb-ctr-gathering-disclaimer-text"></p>
+                                    </div>
+
+
+                                    <div id="tb-ctr-gathering-failed" style="width:400px; display:none; font-size:14px;  margin:150px auto 0; text-align:center;">
+                                        <b style="color:red;">Sorry, something went wrong &nbsp; :(</b>
+                                        <br /><br />
+                                        <span id="tb-ctr-gathering-message">Please refresh the page and try again.</span>
+                                    </div>
+
+                                    <div id="tb-ctr-gathering-failed-only-shorts" style="width:400px; display:none; font-size:14px;  margin:150px auto 0; text-align:center;">
+                                        <b style="color:red;">Since Click Through Rate doesn't apply to Shorts, only long-form content is analyzed. We were unable to find any long-form content in your recent videos.</b>
+                                        <br /><br />
+                                        Please try again when your channel has recent long-form content.
+                                    </div>
+
+                                    <div id="tb-ctr-gathered" style="display:none;">
+                                        <table style="width:570px; position:relative; left:-10px; margin:140px auto 0; text-align:left;" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="width: 50%;">
+                                                    <div class="tb-ctr-feature-container" id="tb-ctr-top-performers-button">
+                                                        <!--<a class="tb-button tb-button-primary tb-ctr-section-button">OPEN</a>-->
+                                                        <div class="tb-ctr-section-header">
+                                                            <i class="small material-icons tb-icon-help tb-move-down3">fitness_center</i>
+                                                            Power Rankings
+                                                        </div>
+                                                        <div class="tb-ctr-section-body">
+                                                            If you want people to watch more of your videos, create content they crave.
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 50%;">
+                                                    <div class="tb-ctr-feature-container" id="tb-ctr-element-inspector-button">
+
+                                                        <!--<a class="tb-button tb-button-primary tb-ctr-section-button">OPEN</a>-->
+                                                        <div class="tb-ctr-section-header">
+                                                            <i class="small material-icons tb-icon-help tb-move-down3">search</i>
+                                                            Element Inspector
+                                                        </div>
+                                                        <div class="tb-ctr-section-body">
+                                                            Discover which elements of your video packaging are actually driving clicks.
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr style="margin-top:20px;">
+                                                <td style="width: 50%; padding-top:15px;">
+                                                    <div class="tb-ctr-feature-container" id="tb-ctr-opportunity-finder-button">
+
+                                                        <!--<a id="tb-ctr-opportunity-finder-button" class="tb-button tb-button-primary tb-ctr-section-button">OPEN</a>-->
+                                                        <div class="tb-ctr-section-header">
+                                                            <i class="small material-icons tb-icon-help tb-move-down3">check_circle_outline</i>
+                                                            CTR Opportunities
+                                                        </div>
+                                                        <div class="tb-ctr-section-body">
+                                                            Get the most bang for your buck when focusing on improving these videos.
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 50%; padding-top:15px;">
+                                                    <div class="tb-ctr-feature-container" id="tb-ctr-analytics-button">
+
+                                                        <!--<a class="tb-button tb-button-primary tb-ctr-section-button">OPEN</a>-->
+                                                        <div class="tb-ctr-section-header">
+                                                            <i class="small material-icons tb-icon-help tb-move-down3">insert_chart_outlined</i>
+                                                            Advanced Analytics
+                                                        </div>
+                                                        <div class="tb-ctr-section-body">
+                                                            View and export (to CSV) a variety of advanced metrics and video data.
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div style="clear:both"></div>
+
+                        </div>
+                    </div>
+
+                    <div id="tb-ctr-analytics-container" style="display:none;">
+
+
+                        <div class="tb-ctr-display-bodya">
+
+
+                            <div id="tb-ctr-wl-loaded" style="position:relative;">
+                                <div class="tb-ctr-display-left" style="background:#f4f4f4; padding:20px 22px 0 15px; margin:-15px 0 0 -15px; height:100%;">
+                                    <div id="loadingtest" style="display:none;">LOADING</div>
+                                    <div class="tb-font-size-sm tb-font-bold">
+                                        Time Frame
+                                    </div>
+                                    <select id="tb-ctr-tf-select" style="width:100%;" class="tb-dropdown-menu tb-margin-5">
+                                        <option value="Lifetime">Lifetime</option>
+                                        <optgroup label="Video's First...">
+                                            <option value="1">24 Hours</option>
+                                            <option value="2">48 Hours</option>
+                                            <option value="7">7 Days</option>
+                                            <option value="30">30 Days</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="tb-margin-top-15">
+                                        <div class="tb-font-size-sm tb-font-bold">
+                                            Traffic Source
+                                        </div>
+                                        <div id="tb-ctr-ts-na" style="font-size: .9em;color: #888;line-height: 16px;padding: 5px; display:none;">
+                                            * Only available for the Lifetime Time Frame *
+                                        </div>
+                                        <select id="tb-ctr-ts-select" style="width:100%;" class="tb-dropdown-menu tb-margin-5">
+                                            <option value="All" selected>All</option>
+                                            <option value="YT_SEARCH">Search</option>
+                                            <option value="YT_RELATED">Suggested</option>
+                                            <option value="SUBSCRIBER">Browse</option>
+                                            <option value="PLAYLIST">Playlists</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="tb-margin-top-15">
+
+                                        <div class="tb-font-size-sm tb-font-bold">
+                                            Min. Impressions
+                                        </div>
+                                        <select style="width:100%" id="tb-ctr-mi-select" class="tb-dropdown-menu tb-margin-5">
+                                            <option selected value="0">None</option>
+                                            <optgroup label="At least...">
+                                                <option value="1">1</option>
+                                                <option value="100">100</option>
+                                                <option value="1000">1,000</option>
+                                                <option value="10000">10,000</option>
+                                                <option value="100000">100,000</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+                                <div class="tb-ctr-display-right">
+                                    <table id="tb-ctr-wl-table" style=" position:relative; top:17px; background:#f1f1f1; z-index:9;">
+                                        <tr>
+                                            <th style="width: 440px; font-weight:normal; text-align:left; background:#f1f1f1; border-bottom:solid 2px #666; padding:5px; padding-left:10px; font-size:1.1em; ">
+                                                Video
+                                            </th>
+                                            <th class="tb-ctr-sort-Views tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 85px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="Clicks">
+                                                    Clicks
+                                                </span>
+                                                <br />
+                                                <span class="tb-ctr-sort" data-ctr-sort="Impressions">
+                                                    <span style="font-size:.75em">Impressions</span>
+                                                </span>
+                                            </th>
+                                            <th class="tb-ctr-sort-Duration tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 100px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="Views">
+                                                    Views
+                                                </span>
+                                                <br />
+                                                <span class="tb-ctr-sort" data-ctr-sort="YTFactor">
+                                                    <span style="font-size:.75em">Clicks/Views</span>
+                                                </span>
+                                            </th>
+                                            <th class="tb-ctr-sort-Impressions tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 85px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="WatchTime">
+                                                    Avg Dur
+                                                </span>
+                                                <br />
+                                                <span class="tb-ctr-sort" data-ctr-sort="WatchPercentage">
+                                                    <span style="font-size:.75em">Avg %</span>
+                                                </span>
+                                            </th>
+                                            <th class="tb-ctr-sort-Clicks tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 85px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="WTpI">
+                                                    WT<span style="font-size:.7em"> per </span>I
+                                                </span>
+                                                <br />
+                                                <span class="tb-ctr-sort" data-ctr-sort="TotalWatchTime">
+                                                    <span style="font-size:.75em">Total WT</span>
+                                                </span>
+
+                                            </th>
+                                            <th class="tb-ctr-sort-CTR tb-cursor-pointer" data-ctr-sort="CTR" style="font-weight:bold; text-align:center; background:#f1f1f1; width: 65px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="CTR">
+                                                    CTR
+                                                </span>
+                                            </th>
+                                            <th class="tb-ctr-sort-score tb-cursor-pointer" data-ctr-sort="Rank" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 80px;border-bottom:solid 2px #666;  padding:5px; font-size:1.1em;">
+                                                <span class="tb-ctr-sort" data-ctr-sort="Rank">
+                                                    Pwr&nbsp;Rank
+                                                </span>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <div id="tb-ctr-wl-container" style="max-height:380px; height: 380px; overflow:auto; margin-top:15px; border-left:solid 1px #ddd; border-bottom:solid 1px #ccc;">
+                                        <table style="width:100%;" id="tb-ctr-wl-data">
+                                        </table>
+                                    </div>
+                                    <div style=" border:solid 1px #ddd; padding:5px 8px; margin-top:15px; position: relative; display:none;">
+                                        <div id="tb-ctr-distribution-label" style="text-align: center;position:absolute;left: 240px;top: 90px;font-size:12px;font-weight:bold;z-index: 9;width: 150px;background: #f1f1f1;padding: 3px 3px;">
+                                            CTR
+                                            Distribution
+                                        </div>
+                                        <div id="tb-ctr-distribution" style="height: 90px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tb-ctr-element-inspector-container" style="display:none;">
+                        <!--<div class="tb-ctr-display-header">
+                            Element Inspector
+                        </div>-->
+                        <div class="tb-ctr-display-bodya">
+                            <div id="tb-ctr-element-inspector-loaded" style="position:relative; border:0px;">
+                                <div class="tb-ctr-display-left" style="background:#f4f4f4; padding:10px 22px 0 15px; margin:-45px 0 0 -15px; height:120%; width:155px !important;">
+
+                                    <div style="padding-bottom:10px; font-weight:bold; font-size:18px; margin-top:15px;">
+                                        Faces
+                                    </div>
+                                    <div style="padding-left:5px">
+                                        <div id="tb-ctr-faces-option" data-cr-option="FaceCounts" class="tb-ctr-tab-option tb-ctr-tab-option-selected">
+                                            <div class="tb-ctr-tab-option-header">Face vs No face</div>
+                                            <!--<div class="tb-ctr-tab-option-body tb-ctr-tab-option-body-show">How many faces are shown in the thumbnail</div>-->
+                                        </div>
+
+                                        <div data-cr-option="FaceEmotions" class="tb-ctr-tab-option">
+                                            <div class="tb-ctr-tab-option-header">Emotions</div>
+                                            <!--<div class="tb-ctr-tab-option-body">Different emotions in thumbnail faces</div>-->
+                                        </div>
+                                        <div data-cr-option="FaceAttributes" class="tb-ctr-tab-option">
+                                            <div class="tb-ctr-tab-option-header">Sizes</div>
+                                            <!--<div class="tb-ctr-tab-option-body">Other attributes of faces in thumbnails</div>-->
+                                        </div>
+                                    </div>
+                                    <div style="padding-bottom:10px; font-weight:bold; font-size:18px; margin-top:45px;">
+                                        Text
+                                    </div>
+                                    <div style="padding-left:10px">
+
+                                        <div data-cr-option="TextAnalysis" class="tb-ctr-tab-option">
+                                            <div class="tb-ctr-tab-option-header">Text vs No Text</div>
+                                            <!--<div class="tb-ctr-tab-option-body">A look at text (size, # words, etc)</div>-->
+                                        </div>
+                                        <div data-cr-option="WordAnalysis" class="tb-ctr-tab-option">
+                                            <div class="tb-ctr-tab-option-header">Words in Titles</div>
+                                            <!--<div class="tb-ctr-tab-option-body">Which words drive the highest CTR</div>-->
+                                        </div>
+                                    </div>
+                                    <div style="margin-top:30px; font-size:12px; line-height: 14px; padding-left:5px">
+                                        <b>Disclaimer</b>: TubeBuddy ties into Amazon's <a href="https://aws.amazon.com/rekognition/image-features/?nc=sn&loc=3&dn=2" target="_blank">Image Rekognition API</a>. It's not always 100% accurate.
+                                    </div>
+                                </div>
+                                <div class="tb-ctr-display-right">
+                                    <div data-tab-name="FaceCounts" class="tb-cr-element-section">
+
+
+                                        <div class="tb-clickmagnet-outside">
+                                            <div class="tb-clickmagnet-whiteside" style="position:relative; top:10px; left:25px;">
+                                                <div class="tb-clickmagnet-ctr">Aggregate Click Through Rates</div>
+                                                <div style="width:370px; height:370px;" id="tb-ctr-grid-face-counts"></div>
+                                            </div>
+                                            <div style="width:300px;" class="tb-clickmagnet-greyside">
+                                                <div style="font-size: 24px;">
+                                                    Should you include a face in your thumbnails?
+                                                </div>
+                                                <div style="margin: 15px 0px 15px;padding: 10px 0 0 10px; position:relative; left:3px;">
+                                                    <img class="" src="https://img.youtube.com/vi/4cl-F3zAP7c/mqdefault.jpg" style="width: 110px;border: solid 3px #444;">
+                                                    <span style="font-size: 18px;font-weight:bold;position:relative;top: -28px;padding: 0 10px;">
+                                                        VS
+                                                    </span>
+                                                    <img class="" src="https://img.youtube.com/vi/81iqGxLh-a4/mqdefault.jpg" style="width: 110px;border: solid 3px #444;">
+                                                </div>
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    The general rule of <i>thumb</i> (pun intended) is that <b>yes</b>, bringing the human element of a face, especially with emotion, will drive more clicks to your videos.
+                                                    <span id="tb-cm-consider-face">    Consider running an <a href="https://www.tubebuddy.com/tools#videoabtests" target="_blank">A/B Test</a> to see what works best for your specific audience.</span>
+                                                </div>
+
+                                                <div style="margin-top: 15px;">
+                                                    <img src="" class="tb-clickmagnet-channel" style="height:20px;width:20px;border-radius:50%;position: relative;top: 5px;margin-right: 3px;"> <b>Your Channel</b>
+                                                </div>
+                                                <div style="margin-top: 8px;padding-left: 31px;">
+                                                    <span id="tb-clickmagnet-face-analysis"></span>
+
+                                                </div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div data-tab-name="FaceEmotions" class="tb-cr-element-section">
+
+                                        <div class="tb-clickmagnet-outside">
+                                            <div style="width:370px; max-width:370px; overflow-x:auto; position:relative; top:10px; left:25px;" class="tb-clickmagnet-whiteside">
+                                                <div class="tb-clickmagnet-ctr">Aggregate Click Through Rates</div>
+
+                                                <div style=" height:370px;  width: 700px;  margin-top:0px;" id="tb-ctr-grid-face-emotions"></div>
+                                            </div>
+                                            <div style="width:300px;" class="tb-clickmagnet-greyside">
+                                                <div style="font-size: 26px;">
+                                                    Which emotion drives the most clicks?
+                                                </div>
+                                                <div style="margin: 12px 0px 15px;padding: 10px 0 0 0px; position:relative; left:0px;">
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/1.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/35.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/53.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/47.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/45.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/67.png" style="height:25px;" /> &nbsp;
+                                                    <img src="https://s3.us-west-1.amazonaws.com/img.tubebuddy.com/emoji/people/40.png" style="height:25px;" /> &nbsp;
+
+                                                </div>
+                                                <div style="font-size:14px;margin-top: 25px; line-height:19px;">
+                                                    Every channel's audience is different.
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    Use the graph to the left to get an overall sense at how your audience responds to different emotions.
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    Each column is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain a thumbnail matching the emotion based on <a href="https://aws.amazon.com/rekognition/" target="_blank">Amazon Image Rekognition</a> (which isn't always perfect!).
+                                                </div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div data-tab-name="FaceAttributes" class="tb-cr-element-section">
+                                        <div class="tb-clickmagnet-outside">
+                                            <div class="tb-clickmagnet-whiteside" style="position:relative; top:10px; left:25px;">
+                                                <div class="tb-clickmagnet-ctr">Aggregate Click Through Rates</div>
+                                                <div style="width:370px; height:370px;" id="tb-ctr-grid-face-attributes"></div>
+
+                                            </div>
+                                            <div style="width:300px;" class="tb-clickmagnet-greyside">
+
+                                                <div style="font-size: 26px;">
+                                                    What face size drives the most clicks?
+                                                </div>
+                                                <div style="margin: 12px 0px 15px;padding: 10px 0 0 0px; position:relative; left:0px;">
+
+                                                    <table style="border:0px;">
+                                                        <tr>
+                                                            <td style="width:33%">
+                                                                Long Shot
+                                                                <img src="https://img.youtube.com/vi/rzGGpR2FYWE/mqdefault.jpg" style="max-width:95%" />
+                                                            </td>
+                                                            <td style="width:33%">
+                                                                Med. Shot
+                                                                <img src="https://img.youtube.com/vi/TdLwXYCt0fY/mqdefault.jpg" style="max-width:95%" />
+                                                            </td>
+                                                            <td style="width:33%">
+                                                                Close Up
+                                                                <img src="https://img.youtube.com/vi/G9YFEteeqDg/mqdefault.jpg" style="max-width:95%" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                </div>
+                                                <div style="font-size:14px;margin-top: 17px; line-height:19px; margin-right:-10px;">
+                                                    Don't take it personally, but putting yourself front and center isn't always best.
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px; margin-right:-8px;">
+
+                                                    Certain types of channels (cooking, tech, etc), may do better focusing on the
+                                                    subject of the video whereas other types (vlogging, family, etc)
+                                                    rely on the personal connection and large faces can help.
+
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    Each column in the graph is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain a thumbnail matching the face size.
+                                                </div>
+
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+                                    </div>
+                                    <div data-tab-name="TextAnalysis" class="tb-cr-element-section">
+
+                                        <div class="tb-clickmagnet-outside">
+                                            <div class="tb-clickmagnet-whiteside" style="position:relative; top:10px; left:25px;">
+                                                <div class="tb-clickmagnet-ctr">Aggregate Click Through Rates</div>
+                                                <div style="width:370px; height:370px;" id="tb-ctr-grid-text-analysis"></div>
+                                            </div>
+                                            <div style="width:300px;" class="tb-clickmagnet-greyside">
+                                                <div style="font-size: 26px;">
+                                                    Should you include text on your thumbnail?
+                                                </div>
+                                                <div style="margin: 15px 0px 15px;padding: 10px 0 0 10px; position:relative; left:3px;">
+                                                    <img class="" src="https://img.youtube.com/vi/MURPf_6r8z4/mqdefault.jpg" style="width: 110px;border: solid 3px #444;">
+                                                    <span style="font-size: 22px;font-weight:bold;position:relative;top: -28px;padding: 0 10px;">
+                                                        VS
+                                                    </span>
+                                                    <img class="" src="https://img.youtube.com/vi/V_yDTSrsv5g/mqdefault.jpg" style="width: 110px;border: solid 3px #444;">
+                                                </div>
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    The general rule of <i>thumb</i>  is that <b>yes</b>, adding a few large words to your thumbnail will make it stand out
+                                                    and build curiosity or excitement and ultimately drive more clicks to your videos.
+                                                    <span id="tb-cm-consider-text">
+                                                        Consider running an <a href="https://www.tubebuddy.com/tools#videoabtests" target="_blank">A/B Test</a> to see what works best for your specific audience.
+                                                    </span>
+                                                </div>
+
+                                                <div style="margin-top: 15px;">
+                                                    <img src="" class="tb-clickmagnet-channel" style="height:20px;width:20px;border-radius:50%;position: relative;top: 5px;margin-right: 3px;"> <b>Your Channel</b>
+                                                </div>
+                                                <div style="margin-top: 8px;padding-left: 31px;">
+                                                    <span id="tb-clickmagnet-text-analysis"></span>
+
+                                                </div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div data-tab-name="WordAnalysis" class="tb-cr-element-section">
+
+                                        <div class="tb-clickmagnet-outside">
+                                            <div style="width:370px; max-width:370px; overflow-x:auto; top:10px; left:25px;" class="tb-clickmagnet-whiteside">
+                                                <div class="tb-clickmagnet-ctr">Aggregate Click Through Rates</div>
+
+                                                <div style="height:370px;  width: 1200px; margin-top:0px;" id="tb-ctr-grid-word-analysis"></div>
+                                            </div>
+                                            <div style="width:300px;" class="tb-clickmagnet-greyside">
+                                                <div style="font-size: 26px;">
+                                                    Which words in Titles drive the most clicks?
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 25px; line-height:19px;">
+                                                    It's not all about the thumbnail. The words (and topics) that you choose matter when considering click through rates.
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    Use the graph to the left to get an overall sense at how your audience responds to different words in your video titles.
+                                                </div>
+
+                                                <div style="font-size:14px;margin-top: 15px; line-height:19px;">
+                                                    Each column is an aggregate (total) of all impressions and clicks across your most recent 50 uploads
+                                                    that contain the <b>word</b> below it in its title.
+                                                </div>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="tb-ctr-opportunity-finder-container" style="display:none;">
+
+                        <div class="tb-ctr-display-header">
+                            CTR Opportunities
+                        </div>
+                        <div class="tb-ctr-display-body">
+                            <div id="tb-ctr-of-loaded" style="position:relative;">
+                                <div class="tb-ctr-display-left" style="width:150px;">
+                                    <div style="font-weight:bold; font-size:16px; line-height:20px;">
+                                        Where do your opportunities lie?
+                                    </div>
+
+                                    <div style="margin-top:15px;">
+                                        Videos performing well (total watch time, impressions, avg view duration, etc)
+                                        with a low CTR have the biggest potential for gain.
+
+                                    </div>
+
+                                    <div style="margin-top:15px;">
+                                        They are proven winners but not enough people are clicking to watch.
+                                    </div>
+
+                                    <div style="margin-top:10px;">
+                                        Focus on improving Titles and Thumbnails with the highest opportunity scores.
+                                    </div>
+
+                                </div>
+
+                                <div class="tb-ctr-display-right">
+
+
+                                    <table id="tb-ctr-op-table" style=" position:relative; top:17px; background:#f1f1f1; z-index:9;">
+                                        <tr>
+                                            <th class="tb-op-sort-Title tb-cursor-pointer" style="width: 500px; font-weight:normal; text-align:left; background:#f1f1f1; border-bottom:solid 2px #666; padding:5px; padding-left:10px; font-size:1.1em; ">
+                                                Video
+                                            </th>
+                                            <th style="font-weight:normal; text-align:center; background:#f1f1f1; width: 140px;border-bottom:solid 2px #666;  padding:5px; font-size:1em;">
+                                                <span id="tb-avg-ctr-analyzed"></span>
+                                            </th>
+                                            <th style="font-weight:normal; text-align:center; background:#f1f1f1; width: 140px;border-bottom:solid 2px #666;  padding:5px; font-size:1em;">
+                                                Opportunity
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <div id="tb-ctr-op-container" style="max-height:300px; height: 300px; overflow:auto; margin-top:15px; border-left:solid 1px #ddd; border-bottom:solid 1px #ccc;">
+                                        <table style="width:100%;" id="tb-ctr-op-data">
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="tb-ctr-top-performers-container" style="display:none;">
+
+                        <!--<div class="tb-ctr-display-header">
+                            Video Performance Analysis
+                        </div>-->
+                        <div class="tb-ctr-display-bodya">
+                            <div id="tb-ctr-of-loaded" style="position:relative; border:0px;">
+                                <div class="tb-ctr-display-left" style="background:#f4f4f4; width:180px; padding:50px 22px 0 15px; margin:-45px 0 0 -15px; height:120%;">
+                                    <div class="tb-margin-top-15">
+                                        <div class="tb-font-size-sm tb-font-bold">
+                                            Traffic Source
+                                        </div>
+                                        <select id="tb-bw-ts-select" style="width:100%;" class="tb-dropdown-menu tb-margin-5">
+                                            <option value="All" selected>All</option>
+                                            <option value="YT_SEARCH">YouTube Search</option>
+                                            <option value="YT_RELATED">Suggested Videos</option>
+                                            <option value="SUBSCRIBER">Browse Features</option>
+                                            <!--<option value="SUBSCRIBER">Your Subscribers</option>-->
+                                            <!--<option value="PLAYLIST">Playlists</option>-->
+                                        </select>
+                                    </div>
+                                    <div style="margin-top:15px; font-size:14px; padding-left: 10px; line-height:19px; padding-right:5px;" id="tb-ctr-power-description">
+                                        Top performing videos in <b>All Traffic Sources</b>.<br /><br />If you want to grow your channel faster, focus on making videos similar to the top ranking videos.
+                                    </div>
+                                    <div style="margin-top:15px; font-size:11px; padding-left: 10px; line-height:14px; padding-right:5px;">
+                                        <div style="margin-bottom:6px; line-height:18px;">
+                                            <b>Metrics</b><br />
+                                            <div class="tb-move-up1 tb-ctr-pc-g tb-ctr-pc-vh"></div>: 90th Percentile<br />
+                                            <div class="tb-move-up1 tb-ctr-pc-g tb-ctr-pc-h"></div>: 80th Percentile<br />
+                                            <div class="tb-move-up1 tb-ctr-pc-g tb-ctr-pc-a"></div>: 70th Percentile<br />
+                                            <div class="tb-move-up1 tb-ctr-pc-g tb-ctr-pc-l"></div>: 60th Percentile<br />
+                                            <div class="tb-move-up1 tb-ctr-pc-g tb-ctr-pc-vl"></div>: Below 60th Percentile<br />
+                                            <div style="margin-top:5px;">
+                                                "Clicks" are counted <a href="https://i.imgur.com/Aq7BdM1.png" target="_blank">here</a>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tb-ctr-display-right" style="padding-left:230px; top:0px; padding-top:15px;">
+                                    <div style="float:left; width: 730px; margin:0px 0 0 0px;">
+                                        <table id="tb-ctr-op-table" style="position:relative; top:0px; background:#f1f1f1; z-index:9; width:100%;">
+                                            <tr>
+                                                <th class="tb-op-sort-Title tb-cursor-pointer" style="font-weight:normal; text-align:left; background:#f1f1f1; border-bottom:solid 2px #666; padding:5px; padding-left:10px; font-size:1.1em; ">
+                                                    Rank / Video
+                                                </th>
+                                                <th style="font-weight:normal; text-align:center; background:#f1f1f1; border-bottom:solid 2px #666;  padding:5px; font-size:1em; width: 130px;">
+                                                    Metrics
+                                                </th>
+                                                <th style="font-weight:normal; text-align:center; background:#f1f1f1; border-bottom:solid 2px #666;  padding:5px; font-size:1em; width: 130px;">
+                                                    <span style="padding-right:0px;">
+                                                        Strength
+                                                    </span>
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <div id="tb-ctr-tp-container" style="max-height:340px; height: 340px; overflow:auto; margin-bottom:5px; border-left:solid 1px #ddd; border-bottom:solid 1px #ccc;">
+                                            <table style="width:100%;" id="tb-ctr-tp-data">
+                                            </table>
+                                        </div>
+                                        <div style="text-align:right; font-size:11px; padding-left: 10px; line-height:14px; padding-right:5px; position:relative; top:3px;">
+                                            * Overall Strength relative to other videos in the list.
+                                        </div>
+                                    </div>
+                                    <div style="float:left; width: 360px; margin-left:18px; display:none; ">
+                                        <table id="tb-ctr-op-table" style=" position:relative; top:0px; background:#f1f1f1; z-index:9;">
+                                            <tr>
+                                                <th class="tb-op-sort-Title tb-cursor-pointer" style="width: 405px; font-weight:normal; text-align:left; background:#f1f1f1; border-bottom:solid 2px #666; padding:5px; padding-left:10px; font-size:1.1em; ">
+                                                    BOTTOM Performers
+                                                </th>
+
+                                                <th class="tb-op-sort-CTR tb-cursor-pointer" style="font-weight:normal; text-align:center; background:#f1f1f1; width: 135px;border-bottom:solid 2px #666;  padding:5px; font-size:1em;">
+                                                    Performance
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <div id="tb-ctr-bp-container" style="max-height:340px; height: 340px; overflow:auto; margin-bottom:15px; border-left:solid 1px #ddd; border-bottom:solid 1px #ccc;">
+                                            <table style="width:100%;" id="tb-ctr-bp-data">
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div style="clear:both"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+        </div>
+        <div class="tb-module-footer" style="display:none" id="tb-ctr-footer">
+            <a class="tb-btn tb-btn-grey tb-ctr-back-home" id="tb-ctr-back" style="display:none;">Back</a>
+            <a id="tb-ctrcenter-export" class="tb-btn tb-btn-primary" style="float:right; display:none; position:relative; top:3px; left:-2px;">Export to CSV</a>
+            <a id="tb-ctrcenter-export-opportunity" class="tb-btn tb-btn-primary" style="float:right; display:none; position:relative; top:3px; left:-2px;">Export to CSV</a>
+        </div>
+        <!--End BASE Footer-->
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

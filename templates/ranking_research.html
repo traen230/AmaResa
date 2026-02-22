@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ランキングリサーチ</title>
+    <style>
+        body {
+            font-family: "Meiryo", "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #0f2a44, #1e4f7a);
+            margin: 0;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 18px;
+        }
+        h1, h2, h3 {
+            margin: 0 0 12px;
+        }
+        .subtitle {
+            color: #cfe6ff;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d9ecff;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            padding: 11px 12px;
+            font-size: 14px;
+        }
+        button, .btn-link {
+            display: inline-block;
+            margin-top: 12px;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            background: linear-gradient(135deg, #1e90ff, #1c6fd5);
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .btn-link.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+        .logs {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .logs li {
+            margin-bottom: 6px;
+            color: #eaf4ff;
+            font-size: 14px;
+        }
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 980px;
+            background: rgba(10, 20, 35, 0.45);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            padding: 8px;
+            font-size: 13px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.12);
+            color: #d9ecff;
+        }
+        td a {
+            color: #8fd0ff;
+        }
+        img {
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 4px;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h1>ランキングリサーチ</h1>
+        <div class="subtitle">AmazonランキングURLを指定してライバル候補を抽出します。</div>
+
+        <form method="post">
+            <label for="ranking_url">AmazonランキングURL</label>
+            <input id="ranking_url" type="text" name="ranking_url" placeholder="https://www.amazon.co.jp/..." required>
+            <button type="submit">リサーチ開始</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>実行ログ</h3>
+        <ul class="logs">
+            {% for log in logs %}
+            <li>{{ log }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="actions">
+            {% if csv_filename %}
+            <a class="btn-link" href="{{ url_for('download_file', filename=csv_filename) }}">CSVをダウンロード</a>
+            {% endif %}
+            <a class="btn-link secondary" href="{{ url_for('index') }}">トップへ戻る</a>
+        </div>
+    </div>
+
+    {% if results %}
+    <div class="card">
+        <h3>ライバル商品一覧</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>順位</th>
+                        <th>ASIN</th>
+                        <th>商品名</th>
+                        <th>商品URL</th>
+                        <th>レビュー数</th>
+                        <th>レビュー点数</th>
+                        <th>月販数（親）</th>
+                        <th>月販数（子）</th>
+                        <th>画像</th>
+                        <th>価格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in results %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td><a href="{{ row[3] }}" target="_blank" rel="noopener">リンク</a></td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                        <td>{{ row[6] }}</td>
+                        <td>{{ row[7] }}</td>
+                        <td>
+                            {% if row[8] != "N/A" %}
+                            <img src="{{ row[8] }}" alt="商品画像">
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </td>
+                        <td>{{ row[9] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

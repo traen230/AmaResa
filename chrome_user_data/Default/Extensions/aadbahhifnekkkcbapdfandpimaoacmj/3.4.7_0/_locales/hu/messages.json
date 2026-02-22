@@ -1,0 +1,33 @@
+{
+   "EXTENSION_DESCRIPTION": {
+      "message": "Segítségével könnyen megtalálhatja a termékforrásokat az Alibaba, AliExpress, 1688, Taobao, Pinduoduo és Yiwugo oldalakon."
+   },
+   "EXTENSION_NAME": {
+      "message": "AliPrice keresés kép alapján az Alibabán"
+   },
+   "context_menu_screenshot_search": {
+      "message": "Rögzítse a kép alapján történő kereséshez"
+   },
+   "context_menus_goote_trans": {
+      "message": "Oldal lefordítása/Eredeti megjelenítése"
+   },
+   "context_menus_search_by_image": {
+      "message": "Kép szerint kereshet a $storeName$ oldalon",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_search_by_image_capture": {
+      "message": "Rögzítés a $storeName$ helyre",
+      "placeholders": {
+         "storeName": {
+            "content": "$1"
+         }
+      }
+   },
+   "context_menus_translator": {
+      "message": "Rögzítse a fordításhoz"
+   }
+}

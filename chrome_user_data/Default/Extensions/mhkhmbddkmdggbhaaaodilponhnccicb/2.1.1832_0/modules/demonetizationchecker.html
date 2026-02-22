@@ -1,0 +1,213 @@
+﻿<!--Start ML Modal Button-->
+<div style="display:none">
+    <div class="tb-dc-trigger-container tb-trigger-demon-checker" style="display:none;">
+        <a class="tb-button tb-button-default" style="position:relative; margin-left:5px; text-decoration:none;">
+            <img class="tb-height12" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" style="margin-right: 2px; position:relative; top:-1px;">
+            <!-- Find Demonetized Videos
+            &nbsp;-->
+            <img src="{PLUGIN_FILE_ROOT}/images/modules/demonetization/demonetization.png" style="height:16px; position:relative; top:-1px;" />
+            Check
+        </a>
+    </div>
+</div>
+<!--End ML Modal Button-->
+<!--Start Base Module Template-->
+<div id="tb-demon-checker-container" class="tb-module-template draggable-container" style="display:none;">
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Demonetization Double-Check
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=bulkdemonetization" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i data-draggable="false" class="medium material-icons tb-icon-white">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+        <!--Start Base Module Container-->
+        <div class="tb-module-content">
+
+            <!--Start Welcome Section-->
+            <div id="tb-demon-checker-welcome-studio" style="display:none;">
+                <h2>
+                    Are you missing out on <span style="color:green; font-weight:bold;">$Revenue$</span> because
+                    of demonetized videos that you don't know about?
+                </h2>
+                <div id="tb-demon-checker-start-searching2">
+
+                </div>
+
+            </div>
+
+            <!--Start Welcome Section-->
+            <div id="tb-demon-checker-welcome">
+                <h2>
+                    Are you missing out on <span style="color:green; font-weight:bold;">$Revenue$</span> because
+                    of demonetized videos that you don't know about?
+                </h2>
+                <div id="tb-demon-checker-start-searching">
+                    <p>Let TubeBuddy find them for you...</p>
+                    <div style="margin: 15px; font-size:14px;">
+                        <input type="radio" name="tbhowmanydc" data-count="100" checked /> Search Recent Videos (100 Videos, quick)
+                        <div style="margin-top:5px; font-size:14px;">
+                            <input type="radio" name="tbhowmanydc" data-count="5000" />
+                            Search All Videos (Max 5,000, might take a while)
+                        </div>
+                        
+                    </div>
+                    <br />
+                    <a class="tb-btn-blue" id="tb-demon-checker-start">
+                        &nbsp; Start! &nbsp;
+                    </a>
+                </div>
+
+            </div>
+            <!--End  Welcome Section-->
+            <!--Start Processing Section-->
+            <div id="tb-demon-checker-status" style="display:none;">
+                <div class="tb-demon-status-label tb-demon-status-label-header">
+                    <span id="tb-dc-videos-searched" class="tb-demon-status-value">0</span>
+                    <span style="font-size:1.2em; color:#cdaa3f; font-weight:bold;">$</span>
+                    Videos w/ Limited or No Ads
+                </div>
+                <div style="display:none">
+                    <div class="tb-demon-status-label">
+                        <span id="tb-dc-videos-monetized" class="tb-demon-status-value">0</span>
+                        <span style="font-size:1.2em; color:green; font-weight:bold;">$</span> Monetized
+                    </div>
+                    <div class="tb-demon-status-label">
+                        <span id="tb-dc-videos-not-monetized" class="tb-demon-status-value">0</span>
+                        <span style="font-size:1.2em; color:#777; font-weight:bold;">$</span> Not Monetized
+                    </div>
+                    <div class="tb-demon-status-label">
+                        <span id="tb-dc-videos-copyright" class="tb-demon-status-value">0</span>
+                        <span style="font-size:1.2em; color:dodgerblue; font-weight:bold;">$</span> Copright Claim
+                    </div>
+                </div>
+                
+                <div class="tb-demon-status-label" style="border-bottom:solid 1px #ddd; padding-bottom:10px;">
+                    <span id="tb-dc-videos-limited-or-no-ads-reviewed" class="tb-demon-status-value">0</span>
+                    <i class="material-icons" style="color:green; margin-right:5px;">check</i> <span style="position:relative; top:-4px"> Review requested already</span>
+                </div>
+                
+                <div class="tb-demon-status-label" id="tb-dc-no-ads-requested-list-container" style="display:none; padding-left:17px;">
+                    <div id="tb-dc-no-ads-requested-list" style="max-height:190px; overflow:auto;">
+
+                    </div>
+                </div>
+                
+                <div class="tb-demon-status-label">
+                    <span id="tb-dc-videos-limited-or-no-ads-note-reviewed" class="tb-demon-status-value">0</span>
+                    <i class="material-icons" style="color:#999; margin-right:5px;">check</i> <span style="position:relative; top:-4px"> Review not requested yet </span>
+                </div>
+
+                <div class="tb-demon-status-label" id="tb-dc-no-ads-list-container" style="display:none;">
+                    <div class="tb-font-size-xs tb-margin-bottom-20 tb-flex tb-justify-center tb-items-center">
+                        <img style="margin-right:3px;" src="{PLUGIN_FILE_ROOT}/images/icons/error.png" /><span style="color:#ff5632;">YouTube now prevents bulk submissions. All requests must be done manually.</span>
+                    </div>
+
+                    <!-- Videos needing review -->
+                    <div id="tb-dc-no-ads-list" style="max-height:190px; overflow:auto; border-left: solid 2px #aaa; padding: 0 10px 5px 10px; margin:0px 0 0 25px"></div>
+
+                    <!-- Video completed -->
+                    <div class="tb-demon-status-label" id="tb-dc-complete" style="display:none;margin: 25px 10px 10px 10px;padding: 10px 15px;background-color: #eee;color: black;line-height: 1.5em;">
+                        <div style="font-size:12px;float: right;width: 120px; margin-left:10px; position:relative; top:-5px;">
+                            Video Id's Submitted:<br>
+                            <textarea id="tb-demon-videoid-list" style="width:90%; position:relative; top:-3px;" rows="4"></textarea>
+                        </div>
+                        <div style="color:green">
+                            <i class="material-icons tb-move-down4">assignment_turned_in</i> Complete!
+                        </div>
+                        <div style="padding-top:10px; line-height:20px; font-size:16px;">
+                            You have submitted the selected videos for manual review by YouTube.
+                        </div>
+                    </div>
+
+                    <!-- Video completed empty -->
+                    <div class="tb-demon-status-label" id="tb-dc-complete-empty" style="display:none;margin: 25px 10px 10px 10px;padding: 10px 15px;background-color: #eee;color: black;line-height: 1.5em;">
+                        <div style="color:green">
+                            <i class="material-icons tb-move-down4">assignment_turned_in</i> Complete!
+                        </div>
+                        <div style="padding-top:10px; line-height:20px; font-size:16px;">
+                            There are no more videos needing a manual review by YouTube.
+                        </div>
+                        <div style="padding-top:10px;line-height:20px">
+                            You may run this process again in the future and if we find any demonetized videos, TubeBuddy will list them for you to review in bulk.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tb-demon-status-label" id="tb-dc-no-ads-list-container-no" style="display:none;margin: 25px 10px 10px 10px;padding: 10px 15px;background-color: #eee;color: black;line-height: 1.5em;">
+                    <div style="color:green">
+                        <i class="material-icons tb-move-down4">assignment_turned_in</i> Processing Complete!
+                    </div>
+                    <div style="padding-top:10px;">
+                        In order to view matching videos, a Star or higher license is required.
+                    </div>
+                    <div style="padding-top:10px;">
+                        Please consider <a id="bt-dc-upgrade">Upgrading your License</a>
+                    </div>
+                </div>
+
+                <div class="tb-demon-status-label" id="tb-dc-no-ads-list-container-empty" style="display:none;margin: 25px 10px 10px 10px;padding: 10px 15px;background-color: #eee;color: black;line-height: 1.5em;">
+
+                    <div style="color:green">
+                        <i class="material-icons tb-move-down4">assignment_turned_in</i> Processing Complete!
+                    </div>
+                    <div style="padding-top:10px;">
+                        We did not find any Demonetized Videos needing to be submitted for manual review.
+                    </div>
+                    <div style="padding-top:10px;">
+                        You may run this process again in the future and if we find any demonetized videos, TubeBuddy will list them for you to review in bulk.
+                    </div>
+
+                </div>
+                <div class="tb-demon-status-label" style="display:none;">
+                    <span id="tb-dc-videos-unkown" class="tb-demon-status-value">0</span>
+                    Unknown
+                    <div class="tb-demon-status-sub-label">We couldn't determine</div>
+                </div>
+            </div>
+            <!--End Processing Section-->
+            <!--Start Results Section-->
+            <div id="tb-demon-checker-created" class="tb-dc-created" style="display:none;">
+                <a class="tb-copy-demon-checker tb-btn-white tb-copy-ml" id="tb-demon-checker-created-copy"><i class="small material-icons">content_copy</i> Copy<i class="small material-icons">check</i></a>
+
+                <div class="tb-demon-checker-success tb-dc-success">
+                    <p> Link successfully created!</p>
+                    <a id="tb-demon-checker-created-link" class="tb-demon-checker-created-text tb-dc-created-text" target="_blank"></a>
+                </div>
+            </div>
+            <!--End Results Section-->
+
+        </div>
+        <!--End BASE Module Container-->
+        <!--Start BASE Footer Module-->
+        <div class="tb-module-footer" style="padding-bottom:15px;">
+
+            <div style=" display:none; font-size:1.3em; position:relative; top:4px; left:5px;" id="tb-dc-processing">
+                <span class="tb-spinner"></span>
+                <span id="tb-dc-processing-message" style="padding-left:3px;">
+                    Scanning videos...
+                </span>
+
+                <span id="tb-dc-cancel-process" style="color:red; font-weight:500; padding-left:10px; position:relative; left:-20px; top:-5px; display:none; float:right; font-size:.8em; cursor:pointer;">
+                    <i class="small material-icons tb-move-down4">stop</i>
+                    STOP
+                </span>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <!--End BASE Footer-->
+    </div>
+    <!--End BASE Shadow-->
+</div>
+<!--End BASE Module Template-->

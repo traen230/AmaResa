@@ -1,0 +1,283 @@
+﻿<div style="display:none">
+    <div id="tb-search-term-analysis-container">
+        <div class="tb-search-term-analysis-container-header">
+            <div class="tb-search-term-analysis-flex-align-center">
+                <img class="tb-search-term-analysis-header-logo tb-margin-right10" src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+                <span class="tb-search-term-analysis-header-title">Search Explorer</span>
+            </div>
+            
+            <div class="tb-search-term-analysis-container-header1">
+                <a style="text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=searchexplorer" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+                <span title="minimize" class="tb-margin-left5 tb-move-up2 tb-search-term-analysis-header-carret">
+                    <i id="tb-search-term-analysis-disable" class="tb-search-term-analysis-disable-img tb-cursor-pointer material-icons tb-icon-white">arrow_drop_down</i>
+                    <i id="tb-search-term-analysis-enable" class="tb-search-term-analysis-disable-img tb-cursor-pointer material-icons tb-icon-white" style="display:none;">arrow_drop_up</i>
+                </span>
+            </div>
+
+        </div>
+        <div id="tb-search-term-analysis-body">
+            <div class="">
+                <div>
+                    <div id="tb-search-term-analysis-keyword-score-tab" class="tb-search-term-analysis-tab tb-search-term-analysis-tab-active" data-tab-container="tb-search-term-analysis-keyword-score-container" style="float:left">
+                        <span>
+                            Keyword Score
+                        </span>
+                    </div>
+                    <div class="tb-search-term-analysis-tab tb-search-term-analysis-tab-inactive" data-tab-container="tb-search-term-analysis-keyword-stats-container" style="float:left">
+                        <span>
+                            Keyword Stats
+                        </span>
+                    </div>
+                    <div style="clear:both">
+                    </div>
+                </div>
+
+                <div class="tb-searchalytics-panel">
+                    <div id="tb-search-term-analysis-keyword-score-container-loading" class="tb-search-term-analysis-loading" style="display:none;">
+                        <div> <span class="tb-spinner"></span> Loading...</div>
+                    </div>
+                    <div id="tb-search-term-analysis-keyword-score-container" class="tb-search-term-analysis-tab-content" style="display:none;">
+                        <div id="tb-search-term-analysis-keyword-score-container-free" style="display:none; text-align:center;">
+                            <button title="Show Keyword Score" class="tb-search-term-analysis-keyword-score-container-free-button tb-btn-blue">
+                                Show Keyword Score
+                            </button>
+                        </div>
+
+                        <div id="tb-search-term-analysis-keyword-score-container-paid" style="display:none;">
+                            <div class="tb-margin-top10 tb-search-term-analysis-flex-align-center-space">
+                                <div class="tb-search-term-analysis-keyword-score-label">Search Volume</div>
+                                <div class="tb-search-term-analysis-flex-align-center">
+                                    <div id="tb-search-term-analysis-search-volume-chart-label" class="tb-search-term-analysis-chart-label"></div>
+                                    <div id="tb-search-term-analysis-search-volume-chart" class="tb-search-term-analysis-chart"></div>
+                                </div>
+
+                            </div>
+                            <div class="tb-search-term-analysis-search-amount-container tb-margin-top10 tb-search-term-analysis-flex-align-center-space" style="display:none">
+                                <div class="tb-search-term-analysis-keyword-score-label tb-search-term-analysis-search-amount-container" style="display:none;">Searches per month</div>
+
+                                <div class="tb-search-term-analysis-keyword-search-volume-amount-wrapper">
+                                    <span class="tb-search-term-analysis-search-amount-label tb-search-term-analysis-search-amount"></span> <span data-tbtooltip="The estimated average number of times people search for this exact keyword on YouTube per month globally."><i class="material-icons tb-font-size13 tb-move-down2">help_outline</i></span>
+                                </div>
+                            </div>
+
+                            <div class="tb-margin-top10" style="display:flex; justify-content:space-between; align-items:center;">
+                                <div class="tb-search-term-analysis-keyword-score-label">Competition</div>
+                                <div class="tb-search-term-analysis-flex-align-center">
+                                    <div id="tb-search-term-analysis-difficulty-chart-label" class="tb-search-term-analysis-chart-label"></div>
+                                    <div id="tb-search-term-analysis-difficulty-chart" class="tb-search-term-analysis-chart"></div>
+                                </div>
+                            </div>
+
+                            <!--<div style="clear:both;"></div>-->
+
+                            <div class="tb-margin-top5 tb-search-term-analysis-flex-align-center-space">
+                                <div class="tb-search-term-analysis-keyword-score-label">
+                                    Overall
+                                    <span style="color:gray;font-style: italic;text-transform: lowercase; font-size:12px">
+                                        (Unweighted) <br />
+                                        <a class="tb-search-term-analysis-keyword-score-label-tag-explorer">click here for weighted</a>
+                                    </span>
+                                </div>
+                                <div class="tb-search-term-analysis-total-score-container">
+                                    <div id="tb-search-term-analysis-total-score-desc-container">
+                                        <span id="tb-search-term-analysis-total-score"></span>
+                                        <div id="tb-search-term-analysis-total-score-number" class="tb-font-color-gray tb-margin-top5"></div>
+                                    </div>
+                                    <div id="tb-search-term-analysis-overall-score-chart"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <!--<div style="clear: both"></div>-->
+                                <div class="tb-search-term-analysis-total-score-description-container tb-margin-top5" style="color:#555 !important;">
+                                    <span class="tb-search-term-analysis-keyword-score-desc-label" id="tb-search-term-analysis-total-score-description"></span>
+                                </div>
+                            </div>
+                            <div style="display:none" class="tb-search-term-analysis-keyword-characters">
+                                We've modified your keyword search. <a href="https://tubebuddy.zendesk.com/hc/en-us/articles/9325842108059" target="_blank">Why?</a>
+                                <br />
+                                <span>New Keyword:</span><span class="tb-margin-left10 tb-search-term-analysis-keyword-characters-keyword tb-italic"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="tb-search-term-analysis-keyword-score-quota" class="tb-padding-10" style="display:none">
+                        <span>You've reached your daily limit of keyword scores.  Check back in 24 hrs.</span>
+                    </div>
+                    <div id="tb-search-term-analysis-keyword-stats-container" class="tb-search-term-analysis-tab-content" style="display: none;">
+                        <div id="tb-search-term-analysis-keyword-stats-container-loading" class="tb-search-term-analysis-loading">
+                            <div>  <span class="tb-spinner"></span> Loading...</div>
+                        </div>
+                        <table id="tb-search-term-analysis-keyword-stats-table" style="display: none;">
+                            <thead>
+                                <tr><td class="tb-width200"></td><td></td></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" style="font-size:11px; font-weight:500; text-align:center; margin-bottom:8px;">
+                                        <img src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon-transparent.svg" class="tb-margin-right2 tb-height11" />
+                                        Analysis of channels &amp; videos on this search page.<br />
+                                    </td>
+                                </tr>
+                                <tr class="tb-search-term-analysis-search-amount-container">
+                                    <td class="tb-search-term-analysis-stat-label tb-padding-top5">Searches Per Month</td>
+                                    <td class="tb-padding-top5 tb-search-term-analysis-stat"><span class="tb-search-term-analysis-search-amount"></span><span data-tbtooltip="The estimated average number of times people search for this exact keyword on YouTube per month globally."><i class="material-icons tb-font-size13 tb-move-down1">help_outline</i></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label tb-padding-top5">Most Views</td>
+                                    <td class="tb-padding-top5 tb-search-term-analysis-stat" id="tb-search-term-analysis-highestviews"></td>
+                                </tr>
+                                <tr style="display:none">
+                                    <td class="tb-search-term-analysis-stat-label">Avg Views</td>
+                                    <td class="tb-search-term-analysis-stat" id="tb-search-term-analysis-avgviews"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label">Least Views</td>
+                                    <td class="tb-search-term-analysis-stat" id="tb-search-term-analysis-lowestviews"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label tb-padding-top10">Keyword in Titles</td>
+                                    <td class="tb-padding-top10 tb-search-term-analysis-stat"><span id="tb-search-term-analysis-termintitle"></span>/<span class="tb-search-term-analysis-totalvideos"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label">Keyword in Description</td>
+                                    <td class="tb-search-term-analysis-stat"><span id="tb-search-term-analysis-termindesc"></span>/<span class="tb-search-term-analysis-totalvideos"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label">Keyword in Tags</td>
+                                    <td class="tb-search-term-analysis-stat"><span id="tb-search-term-analysis-termintags"></span>/<span class="tb-search-term-analysis-totalvideos"></span></td>
+                                </tr>
+                                <tr id="tb-search-term-analysis-newvideos-row">
+                                    <td class="tb-search-term-analysis-stat-label tb-padding-top10">Published Last 7 days</td>
+                                    <td class="tb-padding-top10 tb-search-term-analysis-stat" id="tb-search-term-analysis-newvideos"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label">Top Channel</td>
+                                    <td class="tb-search-term-analysis-stat" id="tb-search-term-analysis-topchannel"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tb-search-term-analysis-stat-label">Videos You Own</td>
+                                    <td class="tb-search-term-analysis-stat" id="tb-search-term-analysis-ownedvideos"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tb-padding-bottom10 tb-padding-top10 tb-margin-bottom5 tb-margin-top5">
+
+                <div style="position:relative;top:-3px;">
+                    <span class="tb-search-term-analysis-tab-single">
+                        Related Searches
+                    </span>
+                </div>
+                <div class="tb-searchalytics-panel">
+
+                    <div id="tb-search-term-analysis-autocomplete-container-loading" class="tb-search-term-analysis-loading">
+                        <div>  <span class="tb-spinner"></span> Loading...</div>
+                    </div>
+                    <div id="tb-search-term-analysis-autocomplete-container" class="tb-scroll-content" style="display:none;">
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <div style="position:relative;top:-3px;">
+                    <span class="tb-search-term-analysis-tab-single">
+                        Common Video Tags
+                    </span>
+                </div>
+                <div class="tb-searchalytics-panel">
+
+                    <div id="tb-search-term-analysis-most-used-tags-container-loading" class="tb-search-term-analysis-loading">
+                        <div>  <span class="tb-spinner"></span> Loading...</div>
+                    </div>
+                    <div id="tb-search-term-analysis-most-used-tags-container" style="display:none;">
+                        <div class="tb-font-size11 tb-margin-bottom5 tb-line-height15 tb-margin-top5">
+                            <span>
+                                Select: <a class="tb-search-term-analysis-all-tags tb-search-term-analysis-link">All</a> | <a class="tb-search-term-analysis-none-tags tb-search-term-analysis-link">None</a>
+                            </span>
+                            <span class="tb-margin-left15 tb-opaticity60">Common video tags from the top ranking videos</span>
+                        </div>
+                        <div id="tb-search-term-analysis-most-used-tags-list" class="tb-scroll-content" style="max-height:250px; margin-top:15px;overflow-y:auto;overflow-x:hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tb-search-term-analysis-selected-tags-container">
+                <div class="tb-search-term-analysis-action-select">
+                    <div>
+                        <div class="tb-font-size13 tb-text-align-center">
+                            Tags Selected<br />
+                            <span class="tb-search-term-analysis-selected-count tb-move-down4">0</span>
+                            <div style="font-size:10px; display:none;">
+                                <a style="cursor:pointer">clear</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tb-margin-left10">
+                        <div> Action</div>
+                        <div class="tb-cursor-pointer tb-search-term-analysis-action-menu" style="height:27px;width:185px;">
+                            <div style="display:flex; justify-content:space-between;">
+                                <div class="tb-margin-left6 tb-search-term-analysis-action-selected">Copy to clipboard</div>
+                                <i class="material-icons tb-font-color-gray tb-mat-icon-gray tb-move-up5">arrow_drop_down</i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tb-move-down15">
+                    <button disabled class="tb-btn-blue tb-search-term-analysis-action-insert">
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <div class="tb-margin-top15">
+                <div id="tb-search-term-analysis-historical-container"></div>
+            </div>
+        </div>
+        <div id="tb-search-term-analysis-disabled" class="tb-margin-top10 tb-margin-left25" style="display:none">
+            <div class="tb-search-term-analysis-flex-align-center-space">
+                <div >
+                    <i class="material-icons tb-font-color-gray tb-font-size45">insert_chart</i>
+                </div>
+                <div>
+                    <ul class="tb-search-term-analysis-container-disabled-list">
+                        <li>View and copy top ranking video tags</li>
+                        <li>View statistics on the keyword you're searching</li>
+                        <li>View related search queries</li>
+                    </ul>
+                </div>
+           
+            </div>
+            <div class="tb-center tb-margin-bottom10" style="font-size:1.2em;"><a class="tb-search-term-analysis-enabled-button" style="text-decoration: underline;cursor:pointer">Show Now</a></div>
+        </div>
+    </div>
+
+    <div style="display:none" type="text/template" id="tb-search-term-analysis-action-dropdown-template">
+        <div class="tb-search-term-analysis-action-dropdown" style="">
+            <div class="tb-search-term-analysis-action-dropdown-action-option tb-margin-top10 tb-margin-left15" data-option="clipboard">
+                <i class="material-icons tb-font-size14 tb-move-down2 tb-font-color-gray tb-mat-icon-gray tb-margin-right5">file_copy</i>
+                <span> Copy to Clipboard</span>
+            </div>
+            <div class="tb-margin-left5 tb-margin-right5 tb-margin-top15">
+                <div class="tb-search-term-analysis-action-dropdown-action-option-header">
+                    Copy to tag list...
+                </div>
+                <div class="tb-search-term-analysis-lists-container">
+                    <div class="tb-margin-left15 tb-search-term-analysis-loading">
+                        Loading lists...
+                    </div>
+                </div>
+                <div style="text-align:right; margin-top:3px; margin-bottom:3px;">
+                    <div class="tb-search-term-analysis-action-dropdown-action-option tb-margin-bottom-0" data-option="newlist" style="display:inline-block; padding: 3px 4px;">
+                        <span>+ New Tag List</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

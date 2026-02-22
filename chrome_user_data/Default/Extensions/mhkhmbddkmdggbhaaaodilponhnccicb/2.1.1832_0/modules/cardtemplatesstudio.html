@@ -1,0 +1,113 @@
+﻿<!--Start Base Module Template-->
+<div id="tb-card-templates-container" class="tb-module-template draggable-container tb-card-templates-modal" style="display:none; width:885px">
+
+    <!--Start Base Module Shadow-->
+    <div class="tb-module-shadow">
+
+        <!--Start BASE Module Header-->
+        <div class="tb-module-header" data-draggable="true">
+            <img class="tb-module-logo " src="{PLUGIN_FILE_ROOT}/images/branding/tb-icon.svg" alt="tb-logo" data-draggable="false" />
+            <h1 class="tb-module-title">
+                Apply Card Template
+            </h1>
+            <div class="tb-module-help">
+                <a style="vertical-align: middle;text-decoration: none;" target="_blank" href="https://www.tubebuddy.com/tools?tool=cardtemplates" data-draggable="false">
+                    <i class="small material-icons tb-icon-white tb-icon-help">help_outline</i>
+                </a>
+            </div>
+            <div class="tb-module-close" data-draggable="false">
+                <i class="medium material-icons tb-icon-white" data-draggable="false">close</i>
+            </div>
+        </div>
+        <!--End Base Module Header-->
+
+        <div class="tb-module-container">
+            <div class="tb-module-embed-video">
+                <div class="tb-embed-video-thumbnail-container">
+                    <img id="tb-card-templates-thumbnail" alt="video thumbnail" class="tb-embed-video-thumbnail" />
+                </div>
+                <div class="tb-embed-video-link-container">
+                    <a id="tb-card-templates-title" class="tb-embed-video-link" target="_blank"></a>
+                </div>
+            </div>
+            <!--Start Base Module Container-->
+            <div class="tb-module-content">
+                <div id="tb-card-templates-loading-container" style="display:none; height:200px; font-size:16px; padding:20px;">
+                    <span class="tb-spinner"></span>Loading Card Templates...
+                </div>
+
+                <div id="tb-card-templates-none" style="display:none; height:200px; padding:30px 100px 0 20px; font-size:14px; line-height:19px;">
+                    <img src="{PLUGIN_FILE_ROOT}/images/icons/error.png" alt="error, white exclamation point in red triangle" style="position:relative; top: 2px; color:coral" />
+                    You haven't set any of your other videos as a Card Template yet.<br /><br />
+                    Go to the card Tab of any video that contains a set of cards
+                    that you want to use as a Template for other videos. Then check the box <a href="https://www.tubebuddy.com/assets/images/tools/screenshots/cardtemplateswhere2.png" target="_blank">
+                    at the bottom
+                    of that webpage
+                </a> to set that video as a Card Template.<br />
+
+                    <br />
+                    More info here: <a href="https://www.tubebuddy.com/tools?tool=cardtemplates">https://www.tubebuddy.com/tools?tool=cardtemplates</a>
+                </div>
+
+                <div id="tb-card-templates-apply-container" style="display:none;">
+
+                    <div class="tb-card-templates-header">Template:</div>
+                    <div id="tb-card-templates-template-menu">
+                        <select id="tb-card-templates-select" class="tb-dropdown-menu" name=""></select>
+                        <a id="tb-card-templates-reload-templates"><i class="material-icons">sync</i></a>
+                        <div class="tb-inline-block">
+                            <a id="tb-card-templates-edit-template" class="tb-font-size11" target="_blank">EDIT</a>
+                            <span class="tb-font-size11">/</span>
+                            <a id="tb-card-templates-delete-template" class="tb-font-size11 tb-red">DELETE</a>
+                        </div>
+                    </div>
+
+                    <div id="tb-card-templates-selected-menu">
+                        <div class="tb-card-templates-header tb-inline-block">Select/Edit Cards</div>
+                        <div class="tb-inline-block">
+                            <span id="tb-card-templates-how-many" class="tb-card-templates-header"></span>
+                            &nbsp;
+                            <a id="tb-card-templates-select-all">All</a><span>&nbsp;|&nbsp;</span><a id="tb-card-templates-select-none">None</a>
+                        </div>
+                    </div>
+                    <div id="tb-card-templates-list-container" class="tb-margin-bottom10">
+                    </div>
+                    <div class="tb-material-checkbox-container tb-card-template-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-font-size14">
+                            <input id="tb-card-templates-delete-all" type="checkbox" class="tb-material-checkbox-input" />
+                            <span class="tb-material-checkbox-box tb-card-templates-check"><span class="tb-check tb-material-checkbox-check tb-card-templates-check"></span></span>
+                            Remove all existing Cards on Video before applying Template
+                        </label>
+                    </div>
+                    <div class="tb-material-checkbox-container tb-card-template-checkbox-container">
+                        <label class="tb-material-checkbox-label tb-font-size14">
+                            <input type="checkbox" class="tb-card-templates-placeholders tb-material-checkbox-input" />
+                            <span class="tb-material-checkbox-box tb-card-templates-check"><span class="tb-check tb-material-checkbox-check tb-card-templates-check"></span></span>
+                            Convert placeholders in URLs
+                        </label>
+                    </div>
+                    <div class="tb-margin-top5 tb-margin-bottom5 tb-right tb-margin-right20">
+                        <a class="tb-btn-green" id="tb-card-templates-apply">
+                            Apply Selected Cards
+                        </a>
+                        <span id="tb-card-templates-working" style="display:none">Applying Cards... <span class="tb-spinner"></span></span>
+                    </div>
+                </div>
+            </div>
+            <!--End BASE Module Container-->
+            
+        </div>
+        <!--Start BASE Footer Module-->
+        <!--<div id="tb-cards-template-footer"class="tb-module-footer">
+            <a class="tb-btn-grey tb-module-close" id="tb-card-templates-close">Close</a>
+           
+        </div>-->
+        <!--End BASE Footer-->
+
+    </div>
+    <!--End BASE Shadow-->
+
+</div>
+<!--End BASE Module Template-->
+
+
